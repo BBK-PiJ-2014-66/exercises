@@ -150,6 +150,24 @@ public class PokerHands11basic {
 			if (!lswaped) break; // cards in order
 		}
                 System.out.println("debug after sorting cards=        " + carda + " " + cardb + " " + cardc + " " + cardd + " " + carde);
+
+
+                // test whether they are all the same suit, N.B. get suit by remainer of 10
+		boolean lsamesuit = true;
+		if ( (carda%10) != (cardb%10) ) lsamesuit = false;
+		if ( (carda%10) != (cardc%10) ) lsamesuit = false;
+		if ( (carda%10) != (cardd%10) ) lsamesuit = false;
+		if ( (carda%10) != (carde%10) ) lsamesuit = false;
+                System.out.println("debug lsamesuit=        " + lsamesuit);
+
+                // test whether they are consequetive
+                // n.b. get rank by integer divide by 10
+                boolean  lconsec = true;
+                if ( (carda/10)+1 != (cardb/10) ) lconsec = false;
+                if ( (cardb/10)+1 != (cardc/10) ) lconsec = false;
+                if ( (cardc/10)+1 != (cardd/10) ) lconsec = false;
+                if ( (cardd/10)+1 != (carde/10) ) lconsec = false;
+                System.out.println("debug lconsec=        " + lconsec);
 		
 		
 	}
