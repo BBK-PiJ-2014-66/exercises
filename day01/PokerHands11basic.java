@@ -94,21 +94,21 @@ public class PokerHands11basic {
                         }
 			else if (nread==3) {
 				cardc = 10*irank + isuit;
-                                if ( (cardc == carda) || (cardc == carda)) {
+                                if ( (cardc == carda) || (cardc == cardb)) {
                         		System.out.println("ERROR same card input twice. Try again");
 					nread--;
                                 }
                         }
                         else if (nread==4) {
                                 cardd = 10*irank + isuit;
-                                if ( (cardd == carda) || (cardd == carda) ||  (cardd == cardc)) {
+                                if ( (cardd == carda) || (cardd == cardb) ||  (cardd == cardc)) {
                                         System.out.println("ERROR same card input twice. Try again");
                                         nread--;
                                 }
                         }
                         else if (nread==5) {
                                 carde = 10*irank + isuit;
-                                if ( (carde == carda) || (carde == carda) ||  (carde == cardc) || (carde == cardd)) {
+                                if ( (carde == carda) || (carde == cardb) ||  (carde == cardc) || (carde == cardd)) {
                                         System.out.println("ERROR same card input twice. Try again");
                                         nread--;
                                 }
