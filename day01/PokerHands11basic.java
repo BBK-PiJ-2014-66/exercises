@@ -151,7 +151,7 @@ public class PokerHands11basic {
 		}
                 System.out.println("debug after sorting cards=        " + carda + " " + cardb + " " + cardc + " " + cardd + " " + carde);
 
-
+                // Now score
                 // test whether they are all the same suit, N.B. get suit by remainer of 10
 		boolean lsamesuit = true;
 		if ( (carda%10) != (cardb%10) ) lsamesuit = false;
@@ -162,13 +162,46 @@ public class PokerHands11basic {
 
                 // test whether they are consequetive
                 // n.b. get rank by integer divide by 10
+                // special case is A 10 J Q K as aces are allowed to go high or low
+                // we would get this as 1? 10? 11? 12? 13?
                 boolean  lconsec = true;
                 if ( (carda/10)+1 != (cardb/10) ) lconsec = false;
+                if ( (carda/10==1) && (cardb/10==10)) lconsec = true; // aces hi possible
                 if ( (cardb/10)+1 != (cardc/10) ) lconsec = false;
                 if ( (cardc/10)+1 != (cardd/10) ) lconsec = false;
                 if ( (cardd/10)+1 != (carde/10) ) lconsec = false;
                 System.out.println("debug lconsec=        " + lconsec);
 		
 		
+                // Straight flush: all cards are of the same suite and their ranks are consecutive.
+                if (lsamesuit && lconsec) {
+                	System.out.println("Straight flush");
+                }
+                // Poker: four of the five cards have the same rank
+                else if (  ((carda/10==cardb/10) && (cardb/10==cardc/10) && (cardc/10==cardd/10)) || 
+                           ((cardb/10==cardc/10) && (cardc/10==cardd/10) && (cardd/10==carde/10)) ) {
+                	System.out.println("Poker (aka four-of-a-kind)");
+		}
+		// Full House: three of a kind plus two of a kind.
+                else if (  ((carda/10==cardb/10) && (cardb/10==cardc/10) && (cardd/10==carde/10)) || 
+                           ((carda/10==cardb/10) && (cardc/10==cardd/10) && (cardd/10==carde/10)) ) {
+                	System.out.println("Full House: three-of-a-kind plus two-of-a-kind.");
+		}
+		else if (lsamesuit) {
+                	System.out.println("Flush: all cards share the same suit but are not consecutive.");
+		}
+                else if (lconsec) {
+                	System.out.println("Straight: all cards are consecutive, but not of the same suit.");
+                }
+		// Three of a kind:
+		// Two pairs:
+		// three of the five cards have the same rank.
+		// two pairs (see below).
+		// Pair: two of the five cards have the same rank.
+
+		// Nothing: any other situation.
+                else {
+                	System.out.println("Nothing: any other situation");
+                }
 	}
 }
