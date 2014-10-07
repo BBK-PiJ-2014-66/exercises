@@ -25,56 +25,97 @@
 // piece of it.
 //
 // 2nd attempt no arrays, no methods, no sort
+//
+// observation normally 1 is A (ace) and can act either high or low in flushes:
+//
+// we will represent card as an integer value
+// first one or two digits are the rank 1 for Ace
+//                                      2 for two
+//                                    .....
+//                                     10 for ten
+//                                     11 for Jack
+//                                     12 for queen
+//                                     13 for king
+// final digit encodes the suit: 1 means spades
+//                               2 means hearts
+//				 3 means diamonds
+//				 4 means clubs
+//
+// So 14 means ace of clubs, 91 means nine of spades, 123 means queen of diamonds.
+// idea is that use integer divide by 10 to extract the rank, and modulu by 10 to get the suit
+// can also use integer rather than string comparison easier to code
 public class PokerHands11basic {
 	public static void main(String[] args) {
-		// simply store the rank of the cards in strings 
-                String ranka="", rankb="", rankc="", rankd="", ranke="";
-                String suita="", suitb="", suitc="", suitd="", suite="";
+		// store the cards as 5 seperate integers (arrays not allowed)
+                int carda=0, cardb=0, cardc=0, cardd=0, carde=0;
 
                 int nread=0; // number of cards read
                 while (nread < 5) {
 			nread++; // read next card
-                        String suitread, rankread;
+                        int irank=0, isuit=0;
 			while (true) { // infinite loop jump out on valid input
 				System.out.print("Enter rank of number "+ nread +" card (1 or 2 or ... 10 or J or Q or K): ");
-                		rankread = System.console().readLine();
- 				if (rankread.equals("1")) break;
- 				if (rankread.equals("2")) break;
- 				if (rankread.equals("3")) break;
- 				if (rankread.equals("4")) break;
- 				if (rankread.equals("5")) break;
- 				if (rankread.equals("6")) break;
- 				if (rankread.equals("7")) break;
- 				if (rankread.equals("8")) break;
- 				if (rankread.equals("9")) break;
- 				if (rankread.equals("10")) break;
- 				if (rankread.equals("J")) break;
- 				if (rankread.equals("Q")) break;
- 				if (rankread.equals("K")) break;
+                		String strrank = System.console().readLine();
+ 				if (strrank.equals("1")) irank = 1;
+ 				if (strrank.equals("2")) irank = 2;
+ 				if (strrank.equals("3")) irank = 3;
+ 				if (strrank.equals("4")) irank = 4;
+ 				if (strrank.equals("5")) irank = 5;
+ 				if (strrank.equals("6")) irank = 6;
+ 				if (strrank.equals("7")) irank = 7;
+ 				if (strrank.equals("8")) irank = 8;
+ 				if (strrank.equals("9")) irank = 9;
+ 				if (strrank.equals("10")) irank = 10;
+ 				if (strrank.equals("J")) irank = 11;
+ 				if (strrank.equals("Q")) irank = 12;
+ 				if (strrank.equals("K")) irank = 13;
+                                if (irank != 0) break;
                         	System.out.println("ERROR invalid input try again");
                 	}
 			while (true) { // infinite loop jump out on valid input
-				System.out.print("Enter suite of number "+ nread +" card (\"spades\" or \"hearts\" or \"diamonds\" or \"clubs\" ");
-                		suitread = System.console().readLine();
- 				if (suitread.equals("spades")) break;
- 				if (suitread.equals("hearts")) break;
- 				if (suitread.equals("diamonds")) break;
- 				if (suitread.equals("clubs")) break;
+				System.out.print("Enter suite of number "+ nread +" card (\"spades\" or \"hearts\" or \"diamonds\" or \"clubs\": ");
+                		String strsuit = System.console().readLine();
+ 				if (strsuit.equals("spades")) isuit = 1;
+ 				if (strsuit.equals("hearts")) isuit = 2;
+ 				if (strsuit.equals("diamonds")) isuit = 3;
+ 				if (strsuit.equals("clubs"))  isuit = 4;
+                                if (isuit !=0) break; 
                         	System.out.println("ERROR invalid input try again");
                 	}
                         if (nread==1) {
-				ranka = rankread;
-				suita = suitread;
+				carda = 10*irank + isuit;
                         }
 			else if (nread==2) {
-				rankb = rankread;
-				suitb = suitread;
+				cardb = 10*irank + isuit;
+                                if (cardb == carda) {
+                        		System.out.println("ERROR same card input twice. Try again");
+					nread--;
+                                }
                         }
+			else if (nread==3) {
+				cardc = 10*irank + isuit;
+                                if ( (cardc == carda) || (cardc == carda)) {
+                        		System.out.println("ERROR same card input twice. Try again");
+					nread--;
+                                }
+                        }
+                        else if (nread==4) {
+                                cardd = 10*irank + isuit;
+                                if ( (cardd == carda) || (cardd == carda) ||  (cardd == cardc)) {
+                                        System.out.println("ERROR same card input twice. Try again");
+                                        nread--;
+                                }
+                        }
+                        else if (nread==5) {
+                                carde = 10*irank + isuit;
+                                if ( (carde == carda) || (carde == carda) ||  (carde == cardc) || (carde == cardd)) {
+                                        System.out.println("ERROR same card input twice. Try again");
+                                        nread--;
+                                }
+                        }
+
  		}
-		System.out.print("cards read in and stored as ");
-		System.out.print( ranka + suita + "    ");
-		System.out.print( rankb + suitb + "    ");
-		System.out.println("");
+		System.out.println("debug cards read in and stored as " + carda + " " + cardb + " " + cardc + " " + cardd + " " + carde);
 		
 		
 	}
