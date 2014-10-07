@@ -15,9 +15,8 @@
 // all cards share the same suit, but are not consecutive.
 // Straight:
 // all cards are consecutive, but not of the same suit.
-// Three of a kind:
+// Three of a kind: three of the five cards have the same rank.
 // Two pairs:
-// three of the five cards have the same rank.
 // two pairs (see below).
 // Pair: two of the five cards have the same rank.
 // Nothing: any other situation.
@@ -115,8 +114,7 @@ public class PokerHands11basic {
                         }
 
  		}
-		System.out.println("debug cards read in and stored as " + carda + " " + cardb + " " + cardc + " " + cardd + " " + carde);
-
+		//System.out.println("debug cards read in and stored as " + carda + " " + cardb + " " + cardc + " " + cardd + " " + carde);
 		// now have valid input
 
                 // lets sort the cards as it makes life easier 
@@ -149,7 +147,7 @@ public class PokerHands11basic {
                         }
 			if (!lswaped) break; // cards in order
 		}
-                System.out.println("debug after sorting cards=        " + carda + " " + cardb + " " + cardc + " " + cardd + " " + carde);
+                //System.out.println("debug after sorting cards=        " + carda + " " + cardb + " " + cardc + " " + cardd + " " + carde);
 
                 // Now score
                 // test whether they are all the same suit, N.B. get suit by remainer of 10
@@ -158,7 +156,7 @@ public class PokerHands11basic {
 		if ( (carda%10) != (cardc%10) ) lsamesuit = false;
 		if ( (carda%10) != (cardd%10) ) lsamesuit = false;
 		if ( (carda%10) != (carde%10) ) lsamesuit = false;
-                System.out.println("debug lsamesuit=        " + lsamesuit);
+                //System.out.println("debug lsamesuit=        " + lsamesuit);
 
                 // test whether they are consequetive
                 // n.b. get rank by integer divide by 10
@@ -173,18 +171,25 @@ public class PokerHands11basic {
                 System.out.println("debug lconsec=        " + lconsec);
 		
 		
+                int npairs=0; // count number of pairs
+                if (carda/10==cardb/10) npairs++;
+                if (cardb/10==cardc/10) npairs++;
+                if (cardc/10==cardd/10) npairs++;
+                if (cardd/10==carde/10) npairs++;
+
+
                 // Straight flush: all cards are of the same suite and their ranks are consecutive.
                 if (lsamesuit && lconsec) {
                 	System.out.println("Straight flush");
                 }
                 // Poker: four of the five cards have the same rank
-                else if (  ((carda/10==cardb/10) && (cardb/10==cardc/10) && (cardc/10==cardd/10)) || 
-                           ((cardb/10==cardc/10) && (cardc/10==cardd/10) && (cardd/10==carde/10)) ) {
+                else if (  ((carda/10==cardb/10) && (carda/10==cardc/10) && (carda/10==cardd/10)) || 
+                           ((cardb/10==cardc/10) && (cardb/10==cardd/10) && (cardb/10==carde/10)) ) {
                 	System.out.println("Poker (aka four-of-a-kind)");
 		}
 		// Full House: three of a kind plus two of a kind.
-                else if (  ((carda/10==cardb/10) && (cardb/10==cardc/10) && (cardd/10==carde/10)) || 
-                           ((carda/10==cardb/10) && (cardc/10==cardd/10) && (cardd/10==carde/10)) ) {
+                else if (  ((carda/10==cardb/10) && (carda/10==cardc/10) && (cardd/10==carde/10)) || 
+                           ((carda/10==cardb/10) && (cardc/10==cardd/10) && (cardc/10==carde/10)) ) {
                 	System.out.println("Full House: three-of-a-kind plus two-of-a-kind.");
 		}
 		else if (lsamesuit) {
@@ -193,12 +198,16 @@ public class PokerHands11basic {
                 else if (lconsec) {
                 	System.out.println("Straight: all cards are consecutive, but not of the same suit.");
                 }
-		// Three of a kind:
-		// Two pairs:
-		// three of the five cards have the same rank.
-		// two pairs (see below).
-		// Pair: two of the five cards have the same rank.
-
+                else if (  ((carda/10==cardb/10) && (carda/10==cardc/10) ) || 
+                           ((cardc/10==cardd/10) && (cardc/10==carde/10)) ) {
+                	System.out.println("Three of a kind: three of the five cards have the same rank.");
+		}
+                else if ( npairs==2) {
+                	System.out.println("Two pairs");
+		}
+                else if ( npairs==1) {
+                	System.out.println("Pair: two of the five cards have the same rank.");
+		}
 		// Nothing: any other situation.
                 else {
                 	System.out.println("Nothing: any other situation");
