@@ -116,6 +116,40 @@ public class PokerHands11basic {
 
  		}
 		System.out.println("debug cards read in and stored as " + carda + " " + cardb + " " + cardc + " " + cardd + " " + carde);
+
+		// now have valid input
+
+                // lets sort the cards as it makes life easier 
+		while (true) {
+			int iswap;
+			boolean lswaped = false;
+                        if (cardb < carda) {
+				lswaped = true;
+				iswap = carda;
+				carda = cardb;
+				cardb = iswap;
+                        }
+	                if (cardc < cardb) {
+				lswaped = true;
+				iswap = cardb;
+				cardb = cardc;
+				cardc = iswap;
+                        }
+                        if (cardd < cardc) {
+                                lswaped = true;
+                                iswap = cardc;
+                                cardc = cardd;
+                                cardd = iswap;
+                        }
+                        if (carde < cardd) {
+                                lswaped = true;
+                                iswap = cardd;
+                                cardd = carde;
+                                carde = iswap;
+                        }
+			if (!lswaped) break; // cards in order
+		}
+                System.out.println("debug after sorting cards=        " + carda + " " + cardb + " " + cardc + " " + cardd + " " + carde);
 		
 		
 	}
