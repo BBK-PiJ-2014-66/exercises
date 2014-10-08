@@ -18,17 +18,27 @@ public class E06Division {
                 System.out.print("Please enter the 2nd integer number: ");
                 int numb =  Integer.parseInt(System.console().readLine());
 
-                // first lets code assumng numa and numb are positive
+                boolean lSignsDiffer=false; // set true if numa and numb have difference signs
+                if (numa < 0) lSignsDiffer = (!lSignsDiffer);
+                if (numb < 0) lSignsDiffer = (!lSignsDiffer);
+             
+
                 // method is to start at numa and subtract numb repeatedly until the
                 // the working number is less than numb.
-		int workingNum = numa;
+                int workingNum = (numa<0) ? -numa : numa;
+                int absnumb = (numb < 0) ? -numb : numb; // absolute value
                 int numberOfSubtracts=0;
-
-                while( workingNum > numb) {
-			workingNum -= numb;
+                while( workingNum > absnumb) {
+			workingNum -= absnumb;
 			numberOfSubtracts++;
 		}
+                if (lSignsDiffer) 
+			numberOfSubtracts = -numberOfSubtracts;
+		if (numa<0)
+                        workingNum = -workingNum;
 		System.out.println(numa + " divided by " + numb + " is " + 
                                    numberOfSubtracts + ", remainder " + workingNum);
+
+		System.out.println("debug to check numa/numb= " + numa/numb + " numa%numb= " + numa%numb);
 	}
 }
