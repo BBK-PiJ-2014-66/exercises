@@ -44,6 +44,6 @@ public class E06Division {
                                    	quotient + ", remainder " + remainder);
 		}
 
-		System.out.println("debug to just to check numa/numb= " + numa/numb + " numa%numb= " + numa%numb);
+		//System.out.println("debug to just to check numa/numb= " + numa/numb + " numa%numb= " + numa%numb);
 	}
 }
