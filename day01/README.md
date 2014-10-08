@@ -20,6 +20,11 @@ Files:
 **Multiplication05.java** does not use * operator, deals with negative numbers. 
 Use for loop (not sure whether this is allowed).
 
+## 6 Division
+**E06Division.java** conforms to full rules. No methods all in main. 
+Uses ternary operator. Deals with negative inputs for either number entered.
+Protects against division by zero.
+
 ## 7 Naive Sorting
 
 **NaiveSort07.java** Uses Math.max but in comments ternary operator as an alternative.
