@@ -22,11 +22,11 @@ Use for loop (not sure whether this is allowed).
 
 ## 7 Naive Sorting
 
-**NaiveSort07.java** 
+**NaiveSort07.java** Uses Math.max but in comments ternary operator as an alternative.
 
 ## 9 Going up!
 
-**GoingUp09.java**
+**GoingUp09.java** Works hopefully uses clear variable names.
 
 ## 11 Poker hands (harder)
 
