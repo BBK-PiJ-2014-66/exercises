@@ -18,27 +18,32 @@ public class E06Division {
                 System.out.print("Please enter the 2nd integer number: ");
                 int numb =  Integer.parseInt(System.console().readLine());
 
-                boolean lSignsDiffer=false; // set true if numa and numb have difference signs
-                if (numa < 0) lSignsDiffer = (!lSignsDiffer);
-                if (numb < 0) lSignsDiffer = (!lSignsDiffer);
-             
-
-                // method is to start at numa and subtract numb repeatedly until the
-                // the working number is less than numb.
-                int workingNum = (numa<0) ? -numa : numa;
-                int absnumb = (numb < 0) ? -numb : numb; // absolute value
-                int numberOfSubtracts=0;
-                while( workingNum > absnumb) {
-			workingNum -= absnumb;
-			numberOfSubtracts++;
+		// protect against divide by zero
+		if (numb==0) {
+			System.out.println(numa + " divided by " + numb + " is infinity"); 
 		}
-                if (lSignsDiffer) 
-			numberOfSubtracts = -numberOfSubtracts;
-		if (numa<0)
-                        workingNum = -workingNum;
-		System.out.println(numa + " divided by " + numb + " is " + 
-                                   numberOfSubtracts + ", remainder " + workingNum);
+		else {
+                	boolean lSignsDiffer=false; // set true if numa and numb have difference signs
+                	if (numa < 0) lSignsDiffer = (!lSignsDiffer);
+                	if (numb < 0) lSignsDiffer = (!lSignsDiffer);
+             
+                	// method is to start the "remainder" at numa and subtract numb repeatedly 
+                	// until the "remainder" is less than numb.
+                	int remainder = (numa<0) ? -numa : numa; // absolute value of numa
+                	int absnumb = (numb < 0) ? -numb : numb; // absolute value of numb
+                	int quotient=0;
+                	while( remainder > absnumb) {
+				remainder -= absnumb;
+				quotient++;
+			}
+                	if (lSignsDiffer) 
+				quotient = -quotient;
+			if (numa<0)
+                        	remainder = -remainder;
+			System.out.println(numa + " divided by " + numb + " is " + 
+                                   	quotient + ", remainder " + remainder);
+		}
 
-		System.out.println("debug to check numa/numb= " + numa/numb + " numa%numb= " + numa%numb);
+		System.out.println("debug to just to check numa/numb= " + numa/numb + " numa%numb= " + numa%numb);
 	}
 }
