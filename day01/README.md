@@ -32,8 +32,7 @@ Protects against division by zero.
 [GoingUp09.java](GoingUp09.java) Works hopefully uses clear variable names.
 
 ## 10 You said high, I said low. . .
-*to be written*
-
+[E10YouSaidHighISaidLow.java](E10YouSaidHighISaidLow.java) All in main, handles exceptions, conforms to spec.
 
 ## 11 Poker hands (harder)
 [PokerHands11basic.java](PokerHands11basic.java) As instructed. Single main no loops no methods.
