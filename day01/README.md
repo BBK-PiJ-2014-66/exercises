@@ -1,14 +1,13 @@
-"Exercises, day 1"
-==================
+Exercises, day 1
+================
 
 Oliver Smart oliver@osmart.plus.com
 
 * I decided to do exercises in simple java, rather than groovy or javadecaf
   avoided using eclipse as instructed.
-* Trying to avoid use of methods or anything fancy (but gave in to temptation)
+* Trying to avoid use of methods, arrays or anything fancy *(but gave in to temptation)*
 
-Files:
-## Exercise 4 Prime Numbers 
+##  4 Prime Numbers 
 [Prime04.java](Prime04.java) Prompts and checks for primes. Single main. 
 
 [Prime04A.java](Prime04A.java) Separate out and use (old style) methods *naughty* 
