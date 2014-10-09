@@ -29,25 +29,36 @@ public class E08Maximising {
 		boolean lFirst = true;
 		while (true) { // infinite loop asking for input must break
 			System.out.print("Please a positive integer number: ");
-                        String strRead = System.console().readLine();
-                        if (strRead.length() ==0)
-				break; // (d) Enter is taken as alternative to -1 to terminate input
-			int numRead = Integer.parseInt(strRead);
-			if (numRead == -1) 
+			String strRead = System.console().readLine();
+			if (strRead.length() == 0)
+				break; // (d) Enter is taken as alternative to -1 to terminate
+						// input
+			// avoid exception if non-integer is entered
+			// see
+			// http://stackoverflow.com/questions/5439529/determine-if-a-string-is-an-integer-in-java
+			int numRead;
+			try {
+				numRead = Integer.parseInt(strRead);
+			} catch (NumberFormatException e) {
+				System.out.println("ERROR that is not an integer. Try again!");
+				continue;
+			}
+			if (numRead == -1)
 				break;
 			// got number input, is it positive?
 			if (numRead < 1) {
-				System.out.println("ERROR that is not a positive integer. Try again");
+				System.out
+						.println("ERROR that is not a positive integer. Try again");
 				continue;
 			}
-			if ( lFirst || numRead > numMax) 
+			if (lFirst || numRead > numMax)
 				numMax = numRead;
 			lFirst = false;
 		}
 		// finished input output results
 		if (lFirst)
-			 System.out.println("ERROR No positive integer entered");
+			System.out.println("ERROR No positive integer entered");
 		else
-			 System.out.println("Maximum positive integer entered = " + numMax);
+			System.out.println("Maximum positive integer entered = " + numMax);
 	}
 }
