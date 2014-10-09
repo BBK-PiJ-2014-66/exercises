@@ -24,6 +24,11 @@
 
 public class E12NumberPiramids {
 	public static void main(String[] args) {
-
+		int numbLines =  7; // default value will allow override
+		for (int lc=0; lc < numbLines; lc++) { // line count
+			for (int cc=0; cc < lc+1; cc++) // column count for lc=0 want 1 output of 1, lc=1 want two output of 2 ..
+				System.out.print(lc+1); 
+			System.out.println(); // final carriage return to end the line
+		}
 	}
 }
