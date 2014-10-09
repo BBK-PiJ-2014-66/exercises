@@ -16,7 +16,6 @@ Files:
 
 
 ## 5 Multiplication
-
 **Multiplication05.java** does not use * operator, deals with negative numbers. 
 Use for loop (not sure whether this is allowed).
 
@@ -26,8 +25,10 @@ Uses ternary operator. Deals with negative inputs for either number entered.
 Protects against division by zero.
 
 ## 7 Naive Sorting
-
 **NaiveSort07.java** Uses Math.max but in comments ternary operator as an alternative.
+
+## 8 Maximizing
+[E08Maximising.java](E08Maximising.java) Works. Handles exceptions on input.
 
 ## 9 Going up!
 
