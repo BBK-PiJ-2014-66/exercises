@@ -1,8 +1,6 @@
 Exercises, day 1
 ================
-
-Oliver Smart oliver@osmart.plus.com
-
+* Exercise sheet [00_exercise_week_1_day_1.pdf](00_exercise_week_1_day_1.pdf)
 * I decided to do exercises in simple java, rather than groovy or javadecaf
   avoided using eclipse as instructed.
 * Trying to avoid use of methods, arrays or anything fancy *(but gave in to temptation)*
@@ -44,3 +42,5 @@ user prompt program is difficult to script.
 
 [PokerHands11.java](PokerHands11.java) not finished first attempt at doing with C like method calls. Abandoned. 
 *have to play by the rules!*
+
+Oliver Smart oliver@osmart.plus.com
