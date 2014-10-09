@@ -13,37 +13,47 @@
  */
 
 public class E10YouSaidHighISaidLow {
-	public static int promptForInt(String prompt) {
-		System.out.print(prompt);
-		String str = System.console().readLine();
-		// no error check on type conversion
-		int thisint = Integer.parseInt(str);
-		return thisint;
-	}
-
 	public static void main(String[] args) {
 		boolean lAscending = true;
 		boolean lDesending = true;
-		int numread = 0;
-		int previousnum = -1;
+		int countSuccessfulRead = 0;
+		int numPrevious = -1;
 		while (true) { // infinite loop
-			int thisnum = promptForInt("Please enter a positive integer -1 to finish: ");
-			if (thisnum == -1)
+			System.out.print("Please a positive integer number: ");
+			String strRead = System.console().readLine();
+			if (strRead.length() == 0)
+				break; // (d) Enter is taken as alternative to -1 to terminate
+						// input
+			// avoid exception if non-integer is entered
+			// see
+			// http://stackoverflow.com/questions/5439529/determine-if-a-string-is-an-integer-in-java
+			int numRead;
+			try {
+				numRead = Integer.parseInt(strRead);
+			} catch (NumberFormatException e) {
+				System.out.println("ERROR that is not an integer. Try again!");
+				continue;
+			}
+			if (numRead == -1)
 				break;
-			numread++;
-			if (numread == 1) { // ignore first number
-			} else if (numread < 1) {
-				System.out.println("Error you entered a non-positive integer");
-				return;
-			} else {
-				if (thisnum != previousnum + 1)
+			// got number input, is it positive?
+			if (numRead < 1) {
+				System.out.println("ERROR that is not a +ve integer. Try again!");
+				continue;
+			}
+                        // finally got a number to be taken seriously
+                        countSuccessfulRead++;
+			if (countSuccessfulRead != 1) { // ignore first number
+				if (numRead != numPrevious + 1)
 					lAscending = false;
-				if (thisnum != previousnum - 1)
+				if (numRead != numPrevious - 1)
 					lDesending = false;
 			}
-			previousnum = thisnum;
+			numPrevious = numRead;
 		}
-		if ((numread > 1) && (lAscending || lDesending)) {
+                // Simple output as per spec. Need at least one number read and for it be 
+                // ascending or descending
+		if ((countSuccessfulRead > 1) && (lAscending || lDesending)) {
 			System.out.println("Yes");
 		} else {
 			System.out.println("No");
