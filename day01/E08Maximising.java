@@ -10,20 +10,27 @@
  * Questions/Assumptions (Specification rather loose)
  * (a) is a "number" an integer or a float? 
  *     Assume integer.
- * (b) what should the program do if supplied with a negative number or zero?
+ * (b) What should the program do if supplied with a negative number or zero?
+ *     Assume it should say "not recognized" and reprompt.
+ * (c) What if the user enters something like "fred"?
  *     Assume it should say not recognized and reprompt:
- * (c) what if the user enters something like "fred"
- *     Assume it should say not recognized and reprompt:
- * (d) what if the user just hits Enter
+ * (d) What if the user just hits Enter?
  *     Take this as a (better) alternative to -1 to finish.
+ * (e) What should happen if user just enters -1?
+ *     Write out "ERROR No positive integer entered" and finish.
  * 
  *  @author Oliver S. Smart
  */
-
 public class E08Maximising {
 	public static void main(String[] args) {
-		// lets be good no methods do all in main
-		System.out.print("Please a positive integer number: ");
-		int numa = Integer.parseInt(System.console().readLine());
+		int numMax = -10000;
+		boolean lfirst = true;
+		while (true) { // infinite loop asking for input must break
+			System.out.print("Please a positive integer number: ");
+                        String strRead = System.console().readLine();
+			int numRead = Integer.parseInt(strRead);
+			if (numRead == -1) 
+				break;
+		}
 	}
 }
