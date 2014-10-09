@@ -29,7 +29,8 @@ Protects against division by zero.
 [E08Maximising.java](E08Maximising.java) Works. All in main. Handles exceptions on input.
 
 ## 9 Going up!
-[GoingUp09.java](GoingUp09.java) Works hopefully uses clear variable names.
+[E09GoingUp.java](E09GoingUp.java) All in main, handles exceptions, conforms to spec. Trys to use
+clear java-type variable names to make it easy to read.
 
 ## 10 You said high, I said low. . .
 [E10YouSaidHighISaidLow.java](E10YouSaidHighISaidLow.java) All in main, handles exceptions, conforms to spec.
