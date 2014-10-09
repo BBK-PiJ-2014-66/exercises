@@ -9,8 +9,9 @@ Oliver Smart oliver@osmart.plus.com
 
 Files:
 ## Exercise 4 Prime Numbers 
-[Prime04.java](Prime04.java) Prompts and checks for primes. Single main
-[Prime04A.java](Prime04A.java) Separate out methods (old style) *naughty* 
+[Prime04.java](Prime04.java) Prompts and checks for primes. Single main. 
+
+[Prime04A.java](Prime04A.java) Separate out and use (old style) methods *naughty* 
 
 
 ## 5 Multiplication
