@@ -24,13 +24,21 @@
  */
 
 public class E18PIformula {
-
-	public static double roundNumberToNdigits( double aNum, int nDigits) {
-		//System.out.println("debug aNum=" + aNum);
-                double tenPowNDigits = Math.pow(10.0,nDigits);
-                aNum =(double)Math.round(aNum*tenPowNDigits)/(int)tenPowNDigits;
-		//System.out.println("debug aNum=" + aNum + " rounded to " + nDigits );
-        	return aNum;
+	public static int nDigitsAgree( double aNum, double bNum) {
+		// coded to deal with numbers less than 10	
+		if (Math.abs(aNum)>10. || Math.abs(bNum)>10.) {
+			System.out.println("ERROR nDigitsAgree cannot cope with numbers >10");
+			System.exit(1); // terminate program (should probably throw an exception)
+		}
+		int nagree=0;
+		while (true) {
+			if ((int)aNum != (int)bNum)
+				break;
+			aNum *= 10.;
+			bNum *= 10.;
+			nagree++;
+		}
+		return nagree;
 	}
 	public static void main(String[] args) {
 		int numbTerms = 0; // user input number 
@@ -56,13 +64,19 @@ public class E18PIformula {
                 double numerator= -4.0;// choose so zeroth term is (4/1) as stated
                 double denominator= -1.0;
 		double piEstimate=0.;
-		for (int ic=0; ic < numbTerms+1; ic++) {
+		int currentDigitsAgree=0;
+                int nDigitsAgree;
+		double dNumbTerms=numbTerms;
+		// use a double count as we get to such lage numbers where integer addition by one 
+		for (double dc=0.0; dc < dNumbTerms+1.; dc += 1.0) { 
                         numerator = -numerator;
 			denominator = denominator + 2.0;
 			piEstimate += (numerator/denominator);
-                        //int nDigitsAgree = nDecimalPlacesAgree( piEstimate, Math.PI);
-			double test = roundNumberToNdigits(piEstimate,2);				
-			System.out.println("\t" + ic + "\t" + piEstimate);
+                        nDigitsAgree = nDigitsAgree( piEstimate, Math.PI);
+			if ((nDigitsAgree > currentDigitsAgree) || (dc==numbTerms)) {
+				currentDigitsAgree = nDigitsAgree;
+				System.out.println("\t numTerm=" + dc + "\t piEst=" + piEstimate + "\t nDigitsAgree=" + nDigitsAgree );
+			}
 		}
 	}
 }
