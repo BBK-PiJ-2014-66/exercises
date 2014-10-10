@@ -26,36 +26,39 @@
 
 public class E12NumberPiramids {
 	public static void main(String[] args) {
-		int numbLines =  7; // default value will allow override
-                
- 		// parse command lines to get numbLines
-		String useMessage="To produce a number piramid with NLINES run\n\n" +
-			"    java E12NumberPiramids NLINES\n\n" + "where NLINES is a postive integer\n";
-		if (args.length==0) { // no command line args
-			 System.out.println("Using default number of lines = " + numbLines);
-			 	System.out.print(useMessage);
-		}
-		else if (args.length == 1) {
+		int numbLines = 7; // default value will allow override
+
+		// parse command lines to get numbLines
+		String useMessage = "To produce a number piramid with NLINES run\n\n"
+				+ "    java E12NumberPiramids NLINES\n\n"
+				+ "where NLINES is a postive integer\n";
+		if (args.length == 0) { // no command line args
+			System.out.println("Using default number of lines = " + numbLines);
+			System.out.print(useMessage);
+		} else if (args.length == 1) {
 			try {
 				numbLines = Integer.parseInt(args[0]);
 			} catch (NumberFormatException e) {
-				System.out.println("ERROR 01 parsing integer from \"" + args[0] +
-						"\" N.B. the argument must be an integer\n");
-			 	System.out.print(useMessage);
+				System.out.println("ERROR 01 parsing integer from \"" + args[0]
+						+ "\" N.B. the argument must be an integer\n");
+				System.out.print(useMessage);
 				System.exit(1); // terminate program with ERROR status 1
 			}
+		} else {
+			System.out
+					.println("ERROR 02 more than one command line argument\n");
+			System.out.print(useMessage);
+			System.exit(2); // terminate program with ERROR status 2
 		}
-		else {
-				System.out.println("ERROR 02 more than one command line argument\n");
-			 	System.out.print(useMessage);
-				System.exit(2); // terminate program with ERROR status 2
-		}
-                // now produce the piramid
-		for (int lc=0; lc < numbLines; lc++) { // line count from zero as per C not FORTRAN
-                        int numbOut = lc + 1; // output 1, 2, 3
-			for (int cc=0; cc < numbOut; cc++) {// column count for lc=0 want 1 output of 1, lc=1 want two output of 2 ..
-				System.out.print(numbOut%10); // for 10 output 0, 11 output 1 to keep piramid straight
-                        }
+
+		// now produce the piramid
+		for (int lc = 0; lc < numbLines; lc++) { // lines count from zero
+			int numbOut = lc + 1; // but output 1, 2, 3
+			for (int cc = 0; cc < numbOut; cc++) {
+				// use modulo to knock off any leading digits 
+				// so 10 becomes 0. This keeps piramid straight
+				System.out.print(numbOut % 10); 
+			}
 			System.out.println(); // final carriage return to end each line
 		}
 	}
