@@ -19,7 +19,9 @@ Exercises, day 02
   checked against [http://primes.utm.edu/lists/small/1000.txt](http://primes.utm.edu/lists/small/1000.txt)
  
 ### 14 Up to 1,000 primes (*)
-*to be written*
+* [E14First1000Primes.java](E14First1000Primes.java) simple adaptation of previous program.
+* [E14First1000Primes_out.txt](E14First1000Primes_out.txt) program out 
+  checked against [http://primes.utm.edu/lists/small/1000.txt](http://primes.utm.edu/lists/small/1000.txt)
 
 ### 15 Guess my number (*)
 *to be written*
