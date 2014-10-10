@@ -14,7 +14,7 @@ Exercises, day 02
 
 ### 13 All the primes up to 1,000 \(*)
 * [E13AllThePrimesUpTo1000.java](E13AllThePrimesUpTo1000.java) used method *isPrime*
-  from [../day01/Prime04A.java](Prime04A.java) because it produces so much clearer code.
+  from [Prime04A.java](../day01/Prime04A.java) because it produces so much clearer code.
 * [E13AllThePrimesUpTo1000_out.txt](E13AllThePrimesUpTo1000_out.txt) its output 
   checked against [http://primes.utm.edu/lists/small/1000.txt](http://primes.utm.edu/lists/small/1000.txt)
  
