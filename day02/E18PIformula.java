@@ -13,11 +13,25 @@
  * do you need to get the first three digits right (3.14)? 
  * How many for the first 10 digits (3.14159265358. . . ...)?
  *
+ * In practice many terms are needed. So instead of inputting n
+ * lets worry about how many terms are need to get 
+ * 1 digit "right"
+ * 2 digits "right"
+ * 3 digits "right" 
+ * assume right means simple truncation.
+ *
  *  @author Oliver S. Smart
  */
 
 public class E18PIformula {
 
+	public static double roundNumberToNdigits( double aNum, int nDigits) {
+		//System.out.println("debug aNum=" + aNum);
+                double tenPowNDigits = Math.pow(10.0,nDigits);
+                aNum =(double)Math.round(aNum*tenPowNDigits)/(int)tenPowNDigits;
+		//System.out.println("debug aNum=" + aNum + " rounded to " + nDigits );
+        	return aNum;
+	}
 	public static void main(String[] args) {
 		int numbTerms = 0; // user input number 
 
@@ -43,10 +57,11 @@ public class E18PIformula {
                 double denominator= -1.0;
 		double piEstimate=0.;
 		for (int ic=0; ic < numbTerms+1; ic++) {
-			// everytime we swap terms
                         numerator = -numerator;
 			denominator = denominator + 2.0;
 			piEstimate += (numerator/denominator);
+                        //int nDigitsAgree = nDecimalPlacesAgree( piEstimate, Math.PI);
+			double test = roundNumberToNdigits(piEstimate,2);				
 			System.out.println("\t" + ic + "\t" + piEstimate);
 		}
 	}
