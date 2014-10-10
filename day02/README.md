@@ -39,6 +39,9 @@ Exercises, day 02
 
 
 ### 18 π (**)
-*to be written*
+* [E18PIformula.java](E18PIformula.java) written to explore the "how many terms" questions
+* [E18PIformula_out.txt](E18PIformula_out.txt) in practice this implementation never gets beyond
+	8 digits agreeing and then program get caught in some infinite loop. 
+
 
 Oliver Smart oliver@osmart.plus.com

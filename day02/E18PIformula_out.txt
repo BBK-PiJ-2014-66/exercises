@@ -1,0 +1,25 @@
+java E18PIformula  150000000 > E18PIformula_out.txt
+	 numTerm=2.0	 piEst=3.466666666666667	 nDigitsAgree=1
+	 numTerm=18.0	 piEst=3.1941879092319425	 nDigitsAgree=2
+	 numTerm=118.0	 piEst=3.14999586659347	 nDigitsAgree=3
+	 numTerm=1687.0	 piEst=3.141000236580159	 nDigitsAgree=4
+	 numTerm=10793.0	 piEst=3.1415000095284658	 nDigitsAgree=5
+	 numTerm=136120.0	 piEst=3.141599999994786	 nDigitsAgree=6
+	 numTerm=1530011.0	 piEst=3.141592000000233	 nDigitsAgree=7
+	 numTerm=1.8660303E7	 piEst=3.1415926000000005	 nDigitsAgree=8
+	 numTerm=1.5E8	 piEst=3.1415926602555007	 nDigitsAgree=8
+completes
+
+But
+
+java E18PIformula  190000000
+	 numTerm=2.0	 piEst=3.466666666666667	 nDigitsAgree=1
+	 numTerm=18.0	 piEst=3.1941879092319425	 nDigitsAgree=2
+	 numTerm=118.0	 piEst=3.14999586659347	 nDigitsAgree=3
+	 numTerm=1687.0	 piEst=3.141000236580159	 nDigitsAgree=4
+	 numTerm=10793.0	 piEst=3.1415000095284658	 nDigitsAgree=5
+	 numTerm=136120.0	 piEst=3.141599999994786	 nDigitsAgree=6
+	 numTerm=1530011.0	 piEst=3.141592000000233	 nDigitsAgree=7
+	 numTerm=1.8660303E7	 piEst=3.1415926000000005	 nDigitsAgree=8
+
+never completes eats cpu and has to be interupted.
