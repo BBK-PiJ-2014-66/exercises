@@ -14,10 +14,12 @@
  * \ldots
  * 
  * Not allowed methods and everything must be in main.
- * assune the ldots is a typo from latex.
+ * assume the ldots is a typo from latex.
+ *
  * Not told the user is to have any control. 
- * First code to do seven as shown.
- * Then extend to allow user to control number using a command line argument 
+ *
+ * Have choosen to use command line arguments to control and
+ * to see how to terminate with error if problems found
  * 
  *  @author Oliver S. Smart
  */
@@ -27,18 +29,27 @@ public class E12NumberPiramids {
 		int numbLines =  7; // default value will allow override
                 
  		// parse command lines to get numbLines
+		String useMessage="To produce a number piramid with NLINES run\n\n" +
+			"    java E12NumberPiramids NLINES\n\n" + "where NLINES is a postive integer\n";
 		if (args.length==0) { // no command line args
 			 System.out.println("Using default number of lines = " + numbLines);
-			 System.out.println("To produce a number piramid with NLINES rerun");
-			 System.out.println();
-			 System.out.println("    java E12NumberPiramids NLINES");
-			 System.out.println();
-			 System.out.println("where NLINES is a postive integer");
+			 	System.out.print(useMessage);
 		}
 		else if (args.length == 1) {
-			numbLines = Integer.parseInt(args[0]);
+			try {
+				numbLines = Integer.parseInt(args[0]);
+			} catch (NumberFormatException e) {
+				System.out.println("ERROR 01 parsing integer from \"" + args[0] +
+						"\" N.B. the argument must be an integer\n");
+			 	System.out.print(useMessage);
+				System.exit(1); // terminate program with ERROR status 1
+			}
 		}
-
+		else {
+				System.out.println("ERROR 02 more than one command line argument\n");
+			 	System.out.print(useMessage);
+				System.exit(2); // terminate program with ERROR status 2
+		}
                 // now produce the piramid
 		for (int lc=0; lc < numbLines; lc++) { // line count from zero as per C not FORTRAN
                         int numbOut = lc + 1; // output 1, 2, 3
