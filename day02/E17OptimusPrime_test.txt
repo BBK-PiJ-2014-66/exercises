@@ -1,0 +1,54 @@
+output of ./E17OptimusPrime_test.pl test script
+
+
+
+test 1 "java E17OptimusPrime 5116" produces:
+********************************
+ Nearest prime to 5116 is 5113 and 5119
+********************************
+output status=0
+
+
+test 2 "java E17OptimusPrime 5117" produces:
+********************************
+ Nearest prime to 5117 is 5119
+********************************
+output status=0
+
+
+test 3 "java E17OptimusPrime 5119" produces:
+********************************
+ Nearest prime to 5119 is 5119
+********************************
+output status=0
+
+
+test 4 "java E17OptimusPrime -2" produces:
+********************************
+ Nearest prime to -2 is 2
+********************************
+output status=0
+
+
+test 5 "java E17OptimusPrime produceERRORonParse" produces:
+********************************
+ERROR01 parsing integer from "produceERRORonParse" N.B. the single argument must be an integer
+
+Finds the nearest prime number to given number. Run 
+
+    java E17OptimusPrime NINPUT
+
+where NINPUT is an integer
+********************************
+output status=1
+
+
+test 6 "java E17OptimusPrime" produces:
+********************************
+Finds the nearest prime number to given number. Run 
+
+    java E17OptimusPrime NINPUT
+
+where NINPUT is an integer
+********************************
+output status=2

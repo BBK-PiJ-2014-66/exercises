@@ -30,7 +30,13 @@ Exercises, day 02
 *to be written*
 
 ### 17 Optimus Prime (**)
-*to be written*
+* [E17OptimusPrime.java](E17OptimusPrime.java) once again using command line input.
+* [E17OptimusPrime_test.pl](E17OptimusPrime_test.pl) perl 
+  test script to test the **E17OptimusPrime.java**
+* [E17OptimusPrime_test.txt](E17OptimusPrime_test.txt) the output of the
+  test script shows sensible results.
+
+
 
 ### 18 π (**)
 *to be written*
