@@ -1,0 +1,68 @@
+output of ./E12NumberPiramids_test.pl test script
+
+
+
+test 1 "java E12NumberPiramids" produces:
+********************************
+Using default number of lines = 7
+To produce a number piramid with NLINES run
+
+    java E12NumberPiramids NLINES
+
+where NLINES is a postive integer
+1
+22
+333
+4444
+55555
+666666
+7777777
+********************************
+output status=0
+
+
+test 2 "java E12NumberPiramids 15" produces:
+********************************
+1
+22
+333
+4444
+55555
+666666
+7777777
+88888888
+999999999
+0000000000
+11111111111
+222222222222
+3333333333333
+44444444444444
+555555555555555
+********************************
+output status=0
+
+
+test 3 "java E12NumberPiramids produceERRORonParse" produces:
+********************************
+ERROR 01 parsing integer from "produceERRORonParse" N.B. the argument must be an integer
+
+To produce a number piramid with NLINES run
+
+    java E12NumberPiramids NLINES
+
+where NLINES is a postive integer
+********************************
+output status=1
+
+
+test 4 "java E12NumberPiramids 15 produceERRORmultipleArgs " produces:
+********************************
+ERROR 02 more than one command line argument
+
+To produce a number piramid with NLINES run
+
+    java E12NumberPiramids NLINES
+
+where NLINES is a postive integer
+********************************
+output status=2

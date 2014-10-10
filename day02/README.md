@@ -5,8 +5,12 @@ Exercises, day 02
 * Trying to avoid use of methods, arrays or anything fancy 
 
 ### 12 Number piramids
-*to be written*
-
+* [E12NumberPiramids.java](E12NumberPiramids.java) choosen to allow control
+  of the number of lines output by a command line argument. 
+* [E12NumberPiramids_test.pl](E12NumberPiramids_test.pl) perl 
+  test script to test the **E12NumberPiramids.java**
+* [E12NumberPiramids_test.txt](E12NumberPiramids_test.txt) the output of the
+  test script.
 ### 13 All the primes up to 1,000 \(*)
 *to be written*
 
