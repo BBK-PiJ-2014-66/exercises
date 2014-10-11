@@ -35,20 +35,46 @@ class Point {
 
 public class E12DistancePointToPoint {
 	public static void main(String[] args) {
-		Point pointa = new Point(); // default constructor sets pointa.x and pointa.y to 0.0 
-		System.out.println("Print pointa (should be a memory address) \"" + pointa + "\"");
-		System.out.println("Print field pointa.x=\"" + pointa.x + "\""); 
-		System.out.println("Print field pointa.y=\"" + pointa.y + "\""); 
-                // try setting some values here
-                pointa.x = 10.0;
-                pointa.y = -20.0;
-		System.out.println("after assigning pointa x,y= (" + pointa.x + "," + pointa.y + ")");
-		System.out.println("using method pointa = " + pointa.coordString() );
-		pointa.storexy( 30., 40.);
-		System.out.println("after pointa.storexy( 30., 40.)  pointa = " + pointa.coordString() );
-		Point pointb = new Point();
-		System.out.print("Distance between "+pointa.coordString() + " and ");
-		System.out.println(pointb.coordString() + " is " + pointa.distanceTo(pointb));
+		System.out.println("E12DistancePointToPoint");
+		System.out.println("program reads in X and Y coordinates for three points");
+		System.out.println("and outputs which of the three are close");
 
+		Point pointA = new Point(); 
+		Point pointB = new Point(); 
+		Point pointC = new Point(); 
+
+		// we will read from the command line because I prefer it.
+		// also code a -test option to run tests on methods
+                if (args.length==1 && args[0].equals("-test"))  {
+			System.out.println("-test procedure, use hard coded points: ");
+			// leave A at (0,0) default constructor
+			pointB.storexy(3.,4.); // B is (3,4) 
+			pointC.storexy(1.,1.); // C is (1,1) 
+			System.out.println("\tstored A as (0,0) B as (3,4) and C as (1,1)");
+			System.out.println("\tso by hand distAB=5"); 
+			System.out.println("\t           distAC=sqrt(2)=1.41421");
+			System.out.println("\t           distBC=sqrt(13)=3.60555");
+			System.out.println("\tSo closest points should be A and C");
+                }
+		
+		// first echo back information to user - have the understood input order
+		System.out.print("pointA stored as " + pointA.coordString() );
+		System.out.print("   pointB stored as " + pointB.coordString() );
+		System.out.println("   pointC stored as " + pointC.coordString() );
+		double distAB = pointA.distanceTo(pointB);
+		double distAC = pointA.distanceTo(pointC);
+		double distBC = pointB.distanceTo(pointC);
+		System.out.println("Calculate distances: AB=" + distAB + " AC= " + distAC + "  BC= " + distBC);
+ 
+		System.out.print("Closest points are ");
+		if ( (distAB<distAC) && (distAB < distBC) ) {
+			System.out.println("A and B");
+		}
+		else if ( (distAC<distAB) && (distAC<distBC) ) {
+			System.out.println("A and C");
+		}
+		else {
+			System.out.println("B and C");
+		}
 	}
 }
