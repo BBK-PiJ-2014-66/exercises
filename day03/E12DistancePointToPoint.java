@@ -63,12 +63,19 @@ public class E12DistancePointToPoint {
 			System.out.println("\tSo closest points should be A and C");
                 }
 		else if (args.length!=6) {
-			 System.out.print(usageMessage);
-			 System.exit(0); // terminate program with no error 
+			System.out.print(usageMessage);
+			System.exit(0); // terminate program with no error 
 		}
 		else {
-			 System.out.println("need to code argument passing");
-			 System.exit(0); // terminate program with no error 
+			double d0 = Double.parseDouble(args[0]);
+			double d1 = Double.parseDouble(args[1]);
+			double d2 = Double.parseDouble(args[2]);
+			double d3 = Double.parseDouble(args[3]);
+			double d4 = Double.parseDouble(args[4]);
+			double d5 = Double.parseDouble(args[5]);
+			pointA.storexy(d0,d1);
+			pointB.storexy(d2,d3);
+			pointC.storexy(d4,d5);
 		}
 		
 		// first echo back information to user - have the understood input order
