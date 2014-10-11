@@ -38,6 +38,12 @@ public class E12DistancePointToPoint {
 		System.out.println("E12DistancePointToPoint");
 		System.out.println("program reads in X and Y coordinates for three points");
 		System.out.println("and outputs which of the three are close");
+		String usageMessage= "\n" +
+			"USAGE: please specify the X and Y coordinates for the three points" +
+			" on the command line:\n" +
+			"\tE12DistancePointToPoint XA YA XB YB XC YC\n" +	
+			"alternatively to run tests\n" +
+			"\tE12DistancePointToPoint -test\n";	
 
 		Point pointA = new Point(); 
 		Point pointB = new Point(); 
@@ -56,6 +62,14 @@ public class E12DistancePointToPoint {
 			System.out.println("\t           distBC=sqrt(13)=3.60555");
 			System.out.println("\tSo closest points should be A and C");
                 }
+		else if (args.length!=6) {
+			 System.out.print(usageMessage);
+			 System.exit(0); // terminate program with no error 
+		}
+		else {
+			 System.out.println("need to code argument passing");
+			 System.exit(0); // terminate program with no error 
+		}
 		
 		// first echo back information to user - have the understood input order
 		System.out.print("pointA stored as " + pointA.coordString() );
