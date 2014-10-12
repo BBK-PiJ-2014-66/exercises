@@ -78,6 +78,17 @@ class Rectangle {
 		double width = upLeft.y - downRight.y;
 		return length*width;
 	}
+	boolean ContainsPoint( Point testPoint) {
+		if (testPoint.x > this.downRight.x)
+			return false;
+		if (testPoint.x < this.upLeft.x)
+			return false;
+		if (testPoint.y > this.upLeft.y)
+			return false;
+		if (testPoint.y < this.downRight.y)
+			return false;
+		return true;
+	}
 }
  
 public class E14InsideOrOutside {
@@ -98,13 +109,20 @@ public class E14InsideOrOutside {
 			System.out.println("\n\t-test procedure, use hard coded points: ");
                         System.out.println("\ttest#1 supply point (1,1) and (21,11) that is bottom left and top right");
 			System.out.println("\ttest#1 expect that this will stored as (1,11) and (21,1).");
-			System.out.println("\ttest#1 Supply test point (5,6) should be inside.");
 
 		        // use overloaded constructor to make the object in a single line	
 			Rectangle myRectangle = new Rectangle( 1., 1., 21., 11.); // java does not use "my" as a special word unlike "this"!
 			System.out.println("\tmyRectangle.coordString()= \"" +  myRectangle.coordString()+"\"");
+			System.out.println("\ttest#1 Supply test point (5,6) should be inside, so function ContainsPoint should return true");
 			Point testPoint = new Point( 5., 6.);
-			System.out.println("\ttestPoint.coordString()= \"" +  testPoint.coordString()+"\"");
+			System.out.print("\ttestPoint.coordString()= \"" +  testPoint.coordString()+"\"");
+			System.out.println("\tmyRectangle.ContainsPoint(testPoint)=" + myRectangle.ContainsPoint(testPoint));
+
+			
+			System.out.println("\n\ttest#2 Supply test point (-1,6) should be outside, so function ContainsPoint should return false");
+                        testPoint.storexy( -1., 6.);
+			System.out.print("\ttestPoint.coordString()= \"" +  testPoint.coordString()+"\"");
+			System.out.println("\tmyRectangle.ContainsPoint(testPoint)=" + myRectangle.ContainsPoint(testPoint));
 
 
 		}
