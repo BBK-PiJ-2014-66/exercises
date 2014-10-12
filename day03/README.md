@@ -38,7 +38,14 @@ Exercises, day 03
 *to be written*
 
 ### 12 Distance point–to–point
-[E12DistancePointToPoint.java](E12DistancePointToPoint.java)  start with this one.
+[E12DistancePointToPoint.java](E12DistancePointToPoint.java) 
+uses the Point class as instructed (there is a java standard
+Point class but I assumed we where meant to do our own). 
+Decided to use Class methods because this produces much 
+cleaner code. Program has **-test** option to demonstrate 
+methods work for the case where points are on isosceles and
+equilateral triangles. Output of -test run 
+[E12DistancePointToPoint-test.md](E12DistancePointToPoint-test.md).
 
 ### 13 Rectangle
 *to be written*
