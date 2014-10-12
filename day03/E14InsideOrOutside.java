@@ -74,16 +74,17 @@ class Rectangle {
 	}
 }
  
-public class E13Rectangle {
+public class E14InsideOrOutside {
 	public static void main(String[] args) {
-                String programName="E13Rectangle";
+                String programName="E14InsideOrOutside.java";
 		System.out.print(programName);
-		System.out.println(" program reads in X and Y coordinates for two points and outputs");
-		System.out.println("  the area and perimeter of a rectangle where both points are opposite corners.");
+		System.out.println(" program reads in X and Y coordinates for two points defining a");
+		System.out.println(" rectangle and then the coordinates of a third point.");
+		System.out.println(" Then determines whether the point falls inside or outside the rectangle.");
 		String usageMessage= "\n" +
-			"USAGE: please specify the X and Y coordinates for the two points" +
-			" on the command line:\n" +
-			"\t" + programName + " XA YA XB YB\n" +	
+			"USAGE: on the command line please specify the X and Y coordinates for the two points A & B" +
+			" that define the rectangle, followed by the X and Y coordinates for point C\n" +
+			"\t" + programName + " XA YA XB YB XC YC\n" +	
 			"alternatively to run test\n" +
 			"\t" + programName + " -test\n";	
 
@@ -91,15 +92,15 @@ public class E13Rectangle {
 			System.out.println("\n\t-test procedure, use hard coded points: ");
                         System.out.println("\ttest#1 supply point (1,1) and (21,11) that is bottom left and top right");
 			System.out.println("\ttest#1 expect that this will stored as (1,11) and (21,1).");
-			System.out.println("\ttest#1 expect area = 200 units squared and perimeter 10 + 20 + 10 + 20 = 60 units.");
 
 		        // use overloaded constructor to make the object in a single line	
 			Rectangle myRectangle = new Rectangle( 1., 1., 21., 11.); // java does not use "my" as a special word unlike "this"!
 			System.out.println("\tmyRectangle.coordString()= \"" +  myRectangle.coordString()+"\"");
-			System.out.println("\tmyRectangle.Area()=" +  myRectangle.Area());
-			System.out.println("\tmyRectangle.Perimeter()=" +  myRectangle.Perimeter());
+
+
+
 		}
-		else if (args.length!=4) { // no args supplied
+		else if (args.length!=6) { // no args supplied
 			System.out.print(usageMessage);
 		}
 		else {  // user supplied args
@@ -109,8 +110,6 @@ public class E13Rectangle {
 			double d3 = Double.parseDouble(args[3]);
 			Rectangle myRectangle = new Rectangle( d0, d1, d2, d3); 
 			System.out.println(" Your rectangle stored as \"" +  myRectangle.coordString()+"\"");
-			System.out.println(" Your rectangle's perimeter is " + myRectangle.Perimeter() + " units");
-			System.out.println(" Your rectangle's Area is " + myRectangle.Area() + " units squared");
 		}
 	
 
