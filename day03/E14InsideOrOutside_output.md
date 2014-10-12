@@ -1,5 +1,5 @@
-EE14InsideOrOutside example outputs
-===================================
+E14InsideOrOutside example outputs
+==================================
 Running
 ```
 java E14InsideOrOutside -test
