@@ -79,7 +79,30 @@ class Rectangle {
  
 public class E13Rectangle {
 	public static void main(String[] args) {
-		System.out.println("E13Rectangle");
+                String programName="E13Rectangle";
+		System.out.print(programName);
+		System.out.println(" program reads in X and Y coordinates for two points and outputs");
+		System.out.println("  the area and perimeter of a rectangle where both points are opposite corners.");
+		String usageMessage= "\n" +
+			"USAGE: please specify the X and Y coordinates for the two points" +
+			" on the command line:\n" +
+			"\t" + programName + " XA YA XB YB\n" +	
+			"alternatively to run tests\n" +
+			"\t" + programName + " -test\n";	
+
+		Rectangle myRectangle = new Rectangle(); // java does not use "my" as a special word unlike "this"!
+
+                if (args.length==1 && args[0].equals("-test"))  {
+			System.out.println("-test procedure, use hard coded points: ");
+			myRectangle.storePoints( 1., 1., 11., 21.);
+			System.out.println();
+                        System.out.println("\ttest#1 supply point (1,1) and (21,11) that is bottom left and top right");
+			System.out.println("\ttest#1 expect that this will stored as (1,11) and (21,1).");
+			System.out.println("\ttest#1 expect area = 200 units squared and perimeter 10 + 20 + 10 + 20 = 60 units.");
+
+
+		}
+
 	}
 }
 
