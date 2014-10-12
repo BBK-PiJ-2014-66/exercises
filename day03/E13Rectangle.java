@@ -49,6 +49,10 @@ class Rectangle {
         // describes rectangle oriented along the X and Y axes 
 	Point upLeft;
 	Point downRight;
+	Rectangle() { // constructor
+		this.upLeft = new Point(); // create the upLeft object
+		this.downRight = new Point(); // create the upLeft object
+	}
 	String coordString() { 
         	// method to return string like 
         	// "rectangle: upper left (0.0,10.0) to lower right (20.,0.)"
@@ -99,6 +103,7 @@ public class E13Rectangle {
                         System.out.println("\ttest#1 supply point (1,1) and (21,11) that is bottom left and top right");
 			System.out.println("\ttest#1 expect that this will stored as (1,11) and (21,1).");
 			System.out.println("\ttest#1 expect area = 200 units squared and perimeter 10 + 20 + 10 + 20 = 60 units.");
+			System.out.println("\ttest#1 myRectangle.coordString()=" +  myRectangle.coordString());
 
 
 		}
