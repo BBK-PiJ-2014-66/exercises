@@ -18,6 +18,12 @@
 class Point {
    	double x;
        	double y;
+        Point() { // default constructor
+	}
+	Point( double xnew, double ynew) { // overload constructor with values
+		this.x = xnew;
+		this.y = ynew;
+	}
 	String coordString() { // method to return string like "(5.0,3.0)"
 		return "(" + x + "," + y + ")";
 	}
@@ -92,11 +98,13 @@ public class E14InsideOrOutside {
 			System.out.println("\n\t-test procedure, use hard coded points: ");
                         System.out.println("\ttest#1 supply point (1,1) and (21,11) that is bottom left and top right");
 			System.out.println("\ttest#1 expect that this will stored as (1,11) and (21,1).");
+			System.out.println("\ttest#1 Supply test point (5,6) should be inside.");
 
 		        // use overloaded constructor to make the object in a single line	
 			Rectangle myRectangle = new Rectangle( 1., 1., 21., 11.); // java does not use "my" as a special word unlike "this"!
 			System.out.println("\tmyRectangle.coordString()= \"" +  myRectangle.coordString()+"\"");
-
+			Point testPoint = new Point( 5., 6.);
+			System.out.println("\ttestPoint.coordString()= \"" +  testPoint.coordString()+"\"");
 
 
 		}
