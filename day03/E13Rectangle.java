@@ -18,8 +18,9 @@
  * (a) use the class Point from E12.
  * (b) because the class definition specifies the Point's in Rectangle 
  *     are "upLeft" and "downRight" will have to order input data.
- *     So have storeX1Y1X2Y2 method that takes 4 doubles (we do not know
- *     about constructors yet)
+ *     So have storePoints method that takes 4 doubles (we do not know
+ *     about constructors yet). In future could overload to take 
+ *     two points instead. Or the upperLeft, a width and a height???
  * (c) Implement the perimeter and area as class methods (probably
  *     not meant to but it is crazy not to?)
  * (d) take the input and -test stuff from my E12 solution.
@@ -44,8 +45,41 @@ class Point {
 		return  dist;
 	}
 }
+class Rectangle {
+        // describes rectangle oriented along the X and Y axes 
+	Point upLeft;
+	Point downRight;
+	String coordString() { 
+        	// method to return string like 
+        	// "rectangle: upper left (0.0,10.0) to lower right (20.,0.)"
+		String outStr="rectangle: upper left ";
+		outStr += upLeft.coordString();
+		outStr += " to ";
+		outStr += downRight.coordString();
+		return outStr;
+	}
+	void storePoints( double x1, double y1, double x2, double y2) {
+		// upper left has minimum x but maximum y
+		// computer science screen coordinates?
+		upLeft.storexy( Math.min(x1,x2), Math.max(y1,y2));
+		// down Right is the other one
+		downRight.storexy( Math.max(x1,x2), Math.min(y1,y2));
+	}
+	double Perimeter() {
+		double length = downRight.x - upLeft.x;
+		double width = upLeft.y - downRight.y;
+		return 4.*(length+width);
+	}
+	double Area() {
+		double length = downRight.x - upLeft.x;
+		double width = upLeft.y - downRight.y;
+		return length*width;
+	}
+}
+ 
 public class E13Rectangle {
 	public static void main(String[] args) {
+		System.out.println("E13Rectangle");
 	}
 }
 
