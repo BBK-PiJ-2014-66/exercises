@@ -52,7 +52,7 @@ equilateral triangles. Output of -test run
 to use explicit constructors to get it to work. Bit confused because
 I didn't think we were meant to have done them yet? Recorded
 output of **-test** option as well as normal users input operation in
-[E13Rectangle_Output.md](E13Rectangle_Output.md).
+[E13Rectangle_Output.md](E13Rectangle_output.md).
 
 ### 14 Inside or outside
 [E14InsideOrOutside.java](E14InsideOrOutside.java) *under construction*
