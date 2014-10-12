@@ -1,5 +1,5 @@
-E13Rectangle test output 
-========================
+E13Rectangle example outputs
+============================
 Running
 ```
 java E13Rectangle -test
