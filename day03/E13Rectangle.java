@@ -98,7 +98,7 @@ public class E13Rectangle {
 
                 if (args.length==1 && args[0].equals("-test"))  {
 			System.out.println("-test procedure, use hard coded points: ");
-			myRectangle.storePoints( 1., 1., 11., 21.);
+			myRectangle.storePoints( 1., 1., 21., 11.);
 			System.out.println();
                         System.out.println("\ttest#1 supply point (1,1) and (21,11) that is bottom left and top right");
 			System.out.println("\ttest#1 expect that this will stored as (1,11) and (21,1).");
