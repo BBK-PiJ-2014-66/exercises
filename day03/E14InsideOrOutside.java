@@ -15,3 +15,105 @@
  *
  *  @author Oliver S. Smart
  */
+class Point {
+   	double x;
+       	double y;
+	String coordString() { // method to return string like "(5.0,3.0)"
+		return "(" + x + "," + y + ")";
+	}
+	void storexy( double xnew, double ynew) {
+		x = xnew;
+		y = ynew;
+	}
+	double distanceTo( Point otherPoint) {
+		double dist;
+		dist = (x-otherPoint.x)*(x-otherPoint.x);
+		dist += (y-otherPoint.y)*(y-otherPoint.y);
+		dist = Math.sqrt(dist);
+		return  dist;
+	}
+}
+class Rectangle {
+        // describes rectangle oriented along the X and Y axes 
+	Point upLeft;
+	Point downRight;
+	Rectangle() { // constructor
+		this.upLeft = new Point(); // create the upLeft object
+		this.downRight = new Point(); // create the upLeft object
+	}
+        Rectangle( double x1, double y1, double x2, double y2) { // overload constructor
+		this.upLeft = new Point(); // create the upLeft object
+		this.downRight = new Point(); // create the upLeft object
+		this.storePoints( x1, y1, x2, y2);
+	}
+	String coordString() { 
+        	// method to return string like 
+        	// "rectangle: upper left (0.0,10.0) to lower right (20.,0.)"
+		String outStr="rectangle: upper left ";
+		outStr += upLeft.coordString();
+		outStr += " to lower right ";
+		outStr += downRight.coordString();
+		return outStr;
+	}
+	void storePoints( double x1, double y1, double x2, double y2) {
+		// upper left has minimum x but maximum y
+		// computer science screen coordinates?
+		upLeft.storexy( Math.min(x1,x2), Math.max(y1,y2));
+		// down Right is the other one
+		downRight.storexy( Math.max(x1,x2), Math.min(y1,y2));
+	}
+	double Perimeter() { // of a rectangle is twice (length plus width)
+		double length = downRight.x - upLeft.x;
+		double width = upLeft.y - downRight.y;
+		return 2.*(length+width);
+	}
+	double Area() { // of a rectangle is length times width
+		double length = downRight.x - upLeft.x;
+		double width = upLeft.y - downRight.y;
+		return length*width;
+	}
+}
+ 
+public class E13Rectangle {
+	public static void main(String[] args) {
+                String programName="E13Rectangle";
+		System.out.print(programName);
+		System.out.println(" program reads in X and Y coordinates for two points and outputs");
+		System.out.println("  the area and perimeter of a rectangle where both points are opposite corners.");
+		String usageMessage= "\n" +
+			"USAGE: please specify the X and Y coordinates for the two points" +
+			" on the command line:\n" +
+			"\t" + programName + " XA YA XB YB\n" +	
+			"alternatively to run test\n" +
+			"\t" + programName + " -test\n";	
+
+                if (args.length==1 && args[0].equals("-test"))  {
+			System.out.println("\n\t-test procedure, use hard coded points: ");
+                        System.out.println("\ttest#1 supply point (1,1) and (21,11) that is bottom left and top right");
+			System.out.println("\ttest#1 expect that this will stored as (1,11) and (21,1).");
+			System.out.println("\ttest#1 expect area = 200 units squared and perimeter 10 + 20 + 10 + 20 = 60 units.");
+
+		        // use overloaded constructor to make the object in a single line	
+			Rectangle myRectangle = new Rectangle( 1., 1., 21., 11.); // java does not use "my" as a special word unlike "this"!
+			System.out.println("\tmyRectangle.coordString()= \"" +  myRectangle.coordString()+"\"");
+			System.out.println("\tmyRectangle.Area()=" +  myRectangle.Area());
+			System.out.println("\tmyRectangle.Perimeter()=" +  myRectangle.Perimeter());
+		}
+		else if (args.length!=4) { // no args supplied
+			System.out.print(usageMessage);
+		}
+		else {  // user supplied args
+			double d0 = Double.parseDouble(args[0]);
+			double d1 = Double.parseDouble(args[1]);
+			double d2 = Double.parseDouble(args[2]);
+			double d3 = Double.parseDouble(args[3]);
+			Rectangle myRectangle = new Rectangle( d0, d1, d2, d3); 
+			System.out.println(" Your rectangle stored as \"" +  myRectangle.coordString()+"\"");
+			System.out.println(" Your rectangle's perimeter is " + myRectangle.Perimeter() + " units");
+			System.out.println(" Your rectangle's Area is " + myRectangle.Area() + " units squared");
+		}
+	
+
+	}
+}
+
