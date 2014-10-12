@@ -48,7 +48,7 @@ equilateral triangles. Output of -test run
 [E12DistancePointToPoint-test.md](E12DistancePointToPoint-test.md).
 
 ### 13 Rectangle
-*to be written*
+[E13Rectangle.java](E13Rectangle.java) under construction.
 
 ### 14 Inside or outside
 *to be written*
