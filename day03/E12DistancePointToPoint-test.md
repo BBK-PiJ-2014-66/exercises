@@ -1,7 +1,9 @@
 E12DistancePointToPoint test output
 ===================================
 Running
-	java E12DistancePointToPoint -test > E12DistancePointToPoint-test.md
+```
+java E12DistancePointToPoint -test > E12DistancePointToPoint-test.md
+```
 produces output:
 ```
 E12DistancePointToPoint
