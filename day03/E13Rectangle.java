@@ -53,12 +53,17 @@ class Rectangle {
 		this.upLeft = new Point(); // create the upLeft object
 		this.downRight = new Point(); // create the upLeft object
 	}
+        Rectangle( double x1, double y1, double x2, double y2) { // overload constructor
+		this.upLeft = new Point(); // create the upLeft object
+		this.downRight = new Point(); // create the upLeft object
+		this.storePoints( x1, y1, x2, y2);
+	}
 	String coordString() { 
         	// method to return string like 
         	// "rectangle: upper left (0.0,10.0) to lower right (20.,0.)"
 		String outStr="rectangle: upper left ";
 		outStr += upLeft.coordString();
-		outStr += " to ";
+		outStr += " to lower right ";
 		outStr += downRight.coordString();
 		return outStr;
 	}
@@ -94,20 +99,17 @@ public class E13Rectangle {
 			"alternatively to run tests\n" +
 			"\t" + programName + " -test\n";	
 
-		Rectangle myRectangle = new Rectangle(); // java does not use "my" as a special word unlike "this"!
-
                 if (args.length==1 && args[0].equals("-test"))  {
-			System.out.println("-test procedure, use hard coded points: ");
-			myRectangle.storePoints( 1., 1., 21., 11.);
-			System.out.println();
+			System.out.println("\n\t-test procedure, use hard coded points: ");
                         System.out.println("\ttest#1 supply point (1,1) and (21,11) that is bottom left and top right");
 			System.out.println("\ttest#1 expect that this will stored as (1,11) and (21,1).");
 			System.out.println("\ttest#1 expect area = 200 units squared and perimeter 10 + 20 + 10 + 20 = 60 units.");
-			System.out.println("\tmyRectangle.coordString()=" +  myRectangle.coordString());
+
+		        // use overloaded constructor to make the object in a single line	
+			Rectangle myRectangle = new Rectangle( 1., 1., 21., 11.); // java does not use "my" as a special word unlike "this"!
+			System.out.println("\tmyRectangle.coordString()= \"" +  myRectangle.coordString()+"\"");
 			System.out.println("\tmyRectangle.Area()=" +  myRectangle.Area());
 			System.out.println("\tmyRectangle.Perimeter()=" +  myRectangle.Perimeter());
-
-
 		}
 
 	}
