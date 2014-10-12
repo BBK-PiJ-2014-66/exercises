@@ -69,12 +69,12 @@ class Rectangle {
 		// down Right is the other one
 		downRight.storexy( Math.max(x1,x2), Math.min(y1,y2));
 	}
-	double Perimeter() {
+	double Perimeter() { // of a rectangle is twice (length plus width)
 		double length = downRight.x - upLeft.x;
 		double width = upLeft.y - downRight.y;
-		return 4.*(length+width);
+		return 2.*(length+width);
 	}
-	double Area() {
+	double Area() { // of a rectangle is length times width
 		double length = downRight.x - upLeft.x;
 		double width = upLeft.y - downRight.y;
 		return length*width;
