@@ -96,7 +96,7 @@ public class E13Rectangle {
 			"USAGE: please specify the X and Y coordinates for the two points" +
 			" on the command line:\n" +
 			"\t" + programName + " XA YA XB YB\n" +	
-			"alternatively to run tests\n" +
+			"alternatively to run test\n" +
 			"\t" + programName + " -test\n";	
 
                 if (args.length==1 && args[0].equals("-test"))  {
@@ -111,6 +111,20 @@ public class E13Rectangle {
 			System.out.println("\tmyRectangle.Area()=" +  myRectangle.Area());
 			System.out.println("\tmyRectangle.Perimeter()=" +  myRectangle.Perimeter());
 		}
+		else if (args.length!=4) { // no args supplied
+			System.out.print(usageMessage);
+		}
+		else {  // user supplied args
+			double d0 = Double.parseDouble(args[0]);
+			double d1 = Double.parseDouble(args[1]);
+			double d2 = Double.parseDouble(args[2]);
+			double d3 = Double.parseDouble(args[3]);
+			Rectangle myRectangle = new Rectangle( d0, d1, d2, d3); 
+			System.out.println(" Your rectangle stored as \"" +  myRectangle.coordString()+"\"");
+			System.out.println(" Your rectangle's perimeter is " + myRectangle.Perimeter() + " units");
+			System.out.println(" Your rectangle's Area is " + myRectangle.Area() + " units squared");
+		}
+	
 
 	}
 }
