@@ -23,15 +23,30 @@ E14InsideOrOutside.java program reads in X and Y coordinates for two points defi
 
 Running
 ```
-java E14InsideOrOutside 0 1 0 2 0.5 1.5
+java E14InsideOrOutside  0 1 2 2 0.5 1.5
 ```
-produces sensible output:
+produces sensible output (the rectangle does contain the point).
 ```
+java E14InsideOrOutside 0 0 1 2 0.5 1.5
 E14InsideOrOutside.java program reads in X and Y coordinates for two points defining a
  rectangle and then the coordinates of a third point.
  Then determines whether the point falls inside or outside the rectangle.
- Your rectangle stored as "rectangle: upper left (0.0,2.0) to lower right (0.0,1.0)"
+ Your rectangle stored as "rectangle: upper left (0.0,2.0) to lower right (1.0,0.0)"
  Your point stored as "(0.5,1.5)"
+ The rectangle contains the point.
+```
+
+Running
+```
+java E14InsideOrOutside 0 0 1 2 -0.5 1.5
+E14InsideOrOutside.java program reads in X and Y coordinates for two points defining a
+ rectangle and then the coordinates of a third point.
+```
+produces sensible output (the rectangle does not contain the point).
+```
+ Then determines whether the point falls inside or outside the rectangle.
+ Your rectangle stored as "rectangle: upper left (0.0,2.0) to lower right (1.0,0.0)"
+ Your point stored as "(-0.5,1.5)"
  The rectangle does not contain the point.
 ```
 
