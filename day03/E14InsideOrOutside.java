@@ -136,6 +136,14 @@ public class E14InsideOrOutside {
 			double d3 = Double.parseDouble(args[3]);
 			Rectangle myRectangle = new Rectangle( d0, d1, d2, d3); 
 			System.out.println(" Your rectangle stored as \"" +  myRectangle.coordString()+"\"");
+			double d4 = Double.parseDouble(args[4]);
+			double d5 = Double.parseDouble(args[5]);
+			Point testPoint = new Point( d4, d5);
+			System.out.println(" Your point stored as \"" +  testPoint.coordString()+"\"");
+			if (myRectangle.ContainsPoint(testPoint)) 
+				System.out.println(" The rectangle contains the point.");
+			else
+				System.out.println(" The rectangle does not contain the point.");
 		}
 	
 
