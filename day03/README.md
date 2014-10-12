@@ -55,7 +55,8 @@ output of **-test** option as well as normal users input operation in
 [E13Rectangle_Output.md](E13Rectangle_output.md).
 
 ### 14 Inside or outside
-[E14InsideOrOutside.java](E14InsideOrOutside.java) *under construction*
+[E14InsideOrOutside.java](E14InsideOrOutside.java) extends E13 code.
+Example outputs given in [E14InsideOrOutside_output.md](E14InsideOrOutside_output.md).  
 
 ### 15 Overlaps
 *to be written*
