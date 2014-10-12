@@ -26,3 +26,27 @@
  *
  *  @author Oliver S. Smart
  */
+class Point {
+   	double x;
+       	double y;
+	String coordString() { // method to return string like "(5.0,3.0)"
+		return "(" + x + "," + y + ")";
+	}
+	void storexy( double xnew, double ynew) {
+		x = xnew;
+		y = ynew;
+	}
+	double distanceTo( Point otherPoint) {
+		double dist;
+		dist = (x-otherPoint.x)*(x-otherPoint.x);
+		dist += (y-otherPoint.y)*(y-otherPoint.y);
+		dist = Math.sqrt(dist);
+		return  dist;
+	}
+}
+public class E13Rectangle {
+	public static void main(String[] args) {
+	}
+}
+
+
