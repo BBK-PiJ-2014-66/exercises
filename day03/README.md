@@ -48,7 +48,11 @@ equilateral triangles. Output of -test run
 [E12DistancePointToPoint-test.md](E12DistancePointToPoint-test.md).
 
 ### 13 Rectangle
-[E13Rectangle.java](E13Rectangle.java) under construction.
+[E13Rectangle.java](E13Rectangle.java) interesting example I had
+to use explicit constructors to get it to work. Bit confused because
+I didn't think we were meant to have done them yet? Recorded
+output of **-test** option as well as normal users input operation in
+[E13Rectangle_Output.md](E13Rectangle_Output.md).
 
 ### 14 Inside or outside
 *to be written*
