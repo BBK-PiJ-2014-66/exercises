@@ -1,6 +1,9 @@
-java E12DistancePointToPoint -test > E12DistancePointToPoint-test.md produces:
-==============================================================================
-
+E12DistancePointToPoint test output
+===================================
+Running
+	java E12DistancePointToPoint -test > E12DistancePointToPoint-test.md
+produces output:
+```
 E12DistancePointToPoint
 program reads in X and Y coordinates for three points
 and outputs which of the three are close
@@ -27,3 +30,5 @@ Closest pair(s) of points are AC  BC
 pntA stored as (0.0,0.0)   pntB stored as (1.0,0.0)   pntC stored as (0.5,0.8660254037844386)
 Calculate distances: AB=1.0 AC= 0.9999999999999999  BC= 0.9999999999999999
 Closest pair(s) of points are AB  AC  BC  
+```
+I am happy with this.
