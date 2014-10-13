@@ -12,7 +12,11 @@ Exercises, day 03
 *to be written*
 
 ### 3 Your change, please
-[E03YourChangePlease.java](E03YourChangePlease.java)
+[E03YourChangePlease.java](E03YourChangePlease.java)  Works
+but code is pretty horrific. To do elegantly need arrays
+or objects. Example outputs 
+[E03YourChangePlease_output.md](E03YourChangePlease_output.md)
+show there is a bug!
 
 ### 4 Line to column
 *to be written*
