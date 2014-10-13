@@ -28,54 +28,70 @@
 class E01Calculator {
         public static void main(String[] args) {
 		boolean gotNumbers=false;
+		boolean displayMenu=true;
 		double numberA=-1E12, numberB=-1E12; 
 		while(true) { // getting user input
 			// initialize to weird numbers to avoid javac complaint
 			if (!gotNumbers) {
-                		System.out.print("Please enter 1st decimal number <stop program>: ");
+                		System.out.print("Please enter 1st decimal number: ");
                 		String inStr = System.console().readLine();
-				if (inStr.length()==0) break; 
+				if (inStr.length()==0) continue; 
 				numberA = Double.parseDouble(inStr);
 
-                		System.out.print("Please enter 2nd decimal number <stop program>: ");
+
+                		System.out.print("Please enter 2nd decimal number: ");
                 		inStr = System.console().readLine();
-				if (inStr.length()==0) break; 
+				if (inStr.length()==0) continue; 
 				numberB = Double.parseDouble(inStr);
 				gotNumbers = true;
 			}
-			// main menu
-                	System.out.println("Now choose operation to perform: ");
-                	System.out.println("\tEnter \"+\" for addition");
-                	System.out.println("\tEnter \"-\" for subtraction");
-                	System.out.println("\tEnter \"*\" for multiplication");
-                	System.out.println("\tEnter \"/\" for division");
-                	System.out.println("\tEnter \"r\" to enter new numbers");
-                	System.out.println("\tor just hit \"Enter\" key to stop program");
-                	System.out.print("Please enter your choice <stop program>: ");
-
-                	String inStr = System.console().readLine();
-			if (inStr.length()==0) break; 
-                	char choice = inStr.charAt(0);
-
-			if (choice == '+') {
-                		System.out.println( "\t" + numberA + "  + " + numberB + " = " + (numberA+numberB));
+			else if (displayMenu) {
+				// main menu
+                		System.out.println("Now choose operation to perform: ");
+                		System.out.println("\tEnter \"+\" for addition");
+                		System.out.println("\tEnter \"-\" for subtraction");
+                		System.out.println("\tEnter \"*\" for multiplication");
+                		System.out.println("\tEnter \"/\" for division");
+                		System.out.println("\tEnter \"r\" to enter new numbers");
+                		System.out.println("\tEnter \"s\" to stop program");
+				displayMenu = false;
 			}
-			else if (choice == '-') {
-                		System.out.println( "\t" + numberA + "  - " + numberB + " = " + (numberA-numberB));
-			}
-			else if (choice == '*') {
-                		System.out.println( "\t " +numberA + "  * " + numberB + " = " + (numberA*numberB));
-			}
-			else if (choice == '/') {
-				if (numberB!=0) {
-                			System.out.println( "\t " +numberA + "  / " + numberB + " = " + (numberA/numberB));
+			else { // prompt and read response
+                		System.out.print("Please enter your choice <display menu>: ");
+                		String inStr = System.console().readLine();
+				if (inStr.length()==0) {
+					displayMenu = true;
+					continue; 
+				}
+                		char choice = inStr.charAt(0);
+	
+				if (choice == '+') {
+                			System.out.println( "\t" + numberA + "  + " + numberB + " = " + (numberA+numberB));
+				}
+				else if (choice == '-') {
+                			System.out.println( "\t" + numberA + "  - " + numberB + " = " + (numberA-numberB));
+				}
+				else if (choice == '*') {
+                			System.out.println( "\t " +numberA + "  * " + numberB + " = " + (numberA*numberB));
+				}
+				else if (choice == '/') {
+					if (numberB!=0) {
+                				System.out.println( "\t " +numberA + "  / " + numberB + " = " + (numberA/numberB));
+					}
+					else {
+                				System.out.println( "\tERROR cannot divide by zero");
+					}
+				}
+				else if (choice == 'r') {
+					gotNumbers = false;
+				}
+				else if (choice == 's') {
+					break;
 				}
 				else {
-                			System.out.println( "\tERROR cannot divide by zero");
+					System.out.print("u0007"); // bell character 	
+					System.out.println( "\tInvalid response try again");
 				}
-			}
-			else if (choice == 'r') {
-				gotNumbers = false;
 			}
 			
 		}
