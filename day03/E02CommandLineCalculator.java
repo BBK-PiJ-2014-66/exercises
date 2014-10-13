@@ -17,9 +17,9 @@
  * Command line args are easier than prompt and response menus!
  * Task appears to have been made to be tricky by explicily
  * giving 
- * (1st) example "3/5" where a single argument arg[0] = "3/5"
+ * (1st) example "3/5" where a single argument args[0] = "3/5"
  * (2nd) example "23 * 4" would result in 3 arguments 
- *       arg[0]="23" arg[1]="*" and arg[2]="4"
+ *       args[0]="23" arg[1]="*" and args[2]="4"
  *
  * Guess the thing to do is to concat all the args together.
  * into a single string.
@@ -37,6 +37,14 @@ public class E02CommandLineCalculator {
 	public static void main(String[] args) {
 		for (int cc = 0; cc < args.length; cc++) {
 			System.out.println("debug args["+cc+"] = \"" + args[cc] + "\"");
+		}
+		if (args.length==0) {
+			System.out.println("Usage you must specify the calculation wanted on the command line");
+			System.out.println("for instance:\n");
+			System.out.println("\tjava E02CommandLineCalculator 3/5");
+			System.out.println("\nor:\n");
+			System.out.println("\tjava E02CommandLineCalculator 23 * 4");
+			System.out.println("\ntry again");
 		}
 	}
 }
