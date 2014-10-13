@@ -16,7 +16,8 @@ Exercises, day 03
 but code is pretty horrific. To do elegantly need arrays
 or objects. Example outputs 
 [E03YourChangePlease_output.md](E03YourChangePlease_output.md)
-show there is a bug!
+(now looks ok).
+
 
 ### 4 Line to column
 *to be written*

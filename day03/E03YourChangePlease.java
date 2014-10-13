@@ -27,17 +27,18 @@ class E03YourChangePlease {
 		double costPounds = Double.parseDouble(System.console().readLine());
 		System.out.print("Please enter amount paid: ");	
 		double paidPounds = Double.parseDouble(System.console().readLine());
-		//System.out.println("Debug Pounds cost= " + costPounds + " paid=" + paidPounds);
+		double changePounds=paidPounds-costPounds;
 		// decide to make life easier by internally using integer number of pennies
-		int costPennies = (int)(100.*costPounds);
-		int paidPennies = (int)(100.*paidPounds);
-		//System.out.println("Debug Pennies cost= " + costPennies + " paid=" + paidPennies);
-		int changePennies =paidPennies-costPennies;
-		System.out.println("Your change is £" + changePennies/100 + "." + Math.abs(changePennies%100));
-		if (changePennies<0) {
-			System.out.println("You have not paid enough");
+		// print with leading zero http://stackoverflow.com/questions/275711/add-leading-zeroes-to-number-in-java
+		if (changePounds<0) {
+			System.out.println("You have not paid enough please pay £" + -changePounds+ " more");
 		}
 		else {
+			int costPennies = (int)(100.*costPounds);
+			int paidPennies = (int)(100.*paidPounds);
+			int changePennies =paidPennies-costPennies;
+
+			System.out.println("Your change is £" + changePennies/100 + "." + String.format("%02d", Math.abs(changePennies%100)));
 			System.out.println("Your change is: ");
 			int noteOrCoinPennies=0;
 			String noteOrCoinName="";
