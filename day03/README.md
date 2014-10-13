@@ -5,7 +5,8 @@ Exercises, day 03
 
 
 ### 1 Calculator
-[E01Calculator.java](E01Calculator.java) 
+[E01Calculator.java](E01Calculator.java) produces output like:
+[E01Calculator_output.md](E01Calculator_output.md)
 
 ### 2 Command-line calculator (*)
 *to be written*
