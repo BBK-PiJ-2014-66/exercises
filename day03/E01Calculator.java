@@ -28,8 +28,9 @@
 class E01Calculator {
         public static void main(String[] args) {
 		boolean gotNumbers=false;
+		double numberA=-1E12, numberB=-1E12; 
 		while(true) { // getting user input
-			double numberA, numberB; 
+			// initialize to weird numbers to avoid javac complaint
 			if (!gotNumbers) {
                 		System.out.print("Please enter 1st decimal number <stop program>: ");
                 		String inStr = System.console().readLine();
@@ -40,7 +41,6 @@ class E01Calculator {
                 		inStr = System.console().readLine();
 				if (inStr.length()==0) break; 
 				numberB = Double.parseDouble(inStr);
-                		System.out.println("Debug numberA= " + numberA + " numberB= " + numberB);
 				gotNumbers = true;
 			}
 			// main menu
@@ -53,8 +53,31 @@ class E01Calculator {
                 	System.out.println("\tor just hit \"Enter\" key to stop program");
                 	System.out.print("Please enter your choice <stop program>: ");
 
+                	String inStr = System.console().readLine();
+			if (inStr.length()==0) break; 
+                	char choice = inStr.charAt(0);
+
+			if (choice == '+') {
+                		System.out.println( "\t" + numberA + "  + " + numberB + " = " + (numberA+numberB));
+			}
+			else if (choice == '-') {
+                		System.out.println( "\t" + numberA + "  - " + numberB + " = " + (numberA-numberB));
+			}
+			else if (choice == '*') {
+                		System.out.println( "\t " +numberA + "  * " + numberB + " = " + (numberA*numberB));
+			}
+			else if (choice == '/') {
+				if (numberB!=0) {
+                			System.out.println( "\t " +numberA + "  / " + numberB + " = " + (numberA/numberB));
+				}
+				else {
+                			System.out.println( "\tERROR cannot divide by zero");
+				}
+			}
+			else if (choice == 'r') {
+				gotNumbers = false;
+			}
 			
-			break; // temporary
 		}
 		
 	}
