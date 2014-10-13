@@ -17,7 +17,25 @@
  *  Initial thoughts
  * (a) has to be interactive
  * (b) task does not decribe what to after the calculator performs
- *     the operation. But as it is a menu lets allow another operation.
+ *     the operation. But as it is a "menu" lets allow another operation.
  * (c) User can terminate program by hitting enter at any prompt
+ * (d) User could even change the numbers
+ *
+ * meant not to use methods, will not catch exceptions for instance entering non-number 
+ * at number prompt
+ *
  */
+class E01Calculator {
+        public static void main(String[] args) {
+		while(true) {
+                	System.out.print("Please enter first decimal number <stop program>: ");
+                	String inStr = System.console().readLine();
+			if (inStr.length()==0) break; 
+			double numberA = Double.parseDouble(inStr);
+                	System.out.println("Debug numberA= " + numberA);
+			break;
+		}
+		
+	}
+}
 
