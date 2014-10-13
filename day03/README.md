@@ -5,7 +5,7 @@ Exercises, day 03
 
 
 ### 1 Calculator
-*to be written*
+[E01Calculator.java](E01Calculator.java) 
 
 ### 2 Command-line calculator (*)
 *to be written*
