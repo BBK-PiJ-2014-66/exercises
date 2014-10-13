@@ -27,13 +27,34 @@
  */
 class E01Calculator {
         public static void main(String[] args) {
-		while(true) {
-                	System.out.print("Please enter first decimal number <stop program>: ");
-                	String inStr = System.console().readLine();
-			if (inStr.length()==0) break; 
-			double numberA = Double.parseDouble(inStr);
-                	System.out.println("Debug numberA= " + numberA);
-			break;
+		boolean gotNumbers=false;
+		while(true) { // getting user input
+			double numberA, numberB; 
+			if (!gotNumbers) {
+                		System.out.print("Please enter 1st decimal number <stop program>: ");
+                		String inStr = System.console().readLine();
+				if (inStr.length()==0) break; 
+				numberA = Double.parseDouble(inStr);
+
+                		System.out.print("Please enter 2nd decimal number <stop program>: ");
+                		inStr = System.console().readLine();
+				if (inStr.length()==0) break; 
+				numberB = Double.parseDouble(inStr);
+                		System.out.println("Debug numberA= " + numberA + " numberB= " + numberB);
+				gotNumbers = true;
+			}
+			// main menu
+                	System.out.println("Now choose operation to perform: ");
+                	System.out.println("\tEnter \"+\" for addition");
+                	System.out.println("\tEnter \"-\" for subtraction");
+                	System.out.println("\tEnter \"*\" for multiplication");
+                	System.out.println("\tEnter \"/\" for division");
+                	System.out.println("\tEnter \"r\" to enter new numbers");
+                	System.out.println("\tor just hit \"Enter\" key to stop program");
+                	System.out.print("Please enter your choice <stop program>: ");
+
+			
+			break; // temporary
 		}
 		
 	}
