@@ -38,5 +38,4 @@ Your change is £0.01
 Your change is: 
 	1 * one pence coin
 ```
-There is a bug in the change output of last example! 
-Have to fix
+Happy with this output
