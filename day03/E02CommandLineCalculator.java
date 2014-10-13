@@ -33,3 +33,10 @@
  * do the operation
  * 
  */
+public class E02CommandLineCalculator {
+	public static void main(String[] args) {
+		for (int cc = 0; cc < args.length; cc++) {
+			System.out.println("debug args["+cc+"] = \"" + args[cc] + "\"");
+		}
+	}
+}
