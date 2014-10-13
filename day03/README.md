@@ -12,7 +12,7 @@ Exercises, day 03
 *to be written*
 
 ### 3 Your change, please
-*to be written*
+[E03YourChangePlease.java](E03YourChangePlease.java)
 
 ### 4 Line to column
 *to be written*
