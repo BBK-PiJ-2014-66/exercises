@@ -10,8 +10,94 @@
  *
  *  @author Oliver S. Smart
  *
- * Initial thoughts
+ * Thoughts
+ *
+ * try to give as 50 pounds notes as possible 
+ *          then as many 20's, 10's etc.
+ * arrays would be useful but they are verbotten
+ * try to use for loop as it the pount of the we
+ *
  * meant not to use methods, will not catch exceptions for instance 
  * entering non-number at number prompt
  *
  */
+class E03YourChangePlease {
+        public static void main(String[] args) {
+		System.out.print("Please enter cost of purchase: ");	
+		double costPounds = Double.parseDouble(System.console().readLine());
+		System.out.print("Please enter amount paid: ");	
+		double paidPounds = Double.parseDouble(System.console().readLine());
+		//System.out.println("Debug Pounds cost= " + costPounds + " paid=" + paidPounds);
+		// decide to make life easier by internally using integer number of pennies
+		int costPennies = (int)(100.*costPounds);
+		int paidPennies = (int)(100.*paidPounds);
+		//System.out.println("Debug Pennies cost= " + costPennies + " paid=" + paidPennies);
+		int changePennies =paidPennies-costPennies;
+		System.out.println("Your change is £" + changePennies/100 + "." + Math.abs(changePennies%100));
+		if (changePennies<0) {
+			System.out.println("You have not paid enough");
+		}
+		else {
+			System.out.println("Your change is: ");
+			int noteOrCoinPennies=0;
+			String noteOrCoinName="";
+			for (int cc=0; cc<12; cc++) { // there are eleven currency types
+				if (cc==0) {	
+					noteOrCoinName = "fifty pound notes";
+					noteOrCoinPennies = 5000; 
+				}
+				else if (cc==1) {
+					noteOrCoinName = "twenty pound notes";
+					noteOrCoinPennies = 2000; 
+				}
+				else if (cc==2) {
+					noteOrCoinName = "ten pound notes";
+					noteOrCoinPennies = 1000; 
+				}
+				else if (cc==3) {
+					noteOrCoinName = "five pound notes";
+					noteOrCoinPennies = 500; 
+				}
+				else if (cc==4) {
+					noteOrCoinName = "two pound coin";
+					noteOrCoinPennies = 200; 
+				}
+				else if (cc==5) {
+					noteOrCoinName = "one pound coin";
+					noteOrCoinPennies = 100; 
+				}
+				else if (cc==6) {
+					noteOrCoinName = "fifty pence coin";
+					noteOrCoinPennies = 50; 
+				}
+				else if (cc==7) {
+					noteOrCoinName = "twenty pence coin";
+					noteOrCoinPennies = 20; 
+				}
+				else if (cc==8) {
+					noteOrCoinName = "ten pence coin";
+					noteOrCoinPennies = 10; 
+				}
+				else if (cc==9) {
+					noteOrCoinName = "five pence coin";
+					noteOrCoinPennies = 5; 
+				}
+				else if (cc==10) {
+					noteOrCoinName = "two pence coin";
+					noteOrCoinPennies = 2; 
+				}
+				else {
+					noteOrCoinName = "one pence coin";
+					noteOrCoinPennies = 1; 
+				}
+				int noteOrCoinNum=changePennies/noteOrCoinPennies;
+				if (noteOrCoinNum !=0) {
+					changePennies -= noteOrCoinPennies*noteOrCoinNum;
+					System.out.println( "\t" + noteOrCoinNum + " * " + noteOrCoinName);
+				}
+			}
+			//System.out.println("debug final pennies " + changePennies);
+		}
+
+	}
+}
