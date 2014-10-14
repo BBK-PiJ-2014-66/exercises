@@ -28,7 +28,8 @@ or objects. Example outputs
 
 
 ### 4 Line to column
-*to be written*
+[E04LineToColumn.java](E04LineToColumn.java) works and produces
+[E04LineToColumn_output.md](E04LineToColumn_output.md)
 
 ### 5 Counting letters
 *to be written*
