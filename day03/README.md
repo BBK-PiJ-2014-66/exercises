@@ -9,7 +9,10 @@ Exercises, day 03
 [E01Calculator_output.md](E01Calculator_output.md)
 
 ### 2 Command-line calculator (*)
-[E02CommandLineCalculator.java](E02CommandLineCalculator.java) *work in progress*
+[E02CommandLineCalculator.java](E02CommandLineCalculator.java) 
+produces output like: 
+[E02CommandLineCalculator_output.md](E02CommandLineCalculator_output.md)
+
 A hint for anyone "looking over my shoulder" the * character has a special meaning
 on Unix-like command lines (meaning all files in the directory). If you get
 a funny result when you run your program then try using the single quote characters
