@@ -35,9 +35,6 @@
  */
 public class E02CommandLineCalculator {
 	public static void main(String[] args) {
-		for (int cc = 0; cc < args.length; cc++) {
-			System.out.println("debug args["+cc+"] = \"" + args[cc] + "\"");
-		}
 		// in Monday night's session Keith Mannock showed an
 		// ENUM like way of making the code clearer
 		// think it worked like this.
@@ -58,7 +55,6 @@ public class E02CommandLineCalculator {
 			String calculation=""; // cat of all args
 			for (int cc = 0; cc < args.length; cc++) 
 				calculation +=  args[cc];
-			System.out.println("debug calculation="+calculation);
                         /* now split the calculation string into wordLeft, an operand character, wordRight
 			   we will do manually using a for loop because it is a learning exercise 
 
@@ -69,7 +65,6 @@ public class E02CommandLineCalculator {
 			char operand=OPUNDEF;
 			for (int cc=0; cc < calculation.length(); cc++) {
 				char mychar=calculation.charAt(cc);
-				System.out.println("debug calculation char by char \""+mychar+"\"");
 				if (mychar==OPSUM) 
 					operand = OPSUM;
 				else if (mychar==OPMINUS) 
@@ -87,7 +82,6 @@ public class E02CommandLineCalculator {
 					wordRight  += mychar;
 				}
 			}
-			System.out.println("debug wordLeft = \"" + wordLeft + "\" wordRight = \"" + wordRight + "\" operand= " + operand);
 
 			if ((operand==OPUNDEF) || (wordLeft.length()==0) || (wordRight.length()==0)) {
 				System.out.print("ERROR could not parse calculation string \"" + calculation + "\"");
