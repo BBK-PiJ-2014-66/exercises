@@ -46,5 +46,29 @@ public class E02CommandLineCalculator {
 			System.out.println("\tjava E02CommandLineCalculator 23 * 4");
 			System.out.println("\ntry again");
 		}
+		else {
+			String calculation=""; // cat of all args
+			for (int cc = 0; cc < args.length; cc++) 
+				calculation +=  args[cc];
+			System.out.println("debug calculation="+calculation);
+			String word1="", word2="";	
+			char operand=' ';
+			for (int cc=0; cc < calculation.length(); cc++) {
+				char mychar=calculation.charAt(cc);
+				System.out.println("debug calculation char by char \""+mychar+"\"");
+				if (mychar=='+'|| mychar=='-'||mychar=='*'||mychar=='/') {
+					operand = mychar;
+				}
+				else if (operand==' ') {	
+					word1  += mychar;
+				}
+				else {
+					word2  += mychar;
+				}
+			}
+			System.out.println("debug word1=" + word1 + " word2= " + word2);
+			
+			
+		}
 	}
 }
