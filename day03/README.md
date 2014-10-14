@@ -9,7 +9,12 @@ Exercises, day 03
 [E01Calculator_output.md](E01Calculator_output.md)
 
 ### 2 Command-line calculator (*)
-*to be written*
+[E02CommandLineCalculator.java](E02CommandLineCalculator.java) *work in progress*
+A hint for anyone "looking over my shoulder" the * character has a special meaning
+on Unix-like command lines (meaning all files in the directory). If you get
+a funny result when you run your program then try using the single quote characters
+around the option to avoid your command shell expanding the option. The same probably
+applies to the windows cmd prompt. 
 
 ### 3 Your change, please
 [E03YourChangePlease.java](E03YourChangePlease.java)  Works
