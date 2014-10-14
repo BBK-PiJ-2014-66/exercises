@@ -89,8 +89,8 @@ public class E02CommandLineCalculator {
 				System.exit(2); // terminate program with ERROR status 2
 			}
 			
-			double numberLeft = Double.parseDouble(wordLeft); // no error trapping - life it too short
-			double numberRight = Double.parseDouble(wordRight); // no error trapping - life it too short
+			double numberLeft = Double.parseDouble(wordLeft); // no error trapping - life is too short
+			double numberRight = Double.parseDouble(wordRight); 
 			// finally do the calculation, instructions say the output should be "bare"
  			if (operand==OPSUM)
 				System.out.println(numberLeft+numberRight);
