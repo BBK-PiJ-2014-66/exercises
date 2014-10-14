@@ -35,6 +35,14 @@
  */
 public class E02CommandLineCalculator {
 	public static void main(String[] args) {
+		// in Monday night's session Keith Mannock showed an
+		// ENUM like way of making the code clearer
+		// think it worked like this.
+		char OPUNDEF='\t';
+		char OPSUM='+';
+		char OPMINUS='-';
+		char OPTIMES='*';
+		char OPDIVIDE='/';
 		for (int cc = 0; cc < args.length; cc++) {
 			System.out.println("debug args["+cc+"] = \"" + args[cc] + "\"");
 		}
@@ -52,21 +60,26 @@ public class E02CommandLineCalculator {
 				calculation +=  args[cc];
 			System.out.println("debug calculation="+calculation);
 			String word1="", word2="";	
-			char operand=' ';
+			char operand=OPUNDEF;
 			for (int cc=0; cc < calculation.length(); cc++) {
 				char mychar=calculation.charAt(cc);
 				System.out.println("debug calculation char by char \""+mychar+"\"");
-				if (mychar=='+'|| mychar=='-'||mychar=='*'||mychar=='/') {
-					operand = mychar;
-				}
-				else if (operand==' ') {	
+				if (mychar==OPSUM) 
+					operand = OPSUM;
+				else if (mychar==OPMINUS) 
+                                        operand = OPMINUS;
+				else if (mychar==OPTIMES) 
+                                        operand = OPTIMES;
+				else if (mychar==OPDIVIDE) 
+                                        operand = OPDIVIDE;
+				else if (operand==OPUNDEF) {	
 					word1  += mychar;
 				}
 				else {
 					word2  += mychar;
 				}
 			}
-			System.out.println("debug word1=" + word1 + " word2= " + word2);
+			System.out.println("debug word1=" + word1 + " word2= " + word2 + " operand= " + operand);
 			
 			
 		}
