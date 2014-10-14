@@ -59,7 +59,13 @@ public class E02CommandLineCalculator {
 			for (int cc = 0; cc < args.length; cc++) 
 				calculation +=  args[cc];
 			System.out.println("debug calculation="+calculation);
-			String word1="", word2="";	
+                        /* now split the calculation string into wordLeft, an operand character, wordRight
+			   we will do manually using a for loop because it is a learning exercise 
+
+			   N.B. for proper code a better way to do this using standard java would be
+			   to use the "int indexOf(int ch)" string method to find the location of the ch 
+			   character in the string */
+			String wordLeft="", wordRight="";	
 			char operand=OPUNDEF;
 			for (int cc=0; cc < calculation.length(); cc++) {
 				char mychar=calculation.charAt(cc);
@@ -72,15 +78,18 @@ public class E02CommandLineCalculator {
                                         operand = OPTIMES;
 				else if (mychar==OPDIVIDE) 
                                         operand = OPDIVIDE;
+				else if (mychar==' '|| mychar == '\t')
+					; // ignore
 				else if (operand==OPUNDEF) {	
-					word1  += mychar;
+					wordLeft  += mychar;
 				}
 				else {
-					word2  += mychar;
+					wordRight  += mychar;
 				}
 			}
-			System.out.println("debug word1=" + word1 + " word2= " + word2 + " operand= " + operand);
-			
+			System.out.println("debug wordLeft = \"" + wordLeft + "\" wordRight = \"" + wordRight + "\" operand= " + operand);
+
+
 			
 		}
 	}
