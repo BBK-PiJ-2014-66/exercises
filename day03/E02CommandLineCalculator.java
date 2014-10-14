@@ -35,6 +35,9 @@
  */
 public class E02CommandLineCalculator {
 	public static void main(String[] args) {
+		for (int cc = 0; cc < args.length; cc++) {
+			System.out.println("debug args["+cc+"] = \"" + args[cc] + "\"");
+		}
 		// in Monday night's session Keith Mannock showed an
 		// ENUM like way of making the code clearer
 		// think it worked like this.
@@ -43,9 +46,6 @@ public class E02CommandLineCalculator {
 		char OPMINUS='-';
 		char OPTIMES='*';
 		char OPDIVIDE='/';
-		for (int cc = 0; cc < args.length; cc++) {
-			System.out.println("debug args["+cc+"] = \"" + args[cc] + "\"");
-		}
 		if (args.length==0) {
 			System.out.println("Usage you must specify the calculation wanted on the command line");
 			System.out.println("for instance:\n");
@@ -89,7 +89,25 @@ public class E02CommandLineCalculator {
 			}
 			System.out.println("debug wordLeft = \"" + wordLeft + "\" wordRight = \"" + wordRight + "\" operand= " + operand);
 
-
+			if ((operand==OPUNDEF) || (wordLeft.length()==0) || (wordRight.length()==0)) {
+				System.out.print("ERROR could not parse calculation string \"" + calculation + "\"");
+				System.out.println(      "it must contain NUMBER then + or - or / or * then NUMBER");
+				System.exit(2); // terminate program with ERROR status 2
+			}
+			
+			double numberLeft = Double.parseDouble(wordLeft); // no error trapping - life it too short
+			double numberRight = Double.parseDouble(wordRight); // no error trapping - life it too short
+			// finally do the calculation, instructions say the output should be "bare"
+ 			if (operand==OPSUM)
+				System.out.println(numberLeft+numberRight);
+ 			else if (operand==OPMINUS)
+				System.out.println(numberLeft-numberRight);
+ 			else if (operand==OPTIMES)
+				System.out.println(numberLeft*numberRight);
+ 			else if (operand==OPDIVIDE)
+				System.out.println(numberLeft/numberRight);
+			else
+				System.out.println("ERROR impossible error in E02CommandLineCalculator this should never happen");
 			
 		}
 	}
