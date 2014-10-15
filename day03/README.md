@@ -50,7 +50,7 @@ or objects. Example outputs
 *to be written*
 
 ### 11 Text2number
-*to be written*
+[E12Text2Number.java](E12Text2Number.java) started
 
 ### 12 Distance point–to–point
 [E12DistancePointToPoint.java](E12DistancePointToPoint.java) 
@@ -63,9 +63,17 @@ equilateral triangles. Output of -test run
 [E12DistancePointToPoint-test.md](E12DistancePointToPoint-test.md).
 
 ### 13 Rectangle
-[E13Rectangle.java](E13Rectangle.java) interesting example I had
+[E13Rectangle.java](E13Rectangle.java) interesting example.
+
+I initially wrongly thought that ~~I had
 to use explicit constructors to get it to work. Bit confused because
-I didn't think we were meant to have done them yet? Recorded
+I didn't think we were meant to have done them yet?~~ 
+Turns out that could have manually constructed the Point objects for
+a Rectangle using
+method shown in the OysterCard TravelCard graded assessment. But it
+is now done with constructors.
+
+Recorded
 output of **-test** option as well as normal users input operation in
 [E13Rectangle_Output.md](E13Rectangle_output.md).
 
