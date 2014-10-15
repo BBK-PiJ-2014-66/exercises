@@ -36,4 +36,22 @@
  * 23,419.34
  * 10
  * -10.000,000,99
+ * 0
  */
+public class E12Text2Number {
+	public static double Text2Number( String inStr) {
+		// method to return double number from a string like 23,419.34
+		// exercise requires not to use Double.parsedouble()!
+		// inStr not to be altered in method
+		double answer = 0.0;
+		System.out.println("debug Method Text2Number to be written");	
+		return answer;
+	}
+	public static void main(String[] args) {
+                if (args.length==1 && args[0].equals("-test")) {
+			System.out.println("\n\t-test procedure, test Text2Number method: ");
+			double testValue =  Text2Number("23,419.34");
+			System.out.println("\ttest#1 Text2Number(\"23,419.34\") results in "+ testValue);
+		}
+	}
+} 
