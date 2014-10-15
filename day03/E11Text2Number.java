@@ -38,13 +38,14 @@
  * 10
  * -10.000,000,99
  * 0
+ * 1E06 (should get exception)
  */
 public class E11Text2Number {
 	public static double Text2Number( String inStr) {
 		// method to return double number from a string like 23,419.34
 		// exercise requires not to use Double.parsedouble()!
 		// inStr not to be altered in method
-		System.out.println("debug Method Text2Number to be written");	
+		//System.out.println("debug Method Text2Number:");	
 		double answer = 0.0;
 		double powerOfTen = 1.0;
 		boolean gotDecimal=false;
@@ -52,7 +53,7 @@ public class E11Text2Number {
 		for (int cc = inStr.length()-1; cc>=0; cc--) { 
 			char strChr = inStr.charAt(cc); // to make code more readable
 			int  chrInt=strChr-'0'; //ascii value of the char minus that of 0 character
-			System.out.print("debug reversed inStr c by c \t" + strChr + "\t chrInt = " + chrInt);
+			//System.out.print("debug reversed inStr c by c \t" + strChr + "\t chrInt = " + chrInt);
 			if ( chrInt>=0 && chrInt<10 ) { // it is a digit
 				answer += powerOfTen*chrInt;
 				powerOfTen *= 10.;
@@ -72,18 +73,27 @@ public class E11Text2Number {
 			else { // illegal character
 				throw new IllegalArgumentException("Text2Number cannot handle numbers containing \"" + strChr + "\"");
 			}
-			System.out.println(" powerOfTen= " + powerOfTen + " answer = " + answer);
+			//System.out.println(" powerOfTen= " + powerOfTen + " answer = " + answer);
 		}
 		return answer;
 	}
 	public static void main(String[] args) {
                 if (args.length==1 && args[0].equals("-test")) {
-			System.out.println("\n\t-test procedure, test Text2Number method: ");
-			double testVal;
+			System.out.println("\n-test procedure for Text2Number method: ");
 			String testStr;
 			testStr = "-230,419.340"; 
-			testVal = Text2Number(testStr);
-			System.out.println("\ttest Text2Number(\"" + testStr + "\") results in "+ testVal);
+			System.out.println("\ttest Text2Number(\"" + testStr + "\") results in "+ Text2Number(testStr));
+			testStr = "23,419.34";
+			System.out.println("\ttest Text2Number(\"" + testStr + "\") results in "+ Text2Number(testStr));
+			testStr = "10"; 
+			System.out.println("\ttest Text2Number(\"" + testStr + "\") results in "+ Text2Number(testStr));
+			testStr = "-10.000,000,99"; 
+			System.out.println("\ttest Text2Number(\"" + testStr + "\") results in "+ Text2Number(testStr));
+			testStr = "0"; 
+			System.out.println("\ttest Text2Number(\"" + testStr + "\") results in "+ Text2Number(testStr));
+			testStr = "1E06"; 
+			System.out.println("\ttest Text2Number(\"" + testStr + "\") results in (should throw exception)");
+			System.out.println(Text2Number(testStr));
 		}
 	}
 } 
