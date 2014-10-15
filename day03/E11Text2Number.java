@@ -9,7 +9,7 @@
  *
  *  @author Oliver S. Smart
  *
- * Initial thoughts
+ * revised thoughts
  *  May as well use a method to facilitate test 
  *  Could take out all commas, then find whether there is a dot
  *  record where it is the string and then use Integer.parseInt() 
@@ -26,13 +26,14 @@
  *     for a digit
  *     answer += chrInt*powerOfTen
  *     powerOfTen *= 10.0
- *  when we get to . then answer = answer/(0.1*powerOfTen); powerOfTen=1.0
+ *  when we get to . then answer = answer/powerOfTen and powerOfTen reset to 1.0
  *  so that 1345 becomes 0.1345 and we carry on adding 1's 10's
  *     
  *  should ignore commas throw an exceptions for any other character
  *  only accept - as the last character and this means answer *= -1.0
  *
  * test with:  
+ * -230,419.340
  * 23,419.34
  * 10
  * -10.000,000,99
@@ -43,15 +44,46 @@ public class E11Text2Number {
 		// method to return double number from a string like 23,419.34
 		// exercise requires not to use Double.parsedouble()!
 		// inStr not to be altered in method
-		double answer = 0.0;
 		System.out.println("debug Method Text2Number to be written");	
+		double answer = 0.0;
+		double powerOfTen = 1.0;
+		boolean gotDecimal=false;
+		// go character by char backwards through inStr
+		for (int cc = inStr.length()-1; cc>=0; cc--) { 
+			char strChr = inStr.charAt(cc); // to make code more readable
+			int  chrInt=strChr-'0'; //ascii value of the char minus that of 0 character
+			System.out.print("debug reversed inStr c by c \t" + strChr + "\t chrInt = " + chrInt);
+			if ( chrInt>=0 && chrInt<10 ) { // it is a digit
+				answer += powerOfTen*chrInt;
+				powerOfTen *= 10.;
+			}
+			else if (strChr=='.') { // the decimal point
+		        	if (gotDecimal) // big problem only allowed one	
+					throw new IllegalArgumentException("Text2Number cannot handle numbers with more than one decimal point");
+				gotDecimal = true;
+				answer = answer/powerOfTen; // for 1345 becomes 0.1345 
+				powerOfTen = 1.0;
+			}
+			else if (cc==0 && strChr=='-') { // initial negative sign
+				answer *= -1; // change sign of answer
+			}
+			else if (strChr==',') { // ignore comma's
+			}
+			else { // illegal character
+				throw new IllegalArgumentException("Text2Number cannot handle numbers containing \"" + strChr + "\"");
+			}
+			System.out.println(" powerOfTen= " + powerOfTen + " answer = " + answer);
+		}
 		return answer;
 	}
 	public static void main(String[] args) {
                 if (args.length==1 && args[0].equals("-test")) {
 			System.out.println("\n\t-test procedure, test Text2Number method: ");
-			double testValue =  Text2Number("23,419.34");
-			System.out.println("\ttest#1 Text2Number(\"23,419.34\") results in "+ testValue);
+			double testVal;
+			String testStr;
+			testStr = "-230,419.340"; 
+			testVal = Text2Number(testStr);
+			System.out.println("\ttest Text2Number(\"" + testStr + "\") results in "+ testVal);
 		}
 	}
 } 
