@@ -40,14 +40,10 @@ or objects. Example outputs
 ### 7 Counting letters redux (*)
 *to be written*
 
-### 8 Palindrome
-*to be written*
-
-### 9 Palindrome creator
-*to be written*
-
-### 10 Palindrome redux (*)
-*to be written*
+### 8 Palindrome and 9 Palindrome creator and 10 Palindrome redux (*)
+[E08toE10Palindromes.java](E08toE10Palindromes.java) does all three tasks in
+one. Uses methods to save time and reducing tests. Produces output 
+[E08toE10Palindromes_output.md](E08toE10Palindromes_output.md)
 
 ### 11 Text2number
 [E11Text2Number.java](E11Text2Number.java) works and produces
