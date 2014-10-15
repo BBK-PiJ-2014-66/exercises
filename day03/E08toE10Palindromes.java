@@ -59,24 +59,33 @@ public class E08toE10Palindromes {
 		}
 		return stripStrng;
 	}
+	public static boolean isPalindrome( String inStrng) {
+		if (inStrng.equals(reverseString(inStrng)))
+			return true;
+		else
+			return false;
+	}
+	public static boolean isRelaxedPalindrome(String inStrng) {
+		String stripLowerCaseStr = stripPunctation(inStrng.toLowerCase());
+		return isPalindrome(stripLowerCaseStr);
+	}
 	public static void main(String[] args) {
 			System.out.print("Please enter text for palindrome check/creation/relaxed check: ");
 			String inStr = System.console().readLine();
 
 			System.out.println("\nExercise 8 Palindrome check:");
-			String notOrNull = inStr.equals(reverseString(inStr)) ? "" : "NOT ";
+			String notOrNull = isPalindrome(inStr) ? "" : "NOT ";
 			System.out.println("Your text is " + notOrNull + "a strict palindrome");
 
 			System.out.println("\nExercise 9 Palindrome creator:");
 		 	String palindrome=inStr;		
 			// only add reversed string if the string is not already a palindrome
-			if (!inStr.equals(reverseString(inStr))) 
+			if (!isPalindrome(palindrome)) 
 				palindrome += reverseString(inStr);
 			System.out.println(palindrome);
 			
 			System.out.println("\nExercise 10 relaxed Palindrome check:");
-			String stripLowerCaseStr = stripPunctation(inStr.toLowerCase());
-			notOrNull = stripLowerCaseStr.equals(reverseString(stripLowerCaseStr)) ? "" : "NOT ";
+			notOrNull = isRelaxedPalindrome(inStr) ? "" : "NOT ";
 			System.out.println("Your text is " + notOrNull + "a relaxed palindrome");
 	}
 }
