@@ -42,3 +42,23 @@
  *     stripPlow = stripPunctationAndLowerCaseString(inStr)
  *     relaxed palindrome if stripPlow.equals(reverseString(stripPlow))
  */
+
+public class E08toE10Palindromes {
+	public static String reverseString( String inStrng) {
+		String reversedStrng = "";
+		for (int cc= inStrng.length()-1; cc>=0; cc--) 
+			reversedStrng += inStrng.charAt(cc);
+		return reversedStrng; 
+	}
+	public static void main(String[] args) {
+			System.out.print("Please enter text for palindrome check/creation/relaxed check: ");
+			String inStr = System.console().readLine();
+
+			System.out.println("\nExercise 8 Palindrome check:");
+			String notOrNull = inStr.equals(reverseString(inStr)) ? "" : "NOT ";
+			System.out.println("Your text is " + notOrNull + "a strict palindrome");
+
+			System.out.println("\nExercise 9 Palindrome creator:");
+			System.out.println(inStr + reverseString(inStr));
+	}
+}
