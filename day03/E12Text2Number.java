@@ -19,14 +19,15 @@
  *  to the beginning. Keep:
  *     double powerOfTen=1.0
  *     double answer=0.0
- *  for characters that are digits Character.isDigit(strChr) read the 
- *     integer value from the char rather nice C-like method from
+ *     get integer value from the char rather nice C-like method from
  *     http://stackoverflow.com/questions/4968323/java-parse-int-value-from-a-char 
  *     int chrInt=strChr-'0';
+ *  chrInt will be between 0 and 9 for digits  will avoid using standard Character.isDigit(strChr) 
+ *     for a digit
  *     answer += chrInt*powerOfTen
  *     powerOfTen *= 10.0
  *  when we get to . then answer = answer/(0.1*powerOfTen); powerOfTen=1.0
- *  so that 1345 becomes 0.1345 and we carry on
+ *  so that 1345 becomes 0.1345 and we carry on adding 1's 10's
  *     
  *  should ignore commas throw an exceptions for any other character
  *  only accept - as the last character and this means answer *= -1.0
