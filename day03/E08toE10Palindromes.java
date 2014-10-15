@@ -70,22 +70,22 @@ public class E08toE10Palindromes {
 		return isPalindrome(stripLowerCaseStr);
 	}
 	public static void main(String[] args) {
-			System.out.print("Please enter text for palindrome check/creation/relaxed check: ");
-			String inStr = System.console().readLine();
+		System.out.print("Please enter text for palindrome check/creation/relaxed check: ");
+		String inStr = System.console().readLine();
 
-			System.out.println("\nExercise 8 Palindrome check:");
-			String notOrNull = isPalindrome(inStr) ? "" : "NOT ";
-			System.out.println("Your text is " + notOrNull + "a strict palindrome");
+		System.out.println("\nExercise 8 Palindrome check:");
+		String notOrNull = isPalindrome(inStr) ? "" : "NOT ";
+		System.out.println("Your text is " + notOrNull + "a strict palindrome");
 
-			System.out.println("\nExercise 9 Palindrome creator:");
-		 	String palindrome=inStr;		
-			// only add reversed string if the string is not already a palindrome
-			if (!isPalindrome(palindrome)) 
-				palindrome += reverseString(inStr);
-			System.out.println(palindrome);
-			
-			System.out.println("\nExercise 10 relaxed Palindrome check:");
-			notOrNull = isRelaxedPalindrome(inStr) ? "" : "NOT ";
-			System.out.println("Your text is " + notOrNull + "a relaxed palindrome");
+		System.out.println("\nExercise 9 Palindrome creator:");
+	 	String palindrome=inStr;		
+		// only add reversed string if the string is not already a palindrome
+		if (!isPalindrome(palindrome)) 
+			palindrome += reverseString(inStr);
+		System.out.println(palindrome);
+		
+		System.out.println("\nExercise 10 relaxed Palindrome check:");
+		notOrNull = isRelaxedPalindrome(inStr) ? "" : "NOT ";
+		System.out.println("Your text is " + notOrNull + "a relaxed palindrome");
 	}
 }
