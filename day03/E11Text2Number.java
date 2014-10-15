@@ -95,5 +95,10 @@ public class E11Text2Number {
 			System.out.println("\ttest Text2Number(\"" + testStr + "\") results in (should throw exception)");
 			System.out.println(Text2Number(testStr));
 		}
+		else {
+			System.out.print("Please enter a number with commas and a decimal dot: ");
+			double readDble = Text2Number(System.console().readLine());
+			System.out.println("Half your number is " +  0.5*readDble);
+		}
 	}
 } 
