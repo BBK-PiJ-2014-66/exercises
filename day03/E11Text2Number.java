@@ -79,7 +79,7 @@ public class E11Text2Number {
 	}
 	public static void main(String[] args) {
                 if (args.length==1 && args[0].equals("-test")) {
-			System.out.println("\n-test procedure for Text2Number method: ");
+			System.out.println("-test procedure for Text2Number method: ");
 			String testStr;
 			testStr = "-230,419.340"; 
 			System.out.println("\ttest Text2Number(\"" + testStr + "\") results in "+ Text2Number(testStr));
