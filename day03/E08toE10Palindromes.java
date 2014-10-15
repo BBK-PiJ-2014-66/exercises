@@ -38,8 +38,8 @@
  *  9: Simple use the reverseString(inStr) method from 8 output 
  *	inStr + reverseString(inStr) 
  *
- * 10: Write a method stripPunctationAndLowerCaseString(inStr) 
- *     stripPlow = stripPunctationAndLowerCaseString(inStr)
+ * 10: Write a method stripPunctation(inStr) and use java str.toLowerCase() method
+ *     stripLowerCaseStr = stripPunctation(inStr.toLowerCase());
  *     relaxed palindrome if stripPlow.equals(reverseString(stripPlow))
  */
 
@@ -49,6 +49,15 @@ public class E08toE10Palindromes {
 		for (int cc= inStrng.length()-1; cc>=0; cc--) 
 			reversedStrng += inStrng.charAt(cc);
 		return reversedStrng; 
+	}
+	public static String stripPunctation( String inStrng) {
+		String stripStrng = "";
+		for (int cc=0; cc<inStrng.length(); cc++) {
+			char myChr = inStrng.charAt(cc);
+			if (Character.isLetter(myChr))
+				stripStrng += myChr;
+		}
+		return stripStrng;
 	}
 	public static void main(String[] args) {
 			System.out.print("Please enter text for palindrome check/creation/relaxed check: ");
@@ -60,5 +69,10 @@ public class E08toE10Palindromes {
 
 			System.out.println("\nExercise 9 Palindrome creator:");
 			System.out.println(inStr + reverseString(inStr));
+			
+			System.out.println("\nExercise 10 relaxed Palindrome check:");
+			String stripLowerCaseStr = stripPunctation(inStr.toLowerCase());
+			notOrNull = stripLowerCaseStr.equals(reverseString(stripLowerCaseStr)) ? "" : "NOT ";
+			System.out.println("Your text is " + notOrNull + "a relaxed palindrome");
 	}
 }
