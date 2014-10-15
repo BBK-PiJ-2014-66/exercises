@@ -50,7 +50,7 @@ or objects. Example outputs
 *to be written*
 
 ### 11 Text2number
-[E12Text2Number.java](E12Text2Number.java) started
+[E11Text2Number.java](E11Text2Number.java) started
 
 ### 12 Distance point–to–point
 [E12DistancePointToPoint.java](E12DistancePointToPoint.java) 

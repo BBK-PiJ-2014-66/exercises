@@ -38,7 +38,7 @@
  * -10.000,000,99
  * 0
  */
-public class E12Text2Number {
+public class E11Text2Number {
 	public static double Text2Number( String inStr) {
 		// method to return double number from a string like 23,419.34
 		// exercise requires not to use Double.parsedouble()!
