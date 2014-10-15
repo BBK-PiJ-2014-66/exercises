@@ -68,7 +68,11 @@ public class E08toE10Palindromes {
 			System.out.println("Your text is " + notOrNull + "a strict palindrome");
 
 			System.out.println("\nExercise 9 Palindrome creator:");
-			System.out.println(inStr + reverseString(inStr));
+		 	String palindrome=inStr;		
+			// only add reversed string if the string is not already a palindrome
+			if (!inStr.equals(reverseString(inStr))) 
+				palindrome += reverseString(inStr);
+			System.out.println(palindrome);
 			
 			System.out.println("\nExercise 10 relaxed Palindrome check:");
 			String stripLowerCaseStr = stripPunctation(inStr.toLowerCase());
