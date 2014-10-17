@@ -37,5 +37,11 @@ Please enter amount paid: 0.02
 Your change is £0.01
 Your change is: 
 	1 * one pence coin
+
+
+$ java E03YourChangePlease 
+Please enter cost of purchase: 13.55
+Please enter amount paid: 13.55
+Exact amount paid. No change needed.
 ```
 Happy with this output

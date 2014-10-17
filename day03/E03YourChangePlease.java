@@ -33,6 +33,9 @@ class E03YourChangePlease {
 		if (changePounds<0) {
 			System.out.println("You have not paid enough please pay £" + -changePounds+ " more");
 		}
+		else if (Math.abs(changePounds) <0.01) {
+			System.out.println("Exact amount paid. No change needed.");
+		}
 		else {
 			int costPennies = (int)(100.*costPounds);
 			int paidPennies = (int)(100.*paidPounds);
