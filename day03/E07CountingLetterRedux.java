@@ -39,6 +39,14 @@
  *
  */
 public class E07CountingLetterRedux{
+	public static int  numTimesChrInStr( char myChr, String myStr) {
+		int numTimes = 0;
+		for (int cc = 0; cc < myStr.length()-1; cc++) {
+			if (myChr == myStr.charAt(cc)) 
+				numTimes++;
+		}
+		return numTimes;
+	}
 	public static void main(String[] args) {
         	System.out.print("Please write a text: ");
         	String userText = System.console().readLine();
@@ -51,7 +59,7 @@ public class E07CountingLetterRedux{
 				continue; // prompt again
 			}
 			char letter=strForLetter.charAt(0);
-			System.out.println("debug will check for \"" + letter + "\" in \"" + userText +"\"");
+			System.out.println("There are "+ numTimesChrInStr( letter, userText) + " in your text.");
 		}
 		
 	}
