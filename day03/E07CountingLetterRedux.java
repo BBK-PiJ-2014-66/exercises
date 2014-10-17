@@ -30,7 +30,7 @@
  *	"Which letter would you like to count now?"
  *	give error message for anything else (like enter)
  *
- *	Keep a String letterEntered and concate each letter 
+ *	Keep a String lettersEntered and concate each letter 
  *	processed to it.  (A String can store arbitary number of
  *	characteris and we haven't done arrays or vectors)
  *
@@ -48,9 +48,9 @@ public class E07CountingLetterRedux{
 		return numTimes;
 	}
 	public static void main(String[] args) {
+		String lettersEntered="";
         	System.out.print("Please write a text: ");
         	String userText = System.console().readLine();
-	
 		while(true) {	// infinite loop must break
 	 		System.out.print("Which letter would you like to count now? ");
 			String strForLetter = System.console().readLine();
@@ -59,8 +59,20 @@ public class E07CountingLetterRedux{
 				continue; // prompt again
 			}
 			char letter=strForLetter.charAt(0);
+			/* N.B. normal java would use String method indexOf to check for the occurance 
+			        of a character in a string:
+
+                           if (lettersEntered.indexOf(letter) != -1) {
+			
+			   but we can reuse the method here */
+                           if (lettersEntered.indexOf(letter) != -1) {
+				System.out.println("Repeated character. Exiting the program...");
+				break; // out of the infinite loop
+			}
 			System.out.println("There are "+ numTimesChrInStr( letter, userText) + " in your text.");
+			lettersEntered += letter; // add this letter to the store
 		}
+		System.out.println("Thank you for your cooperation. Good bye!");
 		
 	}
 }
