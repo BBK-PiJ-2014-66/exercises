@@ -12,7 +12,7 @@ Approach to completing the exercises:
 * I am used to record the evidence that a particular program or feature works. Here I have used [githib type markdown](https://help.github.com/articles/markdown-basics/) to produce such records (but I will switch to [asciidoc](http://www.methods.co.nz/asciidoc/) because it is easier). *(but this is probably overkill here)*
 * Please note that sometimes answers include things we have not seen yet like methods.
 
-If you want further information the please drop me an email.
+If you want further information the please drop me an email osmart01@dcs.bbk.ac.uk
 
 Oliver
 
