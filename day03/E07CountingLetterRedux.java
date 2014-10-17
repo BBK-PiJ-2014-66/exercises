@@ -38,3 +38,22 @@
  *	the new character is already entered.
  *
  */
+public class E07CountingLetterRedux{
+	public static void main(String[] args) {
+        	System.out.print("Please write a text: ");
+        	String userText = System.console().readLine();
+	
+		while(true) {	// infinite loop must break
+	 		System.out.print("Which letter would you like to count now? ");
+			String strForLetter = System.console().readLine();
+			if (strForLetter.length() != 1) {
+			 	System.out.println("ERROR you must enter a single character. Try again");
+				continue; // prompt again
+			}
+			char letter=strForLetter.charAt(0);
+			System.out.println("debug will check for \"" + letter + "\" in \"" + userText +"\"");
+		}
+		
+	}
+}
+		
