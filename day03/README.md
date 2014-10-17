@@ -31,13 +31,13 @@ or objects. Example outputs
 [E04LineToColumn.java](E04LineToColumn.java) works and produces
 [E04LineToColumn_output.md](E04LineToColumn_output.md)
 
-### 5 Counting letters
-*to be written*
+
+
+### 5 Counting letters and 7 Counting letters redux (*)
+[E07CountingLetterRedux.java](E07CountingLetterRedux.java) produces 
+[output](E07CountingLetterRedux_output.asciidoc). 
 
 ### 6 Counting pairs of letters (*)
-*to be written*
-
-### 7 Counting letters redux (*)
 *to be written*
 
 ### 8 Palindrome and 9 Palindrome creator and 10 Palindrome redux (*)
