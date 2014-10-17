@@ -1,0 +1,22 @@
+E04LineToColumn example output
+==============================
+
+Text capture of output of the problem sheet entry:
+
+....
+$ java E07CountingLetterRedux 
+Please write a text: It was a dark and stormy night
+Which letter would you like to count now? a
+There are 4 in your text.
+Which letter would you like to count now? s
+There are 2 in your text.
+Which letter would you like to count now? u
+There are 0 in your text.
+Which letter would you like to count now? a
+Repeated character. Exiting the program...
+Thank you for your cooperation. Good bye!
+....
+
+I am happy with with this. Problem sheet 
+says that +It was a dark and stormy night+
+has 6 letters +a+ amd 3 letters +s+ but I think this is a mistake?
