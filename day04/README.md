@@ -4,7 +4,7 @@ Exercises, day 04
 
 
 ### 1 Scope
-Written exercise 
+Written exercise [answer](E01_Scope.asciidoc).
 
 ### 2 Pointer, arrows. . .
 Easiest to do with pen and paper
