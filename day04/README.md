@@ -15,7 +15,7 @@ have any value in them (until they are initialised)* surely as the Point class i
 no explicit constructor the default constructor would be used and both the integer fields would be initialized
 to zero?  Lets test by trying to print them before any user initialization.
 
-[E02PointExample.java] is java version with a print. The output is 
+[E02PointExample.java](E02PointExample.java) is java version with a print. The output is 
 ```
 $ java E02PointExample 
 Before any user initialization point is 0,0
