@@ -18,6 +18,7 @@ class E02PointExample {
 	public static void main(String[] args) {
 		// Program execution starts here
 		Point myPoint = new Point();
+                System.out.println("Before any user initialization point is " + myPoint.x + "," + myPoint.y);
 		myPoint.x = 0;
 		myPoint.y = 0;
 		int myInt = 0;
