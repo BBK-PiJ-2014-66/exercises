@@ -27,6 +27,9 @@ i, j, newSize, size.
 20 }
 ....
 
+
+.Answer
+****
 +i+ is visible from line +09+ inside the three parts of the +()+ brackets and after +{+ until before +}+ on line +18+ 
 
 +j+ is visible from line +10+ inside the three parts of the  +()+ brackets and after +{+ until before +}+ on line +16+
@@ -34,3 +37,4 @@ i, j, newSize, size.
 +newSize+ is visible after +{+ on line +04+ until +}+ on line +06+.
 
 +size+ is visible after +{+ on line +01+ until +}+ on line +20+
+****
