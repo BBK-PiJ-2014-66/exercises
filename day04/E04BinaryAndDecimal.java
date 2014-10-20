@@ -28,5 +28,18 @@
  *
  *	User menu required but first write a -test 
  */
+public class E04BinaryAndDecimal {
+	public static int binary2decimal( String inStr) {
+		System.out.println("debug binary2decimal to be written");
+		return 0;
+	}
+	public static void main(String[] args) {
+		System.out.println("E04BinaryAndDecimal");
+                if (args.length==1 && args[0].equals("-test"))  {
+			System.out.println("-test procedure: ");
+			System.out.println("binary2decimal(\"11101\") = " + binary2decimal("11101"));
+		}
+	}
+}
 
 
