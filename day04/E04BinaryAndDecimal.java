@@ -92,7 +92,7 @@ public class E04BinaryAndDecimal {
 			System.out.println("decimal2binary(-66) = " + decimal2binary(-66));
 			return; // do not present menu if doing -test
 		}
-		System.out.print("Convert binary to decimal (Enter) or decimal to binary (anything else):");
+		System.out.print("Convert binary to decimal (Enter key) or decimal to binary (anything but Enter): ");
 		String reply= System.console().readLine();
 		if (reply.length()==0) {
 			while (true) {
@@ -106,7 +106,9 @@ public class E04BinaryAndDecimal {
 			}	
 		}
 		else {
-			System.out.println("decimal to binary to be written");
+			System.out.print("Enter decimal number: ");
+			int decimal = Integer.parseInt(System.console().readLine());
+			System.out.println(decimal + " in binary is " +  decimal2binary(decimal));
 		}
 	}
 }
