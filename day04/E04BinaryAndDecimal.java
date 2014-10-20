@@ -31,13 +31,23 @@
 public class E04BinaryAndDecimal {
 	public static int binary2decimal( String inStr) {
 		System.out.println("debug binary2decimal to be written");
-		return 0;
+		int powerOfTwo=1;
+		int answer=0;
+		for ( int cc = inStr.length()-1; cc >= 0; cc--) {
+			if (inStr.charAt(cc)=='1') {
+				answer += powerOfTwo;
+			}
+			System.out.println("debug cc=" + cc + " character =\"" + inStr.charAt(cc)+"\"" + 
+				" answer=" + answer + " powerOfTwo= " + powerOfTwo);
+			powerOfTwo *= 2;
+		}
+		return answer;
 	}
 	public static void main(String[] args) {
 		System.out.println("E04BinaryAndDecimal");
                 if (args.length==1 && args[0].equals("-test"))  {
 			System.out.println("-test procedure: ");
-			System.out.println("binary2decimal(\"11101\") = " + binary2decimal("11101"));
+			System.out.println("binary2decimal(\"10011101\") = " + binary2decimal("10011101"));
 		}
 	}
 }
