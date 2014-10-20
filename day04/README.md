@@ -42,7 +42,7 @@ thing.
 
 
 ### 4 Binary and decimal
-[E04BinaryAndDecimal.java](E04BinaryAndDecimal.java) started
+[E04BinaryAndDecimal.java](E04BinaryAndDecimal.java) finished produces [output](E04BinaryAndDecimal_output.asciidoc)
 
 ### 5 Binary and hexadecimal (*)
 *to be done*

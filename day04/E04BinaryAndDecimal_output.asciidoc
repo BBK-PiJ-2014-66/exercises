@@ -1,0 +1,42 @@
+E04BinaryAndDecimal example output
+===================================
+
+Text capture of output -test procedure to test methods:
+
+....
+$ java E04BinaryAndDecimal  -test
+E04BinaryAndDecimal
+-test procedure: 
+binary2decimal("10011101") = 157
+binary2decimal("-101") = -5
+binary2decimal("0") = 0
+isBinary("10011101") = true
+isBinary("123") = false
+decimal2binary(9) = 1001
+decimal2binary(0) = 0
+decimal2binary(1) = 1
+decimal2binary(-1) = -1
+decimal2binary(-66) = -1000010
+....
+
+
+Text capture showing conversion of user input binary to a decimal:
+
+....
+$ java E04BinaryAndDecimal  
+E04BinaryAndDecimal
+Convert binary to decimal (Enter key) or decimal to binary (anything but Enter): 
+Enter binary number: -101010
+-101010 in decimal is -42
+....
+
+
+Text capture showing conversion of user input decimal to a binary:
+....
+$ java E04BinaryAndDecimal  
+E04BinaryAndDecimal
+Convert binary to decimal (Enter key) or decimal to binary (anything but Enter): e
+Enter decimal number: -42
+-42 in binary is -101010
+....
+
