@@ -68,6 +68,7 @@ public class E04BinaryAndDecimal {
 			System.out.println("binary2decimal(\"0\") = " + binary2decimal("0"));
 			System.out.println("isBinary(\"10011101\") = " + isBinary("-10011101"));
 			System.out.println("isBinary(\"123\") = " + isBinary("123"));
+			return; // do not present menu if doing -test
 		}
 		System.out.print("Convert binary to decimal (Enter) or decimal to binary (anything else):");
 		String reply= System.console().readLine();
