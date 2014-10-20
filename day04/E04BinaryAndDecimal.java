@@ -60,7 +60,14 @@ public class E04BinaryAndDecimal {
 		return answer;
 	}
 	public static String decimal2binary(int inInt) {
-		return "debug decimal2binary to be written";
+		if (inInt==0) 
+			return "0";
+		String binaryStr="";
+		while( inInt>0) { // allowed to work on inInt it is passed by value;
+			binaryStr = (inInt%2) + binaryStr; // keep remainder
+			inInt = inInt/2;
+		}
+		return binaryStr;
 	}
 	public static void main(String[] args) {
 		System.out.println("E04BinaryAndDecimal");
@@ -72,6 +79,10 @@ public class E04BinaryAndDecimal {
 			System.out.println("isBinary(\"10011101\") = " + isBinary("-10011101"));
 			System.out.println("isBinary(\"123\") = " + isBinary("123"));
 			System.out.println("decimal2binary(9) = " + decimal2binary(9));
+			System.out.println("decimal2binary(0) = " + decimal2binary(0));
+			System.out.println("decimal2binary(1) = " + decimal2binary(1));
+			System.out.println("decimal2binary(-1) = " + decimal2binary(-1));
+			System.out.println("decimal2binary(-101) = " + decimal2binary(-101));
 			return; // do not present menu if doing -test
 		}
 		System.out.print("Convert binary to decimal (Enter) or decimal to binary (anything else):");
