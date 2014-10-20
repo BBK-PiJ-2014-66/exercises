@@ -42,7 +42,7 @@ thing.
 
 
 ### 4 Binary and decimal
-*to be done*
+[E04BinaryAndDecimal.java](E04BinaryAndDecimal.java) started
 
 ### 5 Binary and hexadecimal (*)
 *to be done*
