@@ -64,5 +64,6 @@ class C04TCard {
 		System.out.println(yellowReader(card2, 5) ? "pass"
 				: "problem with card");
 		// Point 4
+		System.out.println("finally card1.amount =" + card1.amount + "  card2.amount =" +  card2.amount);
 	}
 }
