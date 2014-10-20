@@ -62,11 +62,18 @@ public class E04BinaryAndDecimal {
 	public static String decimal2binary(int inInt) {
 		if (inInt==0) 
 			return "0";
+		boolean isNegative = false;
+		if (inInt<0) {
+			inInt *= -1;
+			isNegative = true;
+		}
 		String binaryStr="";
 		while( inInt>0) { // allowed to work on inInt it is passed by value;
 			binaryStr = (inInt%2) + binaryStr; // keep remainder
 			inInt = inInt/2;
 		}
+		if (isNegative) 
+			binaryStr = '-' +  binaryStr; 
 		return binaryStr;
 	}
 	public static void main(String[] args) {
@@ -82,7 +89,7 @@ public class E04BinaryAndDecimal {
 			System.out.println("decimal2binary(0) = " + decimal2binary(0));
 			System.out.println("decimal2binary(1) = " + decimal2binary(1));
 			System.out.println("decimal2binary(-1) = " + decimal2binary(-1));
-			System.out.println("decimal2binary(-101) = " + decimal2binary(-101));
+			System.out.println("decimal2binary(-66) = " + decimal2binary(-66));
 			return; // do not present menu if doing -test
 		}
 		System.out.print("Convert binary to decimal (Enter) or decimal to binary (anything else):");
