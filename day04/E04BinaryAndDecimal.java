@@ -29,16 +29,32 @@
  *	User menu required but first write a -test 
  */
 public class E04BinaryAndDecimal {
+	public static boolean isBinary( String inStr) {
+		for ( int cc = inStr.length()-1; cc >= 0; cc--) {
+			char myChr = inStr.charAt(cc);
+			if (myChr=='1' || myChr=='0') 
+				; 
+			else if ( (cc==0) & (myChr=='-') ) 
+				; 
+			else
+				return false;
+			
+		}
+		return true;
+	}
 	public static int binary2decimal( String inStr) {
-		System.out.println("debug binary2decimal to be written");
 		int powerOfTwo=1;
 		int answer=0;
 		for ( int cc = inStr.length()-1; cc >= 0; cc--) {
-			if (inStr.charAt(cc)=='1') {
+			char myChr = inStr.charAt(cc);
+			if (myChr=='1') {
 				answer += powerOfTwo;
 			}
-			System.out.println("debug cc=" + cc + " character =\"" + inStr.charAt(cc)+"\"" + 
-				" answer=" + answer + " powerOfTwo= " + powerOfTwo);
+			else if ( (cc==0) & (myChr=='-') ) { // initial negative
+				answer *= -1;
+			}
+			//System.out.println("debug cc=" + cc + " character =\"" + myChr +"\"" + 
+		 	//	" answer=" + answer + " powerOfTwo= " + powerOfTwo);
 			powerOfTwo *= 2;
 		}
 		return answer;
@@ -48,6 +64,10 @@ public class E04BinaryAndDecimal {
                 if (args.length==1 && args[0].equals("-test"))  {
 			System.out.println("-test procedure: ");
 			System.out.println("binary2decimal(\"10011101\") = " + binary2decimal("10011101"));
+			System.out.println("binary2decimal(\"-101\") = " + binary2decimal("-101"));
+			System.out.println("binary2decimal(\"0\") = " + binary2decimal("0"));
+			System.out.println("isBinary(\"10011101\") = " + isBinary("-10011101"));
+			System.out.println("isBinary(\"123\") = " + isBinary("123"));
 		}
 	}
 }
