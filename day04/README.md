@@ -52,3 +52,11 @@ thing.
 
 ### 7 Integer
 *to be done*
+
+
+## Coursework
+* java versions of the examples [C01CarDealing.java](C01CarDealing.java), 
+[C02FilmRating.java](C02FilmRating.java) and  [C04TCard.java](C04TCard.java)
+* powerpoint of the course work
+ [CourseworkOne_revised_password.pptx](CourseworkOne_revised_password.pptx)
+*this is password protected*
