@@ -57,6 +57,14 @@ class Point {
 	String coordsStrng() {
 		return "(" + xcoord + "," + ycoord + ")";
 	}
+        /* although instructions say call our clone method "clone"
+           doing so  causes javac error:
+	   clone() in Point cannot override clone() in java.lang.Object;
+	   so call it clonep */
+	Point cloneP() {
+		Point clonep = new Point( xcoord, ycoord);
+		return clonep;
+	}
 
 
 }

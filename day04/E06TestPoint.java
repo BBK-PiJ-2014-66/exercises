@@ -13,6 +13,14 @@ class E06TestPoint{
 		Point myPoint = new Point(3.,4.);
                 System.out.println("Have defined myPoint= " + myPoint.coordsStrng());
                 System.out.println("myPoint.distanceToOrigin()=" + myPoint.distanceToOrigin() + "  (expect 5.0)");
-		
+		Point secondPoint = new Point(4.,3.);
+                System.out.println("Have defined secPoint= " + secondPoint.coordsStrng());
+                System.out.println("myPoint.distanceTo(secondPoint)=" + myPoint.distanceTo(secondPoint) + "  (expect sqrt 2.)");
+		myPoint.moveTo(4.,5.);
+                System.out.println("after myPoint.moveTo(4.,5.) myPoint= " + myPoint.coordsStrng());
+		myPoint.moveTo(secondPoint);
+                System.out.println("after myPoint.moveTo(secondPoint) myPoint= " + myPoint.coordsStrng());
+		Point myClone = myPoint.cloneP();
+                System.out.println("clone myClone = myPoint.cloneP(), myClone= " + myClone.coordsStrng() );
 	}
 }
