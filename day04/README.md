@@ -48,7 +48,8 @@ thing.
 *to be done*
 
 ### 6 More on points
-*to be done*
+Wrote required class/methods as [Point.java](Point.java).  This is tested by [E06TestPoint.java](E06TestPoint.java)
+producing  [output](E06_output.asciidoc).
 
 ### 7 Integer
 *to be done*

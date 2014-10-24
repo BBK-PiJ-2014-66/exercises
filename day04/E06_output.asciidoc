@@ -1,0 +1,17 @@
+E06TestPoint output
+===================
+
+Text capture of output:
+
+....
+$ java E06TestPoint 
+E06TestPoint run some tests on Point class
+Have defined myPoint= (3.0,4.0)
+myPoint.distanceToOrigin()=5.0  (expect 5.0)
+Have defined secPoint= (4.0,3.0)
+myPoint.distanceTo(secondPoint)=1.4142135623730951  (expect sqrt 2.)
+after myPoint.moveTo(4.,5.) myPoint= (4.0,5.0)
+after myPoint.moveTo(secondPoint) myPoint= (4.0,3.0)
+clone myClone = myPoint.cloneP(), myClone= (4.0,3.0)
+clone myOpp = myPoint.opposite(), myOpp= (-4.0,-3.0)
+....
