@@ -22,9 +22,8 @@
  *
  * Initial thoughts
  *
- *	Implement in a separate Point.java
+ *	Implement in a separate Point.java (this file) and test with E06TestPoint.java
  */
-
 class Point {
 	double xcoord;
 	double ycoord;
@@ -54,6 +53,9 @@ class Point {
    	double	distanceToOrigin() {
 		Point origin = new Point();
 		return distanceTo( origin);
+	}
+	String coordsStrng() {
+		return "(" + xcoord + "," + ycoord + ")";
 	}
 
 

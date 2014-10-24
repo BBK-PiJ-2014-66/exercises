@@ -11,7 +11,7 @@ class E06TestPoint{
 	public static void main(String[] args) {
                 System.out.println("E06TestPoint run some tests on Point class");
 		Point myPoint = new Point(3.,4.);
-                //System.out.println("Have defined myPoint= " + myPoint.Str);
+                System.out.println("Have defined myPoint= " + myPoint.coordsStrng());
                 System.out.println("myPoint.distanceToOrigin()=" + myPoint.distanceToOrigin() + "  (expect 5.0)");
 		
 	}
