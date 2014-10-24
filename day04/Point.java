@@ -62,9 +62,12 @@ class Point {
 	   clone() in Point cannot override clone() in java.lang.Object;
 	   so call it clonep */
 	Point cloneP() {
-		Point clonep = new Point( xcoord, ycoord);
-		return clonep;
+		Point cloneP = new Point( xcoord, ycoord);
+		return cloneP;
 	}
-
+ 	Point opposite() {
+		Point oppositeP = new Point( -xcoord, -ycoord);
+		return oppositeP;
+	}
 
 }

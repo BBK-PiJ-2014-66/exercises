@@ -20,7 +20,11 @@ class E06TestPoint{
                 System.out.println("after myPoint.moveTo(4.,5.) myPoint= " + myPoint.coordsStrng());
 		myPoint.moveTo(secondPoint);
                 System.out.println("after myPoint.moveTo(secondPoint) myPoint= " + myPoint.coordsStrng());
+
 		Point myClone = myPoint.cloneP();
                 System.out.println("clone myClone = myPoint.cloneP(), myClone= " + myClone.coordsStrng() );
+
+                Point myOpp = myPoint.opposite();
+                System.out.println("clone myOpp = myPoint.opposite(), myOpp= " + myOpp.coordsStrng() );
 	}
 }
