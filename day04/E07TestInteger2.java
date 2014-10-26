@@ -44,5 +44,13 @@ class E07TestInteger2 {
 		System.out.print("Test of prettyPrint method with i2.prettyPrint() produces \"");
 		i2.prettyPrint();
 		System.out.println("\"");
+		        System.out.print("The number you entered is ");
+        	if (i2.isEven()) {
+                	System.out.println("even.");
+        	} else if (i2.isOdd()) {
+                	System.out.println("odd.");
+        	} else {
+                	System.out.println("undefined!! Your code is buggy!");
+        	}
 	}
 }

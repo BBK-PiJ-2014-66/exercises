@@ -32,4 +32,12 @@ class Integer2 {
 	void prettyPrint() {
 		System.out.print(myInt);
 	}
+	boolean isEven() {
+		if (myInt%2 == 0) 
+			return true;
+		return false;
+	}
+	boolean isOdd() {
+		return !isEven();
+	}
 }

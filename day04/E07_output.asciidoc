@@ -1,10 +1,19 @@
 E07TestInteger2 output
 ======================
 
-Text capture of output, when 234 is entered:
+Text capture of outputs when *234* and *1* are entered as input:
 
 ....
 $ java E07TestInteger2
 Enter a number: 234
 Test of prettyPrint method with i2.prettyPrint() produces "234"
+The number you entered is even.
+
+$ java E07TestInteger2
+Enter a number: 1
+Test of prettyPrint method with i2.prettyPrint() produces "1"
+The number you entered is odd.
+
+
+
 ....
