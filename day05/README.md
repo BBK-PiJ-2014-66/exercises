@@ -25,3 +25,24 @@ buggyMethod(0)=
 buggyMethod(8)= 8 6 4 2 
 buggyMethod(9)= 9 7 5 3 1 
 ```
+
+
+#### c)
+Do you see anything wrong with the following code? How would you fix it?
+```
+	String doggyMethod(int n) {
+		String result = doggyMethod(n-3) + n + doggyMethod(n-2);
+		if (n <= 0) {
+			return "";
+		}
+		return result;
+	}
+```
+Initial visual inspection. 
+* Worried about whether *doggyMethod(n-3) + n + doggyMethod(n-2)* will produce a String result
+  the + will be addition not concatenation?
+* The conditional and blank return should be moved up before the *String result* line or we will never
+  terminate.
+
+Lets code it up and see what happens.
+
