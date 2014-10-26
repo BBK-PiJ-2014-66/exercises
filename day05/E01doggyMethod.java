@@ -3,7 +3,7 @@ class E01doggyMethod{
 		if (n <= 0) {
 			return "";
 		}
-		String result = doggyMethod(n-3) + n + doggyMethod(n-2);
+		String result = "" + doggyMethod(n-3) + n + doggyMethod(n-2);
 		return result;
 	}
 	public static void main(String[] args) {
