@@ -7,7 +7,7 @@ Exercises, day 05
 
 #### a) 
 
-What number*s* would the following method print on screen if you called **printNumbers(6)**?
+What number *s* would the following method print on screen if you called **printNumbers(6)**?
 ```
 01 	void printNumbers(int n) {
 02		if (n <= 0) {
@@ -30,6 +30,18 @@ Do this exercise on paper.
 * *C* **printNumbers(2)**, line 07 will invoke **printNumbers(-1)** (simply returns)
 * *C* **printNumbers(2)**, line 08 will print **2** newline
 * *B* **printNumbers(4)**, line 07 will invoke **printNumbers(1)**
+* *D* **printNumbers(1)**, will output **1** newline and **1** newline
+* *B* **printNumbers(4)**, line 08 will print **4** newline
+* *A* **printNumbers(6)**, line 07 will invoke **printNumbers(3)**
+* *E* **printNumbers(3)**, line 05 will print **3** newline
+* *E* **printNumbers(3)**, line 06 will invoke **printNumbers(1)**
+* *F* **printNumbers(1)**, will output **1** newline and **1** newline
+* *E* **printNumbers(3)**, line 08 will print **3** newline
+* *A* **printNumbers(6)**, line 08 will print **6** newline
+
+So I predict output of 6 4 2 2 1 1 4 3 1 1 3 6
+
+**THIS SEEMS A BLEEDING GOOD WAY TO PRODUCE UNREADABLE CODE TO ME**
 
 
 
