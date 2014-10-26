@@ -43,6 +43,11 @@ So I predict output of 6 4 2 2 1 1 4 3 1 1 3 6
 
 **THIS SEEMS A BLEEDING GOOD WAY TO PRODUCE UNREADABLE CODE TO ME**
 
+* check actual result with [E01printNumbers.java](E01printNumbers.java) produces output
+```
+$ java E01printNumbers
+6 4 2 2 1 1 4 3 1 1 3 6 
+```
 
 
 #### b)
