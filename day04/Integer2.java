@@ -23,4 +23,13 @@
  */
 class Integer2 {
 	private int myInt;
+	int getValue() {
+		return myInt;
+	}
+	void setValue( int inInt) {
+		myInt = inInt;
+	}
+	void prettyPrint() {
+		System.out.print(myInt);
+	}
 }

@@ -1,0 +1,10 @@
+E07TestInteger2 output
+======================
+
+Text capture of output, when 234 is entered:
+
+....
+$ java E07TestInteger2
+Enter a number: 234
+Test of prettyPrint method with i2.prettyPrint() produces "234"
+....

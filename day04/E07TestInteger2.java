@@ -37,5 +37,12 @@
 class E07TestInteger2 {
 	public static void main( String[] args) {
 		Integer2 i2 = new Integer2();
+		System.out.print("Enter a number: ");
+		String str = System.console().readLine();
+		int i = Integer.parseInt(str);
+		i2.setValue(i);		
+		System.out.print("Test of prettyPrint method with i2.prettyPrint() produces \"");
+		i2.prettyPrint();
+		System.out.println("\"");
 	}
 }
