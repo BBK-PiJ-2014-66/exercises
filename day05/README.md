@@ -45,13 +45,28 @@ Initial visual inspection.
   terminate.
 
 Lets code it up and see what happens. [E01doggyMethod.java](E01doggyMethod.java)
-* As originally coded we get error:
+* As [originally coded] (https://github.com/BBK-PiJ-2014-66/pij/commit/27ead2a17e5781479f45a4e129e689943b1fce8e#diff-1e8d700b3a313bc5d8276e76d2a9b385) we get an error that indicates we never get past line 3:
 ```
 	at E01doggyMethod.doggyMethod(E01doggyMethod.java:3)
 	at E01doggyMethod.doggyMethod(E01doggyMethod.java:3)
 	at E01doggyMethod.doggyMethod(E01doggyMethod.java:3)
 ```
 * so it infinitely loops
-* Moving the conditional fixes problem. 
-* The + as addition rather than concatenation is no problem *but* I prefer making this clear
+*  [Moving the conditional](https://github.com/BBK-PiJ-2014-66/pij/commit/9ebc0e98b4c989208670760a82190e28b7bedb71#diff-1e8d700b3a313bc5d8276e76d2a9b385) fixes problem. 
+* The + as addition rather than concatenation is no problem *but* I prefer making this clear [E01doggyMethod.java](E01doggyMethod.java)
+* Output of program:
+```
+$ java E01doggyMethod 
+doggyMethod(0)= 
+doggyMethod(1)= 1
+doggyMethod(2)= 2
+doggyMethod(3)= 31
+doggyMethod(4)= 142
+doggyMethod(5)= 2531
+doggyMethod(6)= 316142
+doggyMethod(7)= 14272531
+doggyMethod(8)= 25318316142
+doggyMethod(9)= 316142914272531
+doggyMethod(10)= 142725311025318316142
+````
 
