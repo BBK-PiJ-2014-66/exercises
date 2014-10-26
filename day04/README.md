@@ -52,8 +52,8 @@ Wrote required class/methods as [Point.java](Point.java).  This is tested by [E0
 producing  [output](E06_output.asciidoc).
 
 ### 7 Integer
-*to be done*
-
+class [Integer2.java](Integer2.java) test program [E07TestInteger2.java](E07TestInteger2.java) producing [output](E07_output.asciidoc)
+*(work in progress)*
 
 ## Coursework
 * java versions of the examples [C01CarDealing.java](C01CarDealing.java), 
