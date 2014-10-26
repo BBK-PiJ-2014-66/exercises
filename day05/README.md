@@ -52,4 +52,6 @@ Lets code it up and see what happens. [E01doggyMethod.java](E01doggyMethod.java)
 	at E01doggyMethod.doggyMethod(E01doggyMethod.java:3)
 ```
 * so it infinitely loops
+* Moving the conditional fixes problem. 
+* The + as addition rather than concatenation is no problem *but* I prefer making this clear
 
