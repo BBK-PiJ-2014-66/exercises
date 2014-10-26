@@ -23,21 +23,28 @@
  */
 class Integer2 {
 	private int myInt;
-	int getValue() {
+	public int getValue() {
 		return myInt;
 	}
-	void setValue( int inInt) {
+	public void setValue( int inInt) {
 		myInt = inInt;
 	}
-	void prettyPrint() {
+	public void prettyPrint() {
 		System.out.print(myInt);
 	}
-	boolean isEven() {
+	public boolean isEven() {
 		if (myInt%2 == 0) 
 			return true;
 		return false;
 	}
-	boolean isOdd() {
+	public boolean isOdd() {
 		return !isEven();
 	}
+	/* use @Override to make sure we override the Object method 
+	   http://www.javapractices.com/topic/TopicAction.do?Id=223 */
+	@Override 
+	public String toString() {
+		return "" + myInt;
+	}
+
 }

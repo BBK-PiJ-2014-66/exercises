@@ -8,12 +8,13 @@ $ java E07TestInteger2
 Enter a number: 234
 Test of prettyPrint method with i2.prettyPrint() produces "234"
 The number you entered is even.
+Test the toString method by direct invocation with " + i2 " produces "234"
+Your toString() method seems to work fine.
 
 $ java E07TestInteger2
 Enter a number: 1
 Test of prettyPrint method with i2.prettyPrint() produces "1"
 The number you entered is odd.
-
-
-
+Test the toString method by direct invocation with " + i2 " produces "1"
+Your toString() method seems to work fine.
 ....

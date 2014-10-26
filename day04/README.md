@@ -53,7 +53,7 @@ producing  [output](E06_output.asciidoc).
 
 ### 7 Integer
 class [Integer2.java](Integer2.java) test program [E07TestInteger2.java](E07TestInteger2.java) producing [output](E07_output.asciidoc)
-*(work in progress)*
+*(finished)*
 
 ## Coursework
 * java versions of the examples [C01CarDealing.java](C01CarDealing.java), 

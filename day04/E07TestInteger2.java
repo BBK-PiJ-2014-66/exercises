@@ -52,5 +52,12 @@ class E07TestInteger2 {
         	} else {
                 	System.out.println("undefined!! Your code is buggy!");
         	}
+		System.out.println("Test the toString method by direct invocation with \" + i2 \" produces \"" + i2 + "\"");
+		
+		int parsedInt = Integer.parseInt(i2.toString());
+		if (parsedInt == i2.getValue()) {
+			System.out.println("Your toString() method seems to work fine.");
+		}
+
 	}
 }
