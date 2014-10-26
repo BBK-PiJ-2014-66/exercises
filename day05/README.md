@@ -44,5 +44,12 @@ Initial visual inspection.
 * The conditional and blank return should be moved up before the *String result* line or we will never
   terminate.
 
-Lets code it up and see what happens.
+Lets code it up and see what happens. [E01doggyMethod.java](E01doggyMethod.java)
+* As originally coded we get error:
+```
+	at E01doggyMethod.doggyMethod(E01doggyMethod.java:3)
+	at E01doggyMethod.doggyMethod(E01doggyMethod.java:3)
+	at E01doggyMethod.doggyMethod(E01doggyMethod.java:3)
+```
+* so it infinitely loops
 
