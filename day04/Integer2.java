@@ -21,3 +21,6 @@
  *	test code given is interactive and requires all methods
  *
  */
+class Integer2 {
+	private int myInt;
+}

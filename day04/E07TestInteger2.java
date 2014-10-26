@@ -34,3 +34,8 @@
  *	to translate javadecaf to java should be easy.
  *	prettyPrint method not tested
  */
+class E07TestInteger2 {
+	public static void main( String[] args) {
+		Integer2 i2 = new Integer2();
+	}
+}
