@@ -5,6 +5,34 @@ Exercises, day 05
 
 ### 1 Recursive code, line by line
 
+#### a) 
+
+What number*s* would the following method print on screen if you called **printNumbers(6)**?
+```
+01 	void printNumbers(int n) {
+02		if (n <= 0) {
+03			return;
+04		}
+05		printLine(n);
+06		printNumbers(n-2);
+07		printNumbers(n-3);
+08		printLine(n);
+09	}
+```
+Do this exercise on paper.
+* invoke **printNumbers(6)**
+* *A* **printNumbers(6)**, line 05 will print **6** newline
+* *A* **printNumbers(6)**, line 06 will invoke **printNumbers(4)**
+* *B* **printNumbers(4)**, line 05 will print **4** newline
+* *B* **printNumbers(4)**, line 06 will invoke **printNumbers(2)**
+* *C* **printNumbers(2)**, line 05 will print **2** newline
+* *C* **printNumbers(2)**, line 06 will invoke **printNumbers(0)** (simply returns)
+* *C* **printNumbers(2)**, line 07 will invoke **printNumbers(-1)** (simply returns)
+* *C* **printNumbers(2)**, line 08 will print **2** newline
+* *B* **printNumbers(4)**, line 07 will invoke **printNumbers(1)**
+
+
+
 #### b)
 Do you see anything wrong with the following code? How would you fix it?
 ```
