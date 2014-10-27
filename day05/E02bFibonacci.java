@@ -28,6 +28,8 @@
 public class E02bFibonacci{
 	private static int numFnCalls=0;
 	private static int numAdditions=0;
+	private static int[] memo = {0};
+	private static int memoMax=1000;
 	public static int fibRecursive( int n) {
 		numFnCalls++;
 		if ( (n==1) || (n==2) ) {
@@ -43,6 +45,47 @@ public class E02bFibonacci{
 			return result;
 		}
 	}
+	public static int fibRecursMemo ( int n) { // memoized version
+		if (memo.length != memoMax) { // initialize memo store on first call 
+			memo = new int[memoMax];
+			for (int mc=0; mc<memoMax; mc++)
+				memo[mc] = 0; // set all to zero
+		}
+		if (n<=2) { /* handle first two numbers, zero or negative using Recursive
+			       this avoids cut/paste of code - making maintenance easier */
+			return fibRecursive(n);
+		}
+		else if (n < memoMax  && memo[n] != 0) { // have we stored in memo?
+			numFnCalls++;
+			return memo[n];
+		}
+		else {
+			numFnCalls++;
+			numAdditions++;
+			int result = fibRecursMemo(n-1) + fibRecursMemo(n-2); // method calls itself
+			if (n < memoMax) memo[n] = result; // if it fits, put in memo store
+			return result;
+		}
+	}
+	public static int fibIterative( int n) {
+		if (n<=2) { /* handle first two numbers, zero or negative using Recursive
+			       this avoids cut/paste of code - making maintenance easier */
+			return fibRecursive(n);
+		} else {
+			numFnCalls++;
+			int FnMinus2 = 1;
+			int FnMinus1 = 1;
+			int Fn=0;
+			for (int nc=3; nc <= n; nc++) {
+				numAdditions++;
+				Fn = FnMinus1 + FnMinus2;
+				FnMinus2 = FnMinus1;
+				FnMinus1 = Fn;
+			}
+			return Fn;
+		}
+	}
+
 	public static String reportNums() {
 		return " #functionCalls=" + numFnCalls + " #additions=" + numAdditions;
 	}
@@ -54,7 +97,24 @@ public class E02bFibonacci{
        public static void main(String[] args) {
                 System.out.println("test fibRecursive(8),  expect this to be 21, actual = " +  fibRecursive(8) + reportNums());
 		resetNums();
+
+                System.out.println("test fibIterative(8),  expect this to be 21, actual = " +  fibIterative(8) + reportNums());
+		resetNums();
+
+
+                System.out.println("test fibRecursMemo(8),  expect this to be 21, actual = " +  fibRecursMemo(8) + reportNums());
+		resetNums();
+
+
                 System.out.println("test fibRecursive(40), expect this to be 102334155, actual = " +  fibRecursive(40) + reportNums());
+		resetNums();
+
+                System.out.println("test fibIterative(40), expect this to be 102334155, actual = " +  fibIterative(40) + reportNums());
+		resetNums();
+
+                System.out.println("test fibRecursMemo(40), expect this to be 102334155, actual = " +  fibRecursMemo(40) + reportNums());
+		resetNums();
+
                 System.out.println("test fibRecursive(-1), want a simple message cannot handle zero/negative input " );
 		fibRecursive(-1);
 	}
