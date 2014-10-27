@@ -1,0 +1,18 @@
+E05Power output
+===============
+
+Text capture of output: 
+
+....
+$ java E05Power 
+test powIterative(2,3) expect 8. get 8.0
+test powIterative(2,-3) expect 0.125 get 0.125
+test powIterative(-2,3) expect -8. get -8.0
+test powIterative(-2,0) expect 1. get 1.0
+test powRecursive(2,3) expect 8. get 8.0
+test powRecursive(2,-3) expect 0.125 get 0.125
+test powRecursive(-2,3) expect -8. get -8.0
+test powRecursive(-2,0) expect 1. get 1.0
+....
+
+Happy with results.
