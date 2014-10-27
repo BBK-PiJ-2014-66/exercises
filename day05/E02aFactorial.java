@@ -29,10 +29,24 @@ public class E02aFactorial{
 			return result;
 		}
 	}
+        public static int factorialIterative( int n) {
+		// use zero and negative argument handling from the Recursive version.
+                if (n<1) return factorialRecursive(n); 
+		int result = 1;
+		for (int cc=1; cc<=n; cc++) { // count 1, 2, ... n
+			result *= cc;
+		}
+		return result;
+        }
+
 
 	public static void main(String[] args) {
-		System.out.println("test factorial function (recursive) factorialRecursive(12)=" +  factorialRecursive(12));
-		System.out.println("now lets try some difficult values  factorialRecursive(0)=" +  factorialRecursive(0));
-		System.out.println("now lets try some difficult values  factorialRecursive(-12)=" +  factorialRecursive(-12));
+		System.out.println("test factorial function (recursive) factorialRecursive(12) = " +  factorialRecursive(12));
+		System.out.println("test factorial function (iterative) factorialIterative(12) = " +  factorialIterative(12));
+		System.out.println("                           (According to my calculator 12! = 479001600)" );
+		System.out.println("now lets try zero a difficult value  factorialRecursive(0) = " +  factorialRecursive(0));
+		System.out.println("factorial of negative values is not defined so should throw an " + 
+		                           "exception when calculating factorialRecursive(-12), Try it now ");  
+		factorialRecursive(-12);
 	}
 }
