@@ -38,6 +38,7 @@ public class E02bFibonacci{
 
        public static void main(String[] args) {
                 System.out.println("test fibRecursive(8),  expect this to be 21, actual = " +  fibRecursive(8));
+                System.out.println("test fibRecursive(-1), want a simple message cannot handle zero/negative input  = " +  fibRecursive(-1));
 	}
  
 }
