@@ -26,18 +26,18 @@
  */
 
 public class E02bFibonacci{
-	public static int fib( int n) {
+	public static int fibRecursive( int n) {
 		if ( (n==1) || (n==2) ) {
 			return 1;
 		}
 		else {
-			int result = fib(n-1) + fib(n-2); // method calls itself
+			int result = fibRecursive(n-1) + fibRecursive(n-2); // method calls itself
 			return result;
 		}
 	}
 
        public static void main(String[] args) {
-                System.out.println("test fib recursive fib(8) (expect to be 21) = " +  fib(8));
+                System.out.println("test fibRecursive(8),  expect this to be 21, actual = " +  fibRecursive(8));
 	}
  
 }
