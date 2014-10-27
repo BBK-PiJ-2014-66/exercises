@@ -206,5 +206,8 @@ unnecessary storage and computation. Memoization improves things but at the cost
 # 4 Palindrome
 [E04Palindrome.java](E04Palindrome.java) produces [output](E04Palindrome_output.asciidoc). I wrote
 a "functional version" on day 03 [../day03/E08toE10Palindromes.java](E08toE10Palindromes.java) I find
+
+# 5 Power
+[E05Power.java](E05Power.java)
 this clearer to understand. We separate program into different functions reversing string, comparing string...
 
