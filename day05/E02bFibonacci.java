@@ -30,6 +30,10 @@ public class E02bFibonacci{
 		if ( (n==1) || (n==2) ) {
 			return 1;
 		}
+		else if (n<1) {
+                	System.out.println("ERROR fibonacci method cannot handle zero or negative input, returning 0");
+			return 0;
+		}
 		else {
 			int result = fibRecursive(n-1) + fibRecursive(n-2); // method calls itself
 			return result;
@@ -38,7 +42,8 @@ public class E02bFibonacci{
 
        public static void main(String[] args) {
                 System.out.println("test fibRecursive(8),  expect this to be 21, actual = " +  fibRecursive(8));
-                System.out.println("test fibRecursive(-1), want a simple message cannot handle zero/negative input  = " +  fibRecursive(-1));
+                System.out.println("test fibRecursive(-1), want a simple message cannot handle zero/negative input " );
+		fibRecursive(-1);
 	}
  
 }
