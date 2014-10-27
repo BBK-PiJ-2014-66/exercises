@@ -1,0 +1,12 @@
+E02bFibonacci output
+====================
+
+Text capture of output:
+
+....
+$ java E02bFibonacci 
+test fibRecursive(8),  expect this to be 21, actual = 21 #functionCalls=41 #additions=20
+test fibRecursive(40), expect this to be 102334155, actual = 102334155 #functionCalls=204668309 #additions=102334154
+test fibRecursive(-1), want a simple message cannot handle zero/negative input 
+ERROR fibonacci method cannot handle zero or negative input, returning 0
+....

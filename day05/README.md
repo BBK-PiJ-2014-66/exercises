@@ -199,5 +199,5 @@ Written [E02aFactorial.java](E02aFactorial.java) produces [output](E02aFactorial
 Pretty easy either way. I prefer the iterative but then I am used to for loops?
 
 ## 2.2 Fibonacci
-Started  [E02bFibonacci.java](E02bFibonacci.java)
+[E02bFibonacci.java](E02bFibonacci.java) produces [output](E02bFibonacci_output.asciidoc)
 
