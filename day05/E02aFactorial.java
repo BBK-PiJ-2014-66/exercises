@@ -15,4 +15,13 @@
  * Initial thoughts
  *
  */
-
+public class E02aFactorial{
+	public int factorial( int n) {
+		if (n==1) {
+			return 1;
+		} else {
+			int result = n*factorial(n-1);
+			return result;
+		}
+	}
+}
