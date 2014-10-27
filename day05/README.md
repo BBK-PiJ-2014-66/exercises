@@ -184,4 +184,5 @@ implementation for the test cases given [E01McCarthy91.java](E01McCarthy91.java)
 
 ## 2.1 Factorial
 
-Started [E02aFactorial.java](E02aFactorial.java)
+Written [E02aFactorial.java](E02aFactorial.java) produces [output](E02aFactorial_output.asciidoc).
+Pretty easy either way. I prefer the iterative but then I am used to for loops?
