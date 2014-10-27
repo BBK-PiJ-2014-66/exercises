@@ -16,11 +16,8 @@
  * Initial thoughts
  *
  */
-
-
 public class E04Palindrome{
 	public static boolean isPalindromeRecursive( String inStr) {
-		System.out.println("debug call to isPalindromeRecursive with \"" + inStr + "\"");
 		// want to get the first and last character
 		int inStrLength = inStr.length();
 		if (inStrLength<=1) // have got down to 1 or two characters
@@ -28,12 +25,10 @@ public class E04Palindrome{
 
 		char firstChar = inStr.charAt(0);
 		char lastChar = inStr.charAt(inStrLength-1);
-		System.out.println("debug inStrLength="+ inStrLength + " firstChar=" + firstChar + " lastChar= " + lastChar);
 		if (firstChar != lastChar) {
 			return false;
 		} else {
 			String cutDown =  inStr.substring(1,inStrLength-1);
-			System.out.println("debug cutDown = \""+ cutDown + "\"");
 			return isPalindromeRecursive(cutDown);
 		}
 	}
