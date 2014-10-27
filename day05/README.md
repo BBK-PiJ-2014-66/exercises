@@ -175,8 +175,6 @@ It probably does so for any input less or equal to 101. From wikipedia
 http://en.wikipedia.org/wiki/McCarthy_91_function this is the case. Also show by
 implementation for the test cases given [E01McCarthy91.java](E01McCarthy91.java). 
 
-> FORTRAN programmers are criticized for goto's and computed goto's. However, compared to untangling these examples  
-> spaghetti code is a positive pleasure! Maybe recursion has some good points but if I wanted to produce an exercise
-> to put people off using it question 1 would be it
+> FORTRAN programmers are criticized for goto's and computed goto's. However, compared to untangling these examples dealing will spaghetti code is a positive pleasure! Maybe recursion has some good points but if I wanted to produce an exercise to put people off using it question 1 would be it?
 
 
