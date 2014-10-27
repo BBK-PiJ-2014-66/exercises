@@ -1,11 +1,14 @@
 Exercises, day 05
 =================
-* Exercise sheet [exercises_d5.pdf](exercises_d5.pdf) 
+
+# Exercise sheet 
+
+[exercises_d5.pdf](exercises_d5.pdf) 
 
 
-### 1 Recursive code, line by line
+# 1 Recursive code, line by line
 
-#### a) 
+## a) 
 
 What number *s* would the following method print on screen if you called **printNumbers(6)**?
 ```
@@ -50,7 +53,7 @@ $ java E01printNumbers
 ```
 
 
-#### b)
+## b)
 Do you see anything wrong with the following code? How would you fix it?
 ```
 	String buggyMethod(int n) {
@@ -72,7 +75,7 @@ buggyMethod(9)= 9 7 5 3 1
 ```
 
 
-#### c)
+## c)
 Do you see anything wrong with the following code? How would you fix it?
 ```
 	String doggyMethod(int n) {
@@ -115,7 +118,7 @@ doggyMethod(9)= 316142914272531
 doggyMethod(10)= 142725311025318316142
 ````
 
-#### d) McCarthy’s 91 function
+## d) McCarthy’s 91 function
 Calculate the result of calling this method with arguments 50, 73, and 95. Note that the recursion on line 5 is
 double.
 ```
@@ -177,4 +180,8 @@ implementation for the test cases given [E01McCarthy91.java](E01McCarthy91.java)
 
 > FORTRAN programmers are criticized for goto's and computed goto's. However, compared to untangling these examples dealing will spaghetti code is a positive pleasure! Maybe recursion has some good points but if I wanted to produce an exercise to put people off using it question 1 would be it?
 
+# 2. Classics
 
+## 2.1 Factorial
+
+Started [E02aFactorial.java](E02aFactorial.java)
