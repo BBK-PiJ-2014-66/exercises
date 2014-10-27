@@ -153,9 +153,28 @@ Find mc(95) by hand. For brevity call the function mc
    mc(98) = mc(99)
 9. Now know that:  
    mc(95) = mc(96) = mc(97) = mc(98) = mc(99)
-10.  carry on for mc(99):
+10.  carry on for mc(99):  
    mc(99) = mc(mc(110))  
    mc(110) = 100  
    mc(99) = mc(100)
 11.  So  
     mc(95) = mc(96) = mc(97) = mc(98) = mc(99) = mc(100)
+12. and onto mc(100):  
+   mc(100) = mc(mc(111))
+   mc(111) = 101
+   mc(100) = mc(101)
+13. continuing the equivalence:  
+    mc(95) = mc(96) = mc(97) = mc(98) = mc(99) = mc(100) = mc(101)
+14. But:
+    mc(101) = 91
+15. So:  
+    mc(95) = mc(96) = mc(97) = mc(98) = mc(99) = mc(100) = mc(101) = 91
+
+It would appear that this nightmarish bit of nonse returns 91 (hence the name?).
+It probably does so for any input.
+
+> FORTRAN programmers are critized for goto's and computed goto's. However, compared to untangling this nonsense 
+> sphagetti code is a positive pleasure! Maybe recursion has some good points but if I wanted to produce an exercise
+> to put people off using it question 1 would be it
+
+
