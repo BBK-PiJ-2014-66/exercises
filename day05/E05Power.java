@@ -32,11 +32,26 @@ class E05Power{
 		}
 		return result;
 	}
+	public static double powRecursive( int base, int exponent) {
+		if (exponent==0) {
+			return 1.;
+		} else if (exponent<0) {
+			return 1./powRecursive( base, -exponent);
+	 	} else {
+			return base*powRecursive( base, exponent-1);
+		}
+	}
 	public static void main( String args[]) {
 		System.out.println("test powIterative(2,3) expect 8. get " + powIterative(2,3));
 		System.out.println("test powIterative(2,-3) expect 0.125 get " + powIterative(2,-3));
 		System.out.println("test powIterative(-2,3) expect -8. get " + powIterative(-2,3));
 		System.out.println("test powIterative(-2,0) expect 1. get " + powIterative(2,0));
+
+		System.out.println("test powRecursive(2,3) expect 8. get " + powRecursive(2,3));
+		System.out.println("test powRecursive(2,-3) expect 0.125 get " + powRecursive(2,-3));
+		System.out.println("test powRecursive(-2,3) expect -8. get " + powRecursive(-2,3));
+		System.out.println("test powRecursive(-2,0) expect 1. get " + powRecursive(2,0));
+
 	}
 	
 
