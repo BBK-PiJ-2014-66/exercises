@@ -17,8 +17,13 @@
  */
 public class E02aFactorial{
 	public static int factorial( int n) {
-		if (n==1) {
+		if ( n==1 || n==0) {
 			return 1;
+		} else if (n<0) {
+			System.out.println("ERROR factorial not defined for negative numbers" );
+			// throw an exception
+			throw new IllegalArgumentException("factorial not defined for negative numbers");
+			
 		} else {
 			int result = n*factorial(n-1);
 			return result;
@@ -28,5 +33,6 @@ public class E02aFactorial{
 	public static void main(String[] args) {
 		System.out.println("test factorial function (recursive) factorial(12)=" +  factorial(12));
 		System.out.println("now lets try some difficult values  factorial(0)=" +  factorial(0));
+		System.out.println("now lets try some difficult values  factorial(-12)=" +  factorial(-12));
 	}
 }
