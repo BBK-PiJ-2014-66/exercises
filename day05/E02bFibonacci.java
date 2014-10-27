@@ -24,3 +24,20 @@
  * 
  *
  */
+
+public class E02bFibonacci{
+	public static int fib( int n) {
+		if ( (n==1) || (n==2) ) {
+			return 1;
+		}
+		else {
+			int result = fib(n-1) + fib(n-2); // method calls itself
+			return result;
+		}
+	}
+
+       public static void main(String[] args) {
+                System.out.println("test fib recursive fib(8) (expect to be 21) = " +  fib(8));
+	}
+ 
+}
