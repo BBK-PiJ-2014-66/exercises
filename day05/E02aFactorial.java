@@ -16,7 +16,7 @@
  *
  */
 public class E02aFactorial{
-	public static int factorial( int n) {
+	public static int factorialRecursive( int n) {
 		if ( n==1 || n==0) {
 			return 1;
 		} else if (n<0) {
@@ -25,14 +25,14 @@ public class E02aFactorial{
 			throw new IllegalArgumentException("factorial not defined for negative numbers");
 			
 		} else {
-			int result = n*factorial(n-1);
+			int result = n*factorialRecursive(n-1);
 			return result;
 		}
 	}
 
 	public static void main(String[] args) {
-		System.out.println("test factorial function (recursive) factorial(12)=" +  factorial(12));
-		System.out.println("now lets try some difficult values  factorial(0)=" +  factorial(0));
-		System.out.println("now lets try some difficult values  factorial(-12)=" +  factorial(-12));
+		System.out.println("test factorial function (recursive) factorialRecursive(12)=" +  factorialRecursive(12));
+		System.out.println("now lets try some difficult values  factorialRecursive(0)=" +  factorialRecursive(0));
+		System.out.println("now lets try some difficult values  factorialRecursive(-12)=" +  factorialRecursive(-12));
 	}
 }
