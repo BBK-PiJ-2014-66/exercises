@@ -1,0 +1,57 @@
+E04Palindrome output
+====================
+
+Text capture of output: (will loads of debugs)
+
+....
+5$ java E04Palindrome 
+debug call to isPalindromeRecursive with "radar"
+debug inStrLength=5 firstChar=r lastChar= r
+debug cutDown = "ada"
+debug call to isPalindromeRecursive with "ada"
+debug inStrLength=3 firstChar=a lastChar= a
+debug cutDown = "d"
+debug call to isPalindromeRecursive with "d"
+test isPalindromeRecursive("radar")= true
+debug call to isPalindromeRecursive with "step on no pets"
+debug inStrLength=15 firstChar=s lastChar= s
+debug cutDown = "tep on no pet"
+debug call to isPalindromeRecursive with "tep on no pet"
+debug inStrLength=13 firstChar=t lastChar= t
+debug cutDown = "ep on no pe"
+debug call to isPalindromeRecursive with "ep on no pe"
+debug inStrLength=11 firstChar=e lastChar= e
+debug cutDown = "p on no p"
+debug call to isPalindromeRecursive with "p on no p"
+debug inStrLength=9 firstChar=p lastChar= p
+debug cutDown = " on no "
+debug call to isPalindromeRecursive with " on no "
+debug inStrLength=7 firstChar=  lastChar=  
+debug cutDown = "on no"
+debug call to isPalindromeRecursive with "on no"
+debug inStrLength=5 firstChar=o lastChar= o
+debug cutDown = "n n"
+debug call to isPalindromeRecursive with "n n"
+debug inStrLength=3 firstChar=n lastChar= n
+debug cutDown = " "
+debug call to isPalindromeRecursive with " "
+test isPalindromeRecursive("step on no pets")= true
+debug call to isPalindromeRecursive with "step on pets"
+debug inStrLength=12 firstChar=s lastChar= s
+debug cutDown = "tep on pet"
+debug call to isPalindromeRecursive with "tep on pet"
+debug inStrLength=10 firstChar=t lastChar= t
+debug cutDown = "ep on pe"
+debug call to isPalindromeRecursive with "ep on pe"
+debug inStrLength=8 firstChar=e lastChar= e
+debug cutDown = "p on p"
+debug call to isPalindromeRecursive with "p on p"
+debug inStrLength=6 firstChar=p lastChar= p
+debug cutDown = " on "
+debug call to isPalindromeRecursive with " on "
+debug inStrLength=4 firstChar=  lastChar=  
+debug cutDown = "on"
+debug call to isPalindromeRecursive with "on"
+debug inStrLength=2 firstChar=o lastChar= n
+test isPalindromeRecursive("step on pets")= false
+....

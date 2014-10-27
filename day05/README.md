@@ -203,3 +203,6 @@ Pretty easy either way. I prefer the iterative but then I am used to for loops?
 version is clear and efficient. Simple recursion is inefficient in the extreme requiring loads of
 unnecessary storage and computation. Memoization improves things but at the cost of much more complexity.
 
+# Palindrome
+[E04Palindrome.java](E04Palindrome.java) produces [output](E04Palindrome_output.asciidoc)
+
