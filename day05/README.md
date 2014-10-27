@@ -12,12 +12,9 @@
 
 ---------------------
 
-Exercises, day 05
-=================
+# Exercises, day 05
 
-## The exercise sheet 
-
-[exercises_d5.pdf](exercises_d5.pdf) 
+## The exercise sheet [exercises_d5.pdf](exercises_d5.pdf) 
 
 
 # 1 Recursive code, line by line
