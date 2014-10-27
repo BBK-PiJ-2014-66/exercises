@@ -115,3 +115,47 @@ doggyMethod(9)= 316142914272531
 doggyMethod(10)= 142725311025318316142
 ````
 
+#### d) McCarthy’s 91 function
+Calculate the result of calling this method with arguments 50, 73, and 95. Note that the recursion on line 5 is
+double.
+```
+01	int mcCarthy91(int n) {
+02		if (n > 100) {
+03			return n - 10;
+04		} else {
+05			return mcCarthy91(mcCarthy91(n+11));
+06		}
+07	}
+```
+Find mc(95) by hand. For brevity call the function mc
+
+1. From line 05  
+   mc(95) = mc(mc(106))  
+2. from line 03  
+   mc(106) = 96
+3. So  
+   mc(95) = mc(96)
+4. Now lets find mc(96)  
+   mc(96) = mc(mc(107))  
+   mc(107) = 97  
+   mc(96) = mc(97)
+5. So from 3. and 4.  
+   mc(95) = mc(96) = mc(97)
+6. Lets find  mc(97)  
+   mc(97) = mc(mc(108))  
+   mc(108) = 98  
+   mc(97) = mc(98)
+7. So we know that  
+   mc(95) = mc(96) = mc(97) = mc(98)
+8. Continuing for mc(98)  
+   mc(98) = mc(mc(109))  
+   mc(109) = 99  
+   mc(98) = mc(99)
+9. Now know that:  
+   mc(95) = mc(96) = mc(97) = mc(98) = mc(99)
+10.  carry on for mc(99):
+   mc(99) = mc(mc(110))  
+   mc(110) = 100  
+   mc(99) = mc(100)
+11.  So  
+    mc(95) = mc(96) = mc(97) = mc(98) = mc(99) = mc(100)
