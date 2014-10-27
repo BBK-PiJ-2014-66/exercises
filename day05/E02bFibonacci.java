@@ -26,7 +26,10 @@
  */
 
 public class E02bFibonacci{
+	private static int numFnCalls=0;
+	private static int numAdditions=0;
 	public static int fibRecursive( int n) {
+		numFnCalls++;
 		if ( (n==1) || (n==2) ) {
 			return 1;
 		}
@@ -35,13 +38,23 @@ public class E02bFibonacci{
 			return 0;
 		}
 		else {
+			numAdditions++;
 			int result = fibRecursive(n-1) + fibRecursive(n-2); // method calls itself
 			return result;
 		}
 	}
+	public static String reportNums() {
+		return " #functionCalls=" + numFnCalls + " #additions=" + numAdditions;
+	}
+	public static void resetNums() {
+		numFnCalls=0;
+		numAdditions=0;
+	}
 
        public static void main(String[] args) {
-                System.out.println("test fibRecursive(8),  expect this to be 21, actual = " +  fibRecursive(8));
+                System.out.println("test fibRecursive(8),  expect this to be 21, actual = " +  fibRecursive(8) + reportNums());
+		resetNums();
+                System.out.println("test fibRecursive(40), expect this to be 102334155, actual = " +  fibRecursive(40) + reportNums());
                 System.out.println("test fibRecursive(-1), want a simple message cannot handle zero/negative input " );
 		fibRecursive(-1);
 	}
