@@ -17,6 +17,9 @@
 - [6 Eight Dames (**)](#user-content-6-eight-dames-)
 - [7 Hanoi Redux (**)](#user-content-7-hanoi-redux-)
 - [8 How big is your stack? (*)](#user-content-8-how-big-is-your-stack-)
+
+
+
 ---------------------
 
 # Exercises, day 05
