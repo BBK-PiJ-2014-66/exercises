@@ -217,7 +217,7 @@ unnecessary storage and computation. Memoization improves things but at the cost
 *not yet attempted*
 
 # 3 Paper sizes (\*)
-*not yet attempted*
+[E03PaperSizes.java](E03PaperSizes.java) started.
 
 # 4 Palindrome
 [E04Palindrome.java](E04Palindrome.java) produces [output](E04Palindrome_output.asciidoc). I wrote
