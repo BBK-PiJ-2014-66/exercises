@@ -47,10 +47,19 @@ class PaperDinA {
     	public String toString() {
         	return "" + mmSizeSmall + " mm x " + mmSizeLarge + " mm";
    	}
+	public PaperDinA halfSize() {
+		PaperDinA returnPaperDinA = new PaperDinA();
+		returnPaperDinA.intSize = intSize - 1;
+		returnPaperDinA.mmSizeLarge = mmSizeSmall;
+		returnPaperDinA.mmSizeSmall = mmSizeLarge/2;
+		return returnPaperDinA;
+	}
 }
 class E03PaperSizes{
 	public static void main(String[] args) {
 		PaperDinA A0 = new PaperDinA();
 		System.out.println("test A0 = " + A0);
+		PaperDinA A1 =  A0.halfSize();
+		System.out.println("test A1 = A0.halfSize() =   " + A1);
 	}
 }
