@@ -9,7 +9,14 @@
 	- [d) McCarthy’s 91 function](#user-content-d-mccarthys-91-function)
 - [2. Classics](#user-content-2-classics)
 	- [2.1 Factorial](#user-content-21-factorial)
-
+	- [2.2 Fibonacci](#user-content-22-fibonacci)
+	- [2.3 Hanoi towers](#user-content-23-hanoi-towers)
+- [3 Paper sizes (*)](#user-content-3-paper-sizes-)
+- [4 Palindrome](#user-content-4-palindrome)
+- [5 Power](#user-content-5-power)
+- [6 Eight Dames (**)](#user-content-6-eight-dames-)
+- [7 Hanoi Redux (**)](#user-content-7-hanoi-redux-)
+- [8 How big is your stack? (*)](#user-content-8-how-big-is-your-stack-)
 ---------------------
 
 # Exercises, day 05
