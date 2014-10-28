@@ -43,11 +43,19 @@ class PaperDinA {
 		mmSizeLarge = mmSizeLargeA0;
 		intSize = 0;
 	}
+	public PaperDinA( int userSize) { // construct given the size
+		// this is really ugly? Can it be done better?
+		PaperDinA temp = ASize(userSize);
+		mmSizeSmall = temp.mmSizeSmall;
+		mmSizeLarge = temp.mmSizeLarge;
+		intSize = userSize;
+	}
 	@Override
     	public String toString() {
         	return "" + mmSizeSmall + " mm x " + mmSizeLarge + " mm";
    	}
-	public PaperDinA halfSize() {
+	public PaperDinA halfSize() { 
+		// returns a new PaperDinA half the size of the original
 		PaperDinA returnPaperDinA = new PaperDinA();
 		returnPaperDinA.intSize = intSize - 1;
 		returnPaperDinA.mmSizeLarge = mmSizeSmall;
@@ -88,6 +96,9 @@ class E03PaperSizes{
 		System.out.println("test A4 = PaperDinA.dinASize(4) =   " + A4);
 		PaperDinA A000 = PaperDinA.ASize(-2);
 		System.out.println("test A000 = PaperDinA.dinASize(-2) =   " + A000);
+
+		PaperDinA A3 = new PaperDinA(3);
+		System.out.println("get A3 size by new PaperDinA(3) =" + new PaperDinA(3));
 
 	}
 }
