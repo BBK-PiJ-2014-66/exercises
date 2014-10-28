@@ -203,6 +203,12 @@ Pretty easy either way. I prefer the iterative but then I am used to for loops?
 version is clear and efficient. Simple recursion is inefficient in the extreme requiring loads of
 unnecessary storage and computation. Memoization improves things but at the cost of much more complexity.
 
+## 2.3 Hanoi towers
+*not yet attempted*
+
+# 3 Paper sizes (\*)
+*not yet attempted*
+
 # 4 Palindrome
 [E04Palindrome.java](E04Palindrome.java) produces [output](E04Palindrome_output.asciidoc). I wrote
 a "functional version" on day 03 [../day03/E08toE10Palindromes.java](E08toE10Palindromes.java) I find
@@ -212,3 +218,11 @@ this clearer to understand. We separate program into different functions reversi
 [E05Power.java](E05Power.java)  produces [output](E05Power_output.asciidoc). Think that the recursive
 is easier to follow. Eliminates a couple of variables... *Maybe this recursion thing has something to offer*
 
+# 6 Eight Dames (\*\*)
+*not yet attempted*
+
+# 7 Hanoi Redux (\*\*)
+*not yet attempted*
+
+# 8 How big is your stack? (\*)
+*not yet attempted*
