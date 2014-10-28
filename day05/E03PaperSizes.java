@@ -61,6 +61,19 @@ class PaperDinA {
 		returnPaperDinA.mmSizeSmall = mmSizeLarge;
 		return returnPaperDinA;
 	}
+	public static PaperDinA ASize( int userSize) { 
+		// method returns a PaperDinA object of size userSize
+		if (userSize == 0) {
+			PaperDinA returnPaperDinA = new PaperDinA();
+			return returnPaperDinA; // A0
+		}
+		else if (userSize>0) {
+			return ASize(userSize-1).halfSize();
+		}
+		else {
+			return ASize(userSize+1).doubleSize();
+		}
+	}
 }
 class E03PaperSizes{
 	public static void main(String[] args) {
@@ -70,5 +83,11 @@ class E03PaperSizes{
 		System.out.println("test A1 = A0.halfSize() =   " + A1);
 		PaperDinA A00 =  A0.doubleSize();
 		System.out.println("test A00 = A0.doubleSize() =   " + A00);
+
+		PaperDinA A4 = PaperDinA.ASize(4);
+		System.out.println("test A4 = PaperDinA.dinASize(4) =   " + A4);
+		PaperDinA A000 = PaperDinA.ASize(-2);
+		System.out.println("test A000 = PaperDinA.dinASize(-2) =   " + A000);
+
 	}
 }
