@@ -50,6 +50,9 @@ class PaperDinA {
 		mmSizeLarge = temp.mmSizeLarge;
 		intSize = userSize;
 	}
+        public PaperDinA( String UserString) {
+		this(UserStringToIntSize(UserString));
+	}
 	@Override
     	public String toString() {
         	return "" + mmSizeSmall + " mm x " + mmSizeLarge + " mm";
@@ -74,13 +77,25 @@ class PaperDinA {
 		if (userSize == 0) {
 			PaperDinA returnPaperDinA = new PaperDinA();
 			return returnPaperDinA; // A0
-		}
-		else if (userSize>0) {
+		} else if (userSize>0) {
 			return ASize(userSize-1).halfSize();
-		}
-		else {
+		} else {
 			return ASize(userSize+1).doubleSize();
 		}
+	}
+	public static int UserStringToIntSize( String UserString) {
+		int result=0;
+		if (!UserString.matches("^A[0-9]*$")) { // regular expression for a A followed by a digit 
+			// throw an exception
+			throw new IllegalArgumentException("String \"" + UserString + "\" not a valid DinA"+
+				" must have A followed by one or more digits");
+		} else {
+			result = Integer.parseInt(UserString.substring(1));
+		}
+		if (result==0) { // how many zero's? find from length. A0 will be of length 2, 
+			result = 2-UserString.length();
+		}
+		return result;
 	}
 }
 class E03PaperSizes{
@@ -99,6 +114,14 @@ class E03PaperSizes{
 
 		PaperDinA A3 = new PaperDinA(3);
 		System.out.println("get A3 size by new PaperDinA(3) =" + new PaperDinA(3));
+
+		
+               	System.out.println("test UserStringToIntSize(\"A3\") = " + PaperDinA.UserStringToIntSize("A3"));
+               	System.out.println("test UserStringToIntSize(\"A000\") = " + PaperDinA.UserStringToIntSize("A000"));
+              	//System.out.println("test UserStringToIntSize(\"Aproblem\") = " + PaperDinA.UserStringToIntSize("Aproblem"));
+		
+		System.out.println("test get A1 size by new PaperDinA(\"A1\") =" + new PaperDinA("A1"));
+		System.out.println("test A00000 size by new PaperDinA(\"A00000\") =" + new PaperDinA("A00000"));
 
 	}
 }
