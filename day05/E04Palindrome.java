@@ -18,19 +18,17 @@
  */
 public class E04Palindrome{
 	public static boolean isPalindromeRecursive( String inStr) {
-		// want to get the first and last character
 		int inStrLength = inStr.length();
-		if (inStrLength<=1) // have got down to 1 or two characters
-			return true;
+		if (inStrLength<=1)  // have got down to zero or one characters
+			return true; // it is a palindrome 
 
 		char firstChar = inStr.charAt(0);
 		char lastChar = inStr.charAt(inStrLength-1);
-		if (firstChar != lastChar) {
-			return false;
-		} else {
-			String cutDown =  inStr.substring(1,inStrLength-1);
-			return isPalindromeRecursive(cutDown);
-		}
+		if (firstChar != lastChar)  // not a palindrome as 1st and last characters differ
+			return false; 
+
+		String cutOutFirstAndLast =  inStr.substring(1,inStrLength-1);
+		return isPalindromeRecursive(cutOutFirstAndLast);
 	}
 
 	public static void main(String[] args) {
