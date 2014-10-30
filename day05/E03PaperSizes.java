@@ -72,6 +72,18 @@ class PaperDinA {
 		returnPaperDinA.mmSizeSmall = mmSizeLarge;
 		return returnPaperDinA;
 	}
+	public String name() { // returns "A4" or "AOOO"
+		String name="A"; 
+		if (intSize>0) {
+			name += intSize;
+		} else {
+			name += "0";
+			// for sizes bigger than A0 go A00, A000 etc.
+			for (int cc=0; cc< -intSize; cc++) 
+				name += "0";
+		}
+		return name;
+	}
 	public static PaperDinA ASize( int userSize) { 
 		// method returns a PaperDinA object of size userSize
 		if (userSize == 0) {
@@ -105,30 +117,19 @@ class PaperDinA {
 }
 class E03PaperSizes{
 	public static void main(String[] args) {
-		PaperDinA A0 = new PaperDinA();
-		System.out.println("test A0 = " + A0);
-		PaperDinA A1 =  A0.halfSize();
-		System.out.println("test A1 = A0.halfSize() =   " + A1);
-		PaperDinA A00 =  A0.doubleSize();
-		System.out.println("test A00 = A0.doubleSize() =   " + A00);
-
-		PaperDinA A4 = PaperDinA.ASize(4);
-		System.out.println("test A4 = PaperDinA.dinASize(4) =   " + A4);
-		PaperDinA A000 = PaperDinA.ASize(-2);
-		System.out.println("test A000 = PaperDinA.dinASize(-2) =   " + A000);
-
-		PaperDinA A3 = new PaperDinA(3);
-		System.out.println("get A3 size by new PaperDinA(3) =" + new PaperDinA(3));
-
+                if (args.length==1 && args[0].equals("-table")) {
+			// write out a table
+			for (int ic = -5; ic <11; ic++) {
+				PaperDinA myPaper =new PaperDinA(ic);
+				System.out.println( myPaper.name() + "\t" + myPaper);
+			}
+                } else if (args.length == 1) {
+			PaperDinA.printSizeToScreen(args[0]);
+		} else {
+			System.out.println( "usage specify a paper size like \"A5\" and the size will be printed");
+			System.out.println( "      or specify -table for a table of paper sizes");
+		}
 		
-               	System.out.println("test UserStringToIntSize(\"A3\") = " + PaperDinA.UserStringToIntSize("A3"));
-               	System.out.println("test UserStringToIntSize(\"A000\") = " + PaperDinA.UserStringToIntSize("A000"));
-              	//System.out.println("test UserStringToIntSize(\"Aproblem\") = " + PaperDinA.UserStringToIntSize("Aproblem"));
-		
-		System.out.println("test get A1 size by new PaperDinA(\"A1\") =" + new PaperDinA("A1"));
-		System.out.println("test A00000 size by new PaperDinA(\"A00000\") =" + new PaperDinA("A00000"));
-		System.out.print("test method PaperDinA.printSizeToScreen(\"A2\"):  ");
-		PaperDinA.printSizeToScreen("A2");
 
 	}
 }
