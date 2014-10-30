@@ -214,7 +214,7 @@ version is clear and efficient. Simple recursion is inefficient in the extreme r
 unnecessary storage and computation. Memoization improves things but at the cost of much more complexity.
 
 ## 2.3 Hanoi towers
-*not yet attempted*
+[E02cHanoiTowers.java](E02cHanoiTowers.java) started
 
 # 3 Paper sizes (\*)
 [E03PaperSizes.java](E03PaperSizes.java), 
