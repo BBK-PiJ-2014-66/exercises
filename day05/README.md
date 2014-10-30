@@ -217,7 +217,8 @@ unnecessary storage and computation. Memoization improves things but at the cost
 *not yet attempted*
 
 # 3 Paper sizes (\*)
-[E03PaperSizes.java](E03PaperSizes.java) started.
+[E03PaperSizes.java](E03PaperSizes.java) used this exercise to see whether recursion could be used
+to define objects (so a "bit of a sledge hammer to crack a nut") [output](E03PaperSizes_output.asciidoc).
 
 # 4 Palindrome
 [E04Palindrome.java](E04Palindrome.java) produces [output](E04Palindrome_output.asciidoc). I wrote

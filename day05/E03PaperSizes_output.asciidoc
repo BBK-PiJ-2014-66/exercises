@@ -1,0 +1,41 @@
+E03PaperSizes output
+====================
+
+
+Text capture of output default "usage" output:
+....
+$ java E03PaperSizes
+usage specify a paper size like "A5" and the size will be printed
+      or specify -table for a table of paper sizes
+....
+
+
+Text capture of output when user specifies A4 or A00000
+....
+$ java E03PaperSizes A4
+210 mm x 297 mm
+
+$ java E03PaperSizes A00000
+3364 mm x 4756 mm
+....
+
+Text capture of *-table* output:
+....
+$ java E03PaperSizes -table
+A000000	4756 mm x 6728 mm
+A00000	3364 mm x 4756 mm
+A0000	2378 mm x 3364 mm
+A000	1682 mm x 2378 mm
+A00	1189 mm x 1682 mm
+A0	841 mm x 1189 mm
+A1	594 mm x 841 mm
+A2	420 mm x 594 mm
+A3	297 mm x 420 mm
+A4	210 mm x 297 mm
+A5	148 mm x 210 mm
+A6	105 mm x 148 mm
+A7	74 mm x 105 mm
+A8	52 mm x 74 mm
+A9	37 mm x 52 mm
+A10	26 mm x 37 mm
+....
