@@ -39,3 +39,13 @@ A8	52 mm x 74 mm
 A9	37 mm x 52 mm
 A10	26 mm x 37 mm
 ....
+
+Text capture of output when invalid input given:
+....
+$ java E03PaperSizes B4
+ERROR java.lang.IllegalArgumentException: String "B4" not a valid DinA must have A followed by one or more digits
+$ echo $?
+1
+....
+*In Linux environment variable +$?+ contains the exit status of the last command, 0 means no error. This is useful
+for scripting commands.*

@@ -124,7 +124,12 @@ class E03PaperSizes{
 				System.out.println( myPaper.name() + "\t" + myPaper);
 			}
                 } else if (args.length == 1) {
-			PaperDinA.printSizeToScreen(args[0]);
+			try {
+				PaperDinA.printSizeToScreen(args[0]);
+			} catch (IllegalArgumentException e) {
+				System.out.println( "ERROR " + e);
+				System.exit(1); // terminate program with ERROR status 1
+			}
 		} else {
 			System.out.println( "usage specify a paper size like \"A5\" and the size will be printed");
 			System.out.println( "      or specify -table for a table of paper sizes");
