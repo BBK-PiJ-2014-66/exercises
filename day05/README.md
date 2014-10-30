@@ -214,7 +214,9 @@ version is clear and efficient. Simple recursion is inefficient in the extreme r
 unnecessary storage and computation. Memoization improves things but at the cost of much more complexity.
 
 ## 2.3 Hanoi towers
-[E02cHanoiTowers.java](E02cHanoiTowers.java) started
+[E02cHanoiTowers.java](E02cHanoiTowers.java) procues [output](E02cHanoiTowers_output.asciidoc). Turns out that
+int and long types cannot handle the number of moves for n=64 (return -1). Alter to double and there is no problem.
+The number is big.
 
 # 3 Paper sizes (\*)
 [E03PaperSizes.java](E03PaperSizes.java), 

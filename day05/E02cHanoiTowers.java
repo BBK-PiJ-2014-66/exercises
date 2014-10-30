@@ -38,15 +38,14 @@
  * Meant to do recursively
  */
 public class E02cHanoiTowers{
-	public static int hanoiNumber( int n) {
-		if (n<=1) return 1;
+	public static double hanoiNumber( double n) {
+		if (n<=1) return 1.0;
 		return 2*hanoiNumber(n-1)+1;
 	}
 	
 	public static void main(String[] args) {
-                System.out.println("test  hanoiNumber(1) = " + hanoiNumber(1));
-                System.out.println("test  hanoiNumber(2) = " + hanoiNumber(2));
-                System.out.println("test  hanoiNumber(3) = " + hanoiNumber(3));
-                System.out.println("test  hanoiNumber(4) = " + hanoiNumber(4));
+		for (long n=1; n<=64; n++) {
+			System.out.println("hanoiNumber(" + n + ") = " + hanoiNumber(n) + "\t2^N-1 = " + (Math.pow(2.,n)-1.) );
+		}
 	}
 }
