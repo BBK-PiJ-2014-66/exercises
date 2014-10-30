@@ -37,3 +37,16 @@
  * 
  * Meant to do recursively
  */
+public class E02cHanoiTowers{
+	public static int hanoiNumber( int n) {
+		if (n<=1) return 1;
+		return 2*hanoiNumber(n-1)+1;
+	}
+	
+	public static void main(String[] args) {
+                System.out.println("test  hanoiNumber(1) = " + hanoiNumber(1));
+                System.out.println("test  hanoiNumber(2) = " + hanoiNumber(2));
+                System.out.println("test  hanoiNumber(3) = " + hanoiNumber(3));
+                System.out.println("test  hanoiNumber(4) = " + hanoiNumber(4));
+	}
+}
