@@ -97,6 +97,11 @@ class PaperDinA {
 		}
 		return result;
 	}
+	public static void printSizeToScreen( String UserString) { // required by the spec
+                // will throw an exception if invalid UserString provided
+		System.out.println("" + new PaperDinA(UserString));
+	}
+
 }
 class E03PaperSizes{
 	public static void main(String[] args) {
@@ -122,6 +127,8 @@ class E03PaperSizes{
 		
 		System.out.println("test get A1 size by new PaperDinA(\"A1\") =" + new PaperDinA("A1"));
 		System.out.println("test A00000 size by new PaperDinA(\"A00000\") =" + new PaperDinA("A00000"));
+		System.out.print("test method PaperDinA.printSizeToScreen(\"A2\"):  ");
+		PaperDinA.printSizeToScreen("A2");
 
 	}
 }
