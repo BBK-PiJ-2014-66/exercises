@@ -27,3 +27,14 @@ Observe how the static variable is accessed by different objects both to increme
  * Is spyCount the number of Spy's that exist at that time? Or the "total number of spies so far"?
  * As we are mean to decrement it then presumably the former.
  */
+public class Spy {
+	private static int spyCount = 0;
+	public Spy(...) {
+		spyCount++;
+	// ...
+	}
+	public static int getNumberOfSpies() {
+		return spyCount;
+	}
+	// ...
+}
