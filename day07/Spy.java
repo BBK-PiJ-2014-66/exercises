@@ -29,12 +29,29 @@ Observe how the static variable is accessed by different objects both to increme
  */
 public class Spy {
 	private static int spyCount = 0;
-	public Spy(...) {
+	private int spyID;
+	public Spy( int theirID) {
 		spyCount++;
-	// ...
+		spyID = theirID;
 	}
+	public void die() {
+		System.out.print("Spy ");
+		if (spyID>-1 && spyID<100) System.out.print("0"); // so 7 becomes 07
+		System.out.print(spyID);
+		System.out.println(" has as been detected and eliminated");
+		spyCount--;
+		System.out.println("There are now "+ spyCount + " spies");
+		spyID = -99999; // does not remove object
+ 	}
 	public static int getNumberOfSpies() {
 		return spyCount;
 	}
-	// ...
+	public static void main( String args[]) {
+		Spy jamesBond = new Spy(7);	
+		Spy philby   = new Spy(1);	
+		Spy blunt    = new Spy(2);	
+		Spy hollis   = new Spy(0);	
+		jamesBond.die();
+
+	}
 }
