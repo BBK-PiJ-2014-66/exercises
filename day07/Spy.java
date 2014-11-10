@@ -51,7 +51,13 @@ public class Spy {
 		Spy philby   = new Spy(1);	
 		Spy blunt    = new Spy(2);	
 		Spy hollis   = new Spy(0);	
+                System.out.println("Main I have created 4 spys will now die one");
 		jamesBond.die();
-
+	        {
+			Spy maclean = new Spy(3);
+			System.out.println("Main created a temporary spy");
+		}	
+		System.out.println("Main now kill one more spy");
+		philby.die();
 	}
 }
