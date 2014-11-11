@@ -32,6 +32,10 @@ Use readLine() exactly once. The output may look similar to this example:
  *
  */
 class E02DoWhile {
+	public static String singOrPlur(String strSingle, String strPlural, int inNum) {
+		if (inNum==1) return strSingle;
+		return strPlural;	
+	}
 	public static void main( String args[]) {
 		int numberStudents = 0;
 		int numberDistinctions = 0;
@@ -59,24 +63,15 @@ class E02DoWhile {
 			}
 		} while( inputMark != -1);
 		// rather than having loads of variables make up an output string
-		String outStr = "There ";
-		// need to do singular vs plural use ternary operator 
-		outStr += (numberStudents==1) ? "is " : "are ";
-		outStr += numberStudents + " student";
-		outStr += (numberStudents==1) ? "" : "s";
+		String outStr = "There " + singOrPlur("is ","are ",numberStudents); 
+		outStr +=  numberStudents + " student" +  singOrPlur("","s",numberStudents);
                 outStr += ": ";
-		outStr += numberDistinctions + " distinction";
-		outStr += (numberDistinctions==1)  ? "" : "s";
-		outStr += ", ";
-		outStr += numberPasses + " pass";
-		outStr += (numberPasses==1)  ? "" : "es";
-		outStr += ", ";
-		outStr += numberFails + " fail";
-		outStr += (numberFails==1) ? "" : "s";
+		outStr += numberDistinctions + " distinction" + singOrPlur("","s",numberDistinctions);
+		outStr += ", " + numberPasses + " pass" + singOrPlur("","es", numberPasses);
+		outStr += ", " + numberFails + " fail" + singOrPlur("","s",numberFails);
 		if (numberInvalids !=0 ) {
-			outStr +=  " (plus " + numberInvalids + " invalid";
- 			outStr += (numberInvalids==1) ?  "" : "s";
-			outStr +=  ")";
+			outStr +=  " (plus " + numberInvalids;
+			outStr +=   " invalid" + singOrPlur("","s",numberInvalids) + ")";
 		}
 		System.out.println(outStr);
 	}
