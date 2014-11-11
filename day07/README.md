@@ -9,6 +9,11 @@
 
 
 # 1 Instance counter
-Started [Spy.java](Spy.java)
+[Spy.java](Spy.java) works but the number of spys is not correctly decremented if a spy goes out
+of context - not sure whether it is possible or wanted? May be should reimplement using linked lists?
+
+
+#2 do {pratice} while {!understood}
+[E02DoWhile.java](E02DoWhile.java)
 
 
