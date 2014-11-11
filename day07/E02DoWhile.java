@@ -28,6 +28,7 @@ Use readLine() exactly once. The output may look similar to this example:
  * Thoughts:
  * The example says "students" and "fails" as there are more that one but 
  * use singular "fail" and "invalid". The plural of "pass" is "passes".
+ * 0 is plural!
  *
  */
 class E02DoWhile {
@@ -46,6 +47,11 @@ class E02DoWhile {
 				numberStudents++;
 			}
 		} while( inputMark != -1);
-		System.out.println("There are " + numberStudents + " students");
+		// need to do singular vs plural use ternary operator 
+		String isOrAre = (numberStudents == 1 ) ? "is" : "are";
+		System.out.print("There " + isOrAre + " " + numberStudents + " ");
+		String studentOrStudents = (numberStudents == 1 ) ? "student" : "students";
+		System.out.print(studentOrStudents + ": ");
+		System.out.println();
 	}
 }
