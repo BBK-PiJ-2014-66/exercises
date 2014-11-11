@@ -43,15 +43,41 @@ class E02DoWhile {
 			System.out.print("Input a mark: ");
 			String inputStr = System.console().readLine();
 			inputMark = Integer.parseInt(inputStr); // no error check
-			if (inputMark != -1) {
+			if (inputMark == -1) {
+				; // do not count this one
+			} else if (70 <= inputMark && inputMark <= 100) {
 				numberStudents++;
+				numberDistinctions++;
+			} else if (50 <= inputMark && inputMark <= 69 ) {
+				numberStudents++;
+				numberPasses++;
+			} else if (0 <= inputMark && inputMark <= 49 ) {
+				numberStudents++;
+				numberFails++;
+			} else {
+				numberInvalids++;
 			}
 		} while( inputMark != -1);
+		// rather than having loads of variables make up an output string
+		String outStr = "There ";
 		// need to do singular vs plural use ternary operator 
-		String isOrAre = (numberStudents == 1 ) ? "is" : "are";
-		System.out.print("There " + isOrAre + " " + numberStudents + " ");
-		String studentOrStudents = (numberStudents == 1 ) ? "student" : "students";
-		System.out.print(studentOrStudents + ": ");
-		System.out.println();
+		outStr += (numberStudents==1) ? "is " : "are ";
+		outStr += numberStudents + " student";
+		outStr += (numberStudents==1) ? "" : "s";
+                outStr += ": ";
+		outStr += numberDistinctions + " distinction";
+		outStr += (numberDistinctions==1)  ? "" : "s";
+		outStr += ", ";
+		outStr += numberPasses + " pass";
+		outStr += (numberPasses==1)  ? "" : "es";
+		outStr += ", ";
+		outStr += numberFails + " fail";
+		outStr += (numberFails==1) ? "" : "s";
+		if (numberInvalids !=0 ) {
+			outStr +=  " (plus " + numberInvalids + " invalid";
+ 			outStr += (numberInvalids==1) ?  "" : "s";
+			outStr +=  ")";
+		}
+		System.out.println(outStr);
 	}
 }
