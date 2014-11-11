@@ -18,6 +18,9 @@ public class HospitalManager{
 		patientListStart = firstPatient;
 		Patient anotherPatient = new Patient("Mary",66,"Meningitis");
 		patientListStart.addPatient(anotherPatient);
+		patientListStart.addPatient("Harry",23,"Ebola");
+		// recursive way of finding out how many patients and printing them:
+		System.out.println("There are " + patientListStart.numberFollowing() + " patients:");
 		patientListStart.printAll();
 	}
 }

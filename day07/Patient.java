@@ -27,7 +27,11 @@ public class Patient {
 			this.nextPatient.addPatient(newPatient);
 		}
 	}
-
+	// another addPatient that is easier to use 
+	public void addPatient(String name, int age, String illness) {
+ 		Patient newPatient = new Patient( name, age, illness);
+		addPatient( newPatient);
+	}
 	public void printAll() {
 		System.out.print(" Patient \"" + name + "\" is " + age);
 		System.out.println(" years and suffers from \"" +  illness + "\"");
@@ -35,6 +39,13 @@ public class Patient {
 			return;
 		} else {
 			this.nextPatient.printAll();
+		}
+	}
+        public int numberFollowing() { // number of patients that follow this one
+		if (nextPatient == null) {
+			return 1;
+		} else {
+			return 1 + nextPatient.numberFollowing();
 		}
 	}
 }
