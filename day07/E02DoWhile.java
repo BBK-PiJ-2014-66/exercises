@@ -43,12 +43,12 @@ class E02DoWhile {
 		int numberFails = 0;
 		int numberInvalids = 0;
 		int inputMark=0;
-		do {
+		while (true) {
 			System.out.print("Input a mark: ");
 			String inputStr = System.console().readLine();
 			inputMark = Integer.parseInt(inputStr); // no error check
 			if (inputMark == -1) {
-				; // do not count this one
+				break; 
 			} else if (70 <= inputMark && inputMark <= 100) {
 				numberStudents++;
 				numberDistinctions++;
@@ -61,7 +61,7 @@ class E02DoWhile {
 			} else {
 				numberInvalids++;
 			}
-		} while( inputMark != -1);
+		} 
 		// rather than having loads of variables make up an output string
 		String outStr = "There " + singOrPlur("is ","are ",numberStudents); 
 		outStr +=  numberStudents + " student" +  singOrPlur("","s",numberStudents);
