@@ -50,13 +50,16 @@ public class Patient {
 		addPatient( newPatient);
 	}
 	public void printAll() {
-		System.out.print(" Patient \"" + name + "\" is " + age);
-		System.out.println(" years and suffers from \"" +  illness + "\"");
+		System.out.println(this.details());
 		if (this.nextPatient == null) {
 			return;
 		} else {
 			this.nextPatient.printAll();
 		}
+	}
+	public String details() {
+		return " Patient \"" + name + "\" is " + age + 
+                       " years and suffers from \"" +  illness + "\"";
 	}
         public int numberFollowing() { // number of patients that follow this one
 		if (nextPatient == null) {

@@ -17,7 +17,12 @@ of context - not sure whether it is possible or wanted? May be should reimplemen
 [E02DoWhile.java](E02DoWhile.java) written with *do while* but refactored to *while (true)*
 and a break. For test output see last commit message.
 
-#3 Singly-linked lists
-Work in [Patient.java](Patient.java) and  [HospitalManager.java](HospitalManager.java)
+#3 Singly-linked lists and 4 Queue length
+Work in [Patient.java](Patient.java) and  [HospitalManager.java](HospitalManager.java) written.
+(The output is contained in last commit message for either). 
+
+Seems a bit of a mess. Mixing patients with how to store a list? Surely in OO coding we should
+design a nice interface that hides how a patient list is stored but provides easily understood
+methods? 
 
 

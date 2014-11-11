@@ -18,6 +18,18 @@ public class HospitalManager{
 		System.out.println("There are " + patientListStart.numberFollowing() + " patients:");
 		patientListStart.printAll();
 	}
+	private void printPatientsIteratively() {
+		Patient loopPatient = patientListStart;
+		int countPatients = 0;
+		String tableOfPatients="";
+		while (loopPatient != null) {
+			tableOfPatients += loopPatient.details() + "\n";
+			countPatients++;
+			loopPatient = loopPatient.getNextPatient();
+		}
+		System.out.println("There are " + countPatients + " patients:");
+		System.out.println(tableOfPatients);
+	}
 	private void launch() {
 		patientListStart =  new Patient("John",33,"Tuberculosis");
                 patientListStart.addPatient("Mary",66,"Meningitis");
@@ -36,5 +48,7 @@ public class HospitalManager{
 		patientListStart = patientListStart.getNextPatient();
                 System.out.println("Remove the first patient");
 		printPatients();
+		System.out.println("\n\nTest iterative print and find out number of patients: ");
+		printPatientsIteratively();
 	}
 }
