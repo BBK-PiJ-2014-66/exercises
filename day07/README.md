@@ -14,6 +14,7 @@ of context - not sure whether it is possible or wanted? May be should reimplemen
 
 
 #2 do {pratice} while {!understood}
-[E02DoWhile.java](E02DoWhile.java)
+[E02DoWhile.java](E02DoWhile.java) written with *do while* but refactored to *while (true)*
+and a break. For test output see last commit message.
 
 
