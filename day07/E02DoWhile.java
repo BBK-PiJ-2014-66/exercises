@@ -41,11 +41,10 @@ class E02DoWhile {
 		int numberPasses = 0;
 		int numberFails = 0;
 		int numberInvalids = 0;
-		int inputMark=0;
 		while (true) {
 			System.out.print("Input a mark: ");
 			String inputStr = System.console().readLine();
-			inputMark = Integer.parseInt(inputStr); // no error check
+			int inputMark = Integer.parseInt(inputStr); // no error check
 			if (inputMark == -1) {
 				break; 
 			} else if (70 <= inputMark && inputMark <= 100) {
