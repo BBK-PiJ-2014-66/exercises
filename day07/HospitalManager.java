@@ -19,6 +19,13 @@ public class HospitalManager{
 		Patient anotherPatient = new Patient("Mary",66,"Meningitis");
 		patientListStart.addPatient(anotherPatient);
 		patientListStart.addPatient("Harry",23,"Ebola");
+		patientListStart.addPatient("Henry",7,"Measles");
+		patientListStart.addPatient("Lucy",17,"Acne");
+		patientListStart.addPatient("Larry",41,"HIV");
+		patientListStart.addPatient("Henry",47,"Broken leg");
+		patientListStart.addPatient("Kate",77,"Dementia");
+		patientListStart.addPatient("Elizabeth",103,"Bone loss");
+		patientListStart.addPatient("Nigel",20,"Diabetes");
 		// recursive way of finding out how many patients and printing them:
 		System.out.println("There are " + patientListStart.numberFollowing() + " patients:");
 		patientListStart.printAll();
