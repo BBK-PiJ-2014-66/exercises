@@ -37,7 +37,6 @@ class E02DoWhile {
 		return strPlural;	
 	}
 	public static void main( String args[]) {
-		int numberStudents = 0;
 		int numberDistinctions = 0;
 		int numberPasses = 0;
 		int numberFails = 0;
@@ -50,19 +49,16 @@ class E02DoWhile {
 			if (inputMark == -1) {
 				break; 
 			} else if (70 <= inputMark && inputMark <= 100) {
-				numberStudents++;
 				numberDistinctions++;
 			} else if (50 <= inputMark && inputMark <= 69 ) {
-				numberStudents++;
 				numberPasses++;
 			} else if (0 <= inputMark && inputMark <= 49 ) {
-				numberStudents++;
 				numberFails++;
 			} else {
 				numberInvalids++;
 			}
 		} 
-		// rather than having loads of variables make up an output string
+		int numberStudents = numberDistinctions + numberPasses + numberFails;
 		String outStr = "There " + singOrPlur("is ","are ",numberStudents); 
 		outStr +=  numberStudents + " student" +  singOrPlur("","s",numberStudents);
                 outStr += ": ";
