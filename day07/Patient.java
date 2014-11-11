@@ -19,4 +19,12 @@ public class Patient {
 		this.illness = illness;
 		this.nextPatient = null;
 	}
+	public void addPatient( Patient newPatient) {
+		if (this.nextPatient == null) {
+			// this means this is the last patient in the list
+			this.nextPatient = newPatient;
+		} else {
+			this.nextPatient.addPatient(newPatient);
+		}
+	}
 }
