@@ -19,10 +19,8 @@ public class HospitalManager{
 		patientListStart.printAll();
 	}
 	private void launch() {
-		Patient firstPatient = new Patient("John",33,"Tuberculosis");
-		patientListStart = firstPatient;
-		Patient anotherPatient = new Patient("Mary",66,"Meningitis");
-		patientListStart.addPatient(anotherPatient);
+		patientListStart =  new Patient("John",33,"Tuberculosis");
+                patientListStart.addPatient("Mary",66,"Meningitis");
 		patientListStart.addPatient("Harry",23,"Ebola");
 		patientListStart.addPatient("Henry",7,"Measles");
 		patientListStart.addPatient("Lucy",17,"Acne");
@@ -33,6 +31,10 @@ public class HospitalManager{
 		patientListStart.addPatient("Nigel",20,"Diabetes");
 		printPatients();
                 System.out.println("Delete the 2nd older Henry returns " + patientListStart.deletePatient( new Patient("Henry",47,"Broken leg")));
+		printPatients();
+		// now want to remove the first patient
+		patientListStart = patientListStart.getNextPatient();
+                System.out.println("Remove the first patient");
 		printPatients();
 	}
 }

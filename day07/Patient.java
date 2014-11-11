@@ -33,7 +33,7 @@ public class Patient {
 			return false;
 		} else if (nextPatient.name.equals(patient.name) &&
                            nextPatient.age==patient.age &&
-                           nextPatient.illness==patient.illness ) {
+                           nextPatient.illness==patient.illness ) { // corrected
 			// We found It is the next one!
 			// Now link this patient to the one after the next
 			nextPatient =  nextPatient.nextPatient;
@@ -65,4 +65,10 @@ public class Patient {
 			return 1 + nextPatient.numberFollowing();
 		}
 	}
+
+	// return the nextPatient object to enable removal of the first element
+	public Patient getNextPatient() {
+		return nextPatient;
+	}
+
 }
