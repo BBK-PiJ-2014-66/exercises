@@ -18,5 +18,6 @@ public class HospitalManager{
 		patientListStart = firstPatient;
 		Patient anotherPatient = new Patient("Mary",66,"Meningitis");
 		patientListStart.addPatient(anotherPatient);
+		patientListStart.printAll();
 	}
 }

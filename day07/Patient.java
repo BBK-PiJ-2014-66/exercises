@@ -27,4 +27,14 @@ public class Patient {
 			this.nextPatient.addPatient(newPatient);
 		}
 	}
+
+	public void printAll() {
+		System.out.print(" Patient \"" + name + "\" is " + age);
+		System.out.println(" years and suffers from \"" +  illness + "\"");
+		if (this.nextPatient == null) {
+			return;
+		} else {
+			this.nextPatient.printAll();
+		}
+	}
 }
