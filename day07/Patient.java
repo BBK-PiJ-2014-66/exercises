@@ -13,13 +13,13 @@ public class Patient {
 	private String illness;
 	private Patient nextPatient;
 
-	public Patient( String name, int age, String illness) {
+	public Patient( String name, int age, String illness) { // from lecture notes
 		this.name = name;
 		this.age = age;
 		this.illness = illness;
 		this.nextPatient = null;
 	}
-	public void addPatient( Patient newPatient) {
+	public void addPatient( Patient newPatient) { // from lecture notes
 		if (this.nextPatient == null) {
 			// this means this is the last patient in the list
 			this.nextPatient = newPatient;
@@ -27,6 +27,21 @@ public class Patient {
 			this.nextPatient.addPatient(newPatient);
 		}
 	}
+        public boolean deletePatient(Patient patient) {  // from lecture notes
+		if (nextPatient == null) {
+			// patient to remove was not found
+			return false;
+		} else if (nextPatient.name.equals(patient.name)) {
+			// We found It is the next one!
+			// Now link this patient to the one after the next
+			nextPatient =  nextPatient.nextPatient;
+			return true;
+		} else {
+			return nextPatient.deletePatient(patient);
+		}
+
+        }
+
 	// another addPatient that is easier to use 
 	public void addPatient(String name, int age, String illness) {
  		Patient newPatient = new Patient( name, age, illness);
