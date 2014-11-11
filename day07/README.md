@@ -18,6 +18,6 @@ of context - not sure whether it is possible or wanted? May be should reimplemen
 and a break. For test output see last commit message.
 
 #3 Singly-linked lists
-[Patient.java](Patient.java)
+Work in [Patient.java](Patient.java) and  [HospitalManager.java](HospitalManager.java)
 
 
