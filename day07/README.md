@@ -13,8 +13,11 @@
 of context - not sure whether it is possible or wanted? May be should reimplement using linked lists?
 
 
-#2 do {pratice} while {!understood}
+#2 do {practice} while {!understood}
 [E02DoWhile.java](E02DoWhile.java) written with *do while* but refactored to *while (true)*
 and a break. For test output see last commit message.
+
+#3 Singly-linked lists
+[Patient.java](Patient.java)
 
 
