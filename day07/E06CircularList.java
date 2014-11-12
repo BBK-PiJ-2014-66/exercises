@@ -22,29 +22,17 @@ class HospitalManager{
 		System.out.println("There are " + patientListStart.numberFollowing() + " patients:");
 		patientListStart.printAll();
 	}
-	private void printPatientsIteratively() {
-		Patient loopPatient = patientListStart;
-		int countPatients = 0;
-		String tableOfPatients="";
-		while (loopPatient != null) {
-			tableOfPatients += loopPatient.details() + "\n";
-			countPatients++;
-			loopPatient = loopPatient.getNextPatient();
-		}
-		System.out.println("There are " + countPatients + " patients:");
-		System.out.println(tableOfPatients);
-	}
 	public void launch() {
-		patientListStart =  new Patient("John",33,"Tuberculosis");
-                patientListStart.addPatient("Mary",66,"Meningitis");
+		patientListStart =  new Patient("John",31,"Tuberculosis");
+                patientListStart.addPatient("Mary",62,"Meningitis");
 		patientListStart.addPatient("Harry",23,"Ebola");
-		patientListStart.addPatient("Henry",7,"Measles");
-		patientListStart.addPatient("Lucy",17,"Acne");
-		patientListStart.addPatient("Larry",41,"HIV");
+		patientListStart.addPatient("Henry",4,"Measles");
+		patientListStart.addPatient("Lucy",15,"Acne");
+		patientListStart.addPatient("Larry",46,"HIV");
 		patientListStart.addPatient("Henry",47,"Broken leg");
-		patientListStart.addPatient("Kate",77,"Dementia");
-		patientListStart.addPatient("Elizabeth",103,"Bone loss");
-		patientListStart.addPatient("Nigel",20,"Diabetes");
+		patientListStart.addPatient("Kate",78,"Dementia");
+		patientListStart.addPatient("Elizabeth",109,"Bone loss");
+		patientListStart.addPatient("Nigel",10,"Diabetes");
 		printPatients();
                 System.out.println("Delete the 2nd older Henry returns " + patientListStart.deletePatient( new Patient("Henry",47,"Broken leg")));
 		printPatients();
@@ -52,8 +40,6 @@ class HospitalManager{
 		patientListStart = patientListStart.getNextPatient();
                 System.out.println("Remove the first patient");
 		printPatients();
-		System.out.println("\n\nTest iterative print and find out number of patients: ");
-		printPatientsIteratively();
 	}
 }
 class Patient {
@@ -61,23 +47,27 @@ class Patient {
 	private int age;
 	private String illness;
 	private Patient nextPatient;
+	private boolean last; // only true for the last element in the circular list
 
-	public Patient( String name, int age, String illness) { // from lecture notes
+	public Patient( String name, int age, String illness) { 
 		this.name = name;
 		this.age = age;
 		this.illness = illness;
-		this.nextPatient = null;
+		this.nextPatient = this;
+		this.last = true;
 	}
 	public void addPatient( Patient newPatient) { // from lecture notes
-		if (this.nextPatient == null) {
+		if (this.last) {
 			// this means this is the last patient in the list
 			this.nextPatient = newPatient;
+			this.last = false;
+                        newPatient.nextPatient = this;
 		} else {
 			this.nextPatient.addPatient(newPatient);
 		}
 	}
         public boolean deletePatient(Patient patient) {  // from lecture notes
-		if (nextPatient == null) {
+		if (nextPatient.last) { // not correct
 			// patient to remove was not found
 			return false;
 		} else if (nextPatient.name.equals(patient.name) &&
@@ -99,8 +89,13 @@ class Patient {
 		addPatient( newPatient);
 	}
 	public void printAll() {
-		System.out.println(this.details());
-		if (this.nextPatient == null) {
+		// to check everything is in order print the next patient as well
+		String lineOut = this.details();
+		if (lineOut.length()<56)
+			lineOut +="\t";
+	        lineOut +="\tis followed by" + nextPatient.details();
+		System.out.println(lineOut);
+		if (this.last) {
 			return;
 		} else {
 			this.nextPatient.printAll();
@@ -111,7 +106,7 @@ class Patient {
                        " years and suffers from \"" +  illness + "\"";
 	}
         public int numberFollowing() { // number of patients that follow this one
-		if (nextPatient == null) {
+		if (last) {
 			return 1;
 		} else {
 			return 1 + nextPatient.numberFollowing();
