@@ -36,6 +36,30 @@ class HospitalManager{
 		System.out.println("There are " + countPatients + " patients:");
 		System.out.println(tableOfPatients);
 	}
+	private void traverseListForwardsAndBackwards() {
+		/* to fufil exercise sheet point 2. 
+                   "Traverse it forwards and backwards printing the content of each element" */
+		Patient loopPatient = patientListStart;
+		int countPatients = 0;
+		System.out.println("The list traversed forward is: ");
+		while (loopPatient != null) {
+                        countPatients++;
+			System.out.println("\tPatient number " + countPatients +
+                                           " details: " + loopPatient.details());
+                        loopPatient = loopPatient.getNextPatient();
+                }
+		System.out.println("The list traversed backward is: ");
+		loopPatient = patientListStart.lastPatient(); // need to start at the end
+		while (true) {
+			System.out.println("\tPatient number " + countPatients +
+                                           " details: " + loopPatient.details());
+                        loopPatient = loopPatient.getPreviousPatient();
+			if (loopPatient == null) break; // no more patients
+                        countPatients--;
+		}
+
+
+        }
 	public void launch() {
 		patientListStart =  new Patient("John",33,"Tuberculosis");
                 patientListStart.addPatient("Mary",66,"Meningitis");
@@ -47,15 +71,12 @@ class HospitalManager{
 		patientListStart.addPatient("Kate",77,"Dementia");
 		patientListStart.addPatient("Elizabeth",103,"Bone loss");
 		patientListStart.addPatient("Nigel",20,"Diabetes");
-		printPatients();
+		traverseListForwardsAndBackwards();
                 System.out.println("Delete the 2nd older Henry returns " + patientListStart.deletePatient( new Patient("Henry",47,"Broken leg")));
-		printPatients();
 		// now want to remove the first patient
 		patientListStart = patientListStart.getNextPatient();
                 System.out.println("Remove the first patient");
-		printPatients();
-		System.out.println("\n\nTest iterative print and find out number of patients: ");
-		printPatientsIteratively();
+		traverseListForwardsAndBackwards();
 	}
 }
 class Patient {
@@ -63,17 +84,20 @@ class Patient {
 	private int age;
 	private String illness;
 	private Patient nextPatient;
+	private Patient previousPatient;
 
 	public Patient( String name, int age, String illness) { // from lecture notes
 		this.name = name;
 		this.age = age;
 		this.illness = illness;
 		this.nextPatient = null;
+		this.previousPatient = null;
 	}
 	public void addPatient( Patient newPatient) { // from lecture notes
 		if (this.nextPatient == null) {
 			// this means this is the last patient in the list
 			this.nextPatient = newPatient;
+                        newPatient.previousPatient = this;
 		} else {
 			this.nextPatient.addPatient(newPatient);
 		}
@@ -124,5 +148,15 @@ class Patient {
 	public Patient getNextPatient() {
 		return nextPatient;
 	}
+	public Patient getPreviousPatient() {
+		return previousPatient;
+	}
+        public Patient lastPatient() { 
+                if (nextPatient == null) {
+                        return this;
+                } else {
+                        return nextPatient.lastPatient();
+		}
+        }
 
 }

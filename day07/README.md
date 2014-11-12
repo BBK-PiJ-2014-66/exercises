@@ -25,5 +25,5 @@ Seems a bit of a mess. Mixing patients with how to store a list? Surely in OO co
 design a nice interface that hides how a patient list is stored but provides easily understood
 methods? 
 
-# Doubly-linked lists
+#5 Doubly-linked lists
 [E05DoublyLinkedLists.java](E05DoublyLinkedLists.java) started.
