@@ -74,8 +74,11 @@ class HospitalManager{
 		traverseListForwardsAndBackwards();
                 System.out.println("Delete the 2nd older Henry returns " + patientListStart.deletePatient( new Patient("Henry",47,"Broken leg")));
 		// now want to remove the first patient
+                System.out.println("Remove the first patient John");
 		patientListStart = patientListStart.getNextPatient();
-                System.out.println("Remove the first patient");
+                // doubly linked list so need to tidy 
+		patientListStart.makeThisPatientFirst();
+			
 		traverseListForwardsAndBackwards();
 	}
 }
@@ -112,6 +115,8 @@ class Patient {
 			// We found It is the next one!
 			// Now link this patient to the one after the next
 			nextPatient =  nextPatient.nextPatient;
+			// and need to link back
+			nextPatient.previousPatient = this;
 			return true;
 		} else {
 			return nextPatient.deletePatient(patient);
@@ -158,5 +163,8 @@ class Patient {
                         return nextPatient.lastPatient();
 		}
         }
+	public void makeThisPatientFirst() {
+		previousPatient = null;
+	}
 
 }

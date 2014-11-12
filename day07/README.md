@@ -26,4 +26,5 @@ design a nice interface that hides how a patient list is stored but provides eas
 methods? 
 
 #5 Doubly-linked lists
-[E05DoublyLinkedLists.java](E05DoublyLinkedLists.java) started.
+[E05DoublyLinkedLists.java](E05DoublyLinkedLists.java) works (output contained in
+last commit) but the different treatment of the first patient shows approach is in a mess!
