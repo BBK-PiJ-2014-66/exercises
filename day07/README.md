@@ -28,3 +28,6 @@ methods?
 #5 Doubly-linked lists
 [E05DoublyLinkedLists.java](E05DoublyLinkedLists.java) works (output contained in
 last commit) but the different treatment of the first patient shows approach is in a mess!
+
+#6 Circular list
+[E06CircularList.java](E06CircularList.java) started
