@@ -38,9 +38,11 @@ class HospitalManager{
 		printPatients();
                 System.out.println("Delete the last patient Nigel returns " + patientListStart.deletePatient( new Patient("Nigel",10,"Diabetes")));
 		printPatients();
-		// now want to remove the first patient
+		// now remove the first patient
                 System.out.println("Remove the first patient John");
 		patientListStart = patientListStart.getNextPatient();
+                // also need to fix the last patient's NextPatient 
+                patientListStart.fixLastsNextPatient( patientListStart);
 		printPatients();
 	}
 }
@@ -69,7 +71,7 @@ class Patient {
 		}
 	}
         public boolean deletePatient(Patient patient) {  // from lecture notes
-		if (nextPatient.last) { // not correct
+		if (last) { 
 			// patient to remove was not found
 			return false;
 		} else if (nextPatient.name.equals(patient.name) &&
@@ -77,6 +79,7 @@ class Patient {
                            nextPatient.illness==patient.illness ) { // corrected
 			// We found It is the next one!
 			// Now link this patient to the one after the next
+			last = nextPatient.last; // preserve the last
 			nextPatient =  nextPatient.nextPatient;
 			return true;
 		} else {
@@ -119,5 +122,14 @@ class Patient {
 	public Patient getNextPatient() {
 		return nextPatient;
 	}
+
+        public void fixLastsNextPatient( Patient firstPatient) { 
+                if (last) {
+                        nextPatient = firstPatient;
+                } else {
+                        nextPatient.fixLastsNextPatient(firstPatient);
+		}
+        }
+
 
 }

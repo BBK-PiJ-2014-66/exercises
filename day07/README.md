@@ -19,7 +19,7 @@ and a break. For test output see last commit message.
 
 #3 Singly-linked lists and 4 Queue length
 Work in [Patient.java](Patient.java) and  [HospitalManager.java](HospitalManager.java) written.
-(The output is contained in last commit message for either). 
+(The output is contained in last git commit message for either). 
 
 Seems a bit of a mess. Mixing patients with how to store a list? Surely in OO coding we should
 design a nice interface that hides how a patient list is stored but provides easily understood
@@ -30,4 +30,5 @@ methods?
 last commit) but the different treatment of the first patient shows approach is in a mess!
 
 #6 Circular list
-[E06CircularList.java](E06CircularList.java) started
+[E06CircularList.java](E06CircularList.java) finished and works (program output contained
+in last git commit message).
