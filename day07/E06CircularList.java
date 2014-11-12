@@ -44,6 +44,14 @@ class HospitalManager{
                 // also need to fix the last patient's NextPatient 
                 patientListStart.fixLastsNextPatient( patientListStart);
 		printPatients();
+		// forgot task 5. Add a new element to the list. Try to delete an element that is NOT in the list.
+		System.out.println("Add new patient Fatima ");
+		patientListStart.addPatient("Fatima",0,"Asthma");
+		// try to delete no patient
+		System.out.println("Delete attempt for non-patient Fred returns " + patientListStart.deletePatient( new Patient("Fred",23,"LMF")));
+		printPatients();
+
+	
 	}
 }
 class Patient {
