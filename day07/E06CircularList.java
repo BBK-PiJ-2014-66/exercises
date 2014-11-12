@@ -36,9 +36,11 @@ class HospitalManager{
 		printPatients();
                 System.out.println("Delete the 2nd older Henry returns " + patientListStart.deletePatient( new Patient("Henry",47,"Broken leg")));
 		printPatients();
+                System.out.println("Delete the last patient Nigel returns " + patientListStart.deletePatient( new Patient("Nigel",10,"Diabetes")));
+		printPatients();
 		// now want to remove the first patient
+                System.out.println("Remove the first patient John");
 		patientListStart = patientListStart.getNextPatient();
-                System.out.println("Remove the first patient");
 		printPatients();
 	}
 }
@@ -59,9 +61,9 @@ class Patient {
 	public void addPatient( Patient newPatient) { // from lecture notes
 		if (this.last) {
 			// this means this is the last patient in the list
+                        newPatient.nextPatient = this.nextPatient;
 			this.nextPatient = newPatient;
 			this.last = false;
-                        newPatient.nextPatient = this;
 		} else {
 			this.nextPatient.addPatient(newPatient);
 		}
