@@ -35,4 +35,6 @@ in last git commit message).
 
 
 #8 Stacks (*)
-[E08Stack.java](E08Stack.java) implemented using the shared class [ListUtilities.java](ListUtilities.java).
+[E08Stack.java](E08Stack.java) implemented using the shared class [ListUtilities.java](ListUtilities.java),
+altered so pop and push from the right hand (aka "end") of the stack, as this is normal for instance
+in perl and http://en.wikipedia.org/wiki/Stack_%28abstract_data_type%29 

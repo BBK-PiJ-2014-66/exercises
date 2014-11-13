@@ -41,15 +41,24 @@ public class E08Stack{
 	public static void main( String[] args) {
 		ListUtilities Stack = new ListUtilities();
 		printStackEmptyOrNot(Stack);
+		Stack.printList();
 		Stack.push(5);
 		printStackEmptyOrNot(Stack);
+		Stack.printList();
 		Stack.push(8);
+		Stack.printList();
 		Stack.push(12);
+		Stack.printList();
 		System.out.println("Popping ... it’s a " + Stack.pop());
+		Stack.printList();
 		Stack.push(13);
+		Stack.printList();
 		System.out.println("Popping ... it’s a " + Stack.pop());
+		Stack.printList();
 		System.out.println("Popping ... it’s a " + Stack.pop());
+		Stack.printList();
 		System.out.println("Popping ... it’s a " + Stack.pop());
+		Stack.printList();
 		printStackEmptyOrNot(Stack);
 	}
 }
