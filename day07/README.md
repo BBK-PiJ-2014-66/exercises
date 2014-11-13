@@ -32,3 +32,7 @@ last commit) but the different treatment of the first patient shows approach is 
 #6 Circular list
 [E06CircularList.java](E06CircularList.java) finished and works (program output contained
 in last git commit message).
+
+
+#8 Stacks (*)
+[E08Stack.java](E08Stack.java) implemented using the shared class [ListUtilities.java](ListUtilities.java).
