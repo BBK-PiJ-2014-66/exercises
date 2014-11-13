@@ -33,6 +33,8 @@ last commit) but the different treatment of the first patient shows approach is 
 [E06CircularList.java](E06CircularList.java) finished and works (program output contained
 in last git commit message).
 
+#7 Queues (*)
+[E07Queue.java](E07Queue.java) started
 
 #8 Stacks (*)
 [E08Stack.java](E08Stack.java) implemented using the shared class [ListUtilities.java](ListUtilities.java),
