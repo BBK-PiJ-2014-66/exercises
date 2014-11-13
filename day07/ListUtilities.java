@@ -23,6 +23,9 @@ public class ListUtilities {
 		lastNode = null;
 		numbOfNodes = 0;
 	}
+        public void insert( int inValue) { // wrapper for push for queue task
+		this.push( inValue);
+	}
         public void push( int inValue) { // adds to right hand side of the list
 		System.out.println("Pushing " + inValue);
 		if (firstNode == null) {
@@ -63,7 +66,9 @@ public class ListUtilities {
 		}
 		return retValue;
 	}
-	
+        public int retrieve() { // wrapper for shift for queue task
+		return this.shift();
+	}
 	public int shift() { // removes from left hand side of the list
 		if (numbOfNodes==0)  {
 			System.out.println("ERROR trying to shift from empty stack return -999999999");
@@ -74,13 +79,15 @@ public class ListUtilities {
 		numbOfNodes--;
 		return retValue;
 	}
-        
 	public boolean empty() {
 		boolean isEmpty = false;
 		if (numbOfNodes==0) 
 			isEmpty = true;
 		return isEmpty;
 	} 
+	public int size() {
+		return numbOfNodes;
+	}
 	public void printList() { // for debugging
 		System.out.println("\tlist has " + numbOfNodes + " elements ");
 		if (numbOfNodes != 0) {

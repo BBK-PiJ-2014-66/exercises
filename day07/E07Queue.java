@@ -47,4 +47,22 @@ Check that the values you get are consistent. The output of the program could lo
  *
  */
 public class E07Queue{
+	private static void printNumberRequests( ListUtilities inQueue) {
+		System.out.println("There are " + inQueue.size() + " requests in the queue.");
+	}
+	public static void main( String[] args) {
+		ListUtilities queue = new ListUtilities();
+		printNumberRequests(queue); 
+		queue.insert(5);
+		queue.insert(8);
+		queue.insert(12);
+		printNumberRequests(queue); 
+		System.out.println("Retrieving first request in the queue, value= " + queue.retrieve());
+		queue.insert(13);
+		printNumberRequests(queue); 
+		System.out.println("Retrieving first request in the queue, value= " + queue.retrieve());
+		System.out.println("Retrieving first request in the queue, value= " + queue.retrieve());
+		printNumberRequests(queue); 
+		System.out.println("Retrieving first request in the queue, value= " + queue.retrieve());
+	}
 }
