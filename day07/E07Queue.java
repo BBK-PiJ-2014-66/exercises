@@ -9,8 +9,7 @@
 A queue is a dynamic structure that implements these methods:
 
 	insert(...) inserts an element at the beginning of the queue.
-	retrieve(...)
-	remove an element from the end of the queue.
+	retrieve(...) remove an element from the end of the queue.
 	size() returns the current size of the queue.
 
 Queues are heavily used in computing: communication buffers, incoming request to web servers, read/write
@@ -36,6 +35,15 @@ Check that the values you get are consistent. The output of the program could lo
 	There are 2 requests in the queue.
 	Retrieving request 13... done.
 	etc...
+ *
+ * My thoughts. Use ListUtilies class that already does Stack...
+ * The task says that you add a new element at the begining of a queue and retrieve 
+ * a new element from the end.
+ * This seems the wrong way around normally join the end of a queue and take from the start?
+ * So lets implement:
+ *	insert() method add elements to the right (wrap existing push)
+ *	retrieve() method take elements from the left (wrap existing shift) 
+ *	size() new method 
  *
  */
 public class E07Queue{
