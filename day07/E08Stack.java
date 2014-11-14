@@ -3,7 +3,8 @@
  * author Oliver S. Smart
  * date from 12 Nov 2014
  *  
- * Day 7 Exercises 8
+ * Day 7 Exercise 8 Stacks (*)
+ *
  * Task set:
 
 A stack is a dynamic structure that implements these methods:
