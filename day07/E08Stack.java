@@ -3,7 +3,7 @@
  * author Oliver S. Smart
  * date from 12 Nov 2014
  *  
- * Day 7 Exercise 8 Stacks (*)
+ * Day 7 Exercise 8 Stacks (*) 
  *
  * Task set:
 
