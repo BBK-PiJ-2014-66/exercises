@@ -47,3 +47,16 @@ Task *Create a static method that takes an array of integers and returns a linke
 the original array* . [E09ArrayToList.java](E09ArrayToList.java) used method **arrayToLinkedList** from
 [ListUtilities.java](ListUtilities.java). Finished program output contained in last git commit.
 
+#10 A sorted list
+Task *Create a linked list of integers that is sorted on input* [E10SortedList.java](E10SortList.java) 
+using [ListUtilities.java](ListUtilities.java).
+
+#11 Bubble sort (*)
+*not attempted (yet)*
+
+#12 Cocktail sort (*)
+*not attempted (yet)*
+
+#13 QuickSort (**)
+*not attempted (yet)*
+
