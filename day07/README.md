@@ -44,5 +44,5 @@ in perl and [Wikipedia Stack article](http://en.wikipedia.org/wiki/Stack_%28abst
 
 #9 From array to list
 Task *Create a static method that takes an array of integers and returns a linked list of integers in the same order as
-the original array* . [E09ArrayToList.java](E09ArrayToList.java)
+the original array* . [E09ArrayToList.java](E09ArrayToList.java) finished program output contained in last git commit.
 

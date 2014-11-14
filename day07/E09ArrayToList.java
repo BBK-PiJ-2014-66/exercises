@@ -18,7 +18,15 @@ into a dynamic structure automatically.
 
 
  * My thoughts:
- * Should be able to simply use override pop from previous Stack exercise
- * to take an array rather than an integer.
+ * (On reflection) Have to return a new object so create it in the class,
+ * using existing push method to add each element of the array in turn
  */
+public class E09ArrayToList {
+	public static void main( String[] args) {
+		int[] myArray = { 1, 3, 5, 7, 6, 5, 4, 2, 8, 15, 14, 9, 13, 
+                                  10, 12, 11, -1000, 2000, -3000, 4000, -5000};
+	     	ListUtilities myLinkedList = ListUtilities.arrayToLinkedList(myArray);
+		myLinkedList.printList();
+	}
+}
 
