@@ -26,8 +26,11 @@ public class ListUtilities {
         public void insert( int inValue) { // wrapper for push for queue task
 		this.push( inValue);
 	}
-        public void push( int inValue) { // adds to right hand side of the list
+	public void push( int inValue) { // verbose - says what it does
 		System.out.println("Pushing " + inValue);
+		pushSilent(inValue);
+	}
+        public void pushSilent( int inValue) { // adds to right hand side of the list (silent)
 		if (firstNode == null) {
 			firstNode = new Node(inValue);
 			lastNode = firstNode;
@@ -97,6 +100,14 @@ public class ListUtilities {
 				System.out.println("\telement[" + nc + "] = " + firstNode.getNodeNumber(nc).getValue());
 			}
 		}	
+	}
+
+	public static ListUtilities arrayToLinkedList( int inArray[]) {
+		ListUtilities newLinkedList = new ListUtilities();	
+		for (int ac = 0; ac < inArray.length; ac++) {
+			newLinkedList.pushSilent(inArray[ac]);
+		}
+		return newLinkedList;
 	}
 }
 class Node {

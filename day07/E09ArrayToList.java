@@ -19,7 +19,7 @@ into a dynamic structure automatically.
 
  * My thoughts:
  * (On reflection) Have to return a new object so create it in the class,
- * using existing push method to add each element of the array in turn
+ * using existing push method to add each element of the array in turn.
  */
 public class E09ArrayToList {
 	public static void main( String[] args) {
