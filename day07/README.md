@@ -71,7 +71,9 @@ the original array* . [E09ArrayToList.java](E09ArrayToList.java) used method **a
 #10 A sorted list
 
 Task *Create a linked list of integers that is sorted on input* [E10SortedList.java](E10SortList.java) 
-using [ListUtilities.java](ListUtilities.java).
+using [ListUtilities.java](ListUtilities.java), works use a recursive method to insert in between
+values in place *(found it important to use less than and equal to avoid infinite loop!).* 
+Program output contained in last git commit message.
 
 #11 Bubble sort (*)
 

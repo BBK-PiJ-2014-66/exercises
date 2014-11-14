@@ -52,7 +52,20 @@ public class ListUtilities {
 		} else if (inValue > lastNode.getValue()) { // largest yet - add to right
 			pushSilent( inValue);
 		} else {
-			System.out.println("Debug should insert " + inValue + " not yet written");
+			//System.out.println("Debug insert " + inValue + " into list:"); printList();
+			orderedInsertAfter( firstNode, inValue);
+			//System.out.println("Debug after the insertion list is "); printList();
+		}
+	}
+	public void orderedInsertAfter( Node inNode, int inValue) { // inserts after if inValue is in between this and next
+		if (inNode.getValue()<=inValue && inValue <= inNode.nextNode().getValue()) {
+			//System.out.println("Debug insert " + inValue + " inbetween " + inNode.getValue() + " and " + inNode.nextNode().getValue());
+			Node newNode = new Node(inValue, inNode.nextNode());
+			inNode.setNextNode(newNode);
+			numbOfNodes++;
+		}
+		else {
+			orderedInsertAfter( inNode.nextNode(), inValue);
 		}
 	}
         public void unshift( int inValue) { // adds to left hand side of the list

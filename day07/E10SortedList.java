@@ -17,7 +17,7 @@ sorted.
  * My thoughts:
  * Create a method arrayToSortedLinkedList based on exercise 9 method.
  * Instead of a "push" to end of the list this should insert the value in the 
- * appropriate place.
+ * appropriate place. Do with a recursive method to practice.
  */
 
 public class E10SortedList {
