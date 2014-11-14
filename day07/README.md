@@ -1,19 +1,19 @@
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
-- [Exercises, day 07](#)
-	- [The exercise sheet exercises_d7.pdf](#)
-- [1 Instance counter](#)
-- [2 do {practice} while {!understood}](#)
-- [3 Singly-linked lists and 4 Queue length](#)
-- [5 Doubly-linked lists](#)
-- [6 Circular list](#)
-- [7 Queues (*)](#)
-- [8 Stacks (*)](#)
-- [9 From array to list](#)
-- [10 A sorted list](#)
-- [11 Bubble sort (*)](#)
-- [12 Cocktail sort (*)](#)
-- [13 QuickSort (**)](#)
+- [Exercises, day 07](#user-content-exercises-day-07)
+	- [The exercise sheet exercises_d7.pdf](#user-content-the-exercise-sheet-exercises_d7pdf)
+- [1 Instance counter](#user-content-1-instance-counter)
+- [2 do {practice} while {!understood}](#user-content-2-do-practice-while-understood)
+- [3 Singly-linked lists and 4 Queue length](#user-content-3-singly-linked-lists-and-4-queue-length)
+- [5 Doubly-linked lists](#user-content-5-doubly-linked-lists)
+- [6 Circular list](#user-content-6-circular-list)
+- [7 Queues (*)](#user-content-7-queues-)
+- [8 Stacks (*)](#user-content-8-stacks-)
+- [9 From array to list](#user-content-9-from-array-to-list)
+- [10 A sorted list](#user-content-10-a-sorted-list)
+- [11 Bubble sort (*)](#user-content-11-bubble-sort-)
+- [12 Cocktail sort (*)](#user-content-12-cocktail-sort-)
+- [13 QuickSort (**)](#user-content-13-quicksort-)
 
 ---------------------
 
