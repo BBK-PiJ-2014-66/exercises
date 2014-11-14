@@ -1,5 +1,19 @@
 **Table of Contents**  *generated with [DocToc](http://doctoc.herokuapp.com/)*
 
+- [Exercises, day 07](#)
+	- [The exercise sheet exercises_d7.pdf](#)
+- [1 Instance counter](#)
+- [2 do {practice} while {!understood}](#)
+- [3 Singly-linked lists and 4 Queue length](#)
+- [5 Doubly-linked lists](#)
+- [6 Circular list](#)
+- [7 Queues (*)](#)
+- [8 Stacks (*)](#)
+- [9 From array to list](#)
+- [10 A sorted list](#)
+- [11 Bubble sort (*)](#)
+- [12 Cocktail sort (*)](#)
+- [13 QuickSort (**)](#)
 
 ---------------------
 
