@@ -42,6 +42,19 @@ public class ListUtilities {
 			numbOfNodes++;
 		}
 	} 
+	public void insertInOrder( int inValue) { // add in order - small to large
+		if (firstNode == null) {
+			firstNode = new Node(inValue);
+			lastNode = firstNode;
+			numbOfNodes = 1;
+		} else if (inValue < firstNode.getValue()) { // smallest yet - add to left
+			unshift( inValue);	
+		} else if (inValue > lastNode.getValue()) { // largest yet - add to right
+			pushSilent( inValue);
+		} else {
+			System.out.println("Debug should insert " + inValue + " not yet written");
+		}
+	}
         public void unshift( int inValue) { // adds to left hand side of the list
 		if (firstNode == null) {
 			firstNode = new Node(inValue);
@@ -109,6 +122,15 @@ public class ListUtilities {
 		}
 		return newLinkedList;
 	}
+
+  	public static ListUtilities arrayToSortedLinkedList( int inArray[]) {
+		ListUtilities newLinkedList = new ListUtilities();	
+		for (int ac = 0; ac < inArray.length; ac++) {
+			newLinkedList.insertInOrder(inArray[ac]);
+		}
+		return newLinkedList;
+	}
+
 }
 class Node {
 	private int value;

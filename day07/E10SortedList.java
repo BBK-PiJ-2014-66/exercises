@@ -19,3 +19,13 @@ sorted.
  * Instead of a "push" to end of the list this should insert the value in the 
  * appropriate place.
  */
+
+public class E10SortedList {
+	public static void main( String[] args) {
+		int[] myArray = { 1, 3, 5, 7, 6, 5, 4, 2, 8, 15, 14, 9, 13, 
+                                  10, 12, 11, -1000, 2000, -3000, 4000, -5000};
+	     	ListUtilities myLinkedList = ListUtilities.arrayToSortedLinkedList(myArray);
+		myLinkedList.printList();
+	}
+}
+
