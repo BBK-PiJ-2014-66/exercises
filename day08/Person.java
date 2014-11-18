@@ -12,7 +12,7 @@ public class Person{
 	private int age;
 	Person() {
 		name = "";
-		age = 0;
+		age = -1; // invalid age (the "empty person")
 	}
 	Person( String inName, int inAge) {
 		name = inName;
@@ -24,4 +24,9 @@ public class Person{
 	public int age() {
 		return age;
 	}
+        @Override
+        public String toString() {
+                return name + " is " + age + " years old";
+        }
+
 }
