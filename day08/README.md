@@ -6,3 +6,18 @@
 
 ## The exercise sheet [exercises_d8.pdf](exercises_d8.pdf) 
 
+# 1 Supermarket queue
+
+* [PersonQueue.java](PersonQueue.java) the interface representing a queue of people waiting at the supermarket.
+* [Person.java](Person.java) a simple Person class for testing.
+* [ArrayPersonQueue.java](ArrayPersonQueue.java) an array-based implementation of **PersonQueue**.
+* [Supermarket.java](Supermarket.java) tests **ArrayPersonQueue.java** (see commit message)
+
+# 5 Maps
+
+## 5.1 Hash function
+
+Start now.
+
+
+## 5.2 Simple map
