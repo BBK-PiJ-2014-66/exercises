@@ -35,6 +35,27 @@ public class TreeIntSetNode{
                 }
         }
 
+	public boolean contains( int inNum, boolean verbose) {
+		if (verbose) {
+			System.out.println("\tcontains checks " + inNum + " against " + value);
+		}
+		if (inNum > value) {
+			if (right == null) {
+				return false;
+			} else {
+				return right.contains( inNum, verbose);
+			}
+		} else if (value == inNum) {
+			return true;
+		} else  {
+			if (left == null) {
+				return false;
+			} else {
+				return left.contains( inNum, verbose);
+			}
+		}
+	}
+
         @Override
         public String toString() { 
                 String retStr= "" + value;

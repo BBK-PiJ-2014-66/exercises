@@ -21,6 +21,10 @@ public class TestIntSets{
 		System.out.println("add 7 to the set again!");
 		testIntSet.add(7);
 		System.out.println("print the set contents: " + testIntSet);
+		System.out.println("verbose test whether set contains 9: ");
+		System.out.println("\tResult set does "+ (testIntSet.containsVerbose(9) ? "" : "not ") + "contain 9");
+		System.out.println("verbose test whether set contains 19: ");
+		System.out.println("\tResult set does "+ (testIntSet.containsVerbose(19) ? "" : "not ") + "contain 19");
 
 	
 	}

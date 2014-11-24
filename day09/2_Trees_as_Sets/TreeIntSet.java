@@ -33,8 +33,7 @@ public class TreeIntSet implements IntSet {
          * contains(int)  returns true if the number is in the set, false otherwise.
 	 */
 	public boolean contains( int num) {
-		System.out.println("debug contains to be written");
-		return false;
+		return root.contains( num, false);
 	}
 
 	/*
@@ -42,8 +41,7 @@ public class TreeIntSet implements IntSet {
 	 * but for every element that is checked prints its value on screen.
 	 */
 	public boolean containsVerbose( int num) {
-		System.out.println("debug containsVerbose to be written");
-		return false;
+		return root.contains( num, true);
 	}
 
 	/* 
