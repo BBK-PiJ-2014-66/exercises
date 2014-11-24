@@ -12,6 +12,12 @@ public class IntegerTreeNode{
 	IntegerTreeNode left;
 	IntegerTreeNode right;
 
+	IntegerTreeNode( int newNumber) { // creates the head or a leaf 
+		value = newNumber;
+		left = null;
+		right = null;
+	}
+
 	public void add( int newNumber) {
 		if (newNumber > this.value) {
 			if (right == null) {
