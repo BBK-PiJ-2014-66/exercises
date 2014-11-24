@@ -18,7 +18,7 @@ public class IntegerTreeNode{
 		right = null;
 	}
 
-	public void add( int newNumber) {
+	public void add( int newNumber) { // adds a new number to the tree as given in notes
 		if (newNumber > this.value) {
 			if (right == null) {
 				right = new IntegerTreeNode( newNumber);
@@ -31,6 +31,24 @@ public class IntegerTreeNode{
 			} else {
 				left.add(newNumber);
 			}
+		}
+	}
+
+	public boolean contains( int n) {
+		if (n == value) {
+			return true;
+		} else if (n > value) {
+			if (right == null) {
+				return false;
+			} else {
+				return right.contains(n);
+			}
+		} else {
+                        if (left == null) {
+                                return false;
+                        } else {
+                                return left.contains(n);
+                        }
 		}
 	}
 	
