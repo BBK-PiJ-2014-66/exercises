@@ -25,4 +25,9 @@ public interface IntegerList{
          */
 	public int getMax(); 
 	public int getMin();
+
+	/* 
+         * prints the list in some way 
+	 */
+	public String toString();
 }
