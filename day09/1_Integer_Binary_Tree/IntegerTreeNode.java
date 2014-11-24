@@ -67,6 +67,24 @@ public class IntegerTreeNode implements IntegerList {
 			return left.getMin();
 		}
 	}
+
+        @Override
+        public String toString() { // "complete" print in exercise
+		String retStr= "[" + value;
+		if (left==null) {
+			retStr += " L[]";
+		} else	 {
+			retStr += " L" + left; // toString will be invoked
+		}
+		if (right==null) {
+			retStr += " R[]";
+		} else	 {
+			retStr += " R" + right; 
+		}
+		retStr += "]";
+		return retStr;
+	}
+
 			
 
 }
