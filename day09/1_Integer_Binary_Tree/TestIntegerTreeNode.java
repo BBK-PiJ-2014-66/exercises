@@ -14,6 +14,7 @@ public class TestIntegerTreeNode{
 	public static void launch() {
 		System.out.println("Create a tree like in exercise sheet Figure 1 with 6, 9, 5, 3, 11, 12, 8");
 		IntegerList testIntTree = new IntegerTreeNode(6);
+		System.out.println("Note toString now simplified");
 		System.out.println("Point (a) have started with 6 as head. toString gives: " + testIntTree);
 		testIntTree.add(9);
 		System.out.println("Point (b) after 6, 9. toString gives: " + testIntTree);

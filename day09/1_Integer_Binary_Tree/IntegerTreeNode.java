@@ -69,7 +69,19 @@ public class IntegerTreeNode implements IntegerList {
 	}
 
         @Override
-        public String toString() { // "complete" print in exercise
+        public String toString() { // "simplified" print in exercise
+		String retStr= "[" + value;
+		if (left!=null) {
+			retStr += " " + left; // toString will be invoked
+		}
+		if (right!=null) {
+			retStr += " " + right; 
+		}
+		retStr += "]";
+		return retStr;
+	}
+
+        public String toStringComplete() { // "complete" print in exercise
 		String retStr= "[" + value;
 		if (left==null) {
 			retStr += " L[]";
@@ -84,6 +96,7 @@ public class IntegerTreeNode implements IntegerList {
 		retStr += "]";
 		return retStr;
 	}
+
 
 			
 
