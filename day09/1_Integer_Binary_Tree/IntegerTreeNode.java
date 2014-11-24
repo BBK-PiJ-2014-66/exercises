@@ -7,7 +7,7 @@
  *
  * IntegerTreeNode class as given in notes, completed
  */
-public class IntegerTreeNode{
+public class IntegerTreeNode implements IntegerList {
 	int value;
 	IntegerTreeNode left;
 	IntegerTreeNode right;
