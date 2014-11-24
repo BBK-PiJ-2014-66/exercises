@@ -51,7 +51,22 @@ public class IntegerTreeNode{
                         }
 		}
 	}
+
+	public int getMax() { // returns maximum value in the tree 
+		if (right == null) {
+			return value;
+		} else {
+			return right.getMax();
+		}
+	}
 	
+	public int getMin() { // returns minimum value in the tree 
+		if (left == null) {
+			return value;
+		} else {
+			return left.getMin();
+		}
+	}
 			
 
 }
