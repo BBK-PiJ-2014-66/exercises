@@ -26,7 +26,8 @@ The interface as per instruction [IntSet.java](2_Trees_as_Sets/IntSet.java)
 * [TreeIntSet.java](2_Trees_as_Sets/TreeIntSet.java) has **IntSet** implementation as a tree. Uses 
   [TreeIntSetNode.java](2_Trees_as_Sets/TreeIntSetNode.java) to do the work.
 * [TestIntSets.java](2_Trees_as_Sets/TestIntSets.java) testing script initially just for **TreeIntSet** but
-  will be extended for the linked list implementation (next).
+  will be extended for the linked list implementation (next). *See git commit message for the output
+  of the script*.
 
 
 ## 2.3 Implementation as list
