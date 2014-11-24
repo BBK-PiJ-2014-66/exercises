@@ -10,11 +10,23 @@
 
 public class TreeIntSet implements IntSet {
 
+        // we need a do we need a root node
+	private TreeIntSetNode root;
+	
+	TreeIntSet() { // constructor
+		root = null;
+	}
+
         /*
          * add(int) adds a new int to the set; if it is there already, nothing happens.
          */
 	public void add( int num) {
-		System.out.println("debug add to be written");
+		if (root == null) {
+			root = new TreeIntSetNode( num);
+		} else {
+			root.add(num);
+		}
+			
 	}
 
 	/*
@@ -30,7 +42,7 @@ public class TreeIntSet implements IntSet {
 	 * but for every element that is checked prints its value on screen.
 	 */
 	public boolean containsVerbose( int num) {
-		System.out.println("debug contains to be written");
+		System.out.println("debug containsVerbose to be written");
 		return false;
 	}
 
@@ -40,7 +52,7 @@ public class TreeIntSet implements IntSet {
 	 */
 	@Override
 	public String toString() {
-		return "debug toString to be written";
+		return "" + root;
 	}
 
 }

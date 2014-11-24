@@ -18,6 +18,8 @@ public class TestIntSets{
 		testIntSet.add(7);
 		System.out.println("add 9 to the set");
 		testIntSet.add(9);
+		System.out.println("add 7 to the set again!");
+		testIntSet.add(7);
 		System.out.println("print the set contents: " + testIntSet);
 
 	
