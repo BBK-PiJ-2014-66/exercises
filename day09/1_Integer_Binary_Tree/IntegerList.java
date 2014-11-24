@@ -3,7 +3,7 @@
  * author: Oliver S. Smart
  * date:   from 24 Nov 2014
  *  
- * Day 9 Exercise 5.1 Integer Binary Tree
+ * Day 9 Exercise 1 Integer Binary Tree
  *
  * One of the learning objectives is to use Interfaces 
  * So this is an interface for the the "Integer Binary Tree"
