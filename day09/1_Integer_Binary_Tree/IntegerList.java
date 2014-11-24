@@ -27,7 +27,12 @@ public interface IntegerList{
 	public int getMin();
 
 	/* 
-         * prints the list in some way 
+         * provides some kind of a string version of the complete list
 	 */
 	public String toString();
+
+	/*
+         * provides information about the list - number of entries 
+         */
+	public String information();
 }

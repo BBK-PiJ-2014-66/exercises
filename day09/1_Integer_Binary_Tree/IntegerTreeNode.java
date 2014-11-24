@@ -97,7 +97,29 @@ public class IntegerTreeNode implements IntegerList {
 		return retStr;
 	}
 
+	public String information() {
+		return "The tree contains " + this.numberValues() + 
+			" values. It has a depth of " + this.depth();
+	}
 
-			
+	private int depth() { // returns the depth that is the number of levels below (1.3)
+		if (left==null && right==null) {
+			return 0; // leaf has depth zero
+		} else if (left==null) {
+			return 1 + right.depth();
+		} else if (right==null) {
+			return 1 + left.depth();
+		} else {
+			return 1 + Math.max(right.depth(),left.depth());
+		}
+	}
 
+	private int numberValues() {
+		int retNumber = 1; // this node
+		if (left!=null)
+			retNumber += left.numberValues();
+		if (right!=null)
+			retNumber += right.numberValues();
+		return retNumber;
+	}
 }
