@@ -17,7 +17,8 @@
 
 ## 5.1 Hash function
 
-Start now.
-
+The simple short hash function [HashUtilities.java](5.1_Hash_function/HashUtilities.java) is
+tested by [TestHashUtilities.java](5.1_Hash_function/TestHashUtilities.java).
 
 ## 5.2 Simple map
+
