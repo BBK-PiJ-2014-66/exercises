@@ -20,7 +20,9 @@ The interface as per instruction [IntSet.java](2_Trees_as_Sets/IntSet.java)
 ## 2.2 Implementation as tree
 
 * [TreeIntSet.java](2_Trees_as_Sets/TreeIntSet.java) has **IntSet** implementation as a tree. Uses 
-  [TreeIntSetNode.java](2_Trees_as_Sets/TreeIntSetNode.java) to do the work.
+  [IntegerTreeNode.java](2_Trees_as_Sets/IntegerTreeNode.java) to do the work. This is modified
+  version of the class from exercise 1 to cope with sets and new requirements, originally I wrote
+  a new class but the same code can be used.
 * [TestIntSets.java](2_Trees_as_Sets/TestIntSets.java) testing script initially just for **TreeIntSet** but
   will be extended for the linked list implementation (next). *See git commit message for the output
   of the script*.
