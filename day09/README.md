@@ -32,15 +32,28 @@ The interface as per instruction [IntSet.java](2_Trees_as_Sets/IntSet.java)
 
 * [ListIntSet.java](2_Trees_as_Sets/ListIntSet.java) provides **IntSet** implementation as a linked list,
   using [TestIntSets.java](2_Trees_as_Sets/TestIntSets.java). 
-
 * Testing script for both implementations [TestIntSets.java](2_Trees_as_Sets/TestIntSets.java) shows
   that the tree implementation requires far fewer comparisons to check the the set (see git commit for output).
 
 
 # 3 Trees as (sorted) lists
 
-* to be done
 
+## 2.1 Interface
+
+The interface as per instruction [IntSortedList.java](2_Trees_as_Sets/IntSortedList.java)
+
+## 2.2 Implementation as tree
+
+* [TreeIntSortedList.java](2_Trees_as_Sets/TreeIntSortedList.java) once again uses an extended
+  [IntegerTreeNode.java](2_Trees_as_Sets/IntegerTreeNode.java) to do the work. Tree is
+  automatically sorted on input with only a small number of operations.
+* Testing script [TestIntSortedList.java](2_Trees_as_Sets/TestIntSortedList.java) works
+  fine - see git commit message for the output.
+
+## 3.3 Implementation as list
+
+* to be done
 
 # 4 Abstract syntax tree (*)
 
