@@ -21,15 +21,18 @@ public class ListIntSet implements IntSet {
          * add(int) adds a new int to the set; if it is there already, nothing happens.
          */
 	public void add( int num) {
-		System.out.println("debug ListIntSet.add() to be written");
+		if (head == null) {
+			head = new ListIntSetNode( num);
+		} else {
+			head.add(num);
+		}
 	} 
 
 	/*
          * contains(int)  returns true if the number is in the set, false otherwise.
 	 */
 	public boolean contains( int num) {
-		System.out.println("debug ListIntSet.contains() to be written");
-		return false;
+		return head.contains( num, false); // non-verbose.
 	}
 
 	/*
@@ -37,15 +40,15 @@ public class ListIntSet implements IntSet {
 	 * but for every element that is checked prints its value on screen.
 	 */
 	public boolean containsVerbose( int num) {
-		System.out.println("debug ListIntSet.containsVerbose() to be written");
-		return false;
+		return head.contains( num, true); // verbose prints comparisons
 	}
 
 	/* 
          * toString() returns a string with the values of the elements in the 
          * set separated by commas.
 	 */
+        @Override
 	public String toString() {
-		return "debug ListIntSet.toString() to be written";
+		return "" + head;
 	}
 }

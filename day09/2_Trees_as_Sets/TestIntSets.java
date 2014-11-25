@@ -5,7 +5,7 @@
  *  
  * Day 9 Exercise 2 Trees as sets
  *
- * Runs test on IntSet implementations
+ * Runs test on IntSet implementations.
  */
 public class TestIntSets{
 	public static void main( String args[]) {

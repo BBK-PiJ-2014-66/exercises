@@ -10,5 +10,45 @@
 public class ListIntSetNode{
 	private int value;
 	private ListIntSetNode next;
+
+
+	ListIntSetNode( int num) {
+		value = num;
+		next = null;
+	}
+
+
+	public void add( int num) {
+		if (num == value) {
+			; //ignore as this is a set
+		} else if (next == null) {
+			next = new ListIntSetNode( num);
+		} else {
+			next.add(num);
+		}
+	}
+
+	@Override
+        public String toString() { // comma separated
+		if (next==null) {
+			return "" + value;
+		} else {
+			return "" + value + ", " + next;
+		}
+	}
+
+	public boolean contains( int inNum, boolean verbose) {
+		if (verbose) {
+			System.out.println("\tcontains checks " + inNum + " against " + value);
+		}
+		if (inNum == value ) {
+			return true;
+		} else if (next == null) {
+			return false;
+		} else {
+			return next.contains( inNum, verbose);
+		}
+	}	
+	
 }
 
