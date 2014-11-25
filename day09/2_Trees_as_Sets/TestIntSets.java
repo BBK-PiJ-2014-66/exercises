@@ -14,7 +14,7 @@ public class TestIntSets{
 		IntSet testTree = new TreeIntSet();
 		runTests(testTree);
 
-		System.out.println("\n\nRe-Run tests on ListIntSet:");
+		System.out.println("\n\nRe-Run the same tests on ListIntSet:");
 		testTree = new ListIntSet();
 		runTests(testTree);
 
