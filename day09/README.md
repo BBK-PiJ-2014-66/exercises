@@ -32,8 +32,22 @@ The interface as per instruction [IntSet.java](2_Trees_as_Sets/IntSet.java)
 
 ## 2.3 Implementation as list
 
-To be done
+* [ListIntSet.java](2_Trees_as_Sets/ListIntSet.java) provides **IntSet** implementation as a linked list,
+  using [TestIntSets.java](2_Trees_as_Sets/TestIntSets.java). 
 
+* Testing script for both implementations [TestIntSets.java](2_Trees_as_Sets/TestIntSets.java) shows
+  that the tree implementation requires far fewer comparisons to check the the set (see git commit for output).
+
+
+# 3 Trees as (sorted) lists
+
+* to be done
+
+
+# 4 Abstract syntax tree (*)
+
+# 5 Git internals (**)
+  
 
 
 
