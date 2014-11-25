@@ -138,6 +138,20 @@ public class IntegerTreeNode {
                 return retStr;
         }
 
+
+	public String toStringInOrderCommaSeparated() {
+		String retStr="";
+                if (left!=null) {
+                        retStr += left.toStringInOrderCommaSeparated() + ", "; 
+                }
+                retStr += "" + value;
+                if (right!=null) {
+                        retStr += ", " + right.toStringInOrderCommaSeparated();
+                }
+                return retStr;
+ 
+	}
+
 	public String information() {
 		return "The tree contains " + this.numberValues() + 
 			" values. It has a depth of " + this.depth();
