@@ -11,7 +11,7 @@
 public class TreeIntSet implements IntSet {
 
         // we need a do we need a root node
-	private TreeIntSetNode root;
+	private IntegerTreeNode root;
 	
 	TreeIntSet() { // constructor
 		root = null;
@@ -22,9 +22,9 @@ public class TreeIntSet implements IntSet {
          */
 	public void add( int num) {
 		if (root == null) {
-			root = new TreeIntSetNode( num);
+			root = new IntegerTreeNode( num);
 		} else {
-			root.add(num);
+			root.addSet(num);
 		}
 			
 	}
@@ -33,7 +33,7 @@ public class TreeIntSet implements IntSet {
          * contains(int)  returns true if the number is in the set, false otherwise.
 	 */
 	public boolean contains( int num) {
-		return root.contains( num, false);
+		return root.contains( num);
 	}
 
 	/*
@@ -41,7 +41,7 @@ public class TreeIntSet implements IntSet {
 	 * but for every element that is checked prints its value on screen.
 	 */
 	public boolean containsVerbose( int num) {
-		return root.contains( num, true);
+		return root.containsVerbose( num, true);
 	}
 
 	/* 
@@ -50,7 +50,7 @@ public class TreeIntSet implements IntSet {
 	 */
 	@Override
 	public String toString() {
-		return "" + root;
+		return "" + root.toStringCommaSeparated();
 	}
 
 }
