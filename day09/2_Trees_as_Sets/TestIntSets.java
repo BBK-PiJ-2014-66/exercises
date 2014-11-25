@@ -1,5 +1,5 @@
 /* 
- * Birbeck MSc Computer Science PiJ Exercsies 
+ * Birbeck MSc Computer Science PiJ Exercises 
  * author: Oliver S. Smart
  * date:   from 24 Nov 2014
  *  
@@ -9,9 +9,15 @@
  */
 public class TestIntSets{
 	public static void main( String args[]) {
-		IntSet testTree = new TreeIntSet();
+
 		System.out.println("Run tests on TreeIntSet:");
+		IntSet testTree = new TreeIntSet();
 		runTests(testTree);
+
+		System.out.println("\n\nRe-Run tests on ListIntSet:");
+		testTree = new ListIntSet();
+		runTests(testTree);
+
 	}
 	public static void runTests( IntSet testIntSet ) {
 		System.out.println("add 7 to the set");

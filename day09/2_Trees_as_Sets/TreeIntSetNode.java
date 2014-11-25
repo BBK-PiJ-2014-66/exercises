@@ -1,5 +1,5 @@
 /* 
- * Birbeck MSc Computer Science PiJ Exercsies 
+ * Birbeck MSc Computer Science PiJ Exercises 
  * author: Oliver S. Smart
  * date:   from 24 Nov 2014
  *  
