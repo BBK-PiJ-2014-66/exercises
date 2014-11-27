@@ -10,7 +10,7 @@ Done up to 1.3 Depth:
 
 
 ## 1.4 Deletion of elements (*)
-* Implementedi (see above). Not trivial. Trees require some bookeeping!
+* Implemented (see above). Not trivial. Trees require some bookeeping!
 
 ## 1.5 Balancing a tree (**)
 * This is interesting could not see how to do it. So asked Google and the answer
