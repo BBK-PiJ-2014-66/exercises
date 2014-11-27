@@ -34,14 +34,22 @@ public class TestIntegerTreeNode{
 		System.out.println("The maximum value in the tree is 12, getMax gives: " + testIntTree.getMax());
 		System.out.println("The maximum value in the tree is 3, getMin gives: " + testIntTree.getMin());
 
+		testIntTree.add(8);
+		testIntTree.add(8);
+		testIntTree.add(6);
+		testIntTree.add(6);
+		System.out.println("to make removal more challenging add two more sixes and two more 8's");
+		System.out.println("tree now: " + testIntTree + testIntTree.information());
 
-		System.out.println("\nNow remove 8:");
-		testIntTree.remove(8);
-		System.out.println("after removal:" + testIntTree + testIntTree.information());
+		for (int i=0; i< 3; i++) {
+			System.out.println("\nNow remove the " + i  + "st/nd/rd 8");
+			testIntTree.remove(8);
+			System.out.println("after removal:" + testIntTree + testIntTree.information());
 
-		System.out.println("\nNow remove 6:");
-		testIntTree.remove(6);
-		System.out.println("after removal:" + testIntTree + testIntTree.information());
+			System.out.println("\nNow remove the " + i  + "st/nd/rd 6");
+			testIntTree.remove(6);
+			System.out.println("after removal:" + testIntTree + testIntTree.information());
+		}
 
 		System.out.println("\nNow remove 11:");
 		testIntTree.remove(11);
