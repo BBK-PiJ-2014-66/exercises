@@ -1,13 +1,14 @@
 /* 
- * Birbeck MSc Computer Science PiJ Exercsies 
+ * Birbeck MSc Computer Science PiJ Exercises 
  * author: Oliver S. Smart
  * date:   from 24 Nov 2014
  *  
  * Day 9 Exercise 5.1 Integer Binary Tree
  *
  * IntegerTreeNode class as given in notes, completed
+ * Then extended for exercise 2 and exercise 3
  */
-public class IntegerTreeNode implements IntegerList {
+public class IntegerTreeNode {
 	int value;
 	IntegerTreeNode left;
 	IntegerTreeNode right;
@@ -34,23 +35,52 @@ public class IntegerTreeNode implements IntegerList {
 		}
 	}
 
+	// version of add for sets - no duplicates allowed
+	public void addSet( int newNumber) { // adds a new number to the set 
+		if (newNumber == value) { // do nothing simply return
+		} else if (newNumber > value) {
+                        if (right == null) {
+                                right = new IntegerTreeNode( newNumber);
+                        } else {
+                                right.addSet(newNumber);
+                        }
+                } else {
+                        if (left == null) {
+                                left = new IntegerTreeNode( newNumber);
+                        } else {
+                                left.addSet(newNumber);
+                        }
+                }
+        }
+
+
+
 	public boolean contains( int n) {
-		if (n == value) {
-			return true;
-		} else if (n > value) {
+		return containsVerbose( n, false);
+	}
+
+
+	public boolean containsVerbose( int inNum, boolean verbose) {
+	 	if (verbose) {
+			System.out.println("\tcontains checks " + inNum + " against " + value);
+		}
+		if (inNum > value) {
 			if (right == null) {
 				return false;
 			} else {
-				return right.contains(n);
+				return right.containsVerbose( inNum, verbose);
 			}
-		} else {
-                        if (left == null) {
-                                return false;
-                        } else {
-                                return left.contains(n);
-                        }
+		} else if (value == inNum) {
+			return true;
+		} else  {
+			if (left == null) {
+				return false;
+			} else {
+				return left.containsVerbose( inNum, verbose);
+			}
 		}
 	}
+
 
 	public int getMax() { // returns maximum value in the tree 
 		if (right == null) {
@@ -95,6 +125,31 @@ public class IntegerTreeNode implements IntegerList {
 		}
 		retStr += "]";
 		return retStr;
+	}
+
+        public String toStringCommaSeparated() { 
+                String retStr= "" + value;
+                if (left!=null) {
+                        retStr += ", " + left.toStringCommaSeparated(); 
+                }
+                if (right!=null) {
+                        retStr += ", " + right.toStringCommaSeparated();
+                }
+                return retStr;
+        }
+
+
+	public String toStringInOrderCommaSeparated() {
+		String retStr="";
+                if (left!=null) {
+                        retStr += left.toStringInOrderCommaSeparated() + ", "; 
+                }
+                retStr += "" + value;
+                if (right!=null) {
+                        retStr += ", " + right.toStringInOrderCommaSeparated();
+                }
+                return retStr;
+ 
 	}
 
 	public String information() {
