@@ -11,8 +11,14 @@ public class TestIntSortedList{
 	public static void main( String args[]) {
 
 		System.out.println("Run tests on TreeIntSortedList:");
-		IntSortedList  testTree = new TreeIntSortedList();
-		runTests(testTree);
+		IntSortedList  testSortedL = new TreeIntSortedList();
+		runTests(testSortedL);
+
+
+		System.out.println("\n\nRe-Run the same tests on ListIntSortedList:");
+		testSortedL = new ListIntSortedList();
+	 	runTests(testSortedL);
+
 
 	}
 	public static void runTests( IntSortedList testList ) {

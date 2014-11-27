@@ -28,6 +28,28 @@ public class ListIntSetNode{
 		}
 	}
 
+	public int value() {
+		return value;
+	}
+
+	public void setValue( int num) {
+		value = num;
+	}
+
+
+	public void addSortedList( int num) {
+		if (next == null) { // add to the end biggest as it the biggest
+			next = new ListIntSetNode( num);
+		} else if ((value <= num) && (num < next.value)) {
+			// add in between
+			ListIntSetNode newNode = new ListIntSetNode( num);
+			newNode.next = next;
+			next = newNode;
+		} else {
+			next.addSortedList(num);
+		}
+	}
+
 	@Override
         public String toString() { // comma separated
 		if (next==null) {
