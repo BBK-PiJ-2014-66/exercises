@@ -10,9 +10,12 @@ Done up to 1.3 Depth:
 
 
 ## 1.4 Deletion of elements (*)
-* working on it
+* Implementedi (see above). Not trivial. Trees require some bookeeping!
 
 ## 1.5 Balancing a tree (**)
+* This is interesting could not see how to do it. So asked Google and the answer
+is Tree Rotation: [Wikipedia page on tree rotation](http://en.wikipedia.org/wiki/Tree_rotation). Do not
+have time to work on this!
 
 # 2 Tree as sets
 
@@ -38,9 +41,7 @@ The interface as per instruction [IntSet.java](2_Trees_as_Sets/IntSet.java)
 * Testing script for both implementations [TestIntSets.java](2_Trees_as_Sets/TestIntSets.java) shows
   that the tree implementation requires far fewer comparisons to check the the set (see git commit for output).
 
-
 # 3 Trees as (sorted) lists
-
 
 ## 2.1 Interface
 
@@ -65,6 +66,9 @@ The interface as per instruction [IntSortedList.java](2_Trees_as_Sets/IntSortedL
 
 
 # 4 Abstract syntax tree (*)
+
+* Interesting and could actually be useful in my work. No time at present.
+
 
 # 5 Git internals (**)
   
