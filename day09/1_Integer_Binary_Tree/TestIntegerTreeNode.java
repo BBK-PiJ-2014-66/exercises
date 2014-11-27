@@ -42,11 +42,11 @@ public class TestIntegerTreeNode{
 		System.out.println("tree now: " + testIntTree + testIntTree.information());
 
 		for (int i=0; i< 3; i++) {
-			System.out.println("\nNow remove the " + i  + "st/nd/rd 8");
+			System.out.println("\nNow remove the " + (i+1)  + "st/nd/rd 8");
 			testIntTree.remove(8);
 			System.out.println("after removal:" + testIntTree + testIntTree.information());
 
-			System.out.println("\nNow remove the " + i  + "st/nd/rd 6");
+			System.out.println("\nNow remove the " + (i+1)  + "st/nd/rd 6");
 			testIntTree.remove(6);
 			System.out.println("after removal:" + testIntTree + testIntTree.information());
 		}

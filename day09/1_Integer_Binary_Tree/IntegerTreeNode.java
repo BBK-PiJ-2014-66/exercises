@@ -204,10 +204,12 @@ public class IntegerTreeNode {
 			System.out.println("debug remove " + inNum + " got a non-leaf match ");
 			if (left != null) { // replace value with largest value on the left
 				int replace = left.getMax();
-				this.remove(replace); 
+				value = 1000*value; // make sure we do not try to remove this node again
+				this.remove(replace); // remove the value 
 				value = replace; 
 			} else if (right != null) { // or smallest on the left
 				int replace = right.getMin();
+				value = 1000*value; // make sure we do not try to remove this node again
 				this.remove(replace); 
 				value = replace; 
 			}
