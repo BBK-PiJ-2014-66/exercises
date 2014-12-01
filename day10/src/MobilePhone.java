@@ -36,9 +36,9 @@ public class MobilePhone extends OldPhone {
 	}
 
 	/**
-	 * rings a particular Alarm.
+	 * plays a game
 	 *
-	 * @param alarm to ring (well print) 
+	 * @param game the game to play (filename?)
 	 */
 	public void playGame( String game) {
 		System.out.println("Play game '" + game + "'");
