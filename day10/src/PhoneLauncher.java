@@ -8,7 +8,8 @@ public class PhoneLauncher {
 		launcher.launch();
 	}
 	public void launch() {
-		MobilePhone myPhone = new MobilePhone();
+		System.out.println("Now upgraded to a SmartPhone!");
+		SmartPhone myPhone = new SmartPhone();
 
 		System.out.println("Test call a couple of numbers:");
 		myPhone.call("020 7631 6000"); // Birkbeck
@@ -29,6 +30,14 @@ public class PhoneLauncher {
 
 		System.out.println("\nThis phone can play games:");
 		myPhone.playGame("Poker.class");
+
+		System.out.println("\nThis phone can browse the web:");
+		myPhone.browseWeb("http://moodle.bbk.ac.uk/");
+
+		System.out.println("\nThis phone has GPS:");
+		GPS3coords where = myPhone.findPosition();	
+		System.out.println("I am at latitude " + where.latitude + " degrees, " + 
+				" longitude " + where.longitude + " degrees"); 
 
 
 	}
