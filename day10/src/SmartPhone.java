@@ -26,4 +26,21 @@ public class SmartPhone extends MobilePhone {
 		
 	}
 
+	/**
+	 * calls a number, SmartPhone version routes internation calls through the internet.
+	 *
+	 * @param number phone number to call
+	 */
+	@Override
+	public void call( String number) {
+		if ( number.substring(0,2).equals("00") || // international calls start with 00
+		     number.substring(0,1).equals("+") &&  // or + except if +44!
+		     (!number.substring(0,3).equals("+44"))) { 
+			System.out.println("Internet routed call to <" + number + ">");
+		} else {
+			super.call(number);
+		}
+	}
+
+
 }

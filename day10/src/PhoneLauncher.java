@@ -11,7 +11,7 @@ public class PhoneLauncher {
 		System.out.println("Now upgraded to a SmartPhone!");
 		SmartPhone myPhone = new SmartPhone();
 
-		System.out.println("Test call a couple of numbers:");
+		System.out.println("Test call a couple of numbers: (2nd is international)");
 		myPhone.call("020 7631 6000"); // Birkbeck
 		myPhone.call("+1 202 456 1111"); // The White House
 
@@ -38,6 +38,13 @@ public class PhoneLauncher {
 		GPS3coords where = myPhone.findPosition();	
 		System.out.println("I am at latitude " + where.latitude + " degrees, " + 
 				" longitude " + where.longitude + " degrees"); 
+
+
+		System.out.println("\nNow lets call the Kremlin to test internet call to 00 number");
+		myPhone.call("00 7 495 695 37 76"); // Birkbeck
+  
+		System.out.println("\nTest UK call with +44 should not be internet routed!");
+		myPhone.call("+44 20 7631 6000"); // Birkbeck
 
 
 	}
