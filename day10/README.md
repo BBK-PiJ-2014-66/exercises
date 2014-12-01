@@ -16,7 +16,7 @@ Completed:
 
 # 2 Overriding
 
-* To be done
+* Done [SmartPhone.java](src/SmartPhone.java) and [PhoneLauncher.java](src/PhoneLauncher.java).
 
 # 3 Passing information to ancestor classes
 
