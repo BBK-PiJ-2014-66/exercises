@@ -22,6 +22,7 @@ public class MobilePhone extends OldPhone {
 	 *
 	 * @param number phone number to call
 	 */
+	@Override
 	public void call( String number) {
 		super.call(number);
 		store(number);
