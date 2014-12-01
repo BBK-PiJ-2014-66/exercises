@@ -20,7 +20,8 @@ Completed:
 
 # 3 Passing information to ancestor classes
 
-* To be done
+* Done (see above).
+
 
 # 4 Visibility
 
