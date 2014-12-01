@@ -9,7 +9,7 @@ public class PhoneLauncher {
 	}
 	public void launch() {
 		System.out.println("Now upgraded to a SmartPhone!");
-		SmartPhone myPhone = new SmartPhone();
+		SmartPhone myPhone = new SmartPhone("iphone");
 
 		System.out.println("Test call a couple of numbers: (2nd is international)");
 		myPhone.call("020 7631 6000"); // Birkbeck
@@ -47,5 +47,6 @@ public class PhoneLauncher {
 		myPhone.call("+44 20 7631 6000"); // Birkbeck
 
 
+		System.out.println("\nexercise 3 check the brand of the phone: it is a '" + myPhone.getBrand() +"'");
 	}
 }

@@ -3,6 +3,21 @@
  * @author Oliver Smart <osmart01@dcs.bbk.ac.uk>
  */
 public class SmartPhone extends MobilePhone {
+
+	/**
+	 * Default constructor unbranded phone
+	 */
+	SmartPhone() {
+		super();
+	}
+
+	/**
+	 * branded phone constructor
+	 * @param brand the phone's brand
+	 */
+	SmartPhone( String brand) {
+		super(brand);
+	}
 	/**
 	 * open a web page in the browser
 	 * @param webURL url for the web page

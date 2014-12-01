@@ -12,9 +12,21 @@ public class MobilePhone extends OldPhone {
 	 * Default constructor: initializes lastNumbersStore
 	 */
 	MobilePhone() {
+		super();
 		numInLastNumberStore = 0;
 		lastNumberStore = new String[MAX_NUMBERS_STORED];
 	}
+
+	/**
+	 * branded phone constructor
+	 * @param brand the phone's brand
+	 */
+	MobilePhone(String brand) {
+		super(brand);
+		numInLastNumberStore = 0;
+		lastNumberStore = new String[MAX_NUMBERS_STORED];
+	}
+
 
 
 	/**
