@@ -57,5 +57,15 @@ public class SmartPhone extends MobilePhone {
 		}
 	}
 
+	/**
+	 * plays a game
+	 *
+	 * @param game the game to play (filename?)
+	 */
+	public void playGame( String game) {
+		//cannot use MobilePhone playGame as it is now private
+		System.out.println("Play game '" + game + "' (SmartPhone version)");
+	}
+
 
 }

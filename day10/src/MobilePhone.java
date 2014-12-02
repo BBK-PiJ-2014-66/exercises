@@ -53,7 +53,7 @@ public class MobilePhone extends OldPhone {
 	 *
 	 * @param game the game to play (filename?)
 	 */
-	public void playGame( String game) {
+	private void playGame( String game) {
 		System.out.println("Play game '" + game + "'");
 	}
 

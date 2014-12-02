@@ -27,7 +27,9 @@ Completed:
 
 ## 4.1 Increasing visibility
 
-* To be done
+* Told to change visibility of  *playGame(String)* in [MobilePhone.java](src/MobilePhone.java) to *private*. 
+  So  [SmartPhone.java](src/SmartPhone.java) cannot use this method and instead we have to provide
+  a new implementation in [SmartPhone.java](src/SmartPhone.java) itself.
 
 ## 4.2 Reducing visibility
 
