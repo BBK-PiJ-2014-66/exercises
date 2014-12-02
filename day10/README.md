@@ -49,4 +49,16 @@ Completed:
 
 # 8 Noah’s Ark (*)
 
-* To be done
+Tackled. Used eclipse and java package for first time. 
+Reasonably straightforward. Code is in animal package:
+
+* [animal/Animal.java](Ark/src/animal/Animal.java) Abstract class.
+* [animal/Type.java](Ark/src/animal/Type.java) and [animal/IsMammal.java](Ark/src/animal/IsMammal.java) enum's used.
+* The actual animals are pretty simple
+  * [animal/Bat.java](Ark/src/animal/Bat.java) 
+  * [animal/Bear.java](Ark/src/animal/Bear.java)
+  * [animal/Beetle.java](Ark/src/animal/Beetle.java)
+  * [animal/Dolphin.java](Ark/src/animal/Dolphin.java)
+  * [animal/Eagle.java](Ark/src/animal/Eagle.java)
+  * stopped after doing 5 will leave rest to Noah.
+* [ArkTest.java](Ark/src/ArkTest.java) simple testing script *see commit message for its output.*
