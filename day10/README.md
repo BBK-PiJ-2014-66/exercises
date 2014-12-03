@@ -46,7 +46,13 @@ RestrictedSmartPhone.java:9: playGame(java.lang.String) in RestrictedSmartPhone 
 
 # 5 Multiple inheritance
 
-* To be done
+Done can "cludge" it by using one extension and creating an interface
+to the other class:
+
+* [MusicalInstrument.java](src/MusicalInstrument.java)
+* [WoodenObjectInterface.java](src/WoodenObjectInterface.java)
+* [WoodenObject.java](src/WoodenObject.java)
+* [Guitar.java](src/Guitar.java)
 
 # 6 Java magic
 
