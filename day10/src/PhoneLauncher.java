@@ -8,8 +8,8 @@ public class PhoneLauncher {
 		launcher.launch();
 	}
 	public void launch() {
-		System.out.println("Now upgraded to a SmartPhone!");
-		SmartPhone myPhone = new SmartPhone("iphone");
+		System.out.println("Now upgraded to a SmartPhone - but this has been Restricted");
+		SmartPhone myPhone = new RestrictedSmartPhone("iphone");
 
 		System.out.println("Test call a couple of numbers: (2nd is international)");
 		myPhone.call("020 7631 6000"); // Birkbeck
