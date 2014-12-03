@@ -36,11 +36,13 @@ Completed:
 * Told to try to reduce the visibility of playGame in RestrictedSmartPhone by making the method private
   this results in the compiler message:
 
+```
 RestrictedSmartPhone.java:9: playGame(java.lang.String) in RestrictedSmartPhone cannot override playGame(java.lang.String) in SmartPhone; attempting to assign weaker access privileges; was public
 	private void playGame( String game) {
+```
 
 * You cannot reduce the visibility only increase it. But you can override the method with a new one: 
-  [RestrictedSmartPhone.java](src/RestictedSmartPhone.java) Tested in  [PhoneLauncher.java](src/PhoneLauncher.java).
+  [RestrictedSmartPhone.java](src/RestrictedSmartPhone.java) Tested in  [PhoneLauncher.java](src/PhoneLauncher.java).
 
 # 5 Multiple inheritance
 
