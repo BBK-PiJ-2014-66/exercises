@@ -56,7 +56,13 @@ to the other class:
 
 # 6 Java magic
 
-* To be done
+Not sure what is meant to be wrong the only thing required to
+is to add a constructor for Lecturer class. Works fine simple inheritance?
+
+* [Teacher.java](exercise6/src/Teacher.java) as given
+* [Lecturer.java](exercise6/src/Lecturer.java) added constructor
+* [LecturerTestScript.java](exercise6/src/LecturerTestScript.java) test script
+   works fine - see git commit message for output.
 
 # 7 Final means no change
 
