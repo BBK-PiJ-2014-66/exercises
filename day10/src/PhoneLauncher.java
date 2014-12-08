@@ -15,7 +15,7 @@ public class PhoneLauncher {
 		myPhone.call("020 7631 6000"); // Birkbeck
 		myPhone.call("+1 202 456 1111"); // The White House
 
-		System.out.println("\nThis phone stores the last " + myPhone.MAX_NUMBERS_STORED + " numbers that have been called");
+		System.out.println("\nThis phone stores the last " + MobilePhone.MAX_NUMBERS_STORED + " numbers that have been called");
 		System.out.println("test print of the last number store:");
 		myPhone.printLastNumbers();
 
