@@ -16,17 +16,44 @@ public class SmartPhoneScript {
 		SmartPhone myPhone = new SmartPhone();
 
 		// test all methods of SmartPhone
-		myPhone.call("+34 91 356 7777");
-		System.out.println("phone's brand is " + myPhone.getBrand());
-		myPhone.browseWeb("http://www.dcs.bbk.ac.uk");
-		myPhone.playGame("snakes.class");
-		myPhone.printLastNumbers();
-		myPhone.ringAlarm("dongdong.mp3");
+		testSmartPhone( myPhone);
+
+		// 2.3 Indirect upcasting when calling a method
+		testPhone( myPhone);
+	}
+
+	/**
+	 * Tests a smartPhone
+	 * 
+	 * @param smartPhone the phone to test
+	 */
+	private static void testSmartPhone(SmartPhone smartPhone) {
+		// 2.1
+		smartPhone.call("+34 91 356 7777");
+		System.out.println("phone's brand is " + smartPhone.getBrand());
+		smartPhone.browseWeb("http://www.dcs.bbk.ac.uk");
+		smartPhone.playGame("snakes.class");
+		smartPhone.printLastNumbers();
+		smartPhone.ringAlarm("dongdong.mp3");
 		System.out.println("\nThis phone has GPS:");
-		GPS3coords where = myPhone.findPosition();
+		GPS3coords where = smartPhone.findPosition();
 		System.out.println("I am at latitude " + where.latitude + " degrees, "
 				+ " longitude " + where.longitude + " degrees");
-
 	}
+
+	/**
+	 * Test a Phone phone
+	 * @param aPhone the phone to test
+	 */
+	private static void testPhone(Phone aPhone) {
+		System.out.println("\n\ntestPhone method:");
+		// the only method in Phone is call so we can only test this
+		aPhone.call("00 1 234 56789");
+		// 2.4 downcast to test as a SmartPhone
+		System.out.println("Now test as a SmartPhone:");
+		testSmartPhone( (SmartPhone) aPhone);
+	}
+	
+	
 
 }
