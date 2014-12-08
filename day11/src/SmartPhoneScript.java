@@ -20,6 +20,9 @@ public class SmartPhoneScript {
 
 		// 2.3 Indirect upcasting when calling a method
 		testPhone( myPhone);
+		
+		MobilePhone myMobile = new MobilePhone();
+		testPhone( myMobile);
 	}
 
 	/**
@@ -51,7 +54,11 @@ public class SmartPhoneScript {
 		aPhone.call("00 1 234 56789");
 		// 2.4 downcast to test as a SmartPhone
 		System.out.println("Now test as a SmartPhone:");
-		testSmartPhone( (SmartPhone) aPhone);
+		try {
+			testSmartPhone( (SmartPhone) aPhone);
+		} catch (ClassCastException e){
+			System.out.println("this phone is NOT a SmartPhone");		
+		}
 	}
 	
 	

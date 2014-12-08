@@ -16,7 +16,7 @@ Completed: [Comparator.java](src/comparator/Comparator.java) with a JUnit test
 
 ## 2.2 Direct upcasting
 
-* Change the script so that the SmartPhone is created with the line:
+*Change the script so that the SmartPhone is created with the line:*
 
 ````
 Mobilephone myPhone = new Smartphone();
@@ -62,7 +62,17 @@ Alter [SmartPhoneScript.java](src/SmartPhoneScript.java) can only test the call 
 Smartphone.* Alter [SmartPhoneScript.java](src/SmartPhoneScript.java) downcast easy but dangerous...
 
 
+## 2.5 Casting exception
 
+*Create a MobilePhone object and then pass it to method testPhone(Phone). What happens?*
 
+* runs but get exception:
 
+````
+Exception in thread "main" java.lang.ClassCastException: MobilePhone cannot be cast to SmartPhone
+	at SmartPhoneScript.testPhone(SmartPhoneScript.java:57)
+	at SmartPhoneScript.main(SmartPhoneScript.java:25)
+````
+
+casting is dangerous. Lets modify code to catch the error:  [SmartPhoneScript.java](src/SmartPhoneScript.java).
 
