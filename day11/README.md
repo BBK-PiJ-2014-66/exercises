@@ -54,12 +54,12 @@ location: class MobilePhone
 
 Pass this object to a method testPhone(Phone) that has only one parameter of type Phone. What methods can you call on the object inside the method?
 
-Alter [SmartPhoneScript.java](src/[SmartPhoneScript.java) can only test the call method as this is the only method in `Phone` interface.
+Alter [SmartPhoneScript.java](src/SmartPhoneScript.java) can only test the call method as this is the only method in `Phone` interface.
 
 ## 2.4 Downcasting
 
 *Inside the former method, downcast the object to Smartphone so that you can use all the public methods of
-Smartphone.* Alter [SmartPhoneScript.java](src/[SmartPhoneScript.java) downcast easy but dangerous...
+Smartphone.* Alter [SmartPhoneScript.java](src/SmartPhoneScript.java) downcast easy but dangerous...
 
 
 
