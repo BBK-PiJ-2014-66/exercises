@@ -66,7 +66,14 @@ is to add a constructor for Lecturer class. Works fine simple inheritance?
 
 # 7 Final means no change
 
-* To be done
+* As instructed wrote [FinalMeansNoChange7.java](src/FinalMeansNoChange7.java) 
+attempting to extend `String`. Does not compile because `String` is `final`:
+
+````
+$ javac FinalMeansNoChange7.java 
+FinalMeansNoChange7.java:9: cannot inherit from final java.lang.String
+public class FinalMeansNoChange7 extends String {
+````
 
 # 8 Noah’s Ark (*)
 
