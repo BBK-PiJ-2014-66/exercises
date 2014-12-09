@@ -76,3 +76,7 @@ Exception in thread "main" java.lang.ClassCastException: MobilePhone cannot be c
 
 casting is dangerous. Lets modify code to catch the error:  [SmartPhoneScript.java](src/SmartPhoneScript.java).
 
+# 3 Generic list
+*Modify the doubly-linked list that you have created in past weeks to make it generic, i.e. to allow it to have values
+of its elements of any type.* The doubly-linked list was done in week 7 but [E05DoublyLinkedLists.java](../day07/E05DoublyLinkedLists.java)
+is very wrapped up with patient stuff. So instead work from `LinkedList.java` coursework3.
