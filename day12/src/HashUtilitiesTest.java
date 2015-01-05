@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue; 
 import static org.junit.Assert.assertFalse; 
 import java.util.Random;
-//import static HashUtilities;
+
 /**
  * JUnit test for HashUtilies shortHash Method
  * 
@@ -35,10 +35,6 @@ public class HashUtilitiesTest {
 			assertTrue(descript,myHash>=0);
 			assertFalse(descript + " > " + rangemax, myHash>rangemax);
 		}
-	}
-	
-	
-	
-	
+	}	
 
 }
