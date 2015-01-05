@@ -19,4 +19,14 @@ public class PersonTest {
 		assertEquals("Error failed to get correct initials", expected, output);
 	}
 	
+	@Test
+	public void testsNameWithSpace() {
+		Person p = new Person();
+		String input = "Henry  H.   Hippo";
+		String output = p.getInitials(input);
+		String expected = "HHH";
+		assertEquals("Error failed to get correct initials", expected, output);
+	}
+
+	
 }
