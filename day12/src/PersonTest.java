@@ -21,7 +21,8 @@ public class PersonTest {
 	
 	/**
 	 * bug report in exercise_d12.pdf origin version failed to deal
-	 * with name with mulitple spaces separating
+	 * with name with multiple spaces separating the different words 
+	 * (now fixed).
 	 */
 	@Test
 	public void testsNameWithSpace() {

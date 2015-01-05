@@ -2,7 +2,7 @@
  * 
  * getInitials method from d12.pdf page 3.
  * 
- * @author PiJ 
+ * @author PiJ fixed by Oliver Smart
  * 
  */
 public class Person {
@@ -10,8 +10,10 @@ public class Person {
 		String result = "";
 		String[] words = fullName.split(" ");
 		for (int i = 0; i < words.length; i++) {
-			String nextInitial = "" + words[i].charAt(0);
-			result = result + nextInitial.toUpperCase();
+			if (words[i].length() > 0) { // ignore any blank words
+				String nextInitial = "" + words[i].charAt(0);
+				result = result + nextInitial.toUpperCase();
+			}
 		}
 		return result;
 	}
