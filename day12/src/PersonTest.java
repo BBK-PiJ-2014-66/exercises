@@ -19,6 +19,10 @@ public class PersonTest {
 		assertEquals("Error failed to get correct initials", expected, output);
 	}
 	
+	/**
+	 * bug report in exercise_d12.pdf origin version failed to deal
+	 * with name with mulitple spaces separating
+	 */
 	@Test
 	public void testsNameWithSpace() {
 		Person p = new Person();
