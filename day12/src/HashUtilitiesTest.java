@@ -32,7 +32,7 @@ public class HashUtilitiesTest {
 			int randomNum = rand.nextInt((rmax - rmin) + 1) + rmin;
 			int myHash = HashUtilities.shortHash(randomNum);
 			String descript = "shortHash("+ randomNum + ") returned number out of range = " + myHash;
-			assertTrue(descript,myHash>0);
+			assertTrue(descript,myHash>=0);
 			assertFalse(descript + " > " + rangemax, myHash>rangemax);
 		}
 	}
