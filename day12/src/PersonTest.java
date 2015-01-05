@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
  * 
  * JUnit Tests of getInitials method from d12.pdf page 4.
  * 
- * @author PiJ 
+ * @author PiJ modified by Oliver Smart
  * 
  */
 public class PersonTest {
@@ -15,6 +15,8 @@ public class PersonTest {
 		String input = "Dereck Robert Yssirt";
 		String output = p.getInitials(input);
 		String expected = "DRY";
-		assertEquals(output, expected);
+		// correct assertEquals to expected then output and add message
+		assertEquals("Error failed to get correct initials", expected, output);
 	}
+	
 }
