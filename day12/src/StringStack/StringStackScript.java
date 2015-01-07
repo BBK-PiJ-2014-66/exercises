@@ -1,3 +1,5 @@
+package StringStack;
+
 public class StringStackScript {
     public static void main(String[] args) {
 	  StringStackScript script = new StringStackScript();

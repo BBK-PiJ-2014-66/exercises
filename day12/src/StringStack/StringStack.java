@@ -1,3 +1,5 @@
+package StringStack;
+
 /**
  * A basic Stack of Strings
  */

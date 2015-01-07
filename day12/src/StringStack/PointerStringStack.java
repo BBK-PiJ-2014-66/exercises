@@ -1,3 +1,4 @@
+package StringStack;
 /**
  * Implementation of interface stack using a 
  * dynamic structure as support. 
