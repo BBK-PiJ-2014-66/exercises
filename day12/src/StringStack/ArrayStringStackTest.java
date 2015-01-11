@@ -21,17 +21,26 @@ public class ArrayStringStackTest {
 
 	private StringStack testStack;
 
+	/**
+	 * initialize is called before each test is run
+	 */
 	@Before
 	public void initialize() {
 		testStack = new ArrayStringStack();
 	}
 
+	/**
+	 * test .isEmpty() on an empty stack
+	 */
 	@Test
 	public void testEmptyStackIsEmpty() {
 		String descript = "Empty stack must return .isEmpty() true";
 		assertTrue(descript, testStack.isEmpty());
 	}
 
+	/**
+	 * test .isEmpty() method on a stack that has one element
+	 */
 	@Test
 	public void testFilledStackIsNotEmpty() {
 		String descript = "Stack with one element must return .isEmpty() false";
@@ -39,6 +48,10 @@ public class ArrayStringStackTest {
 		assertFalse(descript, testStack.isEmpty());
 	}
 
+	/**
+	 * test basic operation push a string in, pop it out and check that
+	 * we get back what we put in plus that after this the stack isEmpty.
+	 */
 	@Test
 	public void testSinglePushThenPop() {
 		String in = "in1";
@@ -53,6 +66,9 @@ public class ArrayStringStackTest {
 		assertTrue(descript, testStack.isEmpty());
 	}
 
+	/**
+	 * more comprehensive test with 100 push then pops
+	 */
 	@Test
 	public void testMultiplePushThenPop() {
 		// idea is to push 100 strings 1, 2... 100
@@ -79,6 +95,9 @@ public class ArrayStringStackTest {
 		assertTrue(descript, testStack.isEmpty());
 	}
 
+	/**
+	 * test result of pop/peek on an empty stack. Must return null
+	 */
 	@Test
 	public void testEmptyStackPopAndPeek() {
 		String descript = "Pop from Empty stack must return null";
