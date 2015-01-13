@@ -14,27 +14,43 @@ package library;
  * @since Jan 2015
  */
 public class UserImpl implements User {
+	private String name;
+	private int libID;
 
+	/**
+	 * the single constructor  
+	 * @param the user's name
+	 */
 	UserImpl( String name) {
-		// minimal "stub" implementation to enable Test to run (but fail)
+		this.name = name;
+		libID = Integer.MIN_VALUE; // invalid initial value
 	}
 	
-	
+	/**
+	 * Set the library ID
+	 * @param the library ID 
+	 */
 	@Override
 	public void setLibraryID(int libID) {
-		// minimal "stub" implementation to enable Test to run (but fail)
+		this.libID = libID;
 	}
 
+	/**
+	 * Getter for library ID	 
+	 * @return the library ID number
+	 */
 	@Override
 	public int getLibraryID() {
-		// minimal "stub" implementation to enable Test to run (but fail)
-		return 0;
+		return libID;
 	}
 
+	/** 
+	 * Getter for user's name
+	 * @return the user's name
+	 */
 	@Override
 	public String getUserName() {
-		// minimal "stub" implementation to enable Test to run (but fail)
-		return "a name";
+		return name;
 	}
 
 }
