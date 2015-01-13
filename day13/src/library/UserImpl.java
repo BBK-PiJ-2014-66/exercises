@@ -14,21 +14,27 @@ package library;
  * @since Jan 2015
  */
 public class UserImpl implements User {
-	private String name;
-	private int libID;
+	private String name; // user's name e.g. "Joe Bloggs"
+	private Library library; // library that user is registered with
+	private int libID; // library ID number
 
 	/**
-	 * the single constructor  
-	 * @param the user's name
+	 * the single constructor
+	 * 
+	 * @param the
+	 *            user's name
 	 */
-	UserImpl( String name) {
+	UserImpl(String name) {
 		this.name = name;
 		libID = Integer.MIN_VALUE; // invalid initial value
+		this.library = null;
 	}
-	
+
 	/**
 	 * Set the library ID
-	 * @param the library ID 
+	 * 
+	 * @param the
+	 *            library ID
 	 */
 	@Override
 	public void setLibraryID(int libID) {
@@ -36,7 +42,8 @@ public class UserImpl implements User {
 	}
 
 	/**
-	 * Getter for library ID	 
+	 * Getter for library ID
+	 * 
 	 * @return the library ID number
 	 */
 	@Override
@@ -44,8 +51,9 @@ public class UserImpl implements User {
 		return libID;
 	}
 
-	/** 
+	/**
 	 * Getter for user's name
+	 * 
 	 * @return the user's name
 	 */
 	@Override
@@ -53,17 +61,31 @@ public class UserImpl implements User {
 		return name;
 	}
 
+	/**
+	 * Register the user with a library. registration should set the
+	 * library-unique ID for the user
+	 * 
+	 * @param library
+	 *            the Library to register with
+	 */
 	@Override
 	public void register(Library library) {
-		// stub method
-		System.out.println("debug have not yet written .register() method!");
+		libID = library.getID(name);
+		this.library = library;
 	}
 
+	/**
+	 * Provides the name of library the user registered with
+	 * 
+	 * @return the name of the library the user is registered with or null if
+	 *         not yet registered
+	 */
 	@Override
 	public String getLibrary() {
-		// stub method
-		System.out.println("debug have not yet written .getLibrary() method!");
-		return null;
+		if (library == null)
+			return null;
+		else
+			return library.getLibrary(); // its name
 	}
 
 }
