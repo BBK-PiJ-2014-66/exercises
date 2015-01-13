@@ -38,4 +38,21 @@ public interface User {
 	 */
 	String getUserName();
 
+	/**
+	 * Register the user with a library. registration should set the
+	 * library-unique ID for the user
+	 * 
+	 * @param library
+	 *            the Library to register with
+	 */
+	void register(Library library);
+
+	/**
+	 * Provides the name of library the user registered with
+	 * 
+	 * @return the name of the library the user is registered with or null if
+	 *         not yet registered.
+	 */
+	String getLibrary();
+
 }
