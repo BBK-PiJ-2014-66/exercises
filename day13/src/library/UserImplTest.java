@@ -45,7 +45,8 @@ public class UserImplTest {
 		assertNotNull(".getLibrary() should not be null after .register()",
 				getLibraryName);
 		int getID = testUser.getLibraryID();
-		assertEquals("Mock library should have assigned library id 13",13,getID);
+		assertEquals("Mock library should have assigned library id 13", 13,
+				getID);
 	}
 
 }
