@@ -4,7 +4,12 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-public class BookImplTest {
+/**
+ * Unit Tests of BookImpl
+ * @author Oliver Smart <osmart01@dcs.bbk.ac.uk>
+ * @since Jan 2015
+ *
+ */public class BookImplTest {
 
 	@Test
 	public void testCreateBookGetBacKAuthorTitle() {
