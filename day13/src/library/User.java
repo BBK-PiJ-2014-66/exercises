@@ -51,7 +51,7 @@ public interface User {
 	 * Provides the name of library the user registered with
 	 * 
 	 * @return the name of the library the user is registered with or null if
-	 *         not yet registered.
+	 *         not yet registered
 	 */
 	String getLibrary();
 
