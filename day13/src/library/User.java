@@ -14,27 +14,28 @@ package library;
  * @since Jan 2015
  */
 public interface User {
-	
-	
+
 	/**
-	 * Setter for the library ID number 
+	 * Setter for the library ID number (unique in the library but this is
+	 * sorted outside the class).
 	 * 
-	 * @param libID the supplied library ID number
+	 * @param libID
+	 *            The supplied library ID number
 	 */
-	void setLibraryID( int libID);
-	
-	
+	void setLibraryID(int libID);
+
 	/**
 	 * getter for the library ID number
+	 * 
 	 * @return the library ID number
 	 */
 	int getLibraryID();
-	
+
 	/**
 	 * getter for the user's Name
-	 * @return the user name
+	 * 
+	 * @return the user's name
 	 */
-	int getUserName();
-	
+	String getUserName();
 
 }
