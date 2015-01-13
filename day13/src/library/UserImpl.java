@@ -53,4 +53,17 @@ public class UserImpl implements User {
 		return name;
 	}
 
+	@Override
+	public void register(Library library) {
+		// stub method
+		System.out.println("debug have not yet written .register() method!");
+	}
+
+	@Override
+	public String getLibrary() {
+		// stub method
+		System.out.println("debug have not yet written .getLibrary() method!");
+		return null;
+	}
+
 }
