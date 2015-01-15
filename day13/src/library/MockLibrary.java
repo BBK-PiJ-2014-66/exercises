@@ -21,4 +21,14 @@ public class MockLibrary implements Library {
 		return 13;
 	}
 
+	@Override
+	public int getMaxBooksPerUser() {
+		return 3;
+	}
+
+	@Override
+	public void setMaxBooksPerUser(int maxBooksPerUser) {
+		System.out.println("MockLibrary method setMaxBooksPerUser() does nothing!");
+	}
+
 }
