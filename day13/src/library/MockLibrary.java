@@ -28,7 +28,7 @@ public class MockLibrary implements Library {
 
 	@Override
 	public int getMaxBooksPerUser() {
-		return 3;
+		return 0; //default should three so return 0 to break test
 	}
 
 	@Override
