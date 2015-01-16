@@ -35,3 +35,14 @@ The library exercise: Do everything in a `library` Package.
 * [LibraryImpl](src/library/LibraryImpl.java) actually implements new features
 
 
+## 1.5 Implementation of getID() as instructed
+* Have done it
+* [LibraryImpl](src/library/LibraryImpl.java) has implementation
+* [LibraryImplTest](src/library/LibraryImplTest.java) added a test `testgetID`
+
+Problem is that I do not understand how `Library` is meant to use the `User` class. I would
+seem to be a much better idea to store a list of User objects but the `getID()` instructions
+to use the name really discourage this. Also do not understand how call to `getID()` from  [UserImpl](src/library/UserImpl.java)
+`register()` method can ever catch trying to the same name twice in the library.
+
+ 
