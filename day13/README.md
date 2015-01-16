@@ -46,3 +46,15 @@ to use the name really discourage this. Also do not understand how call to `getI
 `register()` method can ever catch trying to the same name twice in the library.
 
  
+# My take
+Decided to make a new package [library2](src/library2) - my take on library
+ask but altering things that do not make sense to me:
+* In new [User](src/library2/User.java) get rid of `register()` and `getLibrary`. Implementation
+  [UserImpl](src/library2/UserImpl.java) and test with [UserImplTest](src/library2/UserImplTest.java)
+*  Implement `.register( User)` method in new [Library](src/library2/Library.java), implemented in
+  [LibraryImpl](src/library2/LibraryImpl.java) and tested in [LibraryImplTest](src/library2/LibraryImplTest.java)
+
+
+    
+
+
