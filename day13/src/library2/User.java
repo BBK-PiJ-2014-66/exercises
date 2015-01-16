@@ -41,5 +41,30 @@ public interface User {
 	 * @return the user's name
 	 */
 	String getUserName();
+	
+	
+    /**
+     * records that a this User is currently borrowing a specific book
+     * 
+     * @param book the book borrowed
+     */
+	void recordBookBorrowed( Book book);
+	
+    /**
+     * records that a this User is currently borrowing a specific book
+     * 
+     * @param book the book borrowed
+     */
+	void recordBookReturned( Book book);
+	
+	/**
+	 * @return the number books borrowed
+	 */
+    int getNumberBooksBorrowed(); 
+	
+	/**
+	 * @return an array of the titles of the books borrowed (for 1.8)
+	 */
+	String[] getTitlesBooksBorrowed();
 
 }
