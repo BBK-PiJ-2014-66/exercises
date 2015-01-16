@@ -26,25 +26,40 @@ public interface Library {
 	 */
 	String getLibrary();
 
-
 	/**
-	 * getter for the maximum number of books that a user can borrow at a time 
+	 * getter for the maximum number of books that a user can borrow at a time
+	 * 
 	 * @return the maximum number of books allowed for a user
 	 */
 	int getMaxBooksPerUser();
-	
+
 	/**
-	 * setter for the maximum number of books that a user can borrow at a time 
-	 * @param maxBooksPerUser the new maximum number of books allowed for a user
+	 * setter for the maximum number of books that a user can borrow at a time
+	 * 
+	 * @param maxBooksPerUser
+	 *            the new maximum number of books allowed for a user
 	 */
-	void setMaxBooksPerUser( int maxBooksPerUser);
-	
-	
+	void setMaxBooksPerUser(int maxBooksPerUser);
+
 	/**
 	 * Registers a user with the library
-	 * @param aUser the user to register
-	 * @return the user's new library id if successully or -1 if there was a problem registering the the user
+	 * 
+	 * @param aUser
+	 *            the user to register
+	 * @return the user's new library id if successully or -1 if there was a
+	 *         problem registering the the user
 	 */
-	int register( User aUser);
+	int register(User aUser);
+
+	/**
+	 * adds new book to the list of books in the library
+	 * @param title
+	 * @param author
+	 */
+	void addBook(String title, String author);
 	
+	/**
+	 * @return the number of books in this library
+	 */
+	int getBookCount();
 }

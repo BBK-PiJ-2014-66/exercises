@@ -74,4 +74,17 @@ public class LibraryImpl implements Library {
 		return libID; 
 	}
 
+	@Override
+	public void addBook(String title, String author) {
+		System.out.println("addBook not yet implemented");
+	}
+
+	@Override
+	public int getBookCount() {
+		System.out.println("getBookCount not yet implemented");
+		return -1;
+	}
+	
+	
+
 }

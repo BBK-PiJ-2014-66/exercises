@@ -58,7 +58,7 @@ public class LibraryImplTest {
 	}
 	
 	/**
-	 * 
+	 * Test registering a single user 
 	 */
 	@Test
 	public void testRegisterAUser() {
@@ -71,4 +71,14 @@ public class LibraryImplTest {
 		assertEquals("2nd registration of same user failed to return -1", -1, ireg);
 	}
 	
+	/**
+	 * add a few books to the library.
+	 */
+	@Test
+	public void testAddBookGetBookCount() {
+		testLibrary.addBook("War and Peace", "Leo Tolstoy");		
+		testLibrary.addBook("War and Peace", "Leo Tolstoy"); // two copies bought
+		testLibrary.addBook("The Catcher in the Rye", "J.D Salinger");
+		assertEquals("have added 3 books", 3, testLibrary.getBookCount());
+	}
 }
