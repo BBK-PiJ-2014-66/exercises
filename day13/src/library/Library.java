@@ -11,6 +11,8 @@ package library;
  * a method to get the maximum number of books to be borrowed at any time (e.g.
  * getMaxBooksPerUser())."
  * 
+ * So default MaxBooksPerUser must be 3.
+ * 
  * @author Oliver Smart <osmart01@dcs.bbk.ac.uk>
  * @since Jan 2015
  * 
