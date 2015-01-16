@@ -1,5 +1,7 @@
 package library2;
 
+import java.util.ArrayList;
+
 /**
  * PiJ day 13 Test Driven Development
  * 
@@ -16,6 +18,7 @@ package library2;
 public class UserImpl implements User {
 	private String name; // user's name e.g. "Joe Bloggs"
 	private int libID; // library ID number
+	private ArrayList<Book> borrowed; // list of books borrowed
 
 	/**
 	 * the single constructor
@@ -26,6 +29,7 @@ public class UserImpl implements User {
 	UserImpl(String name) {
 		this.name = name;
 		libID = Integer.MIN_VALUE; // invalid initial value
+		borrowed = new ArrayList<Book>(); // 
 	}
 
 	/**
@@ -61,26 +65,28 @@ public class UserImpl implements User {
 
 	@Override
 	public void recordBookBorrowed(Book book) {
-		// TODO Auto-generated method stub
-		
+		borrowed.add(book);		
 	}
 
 	@Override
 	public void recordBookReturned(Book book) {
-		// TODO Auto-generated method stub
-		
+		// to be written
 	}
 
 	@Override
 	public int getNumberBooksBorrowed() {
 		// TODO Auto-generated method stub
-		return 0;
+		return borrowed.size();
 	}
 
 	@Override
 	public String[] getTitlesBooksBorrowed() {
-		// TODO Auto-generated method stub
-		return null;
+		int size = borrowed.size();
+		String[] titleArray = new String[size];
+		for (int bc=0; bc < size; bc++ ) {
+			titleArray[bc] =  borrowed.get(bc).getTitle();
+		}
+		return titleArray;
 	}
 
 }
