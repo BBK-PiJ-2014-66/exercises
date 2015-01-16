@@ -17,6 +17,7 @@ public class LibraryImpl implements Library {
 	private int maxBooksPerUser = 3;
 	// store Library users as Users
 	private ArrayList<User> users;
+	private ArrayList<Book> books;
 
 	/**
 	 * The sole Constructor: "Libraries have a name, set at construction time."
@@ -27,6 +28,7 @@ public class LibraryImpl implements Library {
 	LibraryImpl(String name) {
 		this.name = name;
 		users = new ArrayList<User>();
+		books = new ArrayList<Book>();
 	}
 
 	/**
@@ -73,16 +75,23 @@ public class LibraryImpl implements Library {
 		aUser.setLibraryID(libID); 
 		return libID; 
 	}
-
+	
+	/**
+	 * adds new book to the list of books in the library
+	 * @param title
+	 * @param author
+	 */
 	@Override
 	public void addBook(String title, String author) {
-		System.out.println("addBook not yet implemented");
+		books.add(new BookImpl( title, author));
 	}
 
+	/**
+	 * @return the number of books in this library
+	 */
 	@Override
 	public int getBookCount() {
-		System.out.println("getBookCount not yet implemented");
-		return -1;
+		return books.size();
 	}
 	
 	
