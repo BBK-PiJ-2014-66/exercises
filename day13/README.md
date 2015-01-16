@@ -28,4 +28,10 @@ The library exercise: Do everything in a `library` Package.
 * The implementation [UserImpl](src/library/UserImpl.java) extended and passes test.
 
 
+## 1.4 Implement initial version of LibraryImpl
+* [Library](src/library/Library.java) modified to have getMaxBooksPerUser and setMaxBooksPerUser as per instructions
+* [MockLibrary](src/library/MockLibrary.java) modified accordingly
+* [LibraryImplTest](src/library/LibraryImplTest.java) written to test new features, initially using [MockLibrary](src/library/MockLibrary.java).
+* [LibraryImpl](src/library/LibraryImpl.java) actually implements new features
+
 
