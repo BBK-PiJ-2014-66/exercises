@@ -64,26 +64,28 @@ public class LibraryImpl implements Library {
 
 	@Override
 	public int register(User aUser) {
-		// check whether user with same name is already registered as this is not allowed
+		// check whether user with same name is already registered as this is
+		// not allowed
 		for (User itUser : users) {
-		    if (itUser.getUserName().equals(aUser.getUserName()))
-		    	return -1;
+			if (itUser.getUserName().equals(aUser.getUserName()))
+				return -1;
 		}
 		// add the user
 		users.add(aUser);
 		int libID = users.size(); // user array position as ID
-		aUser.setLibraryID(libID); 
-		return libID; 
+		aUser.setLibraryID(libID);
+		return libID;
 	}
-	
+
 	/**
 	 * adds new book to the list of books in the library
+	 * 
 	 * @param title
 	 * @param author
 	 */
 	@Override
 	public void addBook(String title, String author) {
-		books.add(new BookImpl( title, author));
+		books.add(new BookImpl(title, author));
 	}
 
 	/**
@@ -94,11 +96,75 @@ public class LibraryImpl implements Library {
 		return books.size();
 	}
 
+	/**
+	 * Borrow a book
+	 * 
+	 * @param title
+	 *            title of the book to borrow
+	 * @param user
+	 *            the user who wants to borrow
+	 * @return the result an enum @see BorrowResult
+	 */
 	@Override
 	public BorrowResult borrow(String Title, User user) {
-		return BorrowResult.NOT_YET_IMPLEMENTED;
+		// is the title in the library?
+		if (!this.inLibrary(Title))
+			return BorrowResult.TITLE_NOT_FOUND;
+
+		// is the user registered?
+		if (!users.contains(user))
+			return BorrowResult.USER_NOT_REGISTERED;
+
+		// has the user reached their limit?
+		// to be coded
+
+		// is a copy of the book available to be borrowed?
+		Book copy = this.availableToBorrow(Title);
+		if (copy == null)
+			return BorrowResult.TITLE_BORROWED;
+		
+		// record that the copy of the book has been borrowed
+        copy.setBorrower(user);   
+        
+        // and record that the user has borrowed the copy of the book
+        
+		return BorrowResult.SUCCESS;
 	}
-	
-	
+
+	/**
+	 * finds whether a title is in the library or null if there is no matching
+	 * copy N.B.
+	 * 
+	 * @param Title
+	 *            book's title
+	 * @return Book with matching title (first in library)
+	 */
+	private boolean inLibrary(String Title) {
+		for (Book itBook : books) {
+			if (itBook.getTitle().equalsIgnoreCase(Title))
+				return true;
+		}
+		return false;
+	}
+
+	/**
+	 * finds first available title that has not been borrowed. If title not not
+	 * in library or all copies are borrowed returns null.
+	 * 
+	 * @param Title
+	 * @return Book available to borrow with correct Title or null if there are
+	 *         none
+	 */
+	private Book availableToBorrow(String Title) {
+		for (Book itBook : books) {
+			if (itBook.getTitle().equalsIgnoreCase(Title)) {
+				// Title matches
+				if (itBook.getBorrower() == null)
+					return itBook; // and the Book is not borrowed already
+			}
+		}
+
+		return null;
+	}
 
 }
