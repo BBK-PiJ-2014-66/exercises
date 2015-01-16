@@ -33,20 +33,4 @@ public class UserImplTest {
 				testLibraryID, getID);
 	}
 
-	/**
-	 * register the user with a mock library
-	 */
-	@Test
-	public void testRegisterWithMockLibrary() {
-		Library mockLibrary = new MockLibrary("Test");
-		User testUser = new UserImpl("Test User");
-		testUser.register(mockLibrary);
-		String getLibraryName = testUser.getLibrary();
-		assertNotNull(".getLibrary() should not be null after .register()",
-				getLibraryName);
-		int getID = testUser.getLibraryID();
-		assertEquals("Mock library should have assigned library id 13", 13,
-				getID);
-	}
-
 }

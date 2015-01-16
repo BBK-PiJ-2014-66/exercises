@@ -15,7 +15,6 @@ package library2;
  */
 public class UserImpl implements User {
 	private String name; // user's name e.g. "Joe Bloggs"
-	private Library library; // library that user is registered with
 	private int libID; // library ID number
 
 	/**
@@ -27,7 +26,6 @@ public class UserImpl implements User {
 	UserImpl(String name) {
 		this.name = name;
 		libID = Integer.MIN_VALUE; // invalid initial value
-		this.library = null;
 	}
 
 	/**
@@ -59,33 +57,6 @@ public class UserImpl implements User {
 	@Override
 	public String getUserName() {
 		return name;
-	}
-
-	/**
-	 * Register the user with a library. registration should set the
-	 * library-unique ID for the user
-	 * 
-	 * @param library
-	 *            the Library to register with
-	 */
-	@Override
-	public void register(Library library) {
-		libID = library.getID(name);
-		this.library = library;
-	}
-
-	/**
-	 * Provides the name of library the user registered with
-	 * 
-	 * @return the name of the library the user is registered with or null if
-	 *         not yet registered
-	 */
-	@Override
-	public String getLibrary() {
-		if (library == null)
-			return null;
-		else
-			return library.getLibrary(); // its name
 	}
 
 }

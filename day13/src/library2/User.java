@@ -9,6 +9,10 @@ package library2;
  * methods to get the name of the person and their ID, and to set the latter."
  * 
  * So should have one constructor User(name);
+ *
+ * OSS take2:
+ * User should not have register(Library) or getLibrary() as User is 
+ * manipulated by the Library itself
  * 
  * @author Oliver Smart <osmart01@dcs.bbk.ac.uk>
  * @since Jan 2015
@@ -37,22 +41,5 @@ public interface User {
 	 * @return the user's name
 	 */
 	String getUserName();
-
-	/**
-	 * Register the user with a library. registration should set the
-	 * library-unique ID for the user
-	 * 
-	 * @param library
-	 *            the Library to register with
-	 */
-	void register(Library library);
-
-	/**
-	 * Provides the name of library the user registered with
-	 * 
-	 * @return the name of the library the user is registered with or null if
-	 *         not yet registered
-	 */
-	String getLibrary();
 
 }
