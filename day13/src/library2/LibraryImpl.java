@@ -15,11 +15,8 @@ public class LibraryImpl implements Library {
 
 	private String name;
 	private int maxBooksPerUser = 3;
-
-	/* store an arrayList of the names of registered users
-	 * - do not like this much. Would prefer to store arrayList of User objects
-	 */
-	private ArrayList<String> userNames;
+	// store Library users as Users
+	private ArrayList<User> users;
 
 	/**
 	 * The sole Constructor: "Libraries have a name, set at construction time."
@@ -29,7 +26,7 @@ public class LibraryImpl implements Library {
 	 */
 	LibraryImpl(String name) {
 		this.name = name;
-		userNames = new ArrayList<String>();
+		users = new ArrayList<User>();
 	}
 
 	/**
@@ -61,6 +58,11 @@ public class LibraryImpl implements Library {
 	@Override
 	public void setMaxBooksPerUser(int maxBooksPerUser) {
 		this.maxBooksPerUser = maxBooksPerUser;
+	}
+
+	@Override
+	public int register(User aUser) {
+		return -1; // means there was a problem in registering
 	}
 
 }

@@ -1,6 +1,7 @@
 package library2;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import org.junit.Before;
 
@@ -56,5 +57,18 @@ public class LibraryImplTest {
 				5, testLibrary.getMaxBooksPerUser());
 	}
 	
+	/**
+	 * 
+	 */
+	@Test
+	public void testRegisterAUser() {
+		User testUser = new UserImpl("Joe Bloggs");
+		int ireg = testLibrary.register(testUser);
+		assertTrue(".register() had problem registering it first user and returned -1", ireg != -1);
+		
+		// but should not be able register the user a second time because names must be unique
+		ireg = testLibrary.register(testUser);
+		assertEquals("2nd registration of same user failed to return -1", -1, ireg);
+	}
 	
 }

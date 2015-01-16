@@ -38,4 +38,13 @@ public interface Library {
 	 * @param maxBooksPerUser the new maximum number of books allowed for a user
 	 */
 	void setMaxBooksPerUser( int maxBooksPerUser);
+	
+	
+	/**
+	 * Registers a user with the library
+	 * @param aUser the user to register
+	 * @return the user's new library id if successully or -1 if there was a problem registering the the user
+	 */
+	int register( User aUser);
+	
 }
