@@ -68,4 +68,6 @@ ask but altering things that do not make sense to me:
   [BorrowResult](src/library2/BorrowResult.java) because there are many potential problems
   in a borrow!
 
-
+* As part of this record the `User borrower` in new [BookImpl](src/library2/BookImpl.java),
+  with methods `setBorrower` and `getBorrower` defined in the new interface  [Book](src/library2/Book.java)
+  and tested in  [BookImplTest](src/library2/BookImplTest.java)
