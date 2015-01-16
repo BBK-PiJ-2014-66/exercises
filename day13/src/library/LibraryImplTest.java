@@ -22,7 +22,7 @@ public class LibraryImplTest {
 	 */
 	@Before
 	public void initialize() {
-		testLibrary = new MockLibrary(TESTNAME);
+		testLibrary = new LibraryImpl(TESTNAME);
 	}
 
 	/**
