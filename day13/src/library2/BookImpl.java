@@ -14,6 +14,7 @@ public class BookImpl implements Book {
 
 	private String author;
 	private String title;
+	private User borrower;
 	
 	/**
 	 * the one constructor
@@ -21,6 +22,7 @@ public class BookImpl implements Book {
 	BookImpl( String author, String title) {
 		this.author = author;
 		this.title = title;
+		this.borrower = null;
 	}
 	
 	
@@ -33,5 +35,18 @@ public class BookImpl implements Book {
 	public String getTitle() {
 		return title;
 	}
+
+
+	@Override
+	public User getBorrower() {
+		return this.borrower;
+	}
+
+
+	@Override
+	public void setBorrower(User user) {
+		this.borrower = user;
+	}
+	
 
 }

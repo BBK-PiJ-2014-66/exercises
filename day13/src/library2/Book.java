@@ -26,4 +26,17 @@ public interface Book {
 	 */
 	String getTitle();
 	
+	/**
+	 * getter for User who has borrowed book 
+	 * @return the user or null if the book is available to borrow
+	 */
+	User getBorrower();
+	
+	/**
+	 * Setter for the borrower
+	 * @param user the user who has borrowed the book
+	 */
+	void setBorrower( User user);
+	
+	
 }
