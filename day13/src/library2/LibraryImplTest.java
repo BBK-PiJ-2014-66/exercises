@@ -1,4 +1,4 @@
-package library;
+package library2;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
