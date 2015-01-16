@@ -76,9 +76,9 @@ public class LibraryImplTest {
 	 */
 	@Test
 	public void testAddBookGetBookCount() {
-		testLibrary.addBook("War and Peace", "Leo Tolstoy");		
-		testLibrary.addBook("War and Peace", "Leo Tolstoy"); // two copies bought
-		testLibrary.addBook("The Catcher in the Rye", "J.D Salinger");
+		testLibrary.addBook("Leo Tolstoy", "War and Peace");		
+		testLibrary.addBook("Leo Tolstoy", "War and Peace"); // two copies bought
+		testLibrary.addBook("J.D Salinger", "The Catcher in the Rye");
 		assertEquals("have added 3 books", 3, testLibrary.getBookCount());
 	}
 	
@@ -89,7 +89,7 @@ public class LibraryImplTest {
 	public void testSimpleBorrow() {
 		User testUser = new UserImpl("Joe Bloggs");
 		testLibrary.register(testUser);
-		testLibrary.addBook("War and Peace", "Leo Tolstoy");
+		testLibrary.addBook("Leo Tolstoy", "War and Peace");		
 		BorrowResult borrow = testLibrary.borrow("War and Peace", testUser);
 		assertEquals("Should be able to borrow title in library. User is registered", BorrowResult.SUCCESS, borrow);
 	}
@@ -101,7 +101,7 @@ public class LibraryImplTest {
 	public void testBorrowNotInLibrary() {
 		User testUser = new UserImpl("Joe Bloggs");
 		testLibrary.register(testUser);
-		testLibrary.addBook("War and Peace", "Leo Tolstoy");
+		testLibrary.addBook("Leo Tolstoy", "War and Peace");		
 		BorrowResult borrow = testLibrary.borrow("Henry V", testUser);
 		assertEquals("Trying to borrow title not in library", BorrowResult.TITLE_NOT_FOUND, borrow);
 	}
@@ -112,7 +112,7 @@ public class LibraryImplTest {
 	@Test 
 	public void testBorrowByNoRegisteredUser() {
 		User testUser = new UserImpl("Joe Bloggs");
-		testLibrary.addBook("War and Peace", "Leo Tolstoy");
+		testLibrary.addBook("Leo Tolstoy", "War and Peace");		
 		BorrowResult borrow = testLibrary.borrow("War and Peace", testUser);
 		assertEquals("Try to borrow by non-registered user.", BorrowResult.USER_NOT_REGISTERED, borrow);
 	}
@@ -124,7 +124,7 @@ public class LibraryImplTest {
 	public void testBorrowBookAlreadyOut() {
 		User testUser = new UserImpl("Joe Bloggs");
 		testLibrary.register(testUser);
-		testLibrary.addBook("War and Peace", "Leo Tolstoy");
+		testLibrary.addBook("Leo Tolstoy", "War and Peace");		
 		testLibrary.borrow("War and Peace", testUser);
 		User testUser2 = new UserImpl("Jane Doe");
 		testLibrary.register(testUser2);
@@ -139,7 +139,7 @@ public class LibraryImplTest {
 	public void testBorrowWhenMaxBooksExceeded() {
 		User testUser = new UserImpl("Joe Bloggs");
 		testLibrary.register(testUser);
-		testLibrary.addBook("War and Peace", "Leo Tolstoy");
+		testLibrary.addBook("Leo Tolstoy", "War and Peace");		
 		testLibrary.setMaxBooksPerUser(0);
 		BorrowResult borrow = testLibrary.borrow("War and Peace", testUser);
 		assertEquals("Should not be able to borrow. MaxBooksPerUser set to zero", BorrowResult.USER_BORROW_LIMIT, borrow);
