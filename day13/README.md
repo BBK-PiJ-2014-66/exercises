@@ -55,6 +55,17 @@ ask but altering things that do not make sense to me:
   [LibraryImpl](src/library2/LibraryImpl.java) and tested in [LibraryImplTest](src/library2/LibraryImplTest.java)
 
 
-    
+# addBook( String title, String author)
+* Sensible added to  [Library](src/library2/Library.java) and [LibraryImpl](src/library2/LibraryImpl.java).    
+* To test implemented `getBookCount()` early test in [LibraryImplTest](src/library2/LibraryImplTest.java).
+
+
+# Borrowing a Book
+* Instructed to write method `takeBook( String Title)` but need to record who has borrowed
+  book. Also need to check whether a user already has the limit of books out 
+* So implement a borrowBook( Title, User user). This will check for any book with Title
+  in the library and find any that have not already been borrowed. Method returns an enum
+  [BorrowResult](src/library2/BorrowResult.java) because there are many potential problems
+  in a borrow!
 
 
