@@ -83,7 +83,7 @@ public class LibraryImplTest {
 	}
 	
 	/**
-	 * try borrowing a book
+	 * borrowing a book successfully
 	 */
 	@Test 
 	public void testSimpleBorrow() {
@@ -92,6 +92,61 @@ public class LibraryImplTest {
 		testLibrary.addBook("War and Peace", "Leo Tolstoy");
 		BorrowResult borrow = testLibrary.borrow("War and Peace", testUser);
 		assertEquals("Should be able to borrow title in library. User is registered", BorrowResult.SUCCESS, borrow);
-	
 	}
+	
+	/**
+	 * try to borrow a book not in library
+	 */
+	@Test 
+	public void testBorrowNotInLibrary() {
+		User testUser = new UserImpl("Joe Bloggs");
+		testLibrary.register(testUser);
+		testLibrary.addBook("War and Peace", "Leo Tolstoy");
+		BorrowResult borrow = testLibrary.borrow("Henry V", testUser);
+		assertEquals("Trying to borrow title not in library", BorrowResult.TITLE_NOT_FOUND, borrow);
+	}
+	
+	/**
+	 * borrowing a book - user not registered
+	 */
+	@Test 
+	public void testBorrowByNoRegisteredUser() {
+		User testUser = new UserImpl("Joe Bloggs");
+		testLibrary.addBook("War and Peace", "Leo Tolstoy");
+		BorrowResult borrow = testLibrary.borrow("War and Peace", testUser);
+		assertEquals("Try to borrow by non-registered user.", BorrowResult.USER_NOT_REGISTERED, borrow);
+	}
+	
+	/**
+	 * borrow a book that has already been borrowed
+	 */
+	@Test
+	public void testBorrowBookAlreadyOut() {
+		User testUser = new UserImpl("Joe Bloggs");
+		testLibrary.register(testUser);
+		testLibrary.addBook("War and Peace", "Leo Tolstoy");
+		testLibrary.borrow("War and Peace", testUser);
+		User testUser2 = new UserImpl("Jane Doe");
+		testLibrary.register(testUser2);
+		BorrowResult borrow = testLibrary.borrow("War and Peace", testUser2);
+		assertEquals("book has been borrowed", BorrowResult.TITLE_BORROWED, borrow);
+	}
+	
+	/**
+	 * borrow a book when user reached;
+	 */
+	@Test
+	public void testBorrowWhenMaxBooksExceeded() {
+		User testUser = new UserImpl("Joe Bloggs");
+		testLibrary.register(testUser);
+		testLibrary.addBook("War and Peace", "Leo Tolstoy");
+		testLibrary.setMaxBooksPerUser(0);
+		BorrowResult borrow = testLibrary.borrow("War and Peace", testUser);
+		assertEquals("Should not be able to borrow. MaxBooksPerUser set to zero", BorrowResult.USER_BORROW_LIMIT, borrow);
+	}
+	
+	
+		
+	
+	
 }
