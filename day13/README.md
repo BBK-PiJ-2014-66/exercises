@@ -60,14 +60,16 @@ ask but altering things that do not make sense to me:
 * To test implemented `getBookCount()` early test in [LibraryImplTest](src/library2/LibraryImplTest.java).
 
 
-# Borrowing a Book
+# Borrowing a Book 1.6 2nd part
 * Instructed to write method `takeBook( String Title)` but need to record who has borrowed
   book. Also need to check whether a user already has the limit of books out 
 * So implement a borrowBook( Title, User user). This will check for any book with Title
   in the library and find any that have not already been borrowed. Method returns an enum
   [BorrowResult](src/library2/BorrowResult.java) because there are many potential problems
   in a borrow!
-
 * As part of this record the `User borrower` in new [BookImpl](src/library2/BookImpl.java),
   with methods `setBorrower` and `getBorrower` defined in the new interface  [Book](src/library2/Book.java)
   and tested in  [BookImplTest](src/library2/BookImplTest.java)
+* Borrowing mostly finished [LibraryImpl](src/library2/LibraryImpl.java) and  [LibraryImplTest](src/library2/LibraryImplTest.java)
+  but do not yet record that User has borrowed a book so not yet checking that user has not exceeeded number of books borrowed.
+  
