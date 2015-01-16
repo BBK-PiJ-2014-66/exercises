@@ -63,28 +63,4 @@ public class LibraryImpl implements Library {
 		this.maxBooksPerUser = maxBooksPerUser;
 	}
 
-	@Override
-	/**
-	 * returns the libary ID of a person for a given user's name in this
-	 * library. If the person does not have an ID yet, a new unique ID is
-	 * created and returned. Any subsequent calls to this method with the same
-	 * name argument should return the same ID.
-	 * 
-	 * In practice this means that call to getID with a new name registers the 
-	 * users NAME with the library. This seems a BAD idea to me butt we have been
-	 * told to do this!
-	 * 
-	 * @return the libraryID
-	 */
-	public int getID(String aName) {
-		// is the user already registered?
-		if (!userNames.contains(aName)) {
-			// aName is not already registered so add to
-			userNames.add(aName);
-		}
-
-		// use the index of the name as the id.
-		return userNames.indexOf(aName);
-	}
-
 }

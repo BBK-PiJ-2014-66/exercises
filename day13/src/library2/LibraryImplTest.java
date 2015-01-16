@@ -1,7 +1,6 @@
 package library2;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import org.junit.Before;
 
@@ -58,28 +57,4 @@ public class LibraryImplTest {
 	}
 	
 	
-	/**
-	 * 
-	 */
-	@Test
-	public void testgetID() {
-		String descript;
-		// libraryID must be unique
-		int ida = testLibrary.getID("a");
-		int idb = testLibrary.getID("b");
-		// there is not assertNotEquals in the JUnit I am using!
-		descript = "Library ids must be unique but I get getID(\"a\") same as getID(\"b\") = " + ida;
-		assertTrue(descript,ida!=idb);
-		int idc = testLibrary.getID("c");
-		descript = "Library ids must be unique but I get getID(\"a\") same as getID(\"c\") = " + idc;
-		assertTrue(descript,ida!=idc);
-		
-		// "Any subsequent calls to this method with the same name argument should return the same ID".
-		
-		assertEquals("2nd call to getID(\"b\") failed to get same value", idb,testLibrary.getID("b") );
-		
-		
-		
-	}
-
 }

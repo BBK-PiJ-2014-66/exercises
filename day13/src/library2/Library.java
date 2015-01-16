@@ -26,16 +26,7 @@ public interface Library {
 	 */
 	String getLibrary();
 
-	/**
-	 * returns the libary ID of a person for a given user's name in this
-	 * library. If the person does not have an ID yet, a new unique ID is
-	 * created and returned. Any subsequent calls to this method with the same
-	 * name argument should return the same ID.
-	 * 
-	 * @return the libraryID
-	 */
-	int getID(String usersName);
-	
+
 	/**
 	 * getter for the maximum number of books that a user can borrow at a time 
 	 * @return the maximum number of books allowed for a user
