@@ -45,8 +45,40 @@ public class UserImplTest {
 				2, testUser.getNumberBooksBorrowed());
 		String[] expectTitles = { "Das Kapital", "Alice in Wonderland" };
 		String[] getTitles = testUser.getTitlesBooksBorrowed();
-		assertNotNull("borrowed two books should no get null titles array",getTitles);
+		assertNotNull("borrowed two books should no get null titles array",
+				getTitles);
 		assertArrayEquals("get titles of two books borrowed", expectTitles,
 				getTitles);
 	}
+
+	@Test
+	public void testReturnBook() {
+		User testUser = new UserImpl("Test User");
+		Book booka = new BookImpl("Karl Marx", "Das Kapital");
+		Book bookb = new BookImpl("Karl Marx", "Das Kapital");
+		Book bookc = new BookImpl("Karl Marx", "Das Kapital");
+		testUser.recordBookBorrowed(booka);
+		testUser.recordBookBorrowed(bookb);
+		testUser.recordBookBorrowed(bookc);
+		assertEquals(
+				"Borrowed three books so .getNumberBooksBorrowed() should be three",
+				3, testUser.getNumberBooksBorrowed());
+		testUser.recordBookReturned(booka);
+		assertEquals(
+				"Borrowed 3 books but returned 1 so .getNumberBooksBorrowed() should be 2",
+				2, testUser.getNumberBooksBorrowed());
+		testUser.recordBookReturned(bookb);
+		assertEquals(
+				"Borrowed 3 books but returned 2 so .getNumberBooksBorrowed() should be 1",
+				1, testUser.getNumberBooksBorrowed());
+		testUser.recordBookReturned(bookc);
+		assertEquals(
+				"Borrowed 3 books but returned 3 so .getNumberBooksBorrowed() should be 0",
+				0, testUser.getNumberBooksBorrowed());
+
+
+		
+		
+	}
+
 }
