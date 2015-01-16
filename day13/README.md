@@ -70,6 +70,6 @@ ask but altering things that do not make sense to me:
 * As part of this record the `User borrower` in new [BookImpl](src/library2/BookImpl.java),
   with methods `setBorrower` and `getBorrower` defined in the new interface  [Book](src/library2/Book.java)
   and tested in  [BookImplTest](src/library2/BookImplTest.java)
-* Borrowing mostly finished [LibraryImpl](src/library2/LibraryImpl.java) and  [LibraryImplTest](src/library2/LibraryImplTest.java)
-  but do not yet record that User has borrowed a book so not yet checking that user has not exceeeded number of books borrowed.
+* Borrowing finished [LibraryImpl](src/library2/LibraryImpl.java) and  [LibraryImplTest](src/library2/LibraryImplTest.java)
+  including recording that User has borrowed a book so not yet checking that user has not exceeeded number of books borrowed.
   

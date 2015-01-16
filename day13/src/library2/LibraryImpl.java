@@ -116,18 +116,20 @@ public class LibraryImpl implements Library {
 			return BorrowResult.USER_NOT_REGISTERED;
 
 		// has the user reached their limit?
-		// to be coded
+		if (user.getNumberBooksBorrowed() >= this.maxBooksPerUser)
+			return BorrowResult.USER_BORROW_LIMIT;
 
 		// is a copy of the book available to be borrowed?
 		Book copy = this.availableToBorrow(Title);
 		if (copy == null)
 			return BorrowResult.TITLE_BORROWED;
-		
+
 		// record that the copy of the book has been borrowed
-        copy.setBorrower(user);   
-        
-        // and record that the user has borrowed the copy of the book
-        
+		copy.setBorrower(user);
+
+		// and record that the user has borrowed the copy of the book
+		user.recordBookBorrowed(copy);
+
 		return BorrowResult.SUCCESS;
 	}
 
