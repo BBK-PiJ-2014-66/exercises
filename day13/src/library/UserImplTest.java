@@ -38,7 +38,7 @@ public class UserImplTest {
 	 */
 	@Test
 	public void testRegisterWithMockLibrary() {
-		Library mockLibrary = new MockLibrary();
+		Library mockLibrary = new MockLibrary("Test");
 		User testUser = new UserImpl("Test User");
 		testUser.register(mockLibrary);
 		String getLibraryName = testUser.getLibrary();
