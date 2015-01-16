@@ -81,4 +81,17 @@ public class LibraryImplTest {
 		testLibrary.addBook("The Catcher in the Rye", "J.D Salinger");
 		assertEquals("have added 3 books", 3, testLibrary.getBookCount());
 	}
+	
+	/**
+	 * try borrowing a book
+	 */
+	@Test 
+	public void testSimpleBorrow() {
+		User testUser = new UserImpl("Joe Bloggs");
+		testLibrary.register(testUser);
+		testLibrary.addBook("War and Peace", "Leo Tolstoy");
+		BorrowResult borrow = testLibrary.borrow("War and Peace", testUser);
+		assertEquals("Should be able to borrow title in library. User is registered", BorrowResult.SUCCESS, borrow);
+	
+	}
 }

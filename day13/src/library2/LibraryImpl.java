@@ -93,6 +93,11 @@ public class LibraryImpl implements Library {
 	public int getBookCount() {
 		return books.size();
 	}
+
+	@Override
+	public BorrowResult borrow(String Title, User user) {
+		return BorrowResult.NOT_YET_IMPLEMENTED;
+	}
 	
 	
 

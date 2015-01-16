@@ -53,13 +53,25 @@ public interface Library {
 
 	/**
 	 * adds new book to the list of books in the library
+	 * 
 	 * @param title
 	 * @param author
 	 */
 	void addBook(String title, String author);
-	
+
 	/**
 	 * @return the number of books in this library
 	 */
 	int getBookCount();
+
+	/**
+	 * Borrow a book
+	 * 
+	 * @param title
+	 *            title of the book to borrow
+	 * @param user
+	 *            the user who wants to borrow
+	 * @return the result an enum @see BorrowResult
+	 */
+	BorrowResult borrow(String title, User user);
 }
