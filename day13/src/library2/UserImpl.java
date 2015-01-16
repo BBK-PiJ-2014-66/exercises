@@ -29,7 +29,7 @@ public class UserImpl implements User {
 	UserImpl(String name) {
 		this.name = name;
 		libID = Integer.MIN_VALUE; // invalid initial value
-		borrowed = new ArrayList<Book>(); // 
+		borrowed = new ArrayList<Book>(); //
 	}
 
 	/**
@@ -65,12 +65,17 @@ public class UserImpl implements User {
 
 	@Override
 	public void recordBookBorrowed(Book book) {
-		borrowed.add(book);		
+		borrowed.add(book);
 	}
 
 	@Override
 	public void recordBookReturned(Book book) {
-		// to be written
+		// find book in borrowed
+		int index = borrowed.indexOf(book);
+		if (index != -1) {
+			borrowed.remove(index);
+			book.setBorrower(null);
+		}
 	}
 
 	@Override
@@ -83,8 +88,8 @@ public class UserImpl implements User {
 	public String[] getTitlesBooksBorrowed() {
 		int size = borrowed.size();
 		String[] titleArray = new String[size];
-		for (int bc=0; bc < size; bc++ ) {
-			titleArray[bc] =  borrowed.get(bc).getTitle();
+		for (int bc = 0; bc < size; bc++) {
+			titleArray[bc] = borrowed.get(bc).getTitle();
 		}
 		return titleArray;
 	}

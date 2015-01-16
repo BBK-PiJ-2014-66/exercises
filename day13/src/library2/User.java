@@ -51,9 +51,13 @@ public interface User {
 	void recordBookBorrowed( Book book);
 	
     /**
-     * records that a this User is currently borrowing a specific book
+     * used to update records that a particular book has been returned
+     * and user no longer has it.
      * 
-     * @param book the book borrowed
+     * N.B. If the book does not exist in the library or the user has not borrowed it
+     * does nothing.
+     * 
+     * @param book the book returned to library
      */
 	void recordBookReturned( Book book);
 	

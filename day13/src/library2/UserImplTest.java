@@ -2,6 +2,7 @@ package library2;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertArrayEquals;
 import org.junit.Test;
 
@@ -75,6 +76,9 @@ public class UserImplTest {
 		assertEquals(
 				"Borrowed 3 books but returned 3 so .getNumberBooksBorrowed() should be 0",
 				0, testUser.getNumberBooksBorrowed());
+		
+		// books have been returned so they should have null borrower 
+		assertNull("booka should not have a borrower",booka.getBorrower());
 
 
 		
