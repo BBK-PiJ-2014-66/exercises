@@ -62,7 +62,16 @@ public class LibraryImpl implements Library {
 
 	@Override
 	public int register(User aUser) {
-		return -1; // means there was a problem in registering
+		// check whether user with same name is already registered as this is not allowed
+		for (User itUser : users) {
+		    if (itUser.getUserName().equals(aUser.getUserName()))
+		    	return -1;
+		}
+		// add the user
+		users.add(aUser);
+		int libID = users.size(); // user array position as ID
+		aUser.setLibraryID(libID); 
+		return libID; 
 	}
 
 }
