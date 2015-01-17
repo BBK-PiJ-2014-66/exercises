@@ -74,4 +74,13 @@ public interface Library {
 	 * @return the result an enum @see BorrowResult
 	 */
 	BorrowResult borrow(String title, User user);
+
+	/**
+	 * Used when user hands in a book that has been borrowed. Does nothing if
+	 * the book is not in library or has not been borrowed!
+	 * 
+	 * @param book
+	 *            The book user hands in
+	 */
+	void returnBook(Book book);
 }

@@ -168,5 +168,18 @@ public class LibraryImpl implements Library {
 
 		return null;
 	}
+	
+	/**
+	 * Used when user hands in a book that has been borrowed. Does nothing if
+	 * the book is not in library or has not been borrowed!
+	 * 
+	 * @param book
+	 *            The book user hands in
+	 */
+	@Override
+	public void returnBook(Book book) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

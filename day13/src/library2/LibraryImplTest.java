@@ -2,6 +2,8 @@ package library2;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 import org.junit.Test;
 import org.junit.Before;
 
@@ -172,6 +174,51 @@ public class LibraryImplTest {
 		borrow = testLibrary.borrow("The Catcher in the Rye", testUser);
 		assertEquals("Should not be able to borrow third with max 2 ",
 				BorrowResult.USER_BORROW_LIMIT, borrow);
+
+	}
+
+	/**
+	 * test returning book
+	 */
+	@Test
+	public void testBookReturn() {
+		User testUser = new UserImpl("Joe Bloggs");
+		testLibrary.register(testUser);
+
+		String titlea = "Das Kapital";
+		testLibrary.addBook("Karl Marx", titlea);
+		testLibrary.borrow(titlea, testUser);
+
+		String titleb = "War and Peace";
+		testLibrary.addBook("Leo Tolstoy", titleb);
+		testLibrary.borrow(titleb, testUser);
+
+		assertEquals("user has borrowed two books ", 2,
+				testUser.getNumberBooksBorrowed());
+
+		Book lastBook = testUser.getLastBookBorrowed();
+		assertNotNull("Have borrowed books, so lastBook cannot be null",
+				lastBook);
+		assertEquals("Check book has correct borrower set", testUser,
+				lastBook.getBorrower());
+
+		testLibrary.returnBook(lastBook);
+		assertEquals("After returning one book, user has one borrowed", 1,
+				testUser.getNumberBooksBorrowed());
+		assertNull("Check returned book has null borrower field",
+				lastBook.getBorrower());
+
+		lastBook = testUser.getLastBookBorrowed();
+		testLibrary.returnBook(lastBook);
+		assertEquals("After returning two books, user has zero borrowed", 0,
+				testUser.getNumberBooksBorrowed());
+		assertNull("Check returned book has null borrower field",
+				lastBook.getBorrower());
+
+		lastBook = testUser.getLastBookBorrowed();
+		assertNull(
+				"after returning all books .getLastBookBorrowed() must return null",
+				lastBook);
 
 	}
 
