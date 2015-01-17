@@ -372,7 +372,7 @@ public class LibraryImplTest {
 	@Test
 	public void testLowerMaxBooksPerUser() {
 		/*
-		 * test is as per spec:
+		 * test is as per spec, on the exercise sheet:
 		 * 
 		 * "For example, if the maximum policy is three books per user, Marge,
 		 * Lisa, and Maggie may have borrowed one, two, and three books. If the

@@ -61,7 +61,21 @@ public class LibraryImpl implements Library {
 	@Override
 	public User[] setMaxBooksPerUser(int maxBooksPerUser) {
 		this.maxBooksPerUser = maxBooksPerUser;
-		return null; //temporary stub value
+		// make a new ArrayList of just the offenders
+		ArrayList<User> offendersAL = new ArrayList<User>();
+		for (User itUser : users) {
+			if (itUser.getNumberBooksBorrowed() > maxBooksPerUser) {
+				offendersAL.add(itUser);
+			}
+		}
+		/* Unpack the ArrayList to an array 
+	     *
+		 * method to convert from ArrayList to Array from
+		 * http://stackoverflow.com
+		 * /questions/9929321/converting-arraylist-to-array-in-java
+		 */
+		User offenders[] = offendersAL.toArray(new User[offendersAL.size()]);
+		return offenders;
 	}
 
 	@Override
