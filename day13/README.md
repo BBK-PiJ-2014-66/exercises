@@ -73,3 +73,12 @@ ask but altering things that do not make sense to me:
 * Borrowing finished [LibraryImpl](src/library2/LibraryImpl.java) and  [LibraryImplTest](src/library2/LibraryImplTest.java)
   including recording that User has borrowed a book so not yet checking that user has not exceeeded number of books borrowed.
   
+
+# Returning a Book
+* To implement the functionality in  [Library](src/library2/Library.java) need some methods in [User](src/library2/User.java) so:
+  * added methods `recordBookReturned` and `getLastBookBorrowed()` to [User](src/library2/User.java) and
+  [UserImpl](src/library2/UserImpl.java) with tests in  [UserImplTest](src/library2/UserImplTest.java)
+* Add method `returnBook( Book book)` to [Library](src/library2/Library.java), test in [LibraryImplTest](src/library2/LibraryImplTest.java) and
+  implement in [LibraryImpl](src/library2/LibraryImpl.java).
+
+
