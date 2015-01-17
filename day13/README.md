@@ -96,3 +96,9 @@ with  [LibraryImplTest](src/library2/LibraryImplTest.java). As required implemen
 * `arrayUsersBorrowingBooks()`  returns an array User for the users who are borrowing a book
 * `arrayAllUsers()` returns an array of User for all users
 * `nameOfUserBorrowingBook(String)` gives name of the user borrowing a title.
+
+# 1.10 Modify method setMaxBooksPerUser to return array of offending users
+* TTD for [Library](src/library2/Library.java), [LibraryImpl](src/library2/LibraryImpl.java)
+with  [LibraryImplTest](src/library2/LibraryImplTest.java). As required altered. Test
+is `testLowerMaxBooksPerUser`. 
+*

@@ -56,10 +56,12 @@ public class LibraryImpl implements Library {
 	 * 
 	 * @param maxBooksPerUser
 	 *            the new maximum number of books allowed for a user
+	 * @return 
 	 */
 	@Override
-	public void setMaxBooksPerUser(int maxBooksPerUser) {
+	public User[] setMaxBooksPerUser(int maxBooksPerUser) {
 		this.maxBooksPerUser = maxBooksPerUser;
+		return null; //temporary stub value
 	}
 
 	@Override

@@ -38,8 +38,11 @@ public interface Library {
 	 * 
 	 * @param maxBooksPerUser
 	 *            the new maximum number of books allowed for a user
+	 * 
+	 * @return array of users that have more books out then the new policy
+	 *         allows (1.10). Return empty array if the are no users effected.
 	 */
-	void setMaxBooksPerUser(int maxBooksPerUser);
+	User[] setMaxBooksPerUser(int maxBooksPerUser);
 
 	/**
 	 * Registers a user with the library
@@ -122,5 +125,5 @@ public interface Library {
 	 *         if there is no match
 	 */
 	String nameOfUserBorrowingBook(String title);
-	
+
 }

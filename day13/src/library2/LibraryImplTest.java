@@ -354,8 +354,8 @@ public class LibraryImplTest {
 
 		assertNull("try a title not in Library",
 				testLibrary.nameOfUserBorrowingBook("Lolita"));
-		
-		// add a second copy of War & Peace 
+
+		// add a second copy of War & Peace
 		testLibrary.addBook("Leo Tolstoy", titleA);
 		// Doe Borrows 2nd copy
 		testLibrary.borrow(titleA, testUserB);
@@ -363,6 +363,61 @@ public class LibraryImplTest {
 		testLibrary.returnBook(testUserA.getLastBookBorrowed());
 		assertEquals("Doe has borrowed 2bd copy of War&Peace", nameB,
 				testLibrary.nameOfUserBorrowingBook(titleA));
+	}
+
+	/**
+	 * 1.10 new version of setMaxBooksPerUser returns a User[] array of
+	 * violators
+	 */
+	@Test
+	public void testLowerMaxBooksPerUser() {
+		/*
+		 * test is as per spec:
+		 * 
+		 * "For example, if the maximum policy is three books per user, Marge,
+		 * Lisa, and Maggie may have borrowed one, two, and three books. If the
+		 * policy is then set to a maximum of one book, the method must return
+		 * the names of Lisa and Maggie (so that the library can track them down
+		 * and ask them to return the excess books)."
+		 */
+		User userMarge = new UserImpl("Marge");
+		testLibrary.register(userMarge);
+		User userLisa = new UserImpl("Lisa");
+		testLibrary.register(userLisa);
+		User userMaggie = new UserImpl("Maggie");
+		testLibrary.register(userMaggie);
+		String title = "The Simpsons Guide Book";
+		testLibrary.addBook("The Simpson Family", title); // six copies
+		testLibrary.addBook("The Simpson Family", title);
+		testLibrary.addBook("The Simpson Family", title);
+		testLibrary.addBook("The Simpson Family", title);
+		testLibrary.addBook("The Simpson Family", title);
+		testLibrary.addBook("The Simpson Family", title);
+		testLibrary.borrow(title, userMarge); // Marge borrows one
+		testLibrary.borrow(title, userLisa); // borrows two
+		testLibrary.borrow(title, userLisa); // borrows two
+		testLibrary.borrow(title, userMaggie); // borrows three
+		testLibrary.borrow(title, userMaggie); // borrows three
+		testLibrary.borrow(title, userMaggie); // borrows three
+
+		assertEquals("test setup Marge has one book", 1,
+				userMarge.getNumberBooksBorrowed());
+		assertEquals("test setup Lisa has two books", 2,
+				userLisa.getNumberBooksBorrowed());
+		assertEquals("test setup Maggie has three books", 3,
+				userMaggie.getNumberBooksBorrowed());
+
+		User[] getOffenders = testLibrary.setMaxBooksPerUser(1);
+		User[] expectOffenders = { userLisa, userMaggie };
+		assertArrayEquals(
+				"Set maxBooks per user to 1, expect to get Lisa and Maggie in offenders array",
+				expectOffenders, getOffenders);
+		
+		getOffenders = testLibrary.setMaxBooksPerUser(3);
+		expectOffenders = new User[0]; // empty array
+		assertArrayEquals(
+				"Set maxBooks per user back to 3, expect to empty offenders array",
+				expectOffenders, getOffenders);
 		
 		
 
