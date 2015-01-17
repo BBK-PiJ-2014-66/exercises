@@ -206,5 +206,21 @@ public class LibraryImpl implements Library {
 		}
 
 	}
+	
+	@Override
+	public User[] arrayUsersBorrowingBooks() {
+		return null; // temporary stub implementation
+	}
+	
+	@Override
+	public User[] arrayAllUsers(){
+		return null; // temporary stub implementation
+	}
+	
+	@Override
+	public String nameOfUserBorrowingBook(String title) {
+		return "nameOfUserBorrowingBook not yet implemented!"; //temporary stub
+	}
+	
 
 }

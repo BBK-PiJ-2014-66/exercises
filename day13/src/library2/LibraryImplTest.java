@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertArrayEquals;
 import org.junit.Test;
 import org.junit.Before;
 
@@ -103,15 +104,14 @@ public class LibraryImplTest {
 		testLibrary.addBook("J.D Salinger", "The Catcher in the Rye");
 		assertEquals("have added 3 books", 3, testLibrary.getBookCount());
 	}
-	
+
 	/**
 	 * test getBookBorrowedCount - works giving total number of borrowed books
 	 */
 	@Test
 	public void testGetBookBorrowedCount() {
-		assertEquals(
-				"initially have no books, so total borrowed is zero",
-				0, testLibrary.getBookBorrowedCount());
+		assertEquals("initially have no books, so total borrowed is zero", 0,
+				testLibrary.getBookBorrowedCount());
 		testLibrary.addBook("Leo Tolstoy", "War and Peace");
 		testLibrary.addBook("J.D Salinger", "The Catcher in the Rye");
 		assertEquals(
@@ -121,17 +121,15 @@ public class LibraryImplTest {
 		User testUserA = new UserImpl("Joe Bloggs");
 		testLibrary.register(testUserA);
 		testLibrary.borrow("War and Peace", testUserA);
-		assertEquals(
-				"have added two books, one has been borrowed",
-				1, testLibrary.getBookBorrowedCount());
-		
+		assertEquals("have added two books, one has been borrowed", 1,
+				testLibrary.getBookBorrowedCount());
+
 		User testUserB = new UserImpl("Jane Doe");
 		testLibrary.register(testUserB);
 		testLibrary.borrow("The Catcher in the Rye", testUserB);
-		assertEquals(
-				"have added two books, both borrowed",
-				2, testLibrary.getBookBorrowedCount());
-		
+		assertEquals("have added two books, both borrowed", 2,
+				testLibrary.getBookBorrowedCount());
+
 		testLibrary.returnBook(testUserA.getLastBookBorrowed());
 		testLibrary.returnBook(testUserB.getLastBookBorrowed());
 		assertEquals(
@@ -139,8 +137,6 @@ public class LibraryImplTest {
 				0, testLibrary.getBookBorrowedCount());
 	}
 
-	
-	
 	/**
 	 * borrowing a book successfully
 	 */
@@ -274,4 +270,60 @@ public class LibraryImplTest {
 				lastBook);
 	}
 
+	/**
+	 * tests for arrayUsersBorrowingBooks() and arrayAllUsers() methods
+	 */
+	@Test
+	public void TestArrayUsersMethods() {
+
+		User[] getArray;
+		User[] expectArray;
+
+		expectArray = new User[] {};
+		getArray = testLibrary.arrayAllUsers();
+		assertArrayEquals(
+				"Initially have no users, arrayAllUsers should empty",
+				expectArray, getArray);
+
+		testLibrary.addBook("Leo Tolstoy", "War and Peace");
+		testLibrary.addBook("J.D Salinger", "The Catcher in the Rye");
+
+		String nameA = "Joe Bloggs";
+		User testUserA = new UserImpl(nameA);
+		testLibrary.register(testUserA);
+		String nameB = "Jane Doe";
+		User testUserB = new UserImpl(nameB);
+		testLibrary.register(testUserB);
+
+		expectArray = new User[] { testUserA, testUserB };
+		assertArrayEquals("two users added", expectArray, getArray);
+
+		expectArray = new User[] {};
+		getArray = testLibrary.arrayUsersBorrowingBooks();
+		assertArrayEquals(
+				"Have two users but they have not borrowed, arrayUsersBorrowingBooks should empty",
+				expectArray, getArray);
+
+		testLibrary.borrow("The Catcher in the Rye", testUserB);
+
+		expectArray = new User[] { testUserB };
+		getArray = testLibrary.arrayUsersBorrowingBooks();
+		assertArrayEquals("testUserB borrowed a book.", expectArray, getArray);
+
+		testLibrary.borrow("War and Peace", testUserA);
+
+		expectArray = new User[] { testUserA,testUserB  };
+		getArray = testLibrary.arrayUsersBorrowingBooks();
+		assertArrayEquals("Both users borrowed", expectArray, getArray);
+
+		testLibrary.returnBook(testUserA.getLastBookBorrowed());
+		testLibrary.returnBook(testUserB.getLastBookBorrowed());
+		
+		expectArray = new User[] {};
+		getArray = testLibrary.arrayUsersBorrowingBooks();
+		assertArrayEquals("Both users returned", expectArray, getArray);
+		
+		
+
+	}
 }

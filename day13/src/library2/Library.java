@@ -63,12 +63,12 @@ public interface Library {
 	 * @return the number of users registered in the library
 	 */
 	int getReaderCount();
-	
+
 	/**
 	 * @return the number of books in this library
 	 */
 	int getBookCount();
-	
+
 	/**
 	 * @return the number of books currently borrowed from the library
 	 */
@@ -93,4 +93,34 @@ public interface Library {
 	 *            The book user hands in
 	 */
 	void returnBook(Book book);
+
+	/**
+	 * provides a list with all the users who are borrowing books at the moment
+	 * 
+	 * @return an array of User with the users who are borrowing books
+	 */
+	User[] arrayUsersBorrowingBooks();
+
+	/**
+	 * provides a list with all the users, borrowing or not
+	 * 
+	 * @return an array of User with the users who are borrowing books
+	 */
+	User[] arrayAllUsers();
+
+	/**
+	 * the name of the person borrowing a specific title if there is no book
+	 * with that title in the library or no book with that title is being
+	 * borrowed returns null
+	 * 
+	 * If there is more than one book with that title it will return the name of
+	 * the person who is borrowing one of them.
+	 * 
+	 * @param title
+	 *            the title of the book
+	 * @return name of the user who is borrowing a book with the title or null
+	 *         if there is no match
+	 */
+	String nameOfUserBorrowingBook(String title);
+
 }
