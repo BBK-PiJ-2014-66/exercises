@@ -96,8 +96,12 @@ public class UserImpl implements User {
 
 	@Override
 	public Book getLastBookBorrowed() {
-		// TODO Auto-generated method stub
-		return null;
+		Book bookReturn = null;
+		int size = borrowed.size();
+		if (size > 0) {
+			bookReturn = borrowed.get(size-1);
+		}
+		return bookReturn;
 	}
 
 }
