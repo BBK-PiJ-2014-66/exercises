@@ -90,9 +90,9 @@ public class LibraryImpl implements Library {
 
 	@Override
 	public int getReaderCount() {
-		return -10000; // stub implementation return silly value
+		return users.size();
 	}
-	
+
 	/**
 	 * @return the number of books in this library
 	 */
@@ -100,11 +100,17 @@ public class LibraryImpl implements Library {
 	public int getBookCount() {
 		return books.size();
 	}
-	
+
 	@Override
 	public int getBookBorrowedCount() {
-		return -10000; // stub implementation return silly value
-	}	
+		int totalBooksBorrowed = 0;
+		for (Book itBook : books) {
+			// a book is borrowed if its borrower is not null
+			if (itBook.getBorrower() != null)
+				totalBooksBorrowed++;
+		}
+		return totalBooksBorrowed;
+	}
 
 	/**
 	 * Borrow a book
@@ -193,8 +199,8 @@ public class LibraryImpl implements Library {
 		// make sure this is a real borrower
 		if (borrower != null) {
 			/*
-			 * the .recordBookReturned() method deals with both the User 
-			 * and the Book records of the borrowing
+			 * the .recordBookReturned() method deals with both the User and the
+			 * Book records of the borrowing
 			 */
 			borrower.recordBookReturned(book);
 		}

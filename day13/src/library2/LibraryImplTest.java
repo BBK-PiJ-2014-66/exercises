@@ -87,7 +87,7 @@ public class LibraryImplTest {
 		testLibrary.register(new UserImpl("aaa aaa"));
 		assertEquals("added one user .getReaderCount() should return 1", 1,
 				testLibrary.getReaderCount());
-		testLibrary.register(new UserImpl("aaa aaa"));
+		testLibrary.register(new UserImpl("bbb bbb"));
 		assertEquals("added two users .getReaderCount() should return 2", 2,
 				testLibrary.getReaderCount());
 	}
@@ -127,7 +127,7 @@ public class LibraryImplTest {
 		
 		User testUserB = new UserImpl("Jane Doe");
 		testLibrary.register(testUserB);
-		testLibrary.borrow("War and Peace", testUserB);
+		testLibrary.borrow("The Catcher in the Rye", testUserB);
 		assertEquals(
 				"have added two books, both borrowed",
 				2, testLibrary.getBookBorrowedCount());
