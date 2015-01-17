@@ -178,7 +178,9 @@ public class LibraryImplTest {
 	}
 
 	/**
-	 * test returning book
+	 * test returning book, using returnBook( Book) method
+	 * (checking that all relevant records in Book and User are
+	 * correctly updated)
 	 */
 	@Test
 	public void testBookReturn() {

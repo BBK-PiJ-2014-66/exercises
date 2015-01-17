@@ -168,7 +168,7 @@ public class LibraryImpl implements Library {
 
 		return null;
 	}
-	
+
 	/**
 	 * Used when user hands in a book that has been borrowed. Does nothing if
 	 * the book is not in library or has not been borrowed!
@@ -178,8 +178,17 @@ public class LibraryImpl implements Library {
 	 */
 	@Override
 	public void returnBook(Book book) {
-		// TODO Auto-generated method stub
-		
+		// find out who borrowed the book
+		User borrower = book.getBorrower();
+		// make sure this is a real borrower
+		if (borrower != null) {
+			/*
+			 * the .recordBookReturned() method deals with both the User 
+			 * and the Book records of the borrowing
+			 */
+			borrower.recordBookReturned(book);
+		}
+
 	}
 
 }

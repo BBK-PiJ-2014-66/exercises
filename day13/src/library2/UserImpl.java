@@ -74,6 +74,7 @@ public class UserImpl implements User {
 		int index = borrowed.indexOf(book);
 		if (index != -1) {
 			borrowed.remove(index);
+			// make sure the book's record of borrower is updated
 			book.setBorrower(null);
 		}
 	}

@@ -52,7 +52,8 @@ public interface User {
 	
     /**
      * used to update records that a particular book has been returned
-     * and user no longer has it.
+     * and user no longer has it. The relevant records in both User and Book
+     * must updated in this method.
      * 
      * N.B. If the book does not exist in the library or the user has not borrowed it
      * does nothing.
