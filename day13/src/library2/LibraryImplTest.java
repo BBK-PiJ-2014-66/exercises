@@ -313,16 +313,53 @@ public class LibraryImplTest {
 
 		testLibrary.borrow("War and Peace", testUserA);
 
-		expectArray = new User[] { testUserA,testUserB  };
+		expectArray = new User[] { testUserA, testUserB };
 		getArray = testLibrary.arrayUsersBorrowingBooks();
 		assertArrayEquals("Both users borrowed", expectArray, getArray);
 
 		testLibrary.returnBook(testUserA.getLastBookBorrowed());
 		testLibrary.returnBook(testUserB.getLastBookBorrowed());
-		
+
 		expectArray = new User[] {};
 		getArray = testLibrary.arrayUsersBorrowingBooks();
 		assertArrayEquals("Both users returned", expectArray, getArray);
+
+	}
+
+	@Test
+	public void TestNameOfUserBorrowingBook() {
+
+		String titleA = "War and Peace";
+		testLibrary.addBook("Leo Tolstoy", titleA);
+		String titleB = "The Catcher in the Rye";
+		testLibrary.addBook("J.D Salinger", titleB);
+
+		String nameA = "Joe Bloggs";
+		User testUserA = new UserImpl(nameA);
+		testLibrary.register(testUserA);
+		String nameB = "Jane Doe";
+		User testUserB = new UserImpl(nameB);
+		testLibrary.register(testUserB);
+
+		testLibrary.borrow(titleA, testUserA);
+		testLibrary.borrow(titleB, testUserB);
+
+		assertEquals("Bloggs borrowed War&Peace", nameA,
+				testLibrary.nameOfUserBorrowingBook(titleA));
+		assertEquals("Doe borrowed TheCatcher..", nameB,
+				testLibrary.nameOfUserBorrowingBook(titleB));
+
+		assertNull("try a title not in Library",
+				testLibrary.nameOfUserBorrowingBook("Lolita"));
+		
+		// add a second copy of War & Peace 
+		testLibrary.addBook("Leo Tolstoy", titleA);
+		// Doe Borrows 2nd copy
+		testLibrary.borrow(titleA, testUserB);
+		// Bloggs returns 1st copy
+		testLibrary.returnBook(testUserA.getLastBookBorrowed());
+		assertEquals("Doe has borrowed 2bd copy of War&Peace", nameB,
+				testLibrary.nameOfUserBorrowingBook(titleA));
 		
 		
 
