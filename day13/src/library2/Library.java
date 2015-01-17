@@ -57,10 +57,10 @@ public interface Library {
 	/**
 	 * adds new book to the list of books in the library
 	 * 
-	 * @param title
 	 * @param author
+	 * @param title
 	 */
-	void addBook(String title, String author);
+	void addBook(String author, String title);
 
 	/**
 	 * @return the number of users registered in the library

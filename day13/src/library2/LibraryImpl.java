@@ -32,6 +32,23 @@ public class LibraryImpl implements Library {
 	}
 
 	/**
+	 * For printing
+	 * 
+	 * @return a multiline report on the library "name", number of users, user
+	 *         details, number of books
+	 */
+	@Override
+	public String toString() {
+		String retStr;
+		retStr = "Library name: \"" + name + "\"\n";
+		retStr += "\tNumber of users registered: " + this.getReaderCount();
+		retStr += "   Number of books in collection: " + this.getBookCount();
+		retStr += "   Number of books lent out: " + this.getBookBorrowedCount() + "\n";
+		retStr += "\tMaximum number of books per user: " + maxBooksPerUser;
+		return retStr;
+	}
+
+	/**
 	 * Getter for the library name
 	 * 
 	 * @return The library's name
@@ -56,7 +73,7 @@ public class LibraryImpl implements Library {
 	 * 
 	 * @param maxBooksPerUser
 	 *            the new maximum number of books allowed for a user
-	 * @return 
+	 * @return
 	 */
 	@Override
 	public User[] setMaxBooksPerUser(int maxBooksPerUser) {
@@ -68,8 +85,9 @@ public class LibraryImpl implements Library {
 				offendersAL.add(itUser);
 			}
 		}
-		/* Unpack the ArrayList to an array 
-	     *
+		/*
+		 * Unpack the ArrayList to an array
+		 * 
 		 * method to convert from ArrayList to Array from
 		 * http://stackoverflow.com
 		 * /questions/9929321/converting-arraylist-to-array-in-java
@@ -96,12 +114,12 @@ public class LibraryImpl implements Library {
 	/**
 	 * adds new book to the list of books in the library
 	 * 
-	 * @param title
 	 * @param author
+	 * @param title
 	 */
 	@Override
-	public void addBook(String title, String author) {
-		books.add(new BookImpl(title, author));
+	public void addBook( String author, String title) {
+		books.add(new BookImpl(author, title));
 	}
 
 	@Override
