@@ -209,12 +209,32 @@ public class LibraryImpl implements Library {
 	
 	@Override
 	public User[] arrayUsersBorrowingBooks() {
-		return null; // temporary stub implementation
+		// first find out the number of users who are borrowing
+		int numBorrowing = 0;
+		for (User itUser: users) {
+			if (itUser.getNumberBooksBorrowed()!=0) 
+				numBorrowing++;
+		}
+		// make an array with enough space
+		User userArray[]= new User[numBorrowing];
+		// then fill it
+		int place = 0;
+		for (User itUser: users) {
+			if (itUser.getNumberBooksBorrowed()!=0) {
+				userArray[place] = itUser;
+				place++;
+			}
+		}
+		return userArray; 
 	}
 	
 	@Override
 	public User[] arrayAllUsers(){
-		return null; // temporary stub implementation
+		/* method to convert from ArrayList to Array from
+		 * http://stackoverflow.com/questions/9929321/converting-arraylist-to-array-in-java
+		 */
+		User userArray[]=users.toArray(new User[users.size()]);
+		return userArray; 
 	}
 	
 	@Override

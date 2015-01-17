@@ -296,6 +296,7 @@ public class LibraryImplTest {
 		testLibrary.register(testUserB);
 
 		expectArray = new User[] { testUserA, testUserB };
+		getArray = testLibrary.arrayAllUsers();
 		assertArrayEquals("two users added", expectArray, getArray);
 
 		expectArray = new User[] {};
