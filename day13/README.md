@@ -90,4 +90,9 @@ to pass tests.
 * Already done because it was needed for proper testing. Method is
 `String[] getTitlesBooksBorrowed()` in [User](src/library2/User.java)
 
-# 1.9 Add methods to library
+# 1.9 Add methods to Library
+* TTD for [Library](src/library2/Library.java), [LibraryImpl](src/library2/LibraryImpl.java)
+with  [LibraryImplTest](src/library2/LibraryImplTest.java). As required implemented:
+* `arrayUsersBorrowingBooks()`  returns an array User for the users who are borrowing a book
+* `arrayAllUsers()` returns an array of User for all users
+* `namePersonBorrowingTitle(String)`
