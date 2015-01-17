@@ -60,9 +60,19 @@ public interface Library {
 	void addBook(String title, String author);
 
 	/**
+	 * @return the number of users registered in the library
+	 */
+	int getReaderCount();
+	
+	/**
 	 * @return the number of books in this library
 	 */
 	int getBookCount();
+	
+	/**
+	 * @return the number of books currently borrowed from the library
+	 */
+	int getBookBorrowedCount();
 
 	/**
 	 * Borrow a book

@@ -78,7 +78,22 @@ public class LibraryImplTest {
 	}
 
 	/**
-	 * add a few books to the library.
+	 * test getReaderCount successfully returns the number of readers
+	 */
+	@Test
+	public void testGetReaderCount() {
+		assertEquals("initially have zero readers", 0,
+				testLibrary.getReaderCount());
+		testLibrary.register(new UserImpl("aaa aaa"));
+		assertEquals("added one user .getReaderCount() should return 1", 1,
+				testLibrary.getReaderCount());
+		testLibrary.register(new UserImpl("aaa aaa"));
+		assertEquals("added two users .getReaderCount() should return 2", 2,
+				testLibrary.getReaderCount());
+	}
+
+	/**
+	 * add a few books to the library to test GetBookCount
 	 */
 	@Test
 	public void testAddBookGetBookCount() {
@@ -88,7 +103,44 @@ public class LibraryImplTest {
 		testLibrary.addBook("J.D Salinger", "The Catcher in the Rye");
 		assertEquals("have added 3 books", 3, testLibrary.getBookCount());
 	}
+	
+	/**
+	 * test getBookBorrowedCount - works giving total number of borrowed books
+	 */
+	@Test
+	public void testGetBookBorrowedCount() {
+		assertEquals(
+				"initially have no books, so total borrowed is zero",
+				0, testLibrary.getBookBorrowedCount());
+		testLibrary.addBook("Leo Tolstoy", "War and Peace");
+		testLibrary.addBook("J.D Salinger", "The Catcher in the Rye");
+		assertEquals(
+				"have added two books but they are not yet borrowed, so total borrowed is zero",
+				0, testLibrary.getBookBorrowedCount());
 
+		User testUserA = new UserImpl("Joe Bloggs");
+		testLibrary.register(testUserA);
+		testLibrary.borrow("War and Peace", testUserA);
+		assertEquals(
+				"have added two books, one has been borrowed",
+				1, testLibrary.getBookBorrowedCount());
+		
+		User testUserB = new UserImpl("Jane Doe");
+		testLibrary.register(testUserB);
+		testLibrary.borrow("War and Peace", testUserB);
+		assertEquals(
+				"have added two books, both borrowed",
+				2, testLibrary.getBookBorrowedCount());
+		
+		testLibrary.returnBook(testUserA.getLastBookBorrowed());
+		testLibrary.returnBook(testUserB.getLastBookBorrowed());
+		assertEquals(
+				"have added two books both borrowed and then returned, so total borrowed is zero",
+				0, testLibrary.getBookBorrowedCount());
+	}
+
+	
+	
 	/**
 	 * borrowing a book successfully
 	 */
@@ -178,9 +230,8 @@ public class LibraryImplTest {
 	}
 
 	/**
-	 * test returning book, using returnBook( Book) method
-	 * (checking that all relevant records in Book and User are
-	 * correctly updated)
+	 * test returning book, using returnBook( Book) method (checking that all
+	 * relevant records in Book and User are correctly updated)
 	 */
 	@Test
 	public void testBookReturn() {
@@ -221,7 +272,6 @@ public class LibraryImplTest {
 		assertNull(
 				"after returning all books .getLastBookBorrowed() must return null",
 				lastBook);
-
 	}
 
 }

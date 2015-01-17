@@ -88,6 +88,11 @@ public class LibraryImpl implements Library {
 		books.add(new BookImpl(title, author));
 	}
 
+	@Override
+	public int getReaderCount() {
+		return -10000; // stub implementation return silly value
+	}
+	
 	/**
 	 * @return the number of books in this library
 	 */
@@ -95,6 +100,11 @@ public class LibraryImpl implements Library {
 	public int getBookCount() {
 		return books.size();
 	}
+	
+	@Override
+	public int getBookBorrowedCount() {
+		return -10000; // stub implementation return silly value
+	}	
 
 	/**
 	 * Borrow a book
