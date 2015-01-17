@@ -95,4 +95,4 @@ to pass tests.
 with  [LibraryImplTest](src/library2/LibraryImplTest.java). As required implemented:
 * `arrayUsersBorrowingBooks()`  returns an array User for the users who are borrowing a book
 * `arrayAllUsers()` returns an array of User for all users
-* `nameOfUserBorrowingBook(String)` runs name of the user borrowing a title.
+* `nameOfUserBorrowingBook(String)` gives name of the user borrowing a title.

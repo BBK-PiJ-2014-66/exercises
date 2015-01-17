@@ -326,6 +326,9 @@ public class LibraryImplTest {
 
 	}
 
+	/**
+	 * test out .nameOfUserBorrowingBook() method
+	 */
 	@Test
 	public void TestNameOfUserBorrowingBook() {
 

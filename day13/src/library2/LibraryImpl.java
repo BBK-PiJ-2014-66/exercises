@@ -206,41 +206,56 @@ public class LibraryImpl implements Library {
 		}
 
 	}
-	
+
 	@Override
 	public User[] arrayUsersBorrowingBooks() {
 		// first find out the number of users who are borrowing
 		int numBorrowing = 0;
-		for (User itUser: users) {
-			if (itUser.getNumberBooksBorrowed()!=0) 
+		for (User itUser : users) {
+			if (itUser.getNumberBooksBorrowed() != 0)
 				numBorrowing++;
 		}
 		// make an array with enough space
-		User userArray[]= new User[numBorrowing];
+		User userArray[] = new User[numBorrowing];
 		// then fill it
 		int place = 0;
-		for (User itUser: users) {
-			if (itUser.getNumberBooksBorrowed()!=0) {
+		for (User itUser : users) {
+			if (itUser.getNumberBooksBorrowed() != 0) {
 				userArray[place] = itUser;
 				place++;
 			}
 		}
-		return userArray; 
+		return userArray;
 	}
-	
+
 	@Override
-	public User[] arrayAllUsers(){
-		/* method to convert from ArrayList to Array from
-		 * http://stackoverflow.com/questions/9929321/converting-arraylist-to-array-in-java
+	public User[] arrayAllUsers() {
+		/*
+		 * method to convert from ArrayList to Array from
+		 * http://stackoverflow.com
+		 * /questions/9929321/converting-arraylist-to-array-in-java
 		 */
-		User userArray[]=users.toArray(new User[users.size()]);
-		return userArray; 
+		User userArray[] = users.toArray(new User[users.size()]);
+		return userArray;
 	}
-	
+
 	@Override
 	public String nameOfUserBorrowingBook(String title) {
-		return "nameOfUserBorrowingBook not yet implemented!"; //temporary stub
+		String userName = null;
+		for (Book itBook : books) {
+			// does this book have the correct title?
+			String bookTitle = itBook.getTitle();
+			if (title.equalsIgnoreCase(bookTitle)) {
+				// is the book borrowed?
+				User borrower = itBook.getBorrower();
+				if (borrower != null) {
+					// yes it is borrowed by:
+					userName = borrower.getUserName();
+					break;
+				}
+			}
+		}
+		return userName;
 	}
-	
 
 }
