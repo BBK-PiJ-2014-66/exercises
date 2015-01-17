@@ -81,4 +81,9 @@ ask but altering things that do not make sense to me:
 * Add method `returnBook( Book book)` to [Library](src/library2/Library.java), test in [LibraryImplTest](src/library2/LibraryImplTest.java) and
   implement in [LibraryImpl](src/library2/LibraryImpl.java).
 
+# 1.7 methods getReaderCount() and getBookBorrowedCount()
+* added to [Library](src/library2/Library.java), tested in   [UserImplTest](src/library2/UserImplTest.java) tests
+`testGetReaderCount` and `testGetBookBorrowedCount`. Methods implemented in [LibraryImpl](src/library2/LibraryImpl.java)
+to pass tests.
+
 
