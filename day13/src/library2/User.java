@@ -67,8 +67,14 @@ public interface User {
     int getNumberBooksBorrowed(); 
 	
 	/**
-	 * @return an array of the titles of the books borrowed (for 1.8)
+	 * @return an array of the titles of all the books borrowed (for 1.8)
 	 */
 	String[] getTitlesBooksBorrowed();
+	
+	/**
+	 * 
+	 * @return the last Book borrowed or null if there are not any
+	 */
+	Book getLastBookBorrowed();
 
 }

@@ -94,4 +94,10 @@ public class UserImpl implements User {
 		return titleArray;
 	}
 
+	@Override
+	public Book getLastBookBorrowed() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

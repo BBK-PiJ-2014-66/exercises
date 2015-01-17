@@ -39,6 +39,12 @@ public class UserImplTest {
 	public void testRecordingBookBorrowed() {
 		User testUser = new UserImpl("Test User");
 		testUser.recordBookBorrowed(new BookImpl("Karl Marx", "Das Kapital"));
+		Book lastBook = testUser.getLastBookBorrowed();
+		assertNotNull(
+				"borrowed book so .getLastBookBorrowed() should not return null",
+				lastBook);
+		assertEquals("check author of LastBookBorrowed", "Karl Marx",
+				lastBook.getAuthor());
 		testUser.recordBookBorrowed(new BookImpl("Lewis Carroll",
 				"Alice in Wonderland"));
 		assertEquals(
@@ -76,13 +82,10 @@ public class UserImplTest {
 		assertEquals(
 				"Borrowed 3 books but returned 3 so .getNumberBooksBorrowed() should be 0",
 				0, testUser.getNumberBooksBorrowed());
-		
-		// books have been returned so they should have null borrower 
-		assertNull("booka should not have a borrower",booka.getBorrower());
 
+		// books have been returned so they should have null borrower
+		assertNull("booka should not have a borrower", booka.getBorrower());
 
-		
-		
 	}
 
 }
