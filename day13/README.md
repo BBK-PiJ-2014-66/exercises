@@ -86,4 +86,8 @@ ask but altering things that do not make sense to me:
 `testGetReaderCount` and `testGetBookBorrowedCount`. Methods implemented in [LibraryImpl](src/library2/LibraryImpl.java)
 to pass tests.
 
+## 1.8 User method for array of the titles of all books borrowed.
+* Already done because it was needed for proper testing. Method is
+`String[] getTitlesBooksBorrowed()` in [User](src/library2/User.java)
 
+# 1.9 Add methods to library
