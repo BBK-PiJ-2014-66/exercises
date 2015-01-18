@@ -1,0 +1,40 @@
+*** Demonstrate #2 "A user trying to borrow more books than allowed.
+    And then returning one of the books they already have to borrow a new one." ***
+Create library and add a single user and some books:
+  Library report:
+	Library Name: "LibraryDemoScript Library"
+	Number of users registered: 1   Number of books in collection: 6   Number of books lent out: 0
+	Maximum number of books per user: 3
+	Users:
+		name:"Joe Bloggs" ID:1 No books borrowed.
+	Books:
+		author: "Leo Tolstoy" title: "War and Peace", in library.
+		author: "Leo Tolstoy" title: "Anna Karenina", in library.
+		author: "Leo Tolstoy" title: "Anna Karenina", in library.
+		author: "Anton Chekhov" title: "The Cherry Orchard", in library.
+		author: "Fyodor Dostoyevsky" title: "The Brothers Karamazov", in library.
+		author: "Aleksandr Solzhenitsyn" title: "One Day in the Life of Ivan Denisovich", in library.
+
+  Bloggs attempts to borrows all the books until no more allowed
+	author: "Leo Tolstoy" title: "War and Peace", lent to "Joe Bloggs"
+	author: "Leo Tolstoy" title: "Anna Karenina", lent to "Joe Bloggs"
+	author: "Leo Tolstoy" title: "Anna Karenina", lent to "Joe Bloggs"
+	reached borrowing limit not allowed to borrow "The Cherry Orchard"
+
+  Bloggs returns last book borrowed
+
+  Bloggs borrows another: "The Brothers Karamazov"
+  Final library report:
+	Library Name: "LibraryDemoScript Library"
+	Number of users registered: 1   Number of books in collection: 6   Number of books lent out: 3
+	Maximum number of books per user: 3
+	Users:
+		name:"Joe Bloggs" ID:1 has 3 books borrowed: "War and Peace" "Anna Karenina" "The Brothers Karamazov"
+	Books:
+		author: "Leo Tolstoy" title: "War and Peace", lent to "Joe Bloggs"
+		author: "Leo Tolstoy" title: "Anna Karenina", lent to "Joe Bloggs"
+		author: "Leo Tolstoy" title: "Anna Karenina", in library.
+		author: "Anton Chekhov" title: "The Cherry Orchard", in library.
+		author: "Fyodor Dostoyevsky" title: "The Brothers Karamazov", lent to "Joe Bloggs"
+		author: "Aleksandr Solzhenitsyn" title: "One Day in the Life of Ivan Denisovich", in library.
+

@@ -110,3 +110,9 @@ is `testLowerMaxBooksPerUser`.
 * To illustrate situation *A user borrowing one book and then returning it*
  script [LibraryDemoScript1](src/library2/LibraryDemoScript1.java) produces output
  [Demo 1 text output](outputs/LibraryDemoScript1.txt).
+* To illustrate situation *A user trying to borrow more books than allowed.
+ And then returning one of the books they already have to borrow a new one.*
+ script [LibraryDemoScript2](src/library2/LibraryDemoScript2.java) produces output
+ [Demo 2 text output](outputs/LibraryDemoScript2.txt).
+
+
