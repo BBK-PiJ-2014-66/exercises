@@ -9,9 +9,8 @@ package library2;
  * methods to get the name of the person and their ID, and to set the latter."
  * 
  * So should have one constructor User(name);
- *
- * OSS take2:
- * User should not have register(Library) or getLibrary() as User is 
+ * 
+ * OSS take2: User should not have register(Library) or getLibrary() as User is
  * manipulated by the Library itself
  * 
  * @author Oliver Smart <osmart01@dcs.bbk.ac.uk>
@@ -41,37 +40,38 @@ public interface User {
 	 * @return the user's name
 	 */
 	String getUserName();
-	
-	
-    /**
-     * records that a this User is currently borrowing a specific book
-     * 
-     * @param book the book borrowed
-     */
-	void recordBookBorrowed( Book book);
-	
-    /**
-     * used to update records that a particular book has been returned
-     * and user no longer has it. The relevant records in both User and Book
-     * must updated in this method.
-     * 
-     * N.B. If the book does not exist in the library or the user has not borrowed it
-     * does nothing.
-     * 
-     * @param book the book returned to library
-     */
-	void recordBookReturned( Book book);
-	
+
+	/**
+	 * records that a this User is currently borrowing a specific book
+	 * 
+	 * @param book
+	 *            the book borrowed
+	 */
+	void recordBookBorrowed(Book book);
+
+	/**
+	 * used to update records that a particular book has been returned and user
+	 * no longer has it. The relevant records in both User and Book must updated
+	 * in this method.
+	 * 
+	 * N.B. If the book does not exist in the library or the user has not
+	 * borrowed it does nothing.
+	 * 
+	 * @param book
+	 *            the book returned to library
+	 */
+	void recordBookReturned(Book book);
+
 	/**
 	 * @return the number books borrowed
 	 */
-    int getNumberBooksBorrowed(); 
-	
+	int getNumberBooksBorrowed();
+
 	/**
 	 * @return an array of the titles of all the books borrowed (for 1.8)
 	 */
 	String[] getTitlesBooksBorrowed();
-	
+
 	/**
 	 * 
 	 * @return the last Book borrowed or null if there are not any
