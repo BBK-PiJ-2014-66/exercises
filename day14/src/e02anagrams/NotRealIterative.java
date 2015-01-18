@@ -5,73 +5,78 @@ import java.util.List;
 
 public class NotRealIterative {
 	public static void main(String[] args) {
-		allNonRealAnagrams("abcde");
+		allNonRealAnagrams("abcd");
 	}
 
 	public static List<String> allNonRealAnagrams(String string) {
 
-		// List<String> retList = new ArrayList<String>();
+		List<String> retList = new ArrayList<String>();
 		System.out.println("input string= " + string);
-		// convert to char array
-		// char[] chrStr = string.toCharArray();
-		// int nOut=0;
-		/*
-		 * // swap pairs of letters DOES NOT WORK for (int ic = 0; ic <
-		 * chrStr.length; ic++) { for (int jc = 0; jc < chrStr.length; jc++) {
-		 * if (ic != jc) { char temp = chrStr[ic]; chrStr[ic] = chrStr[jc];
-		 * chrStr[jc] = temp; nOut++; System.out.println(nOut + " " +
-		 * String.copyValueOf(chrStr)); } } }
-		 */
 		int nChars = string.length();
 		System.out.println("size=" + nChars);
-		// int[] indices = new int[size];
-
-		// int position=size;
-		// while (position>0){
-		// System.out.println("position= "+ position);
-		//
-		//
-		// }
-		// int[] indices = new int[size];
-		int[] indice = new int[nChars];
-		for (int ic = 0; ic < nChars; ic++) {
-			indice[ic] = -1; // not set
+		List<int[]> permMat = permutationMatrix( nChars);
+		for (int[] itRow: permMat) {
+			String swappedStr="";
+			for (int cc=0; cc<nChars; cc++) {
+				swappedStr += string.charAt(itRow[cc]); 
+			}
+			System.out.println(swappedStr);
+			retList.add(swappedStr);
 		}
-		List<int[]> indices = new ArrayList<int[]>();
-		indices.add(indice.clone());
-
-		for (int cc = 0; cc < nChars; cc++) {
-			List<int[]> tempIndices = new ArrayList<int[]>();
-			System.out.println("deal with character" + cc);
-			System.out.println("oldindices.size()= " + indices.size());
+		return retList;
+	}
+	/**
+	 * returns a permutationMatrix giving the number ways to rearrange a list
+	 * of numItems elements. 
+	 * 
+	 * The matrix will have numItems factorial rows.
+	 * 
+	 * each row be an array of integers of length numItems
+	 * containing the values 0, 1, 2, .. numItems-1 
+	 * 
+	 * @param numItems the number of dimensions
+	 * @return a matrix as described above
+	 */
+	public static List<int []> permutationMatrix(int numItems) {
+		System.out.println("call to permutationMatrix numItems " + numItems);
+		int[] row = new int[numItems];
+		for (int ic = 0; ic < numItems; ic++) {
+			row[ic] = -1; // set to silly value
+		}
+		List<int[]> permMat = new ArrayList<int[]>();
+		permMat.add(row.clone());
+		for (int cc = 0; cc < numItems; cc++) {
 			// set position cc
-			for (int ic = 0; ic < indices.size(); ic++) {
-				// retrieve from the list
-				indice = indices.get(ic);
-				for (int jc = 0; jc < nChars; jc++) {
+			List<int[]> tempMat = new ArrayList<int[]>();
+			// go through each of the previously defined rows
+			for (int ic = 0; ic < permMat.size(); ic++) {
+				// retrieve this from the list
+				row = permMat.get(ic);
+				// this value can be 0, 1, 2, 3...
+				for (int jc = 0; jc < numItems; jc++) {
+					// but it can not be the same as a previous value
 					boolean match = false;
 					for (int yc = 0; yc < cc; yc++) {
-						if (indice[yc] == jc)
+						if (row[yc] == jc)
 							match = true;
 					}
 					if (!match) {
-						indice[cc] = jc;
-						tempIndices.add(indice.clone());
+						row[cc] = jc;
+						tempMat.add(row.clone());
 					}
 				}
 			}
-			indices = tempIndices;
+			permMat = tempMat;
 		}
-
-		for (int ic = 0; ic < indices.size(); ic++) {
-			indice = indices.get(ic);
-			System.out.print(ic + "\t= (");
-			for (int jc = 0; jc < nChars; jc++) {
-				System.out.print("\t" + indice[jc]);
+		
+		System.out.println("debug permMat has " + permMat.size() + " rows:");
+		for ( int [] itRow : permMat) {
+			for (int cc = 0; cc < itRow.length; cc++) {
+				System.out.print("\t" + itRow[cc]);
 			}
-			System.out.println("\t)");
+			System.out.println();
 		}
 
-		return null;
+		return permMat;
 	}
 }
