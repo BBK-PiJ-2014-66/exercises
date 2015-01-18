@@ -122,4 +122,8 @@ is `testLowerMaxBooksPerUser`.
  [Demo 4 text output](outputs/LibraryDemoScript4.txt).
 
 
+# Final is final
+* Not yet attempted exercise 1 took > 2 days work!
+
+
 
