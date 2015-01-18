@@ -33,6 +33,27 @@ public class UserImpl implements User {
 	}
 
 	/**
+	 * For printing
+	 * 
+	 * @return single line string with user details including titles of books out
+	 */
+	@Override
+	public String toString() {
+		String retStr;
+		retStr = "name:\"" + name + "\" ID:" + libID;
+		int numBorrowed = this.getNumberBooksBorrowed();
+		if (numBorrowed == 0) {
+			retStr += " No books borrowed.";
+		} else {
+			retStr += " has " + numBorrowed + " books borrowed:";
+			String[] titles = this.getTitlesBooksBorrowed();
+			for (int tc = 0; tc < numBorrowed; tc++)
+				retStr += " \"" + titles[tc] + "\"";
+		}
+		return retStr;
+	}
+
+	/**
 	 * Set the library ID
 	 * 
 	 * @param the
@@ -100,7 +121,7 @@ public class UserImpl implements User {
 		Book bookReturn = null;
 		int size = borrowed.size();
 		if (size > 0) {
-			bookReturn = borrowed.get(size-1);
+			bookReturn = borrowed.get(size - 1);
 		}
 		return bookReturn;
 	}

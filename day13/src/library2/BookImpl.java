@@ -25,6 +25,23 @@ public class BookImpl implements Book {
 		this.borrower = null;
 	}
 	
+	/**
+	 * For printing
+	 * 
+	 * @return single line string with book details
+	 */
+	@Override
+	public String toString() {
+		String retStr;
+		retStr = "author: \"" + author +"\" title: \"" + title + "\"";
+		if (borrower==null) {
+			retStr += ", in library.";			
+		} else {
+			retStr += ", lent to \"" + borrower.getUserName() + "\"";
+		}
+ 		return retStr;
+	}
+	
 	
 	@Override
 	public String getAuthor() {

@@ -35,16 +35,30 @@ public class LibraryImpl implements Library {
 	 * For printing
 	 * 
 	 * @return a multiline report on the library "name", number of users, user
-	 *         details, number of books
+	 *         details, number of books, ....
 	 */
 	@Override
 	public String toString() {
 		String retStr;
-		retStr = "Library name: \"" + name + "\"\n";
+		retStr = "\tLibrary Name: \"" + name + "\"\n";
 		retStr += "\tNumber of users registered: " + this.getReaderCount();
 		retStr += "   Number of books in collection: " + this.getBookCount();
-		retStr += "   Number of books lent out: " + this.getBookBorrowedCount() + "\n";
-		retStr += "\tMaximum number of books per user: " + maxBooksPerUser;
+		retStr += "   Number of books lent out: " + this.getBookBorrowedCount()
+				+ "\n";
+		retStr += "\tMaximum number of books per user: " + maxBooksPerUser
+				+ "\n";
+		if (this.getReaderCount() > 0) {
+			retStr += "\tUsers:\n";
+			for (User itUser : users) {
+				retStr += "\t\t" + itUser + "\n";
+			}
+		}
+		if (this.getBookCount() > 0) {
+			retStr += "\tBooks:\n";
+			for (Book itBook : books) {
+				retStr += "\t\t" + itBook + "\n";
+			}
+		}
 		return retStr;
 	}
 
@@ -118,7 +132,7 @@ public class LibraryImpl implements Library {
 	 * @param title
 	 */
 	@Override
-	public void addBook( String author, String title) {
+	public void addBook(String author, String title) {
 		books.add(new BookImpl(author, title));
 	}
 
