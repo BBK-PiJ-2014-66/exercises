@@ -45,29 +45,26 @@ public class LibraryDemoScript3 {
 		testLib.borrow("Anna Karenina", smith);
 		System.out.println("  Library report:\n" + testLib);
 
-		String testTitle = "Anna Karenina";
-		System.out.print("\nLibrary asked who has borrowed \"" + testTitle
-				+ "\"");
-		String borrowName = testLib.nameOfUserBorrowingBook(testTitle);
-		System.out.println(" answer:"
-				+ ((borrowName == null) ? "not in library or not on loan" : " loaned to " + borrowName));
-		
-		testTitle = "War and Peace";
-		System.out.print("\nLibrary asked who has borrowed \"" + testTitle
-				+ "\"");
-		borrowName = testLib.nameOfUserBorrowingBook(testTitle);
-		System.out.println(" answer:"
-				+ ((borrowName == null) ? "not in library or not on loan" : " is loaned to " + borrowName));
+		String[] testTitles = { "Anna Karenina", "War and Peace",
+				"Guide to Russian Cheese", "The Brothers Karamazov"};
+		for (String testTitle : testTitles) {
+			System.out.print("Who has borrowed \"" + testTitle + "\"? ");
+			System.out.println(" answer: "
+					+ prettyBorrowString(testLib, testTitle));
+		}
 
-		testTitle = "Guide to Russian Cheese";
-		System.out.print("\nLibrary asked who has borrowed \"" + testTitle
-				+ "\"");
-		borrowName = testLib.nameOfUserBorrowingBook(testTitle);
-		System.out.println(" answer: "
-				+ ((borrowName == null) ? "not in library or not on loan" : " is loaned to " + borrowName));
-		
 
 	}
-	
+
+	private static String prettyBorrowString(Library library, String title) {
+		String resStr = "";
+		String borrowName = library.nameOfUserBorrowingBook(title);
+		if (borrowName == null) {
+			resStr = "is not in the library or not out on loan.";
+		} else {
+			resStr = "is loaned to \"" + borrowName + "\"";
+		}
+		return resStr;
+	}
 
 }
