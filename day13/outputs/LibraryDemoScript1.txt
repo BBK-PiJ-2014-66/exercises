@@ -1,0 +1,31 @@
+*** Demonstrate "A user borrowing one book and returning it" ***
+Create library and add a single user and a single book:
+  Library report:
+	Library Name: "LibraryDemoScript Library"
+	Number of users registered: 1   Number of books in collection: 1   Number of books lent out: 0
+	Maximum number of books per user: 3
+	Users:
+		name:"Joe Bloggs" ID:1 No books borrowed.
+	Books:
+		author: "Leo Tolstoy" title: "War and Peace", in library.
+
+  Bloggs borrows the book
+  Library report:
+	Library Name: "LibraryDemoScript Library"
+	Number of users registered: 1   Number of books in collection: 1   Number of books lent out: 1
+	Maximum number of books per user: 3
+	Users:
+		name:"Joe Bloggs" ID:1 has 1 books borrowed: "War and Peace"
+	Books:
+		author: "Leo Tolstoy" title: "War and Peace", lent to "Joe Bloggs"
+
+  Bloggs returns the book
+  Library report:
+	Library Name: "LibraryDemoScript Library"
+	Number of users registered: 1   Number of books in collection: 1   Number of books lent out: 0
+	Maximum number of books per user: 3
+	Users:
+		name:"Joe Bloggs" ID:1 No books borrowed.
+	Books:
+		author: "Leo Tolstoy" title: "War and Peace", in library.
+

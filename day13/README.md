@@ -101,4 +101,12 @@ with  [LibraryImplTest](src/library2/LibraryImplTest.java). As required implemen
 * TTD for [Library](src/library2/Library.java), [LibraryImpl](src/library2/LibraryImpl.java)
 with  [LibraryImplTest](src/library2/LibraryImplTest.java). As required altered. Test
 is `testLowerMaxBooksPerUser`. 
-*
+
+# 1.11 scripts to illustrate situations
+* Work prior to this. Add `toString()` method to each of 
+ [UserImpl](src/library2/UserImpl.java),  [BookImpl](src/library2/BookImpl.java)
+ and [LibraryImpl](src/library2/LibraryImpl.java) so that it is easy to print
+ out the state of each object.
+* To illustrate situation *A user borrowing one book and then returning it*
+ script [LibraryDemoScript1](src/library2/LibraryDemoScript1.java) produces output
+ [Demo 1 text output](outputs/LibraryDemoScript1.txt).
