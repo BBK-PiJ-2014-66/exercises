@@ -1,5 +1,13 @@
 package library2;
-
+/**
+* PiJ day 13 Test Driven Development
+*
+* 1.11 The 1st illustration script as instructed
+* 
+* @author Oliver Smart <osmart01@dcs.bbk.ac.uk>
+* @since Jan 2015
+* 
+*/
 public class LibraryDemoScript1 {
 
 	public static void main(String[] args) {
