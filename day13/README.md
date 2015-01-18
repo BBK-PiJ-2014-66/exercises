@@ -117,5 +117,9 @@ is `testLowerMaxBooksPerUser`.
 * To illustrate situation *Several users borrow books. The library is then asked who has some specific title, if anyone.*
  script [LibraryDemoScript3](src/library2/LibraryDemoScript3.java) produces output
  [Demo 3 text output](outputs/LibraryDemoScript3.txt).
+* To illustrate situation *The 'maximum books' is reduced to one, then to zero, then it is increased to the original value.*
+ script [LibraryDemoScript4](src/library2/LibraryDemoScript4.java) produces output
+ [Demo 4 text output](outputs/LibraryDemoScript4.txt).
+
 
 

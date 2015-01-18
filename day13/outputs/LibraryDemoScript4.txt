@@ -1,0 +1,24 @@
+*** Demonstrate #4 "The 'maximum books' is reduced to one,
+    then to zero, then it is increased to the original value"
+    use the Marge, Lisa and Maggie example from 1.10***
+
+Setup library so Marge, Lisa and Maggie have borrowed one, two and three books
+  Library report:
+	Library Name: "Demo #4 Library"
+	Number of users registered: 3   Number of books in collection: 6   Number of books lent out: 6
+	Maximum number of books per user: 3
+	Users:
+		name:"Marge" ID:1 has 1 books borrowed: "The Simpsons Guide Book"
+		name:"Lisa" ID:2 has 2 books borrowed: "The Simpsons Guide Book" "The Simpsons Guide Book"
+		name:"Maggie" ID:3 has 3 books borrowed: "The Simpsons Guide Book" "The Simpsons Guide Book" "The Simpsons Guide Book"
+	Books:
+		author: "The Simpson Family" title: "The Simpsons Guide Book", lent to "Marge"
+		author: "The Simpson Family" title: "The Simpsons Guide Book", lent to "Lisa"
+		author: "The Simpson Family" title: "The Simpsons Guide Book", lent to "Lisa"
+		author: "The Simpson Family" title: "The Simpsons Guide Book", lent to "Maggie"
+		author: "The Simpson Family" title: "The Simpsons Guide Book", lent to "Maggie"
+		author: "The Simpson Family" title: "The Simpsons Guide Book", lent to "Maggie"
+
+Set 'maximum books' to: 1. Users who are borrowing more books than this: "Lisa" "Maggie" 
+Set 'maximum books' to: 0. Users who are borrowing more books than this: "Marge" "Lisa" "Maggie" 
+Set 'maximum books' to: 3. Users who are borrowing more books than this: none
