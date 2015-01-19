@@ -30,13 +30,18 @@ public class Recursive {
 	 * @return a sorted list of the all non-real anagrams
 	 */
 	public static List<String> allNonRealAnagrams(String string) {
-		//catch null input
+		// catch null input
 		if (string == null) {
 			return null;
 		}
 		List<String> retList = new ArrayList<String>();
-		
-		retList.add("not yet implemented");
+
+		// trivial single item list for strings of length 1
+		if (string.length() == 1) {
+			retList.add(string);
+		} else {
+			retList.add("not yet implemented for strings longer than 1 character");
+		}
 		return retList;
 	}
 }
