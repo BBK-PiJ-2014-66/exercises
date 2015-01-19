@@ -23,10 +23,10 @@ public class HailstoneTest {
 	public void testInput3() {
 		/*
 		 * https://www.math.hmc.edu/funfacts/ffiles/10008.5.shtml
-		 * gives hailstone for 3 as 10, 5, 16, 8, 4, 2, 1, 4, 2, 1
+		 * gives hailstone for 3 as 10, 5, 16, 8, 4, 2, 1
 		 */
-		List<Integer> actual = Hailstone.calculate(3);
-		List<Integer> expected = Arrays.asList(10, 5, 16, 8, 4, 2, 1, 4, 2, 1);
+		List<Integer> actual = Hailstone.calculateIterative(3);
+		List<Integer> expected = Arrays.asList(10, 5, 16, 8, 4, 2, 1);
 		/*
 		 * great way of comparing Lists from
 		 * http://stackoverflow.com/questions/3236880/assert-list-in-junit

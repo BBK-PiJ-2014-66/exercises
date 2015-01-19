@@ -1,5 +1,6 @@
 package hailstone;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -27,8 +28,28 @@ import java.util.List;
  * @since Jan 2015
  */
 public class Hailstone {
-	public static List <Integer> calculate( Integer iStart) {
-		return null;
+	/**
+	 * Calculates a list of Hailstone numbers starting at iStart
+	 * and ending when 1 is reached.
+	 * 
+	 * Recursive version
+	 * 
+	 * @param iStart starting integer
+	 * @return the list of Hailstone integer;
+	 */
+	public static List<Integer> calculateRecursive(Integer iStart) {
+		if (iStart == null) // protect against null inpit
+			return null;
+		List<Integer> result = new ArrayList<Integer>();
+		
+		if (iStart != 1) {
+			Integer next = (iStart%2 == 0 ) ? iStart/2 :  3*iStart + 1;
+			result.add(next);
+			result.addAll(calculateRecursive(next));
+		}
+		return result;
 	}
+	
+	
 
 }
