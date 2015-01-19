@@ -49,6 +49,26 @@ public class Hailstone {
 		}
 		return result;
 	}
+	/**
+	 * Calculates a list of Hailstone numbers starting at iStart
+	 * and ending when 1 is reached.
+	 * 
+	 * Recursive version
+	 * 
+	 * @param iStart starting integer
+	 * @return the list of Hailstone integer;
+	 */
+	public static List<Integer> calculateIterative(Integer iStart) {
+		if (iStart == null) // protect against null inpit
+			return null;
+		List<Integer> result = new ArrayList<Integer>();
+		Integer iWork = iStart;
+		while (iWork != 1) {
+			iWork = (iWork%2 == 0 ) ? iWork/2 :  3*iWork + 1;
+			result.add(iWork);
+		}
+		return result;
+	}
 	
 	
 

@@ -20,19 +20,26 @@ import org.junit.Test;
 public class HailstoneTest {
 
 	@Test
-	public void testInput3() {
+	public void testInput3Recursive() {
 		/*
 		 * https://www.math.hmc.edu/funfacts/ffiles/10008.5.shtml
 		 * gives hailstone for 3 as 10, 5, 16, 8, 4, 2, 1
 		 */
-		List<Integer> actual = Hailstone.calculateIterative(3);
+		List<Integer> actual = Hailstone.calculateRecursive(3);
 		List<Integer> expected = Arrays.asList(10, 5, 16, 8, 4, 2, 1);
 		/*
 		 * great way of comparing Lists from
 		 * http://stackoverflow.com/questions/3236880/assert-list-in-junit
 		 * hamcrest rules!
 		 */
-		assertThat("Hailstone for input 3", actual, is(expected));
+		assertThat("Hailstone for input 3, recursive", actual, is(expected));
+	}
+
+	@Test
+	public void testInput3Iterative() {
+		List<Integer> actual = Hailstone.calculateIterative(3);
+		List<Integer> expected = Arrays.asList(10, 5, 16, 8, 4, 2, 1);
+		assertThat("Hailstone for input 3, iterative", actual, is(expected));
 	}
 
 }
