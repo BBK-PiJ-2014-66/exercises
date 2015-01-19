@@ -2,6 +2,8 @@
 
 ## The exercise sheet [exercises_d14.pdf](exercises_d14.pdf) 
 
+# 1 Memoized Fibonacci
+* Did a Memoized Fibonacii on [day05](../day05#user-content-22-fibonacci)
 
 # 2 Anagrams
 * This is a case where it is easier to do by recursive method.
@@ -12,7 +14,9 @@
     So *ABCD* is split into *A* and *BCD* then find the anagrams of *BCD*. Once this is done
     add *A* at the start, in between each letter and at end of each of the *BCD* anagrams. This
     means that there is a 6 character string will produce 6 recursive calls to the method.
-  * An alternative approach as implemented at top of [?](link) is to split *ABCD* 
+  * An alternative approach as implemented at top of 
+   [stackoverflow link](http://stackoverflow.com/questions/20906214/permutation-algorithm-for-array-of-integers-in-java)
+   is to split *ABCD* 
    into *A* plus *BCD*, then *B* plus *ACD*, then *C* plus *ABD*, then *D* plus *ABC*. The
    anagrams of each of the triplets are found and the missing letter added at the start
    of each of them. This produces a factorial explosion of recursions as the string gets longer.
@@ -24,5 +28,8 @@
   until the requires number is found. So in many respects takes the same approach
   as the recursive but in the other direction. **Needs more work***
 * Another thing to worry about is repeated letters. For instances there are three anagrams of *AAB*:  *AAB*,
-  *ABA* and *BAA*. Should get rid of the degenerate solutions. Do this by altering method to use a
+  *ABA* and *BAA*. Should get rid of the degenerate solutions. Fix by altering method to use a
   *TreeSet* internally (also ensures result is sorted).
+
+
+#  3 Hailstone numbers
