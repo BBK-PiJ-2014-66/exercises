@@ -50,8 +50,6 @@ public class RecursiveTest {
 		String[] expect = { input, "BA" };
 		List<String> getList = anagramWrapper(input);
 		assertNotNull("got null list for input string '"+ input+"'", getList);
-		// convert to list using method from
-		// http://stackoverflow.com/questions/4042434/convert-arraylist-containing-strings-to-an-array-of-strings-in-java
 		String[] getArray = getList.toArray(new String[getList.size()]);
 		assertArrayEquals("input string '"+ input+"'", expect, getArray);
 	}
@@ -65,11 +63,23 @@ public class RecursiveTest {
 		String[] expect = { input, "ACB", "BAC", "BCA", "CAB", "CBA" };
 		List<String> getList = anagramWrapper(input);
 		assertNotNull("got null list for input string '"+ input+"'", getList);
-		// convert to list using method from
-		// http://stackoverflow.com/questions/4042434/convert-arraylist-containing-strings-to-an-array-of-strings-in-java
 		String[] getArray = getList.toArray(new String[getList.size()]);
 		assertArrayEquals("input string '"+ input+"'", expect, getArray);
 	}
+	
+	/**
+	 * Repeated letter test BAA
+	 */
+	@Test
+	public void testRepeatLetterBAA() {
+		String input = "BAA";
+		String[] expect = { "AAB", "ABA", input };
+		List<String> getList = anagramWrapper(input);
+		assertNotNull("got null list for input string '"+ input+"'", getList);
+		String[] getArray = getList.toArray(new String[getList.size()]);
+		assertArrayEquals("input string with repeat letter:'"+ input+"'", expect, getArray);
+	}
+	
 	
 
 }
