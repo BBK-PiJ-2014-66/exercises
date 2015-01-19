@@ -1,15 +1,16 @@
 package e02anagrams;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * PiJ day 14 Recusion II
  * 
- * 2
+ * 2 Anagrams
  * 
- * task: Anagrams
+ * task:
  * 
  * An anagram is a word created by recombination of the letters in another
  * words. Some anagrams make sense ("silent", "listen") and some do not
@@ -35,11 +36,13 @@ public class Recursive {
 		if (string == null) {
 			return null;
 		}
-		List<String> retList = new ArrayList<String>();
+		// use a set to get rid of unwanted duplicates. Want a sorted result so
+		// the tree version is appropriate
+		Set<String> retTree = new TreeSet<String>();
 
 		// trivial single item list for strings of length 1
 		if (string.length() == 1) {
-			retList.add(string);
+			retTree.add(string);
 		} else {
 			// split the first character from the string
 			char firstChar = string.charAt(0);
@@ -54,20 +57,27 @@ public class Recursive {
 			 * 
 			 * Need to add in A to BC get ABC, BAC, BCA
 			 * 
-			 * an add in A to CB to get CBA, CAB, CBA  
+			 * an add in A to CB to get CBA, CAB, CBA
 			 */
 			for (String itAr : anaRest) {
 				// first add before 1st character
-				String formStr = firstChar+itAr;
-				retList.add(formStr);
-				for (int cc=0; cc < itAr.length(); cc++) {
-					formStr = itAr.substring(0,cc+1) + firstChar;
-					formStr += itAr.substring(cc+1);
-					retList.add(formStr);
+				String formStr = firstChar + itAr;
+				retTree.add(formStr);
+				for (int cc = 0; cc < itAr.length(); cc++) {
+					formStr = itAr.substring(0, cc + 1) + firstChar;
+					formStr += itAr.substring(cc + 1);
+					retTree.add(formStr);
 				}
 			}
 		}
-		Collections.sort(retList); // sort return to facilitate testing
+
+		/*
+		 * need to return a list rather than a set
+		 * http://stackoverflow.com/questions
+		 * /9322405/converting-a-treeset-to-arraylist
+		 */
+		List<String> retList = new ArrayList<String>(retTree.size());
+		retList.addAll(retTree);
 		return retList;
 
 	}

@@ -10,7 +10,7 @@ import org.junit.Test;
 /**
  * PiJ day 14 Recusion II
  * 
- * 2 Anagrams
+ * 2. Anagrams
  * 
  * Tests for recursive version.
  * 
