@@ -26,10 +26,15 @@
   permutation table listing every way to permute a list of *numItems*. 
   This is found for *numItems*=1, then 2, then 3
   until the requires number is found. So in many respects takes the same approach
-  as the recursive but in the other direction. **Needs more work***
+  as the recursive but in the other direction. **Needs more work**
 * Another thing to worry about is repeated letters. For instances there are three anagrams of *AAB*:  *AAB*,
   *ABA* and *BAA*. Should get rid of the degenerate solutions. Fix by altering method to use a
   *TreeSet* internally (also ensures result is sorted).
 
 
 #  3 Hailstone numbers
+
+* Start implementation [Hailstone](src/hailstone/Hailstone.java)
+  tested by [HailstoneTest](src/hailstone/HailstoneTest.java)
+
+
