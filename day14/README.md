@@ -2,9 +2,6 @@
 
 ## The exercise sheet [exercises_d14.pdf](exercises_d14.pdf) 
 
-# 1 Practicing TDD:
-
-The library exercise: Do everything in a `library` Package.
 
 # 2 Anagrams
 * This is a case where it is easier to do by recursive method.
