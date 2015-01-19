@@ -21,7 +21,9 @@ The library exercise: Do everything in a `library` Package.
    of each of them. This produces a factorial explosion of recursions as the string gets longer.
    It would be possible to use memoisation to save some time but it this adds complexity.
    OK provided small strings used.
-* My iterative solution is build up a 
-  
+* My iterative solution is build up a permutation table listing every way to
+  permute a list of *numItems*. This is found for *numItems*=1, then 2, then 3
+  until the requires number is found. So in many respects takes the same approach
+  as the recursive but in the other direction.
 * Another thing to worry about is repeated letters. For instances there are three anagrams of *AAB*:  *AAB*,
   *ABA* and *BAA*. Should get rid of the degenerate solutions.
