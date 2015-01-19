@@ -1,7 +1,9 @@
 package hailstone;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * PiJ day 14 Recusion II
@@ -28,6 +30,18 @@ import java.util.List;
  * @since Jan 2015
  */
 public class Hailstone {
+	
+	private boolean memo=false; // turn on memo
+	private Map<Integer,List<Integer>> memoMap;
+	
+	Hailstone() {
+		memoMap = new HashMap<Integer,List<Integer>>();
+	}
+	
+	public void setMemo( boolean memo) {
+		this.memo = memo;
+	}
+	
 	/**
 	 * Calculates a list of Hailstone numbers starting at iStart
 	 * and ending when 1 is reached.
@@ -37,9 +51,15 @@ public class Hailstone {
 	 * @param iStart starting integer
 	 * @return the list of Hailstone integer;
 	 */
-	public static List<Integer> calculateRecursive(Integer iStart) {
+	public List<Integer> calculateRecursive(Integer iStart) {
 		if (iStart == null) // protect against null inpit
 			return null;
+        if (memo) {
+        	if (memoMap.containsKey(iStart)) {
+        		System.out.println("debug returning memo store for " + iStart);
+        		return memoMap.get(iStart);
+        	}
+        }
 		List<Integer> result = new ArrayList<Integer>();
 		
 		if (iStart != 1) {
@@ -47,8 +67,13 @@ public class Hailstone {
 			result.add(next);
 			result.addAll(calculateRecursive(next));
 		}
+		if (memo) { // if memoisation on the store the result 
+			memoMap.put(iStart, result);
+		}
 		return result;
 	}
+
+	
 	/**
 	 * Calculates a list of Hailstone numbers starting at iStart
 	 * and ending when 1 is reached.
@@ -58,7 +83,7 @@ public class Hailstone {
 	 * @param iStart starting integer
 	 * @return the list of Hailstone integer;
 	 */
-	public static List<Integer> calculateIterative(Integer iStart) {
+	public List<Integer> calculateIterative(Integer iStart) {
 		if (iStart == null) // protect against null inpit
 			return null;
 		List<Integer> result = new ArrayList<Integer>();
@@ -70,6 +95,4 @@ public class Hailstone {
 		return result;
 	}
 	
-	
-
 }
