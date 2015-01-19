@@ -41,12 +41,9 @@ public class Recursive {
 		if (string.length() == 1) {
 			retList.add(string);
 		} else {
-			System.out.println("\ndebug call to allNonRealAnagrams with " + string);
 			// split the first character from the string
 			char firstChar = string.charAt(0);
 			String strRest = string.substring(1);
-			System.out.println("debug firstChar=" + firstChar + " strRest="
-					+ strRest);
 			// find the anagrams of strRest by a recursive call to this function
 			List<String> anaRest = allNonRealAnagrams(strRest);
 			/*
@@ -62,12 +59,10 @@ public class Recursive {
 			for (String itAr : anaRest) {
 				// first add before 1st character
 				String formStr = firstChar+itAr;
-				System.out.println("debug1 formStr=" + formStr);
 				retList.add(formStr);
 				for (int cc=0; cc < itAr.length(); cc++) {
 					formStr = itAr.substring(0,cc+1) + firstChar;
 					formStr += itAr.substring(cc+1);
-					System.out.println("debug2 formStr=" + formStr);
 					retList.add(formStr);
 				}
 			}
