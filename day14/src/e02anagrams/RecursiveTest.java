@@ -12,7 +12,7 @@ import org.junit.Test;
  * 
  * 2 Anagrams
  * 
- * Tests for recursive version
+ * Tests for recursive version.
  * 
  * @author Oliver Smart <osmart01@dcs.bbk.ac.uk>
  * @since Jan 2015

@@ -1,6 +1,7 @@
 package e02anagrams;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -40,8 +41,39 @@ public class Recursive {
 		if (string.length() == 1) {
 			retList.add(string);
 		} else {
-			retList.add("not yet implemented for strings longer than 1 character");
+			System.out.println("\ndebug call to allNonRealAnagrams with " + string);
+			// split the first character from the string
+			char firstChar = string.charAt(0);
+			String strRest = string.substring(1);
+			System.out.println("debug firstChar=" + firstChar + " strRest="
+					+ strRest);
+			// find the anagrams of strRest by a recursive call to this function
+			List<String> anaRest = allNonRealAnagrams(strRest);
+			/*
+			 * now we need to add in letter firstChar to each of the anagrams
+			 * anaRest.
+			 * 
+			 * For instance if firstChar=A and anaRest = { BC, CB }
+			 * 
+			 * Need to add in A to BC get ABC, BAC, BCA
+			 * 
+			 * an add in A to CB to get CBA, CAB, CBA  
+			 */
+			for (String itAr : anaRest) {
+				// first add before 1st character
+				String formStr = firstChar+itAr;
+				System.out.println("debug1 formStr=" + formStr);
+				retList.add(formStr);
+				for (int cc=0; cc < itAr.length(); cc++) {
+					formStr = itAr.substring(0,cc+1) + firstChar;
+					formStr += itAr.substring(cc+1);
+					System.out.println("debug2 formStr=" + formStr);
+					retList.add(formStr);
+				}
+			}
 		}
+		Collections.sort(retList); // sort return to facilitate testing
 		return retList;
+
 	}
 }
