@@ -3,7 +3,7 @@ package e02anagrams;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NotRealIterative {
+public class Iterative {
 	public static void main(String[] args) {
 		allNonRealAnagrams("abcd");
 	}
