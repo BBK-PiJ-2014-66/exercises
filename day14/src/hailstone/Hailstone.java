@@ -78,7 +78,7 @@ public class Hailstone {
 	 * Calculates a list of Hailstone numbers starting at iStart
 	 * and ending when 1 is reached.
 	 * 
-	 * Recursive version
+	 * Iterative version
 	 * 
 	 * @param iStart starting integer
 	 * @return the list of Hailstone integer;
