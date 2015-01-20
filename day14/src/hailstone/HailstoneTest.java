@@ -56,10 +56,13 @@ public class HailstoneTest {
 		List<Integer> sequence = hailstone.calculateRecursive(8);
 		hailstone.resetCounter(); // reset calculation counter
 		sequence = hailstone.calculateRecursive(3);
+		List<Integer> expected = Arrays.asList(10, 5, 16, 8, 4, 2, 1);
+		assertThat("Hailstone(3), memo recursive", sequence, is(expected));
+		
 		int nCalcMemo = hailstone.getCounter(); // number of calcs
 		int nCalcNon = sequence.size(); // number with no memo
 		assertThat("Memoisation should reduce the number of calcs\n"
-				+ "       needed for hailstone(3) having already found hailstone(8)\n"
+				+ "       needed for Hailstone(3) having already found Hailstone(8)\n"
 				+ "       Testing Recursive version\n"
 				+ "       Checking Ncalcs with memo, Ncalcs without memo.",
 				nCalcMemo, not(nCalcNon));
@@ -73,6 +76,9 @@ public class HailstoneTest {
 		List<Integer> sequence = hailstone.calculateIterative(8);
 		hailstone.resetCounter(); 
 		sequence = hailstone.calculateIterative(3);
+		// check actual values are correct
+		List<Integer> expected = Arrays.asList(10, 5, 16, 8, 4, 2, 1);
+		assertThat("Hailstone(3), memo Iterative", sequence, is(expected));
 		int nCalcMemo = hailstone.getCounter(); 
 		int nCalcNon = sequence.size(); 
 		assertThat("Memoisation should reduce the number of calcs\n"
@@ -82,5 +88,24 @@ public class HailstoneTest {
 				nCalcMemo, not(nCalcNon));
 	}
 
-	
+	@Test
+	public void testMemoIterative2() {
+		// as before but swap 8 and 3
+		Hailstone hailstone = new Hailstone();
+		hailstone.setMemo(true);
+		List<Integer> sequence = hailstone.calculateIterative(3);
+		hailstone.resetCounter(); 
+		sequence = hailstone.calculateIterative(8);
+		// check actual values are correct
+		List<Integer> expected = Arrays.asList( 4, 2, 1);
+		assertThat("Hailstone(8), memo Iterative", sequence, is(expected));
+		int nCalcMemo = hailstone.getCounter(); 
+		int nCalcNon = sequence.size(); 
+		assertThat("Memoisation should reduce the number of calcs\n"
+				+ "       needed for hailstone(8) having already found hailstone(3)\n"
+				+ "       Testing Iterative version\n"
+				+ "       Checking Ncalcs with memo, Ncalcs without memo.",
+				nCalcMemo, not(nCalcNon));
+	}
+
 }

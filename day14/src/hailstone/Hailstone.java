@@ -42,11 +42,11 @@ public class Hailstone {
 	public void setMemo(boolean memo) {
 		this.memo = memo;
 	}
-	
+
 	public void resetCounter() {
 		counter = 0;
 	}
-	
+
 	public int getCounter() {
 		return counter;
 	}
@@ -77,7 +77,7 @@ public class Hailstone {
 			result.add(next);
 			result.addAll(calculateRecursive(next));
 		}
-		if (memo) { // if memoisation on the store the result
+		if (memo) { // if memoisation is on then the store the result
 			memoMap.put(iStart, result);
 		}
 		return result;
@@ -99,11 +99,31 @@ public class Hailstone {
 		List<Integer> result = new ArrayList<Integer>();
 		Integer iWork = iStart;
 		while (iWork != 1) {
-			iWork = (iWork % 2 == 0) ? iWork / 2 : 3 * iWork + 1;
-			counter++;
-			result.add(iWork);
+			if (memoMap.containsKey(iWork)) {
+				result.addAll(memoMap.get(iWork));
+				break;
+			} else {
+				iWork = (iWork % 2 == 0) ? iWork / 2 : 3 * iWork + 1;
+				counter++;
+				result.add(iWork);
+			}
+		}
+		if (memo) {
+			/*
+			 * need to the store the result but also the following list for each
+			 * value in the result
+			 */
+			int size = result.size();
+			for (int rc = 0; rc < size - 1; rc++) { // do not want the last
+													// index
+				iWork = result.get(rc);
+				if (memoMap.containsKey(iWork)) // have already stored this sequence so do not replace
+					break;
+				// subList returns a portion of the list the second index
+				memoMap.put(iWork, result.subList(rc + 1, size));
+			}
+
 		}
 		return result;
 	}
-
 }
