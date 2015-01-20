@@ -34,7 +34,10 @@
 
 #  3 Hailstone numbers
 
-* Start implementation [Hailstone](src/hailstone/Hailstone.java)
-  tested by [HailstoneTest](src/hailstone/HailstoneTest.java)
+* implementated [Hailstone](src/hailstone/Hailstone.java)
+  tested by [HailstoneTest](src/hailstone/HailstoneTest.java). Conclusion memoisation
+  is a pain to implement for the iterative version but really easy for recursive.
+  Would be nice to do some performance tests (cpu time for the first 10000 numbers?) but
+  need to move on.
 
 
