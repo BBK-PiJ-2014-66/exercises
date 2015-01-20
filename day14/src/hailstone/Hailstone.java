@@ -30,57 +30,67 @@ import java.util.Map;
  * @since Jan 2015
  */
 public class Hailstone {
-	
-	private boolean memo=false; // turn on memo
-	private Map<Integer,List<Integer>> memoMap;
-	
+
+	private boolean memo = false; // turn on memo
+	private Map<Integer, List<Integer>> memoMap;
+	private int counter = 0; // counter each calculation of next number
+
 	Hailstone() {
-		memoMap = new HashMap<Integer,List<Integer>>();
+		memoMap = new HashMap<Integer, List<Integer>>();
 	}
-	
-	public void setMemo( boolean memo) {
+
+	public void setMemo(boolean memo) {
 		this.memo = memo;
 	}
 	
+	public void resetCounter() {
+		counter = 0;
+	}
+	
+	public int getCounter() {
+		return counter;
+	}
+
 	/**
-	 * Calculates a list of Hailstone numbers starting at iStart
-	 * and ending when 1 is reached.
+	 * Calculates a list of Hailstone numbers starting at iStart and ending when
+	 * 1 is reached.
 	 * 
 	 * Recursive version
 	 * 
-	 * @param iStart starting integer
+	 * @param iStart
+	 *            starting integer
 	 * @return the list of Hailstone integer;
 	 */
 	public List<Integer> calculateRecursive(Integer iStart) {
 		if (iStart == null) // protect against null inpit
 			return null;
-        if (memo) {
-        	if (memoMap.containsKey(iStart)) {
-        		System.out.println("debug returning memo store for " + iStart);
-        		return memoMap.get(iStart);
-        	}
-        }
+		if (memo) {
+			if (memoMap.containsKey(iStart)) {
+				return memoMap.get(iStart);
+			}
+		}
 		List<Integer> result = new ArrayList<Integer>();
-		
+
 		if (iStart != 1) {
-			Integer next = (iStart%2 == 0 ) ? iStart/2 :  3*iStart + 1;
+			Integer next = (iStart % 2 == 0) ? iStart / 2 : 3 * iStart + 1;
+			counter++;
 			result.add(next);
 			result.addAll(calculateRecursive(next));
 		}
-		if (memo) { // if memoisation on the store the result 
+		if (memo) { // if memoisation on the store the result
 			memoMap.put(iStart, result);
 		}
 		return result;
 	}
 
-	
 	/**
-	 * Calculates a list of Hailstone numbers starting at iStart
-	 * and ending when 1 is reached.
+	 * Calculates a list of Hailstone numbers starting at iStart and ending when
+	 * 1 is reached.
 	 * 
 	 * Iterative version
 	 * 
-	 * @param iStart starting integer
+	 * @param iStart
+	 *            starting integer
 	 * @return the list of Hailstone integer;
 	 */
 	public List<Integer> calculateIterative(Integer iStart) {
@@ -89,10 +99,11 @@ public class Hailstone {
 		List<Integer> result = new ArrayList<Integer>();
 		Integer iWork = iStart;
 		while (iWork != 1) {
-			iWork = (iWork%2 == 0 ) ? iWork/2 :  3*iWork + 1;
+			iWork = (iWork % 2 == 0) ? iWork / 2 : 3 * iWork + 1;
+			counter++;
 			result.add(iWork);
 		}
 		return result;
 	}
-	
+
 }
