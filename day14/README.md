@@ -41,3 +41,9 @@
   need to move on.
 
 
+#  4 Binary Search
+
+* Need a list of sorted random numbers done in [Setup](src/e04binarySearch/Setup.java).
+* Implement [BinarySearch](src/e04binarySearch/BinarySearch.java)
+* Results
+
