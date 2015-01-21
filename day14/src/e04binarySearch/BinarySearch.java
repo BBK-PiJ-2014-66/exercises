@@ -43,15 +43,46 @@ public class BinarySearch {
 	 * test runs
 	 */
 	public void test() {
-		System.out
-				.println("Development Test binary search on sorted list of 10"
-						+ " integers in range 0 to 20:");
+		System.out.println("Test binary search on sorted list of 10,"
+				+ " 100 and 1000 random integers");
 		List<Integer> test;
 
-		test = Setup.ListOfRandomIntegers(10, 20);
-		// for development check whether list contains 13
-		System.out.println(test + " contains(13)= " + binaryContains(test, 13)
-				+ " made " + getNComparisons() + " comparisons");
+		// iterate first 10 elements then 100 then 1000
+		for (int size = 10; size <= 1000; size *= 10) {
+			int max = 2 * size; // make maximum twice the size to give approx
+								// 50% true/false
+			System.out.println("\ntest lists of " + size + " random integers,"
+					+ " in range 0 to " + max);
+			if (size != 10) {
+				System.out.print("\tnumber of comparisons: ");
+			}
+			// in each case do 30 trials
+			int nTrials = 30;
+			for (int trial = 0; trial < nTrials; trial++) {
+				test = Setup.ListOfRandomIntegers(size, max);
+				// look for a random integer in same range
+				int look = Setup.randomInt(0, max);
+				resetNComparisons(); // reset comparisons
+				boolean myContains = binaryContains(test, look);
+				int nComp = getNComparisons();
+				if (size == 10) {
+					System.out.println("\t" + test + " contains(" + look
+							+ ")= " + myContains + " made " + nComp
+							+ " comparisons");
+				} else {
+					System.out.print(nComp + " ");
+				}
+				if (myContains != test.contains(look)) {
+					System.out.println("ERROR binaryContains got it WRONG!");
+					System.out.println("ERROR input list " + test);
+					System.out.println("ERROR binaryContains got it WRONG!");
+					break;
+				}
+			}
+			if (size != 10)
+				System.out.println(); // complete line
+
+		}
 
 	}
 
@@ -75,8 +106,6 @@ public class BinarySearch {
 		// find the middle item
 		int middle = size / 2;
 		int midVal = list.get(middle);
-		System.out.println("debug list=" + list + " size = " + size
-				+ " midVal= " + midVal);
 		nComparisons++; // == is the first comparison
 		if (midVal == value) {
 			return true; // found it

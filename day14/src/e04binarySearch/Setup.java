@@ -38,12 +38,12 @@ public class Setup {
 	}
 
 	/**
-	 * Produces a sorted list of listSize random numbers between 0 and maxNumber
+	 * Produces a sorted list of listSize random numbers in range 0 to max
 	 * 
 	 * @param listSize
 	 *            size of the list
-	 * @param maxNumber
-	 *            maximum number
+	 * @param max
+	 *            maximum random number
 	 * @return the list
 	 */
 	public static List<Integer> ListOfRandomIntegers(int listSize, int max) {
@@ -57,6 +57,18 @@ public class Setup {
 		}
 		Collections.sort(result);
 		return result;
+	}
+	
+	/**
+	 * Returns a single random numer
+	 * @param min the minimum value for the random number
+	 * @param max the maximum value for the random number
+	 * @return the random number
+	 */
+	public static int randomInt( int min, int max) {
+		Random rand = new Random();
+		int randNum = rand.nextInt((max - min) + 1) + min;
+		return randNum;
 	}
 
 }
