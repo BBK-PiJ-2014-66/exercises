@@ -45,5 +45,10 @@
 
 * Need a list of sorted random numbers done in [Setup](src/e04binarySearch/Setup.java).
 * Implement [BinarySearch](src/e04binarySearch/BinarySearch.java)
-* Results
+* Results [BinarySearch_out.txt](BinarySearch_out.txt) so for lists of 10,100,1000 numbers it 
+takes a maximum of 8, 14, 20 comparisons to test for a number (N.B. this counts the equals to
+and the less than comparisons as separate). So the method scales well with the size of the list.
+We would expect that doubling the size of the list would mean one additional iteration as each
+iteration halves the list. Each iteration involves two comparisons. So would expect that increasing
+the list by a facor of 2*2*2=8 would mean 2+2+2 = 6 more comparisons. This is what we see.
 
