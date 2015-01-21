@@ -29,18 +29,29 @@ public class BinarySearch {
 
 	}
 
+	private int nComparisons = 0; // counter for number of comparison
+
+	public int getNComparisons() {
+		return nComparisons;
+	}
+
+	public void resetNComparisons() {
+		nComparisons = 0;
+	}
+
 	/**
 	 * test runs
 	 */
 	public void test() {
-		System.out.println("Development Test binary search on sorted list of 10"
-				+ " integers in range 0 to 20:");
+		System.out
+				.println("Development Test binary search on sorted list of 10"
+						+ " integers in range 0 to 20:");
 		List<Integer> test;
-		
-		
+
 		test = Setup.ListOfRandomIntegers(10, 20);
 		// for development check whether list contains 13
-		System.out.println(test + " contains(13)= " + binaryContains(test, 13));
+		System.out.println(test + " contains(13)= " + binaryContains(test, 13)
+				+ " made " + getNComparisons() + " comparisons");
 
 	}
 
@@ -66,17 +77,24 @@ public class BinarySearch {
 		int midVal = list.get(middle);
 		System.out.println("debug list=" + list + " size = " + size
 				+ " midVal= " + midVal);
+		nComparisons++; // == is the first comparison
 		if (midVal == value) {
 			return true; // found it
-		} else if (value < midVal) { // next search the first half not including middle
-			/*
-			 * use subList to get ".. the portion of this list between the
-			 * specified fromIndex, inclusive, and toIndex, exclusive. (If
-			 * fromIndex and toIndex are equal, the returned list is empty.)"
-			 */
-			return binaryContains(list.subList(0, middle), value);
-		} else { // search the second half not including middle
-			return binaryContains(list.subList(middle + 1, size), value);
+		} else {
+			nComparisons++; // < is the second comparison
+			if (value < midVal) { // next search the first half not including
+									// middle
+
+				/*
+				 * use subList to get ".. the portion of this list between the
+				 * specified fromIndex, inclusive, and toIndex, exclusive. (If
+				 * fromIndex and toIndex are equal, the returned list is
+				 * empty.)"
+				 */
+				return binaryContains(list.subList(0, middle), value);
+			} else { // search the second half not including middle
+				return binaryContains(list.subList(middle + 1, size), value);
+			}
 		}
 	}
 
