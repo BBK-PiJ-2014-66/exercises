@@ -52,3 +52,9 @@ We would expect that doubling the size of the list would mean one additional ite
 iteration halves the list. Each iteration involves two comparisons. So would expect that increasing
 the list by a facor of 2*2*2=8 would mean 2+2+2 = 6 more comparisons. This is what we see.
 
+
+# 5 Mergesort
+* Implemented a generic version to practice using generics:
+[MergeSort](src/e05mergesort/MergeSort.java) tested with [MergeSortTest](src/e05mergesort/MergeSortTest.java)
+**must check that this has been done OK as very new to generics!** 
+
