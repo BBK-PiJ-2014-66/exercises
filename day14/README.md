@@ -60,7 +60,7 @@ the list by a facor of 2*2*2=8 would mean 2+2+2 = 6 more comparisons. This is wh
 
 
 # 6 Quicksort
-* Quickly done [QuickSort](src/e06quicksort/QuickSort.java) and [QuickSortTest](src/e06quicksort/QuickSortTest).
+* Quickly done [QuickSort](src/e06quicksort/QuickSort.java) and [QuickSortTest](src/e06quicksort/QuickSortTest.java).
 Easy to implement being profligate with memory and recursion. In place would be
 a bit more of a challenge!
 
