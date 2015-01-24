@@ -1,5 +1,6 @@
 package e05mergesort;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -25,8 +26,26 @@ import java.util.List;
  */
 public class MergeSort<O> {
 
+	/**
+	 * applies Merge Sort sorting
+	 * 
+	 * @param inList
+	 *            the input unsorted list (not altered)
+	 * @return a new sorted list of the objects in inLists
+	 */
 	public List<O> mergeSort(List<O> inList) {
-		return null;
+		int inSize = inList.size();
+		List<O> result = new ArrayList<O>(inSize);
+		if (inSize < 2) {
+			// list has one or zero elements simply return a copy of the original
+			for (O itO : inList) {
+				result.add(itO);
+			}
+		} else {
+			System.out.println("debug MergeSort needs to sort list " + inList);
+			return null;
+		}
+		return result;
 	}
 
 }

@@ -32,5 +32,38 @@ public class MergeSortTest {
 		assertThat("Compare mergeSort() with Collections.sort()", sortedList,
 				is(integerList));
 	}
+	
+	@Test
+	public void testIntegerListWithTwoEntries() {
 
+		List<Integer> integerList = new ArrayList<Integer>();
+		integerList.add(2);
+		integerList.add(1);
+
+		// my sort
+		MergeSort<Integer> ms = new MergeSort<Integer>();
+		List<Integer> sortedList = ms.mergeSort(integerList);
+
+		// standard sort
+		Collections.sort(integerList);
+
+		assertThat("Compare mergeSort() with Collections.sort()", sortedList,
+				is(integerList));
+	}
+	
+	@Test
+	public void testIntegerListOnSheet() {
+
+		List<Integer> integerList = new ArrayList<Integer>();
+		integerList.addAll(Arrays.asList(3, 7, 2, 9, 1));
+		// my sort
+		MergeSort<Integer> ms = new MergeSort<Integer>();
+		List<Integer> sortedList = ms.mergeSort(integerList);
+
+		// standard sort
+		Collections.sort(integerList);
+
+		assertThat("Compare mergeSort() with Collections.sort()", sortedList,
+				is(integerList));
+	}
 }
