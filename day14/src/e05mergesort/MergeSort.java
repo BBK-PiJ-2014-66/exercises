@@ -45,20 +45,14 @@ public class MergeSort<O extends Comparable<O>> {
 				result.add(itO);
 			}
 		} else {
-			System.out.println("debug MergeSort needs to sort list " + inList);
 			// need to split the list into two sublists of ~equal size
 			List<O> subListA = inList.subList(0, (inSize + 1) / 2);
 			List<O> subListB = inList.subList((inSize + 1) / 2, inSize);
-			System.out.println("debug split into " + subListA + " and "
-					+ subListB);
 			// now sort each subList
 			List<O> sortListA = this.mergeSort(subListA);
-			System.out.println("debug sortListA = " + sortListA);
 			List<O> sortListB = this.mergeSort(subListB);
-			System.out.println("debug sortListB = " + sortListB);
 			// Need to Merge the two sorted sublist ("integration" stage).
 			result = this.merge(sortListA, sortListB);
-			System.out.println("debug merged list = " + result);
 		}
 		return result;
 	}
