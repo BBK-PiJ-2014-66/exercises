@@ -43,6 +43,14 @@ public class MergeSort<O> {
 			}
 		} else {
 			System.out.println("debug MergeSort needs to sort list " + inList);
+			// need to split the list into two sublists of ~equal size
+			List<O> subListA = inList.subList(0,(inSize+1)/2);
+			List<O> subListB = inList.subList((inSize+1)/2,inSize);
+			System.out.println("debug split into " + subListA + " and " + subListB);
+			// now sort each subList
+			List<O> sortListA = this.mergeSort(subListA);
+			List<O> sortListB = this.mergeSort(subListB);
+	        // Need to Merge the two sorted sublist ("integration" stage.
 			return null;
 		}
 		return result;
