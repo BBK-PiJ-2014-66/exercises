@@ -25,7 +25,7 @@ import java.util.List;
  * @author Oliver Smart <osmart01@dcs.bbk.ac.uk>
  * @since 23 Jan 2015
  */
-public class MergeSort<O extends Comparable> {
+public class MergeSort<O extends Comparable<O>> {
 
 	/**
 	 * applies Merge Sort sorting
