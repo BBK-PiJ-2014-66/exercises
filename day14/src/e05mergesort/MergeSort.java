@@ -34,9 +34,10 @@ public class MergeSort<O> {
 	 * @return a new sorted list of the objects in inLists
 	 */
 	public List<O> mergeSort(List<O> inList) {
+		List<O> result; // to be returned
 		int inSize = inList.size();
-		List<O> result = new ArrayList<O>(inSize);
 		if (inSize < 2) {
+			result = new ArrayList<O>(inSize);
 			// list has one or zero elements simply return a copy of the original
 			for (O itO : inList) {
 				result.add(itO);
@@ -50,10 +51,20 @@ public class MergeSort<O> {
 			// now sort each subList
 			List<O> sortListA = this.mergeSort(subListA);
 			List<O> sortListB = this.mergeSort(subListB);
-	        // Need to Merge the two sorted sublist ("integration" stage.
-			return null;
+	        // Need to Merge the two sorted sublist ("integration" stage).
+			result = this.merge(sortListA, sortListB);
 		}
 		return result;
+	}
+	
+	/**
+	 * merges two already sorted lists so result is sorted 
+	 * @param listA first sorted list
+	 * @param listB
+	 * @return the resulting sorted list
+	 */
+	protected List<O> merge( List<O> listA, List<O> listB) {
+		return null;
 	}
 
 }
