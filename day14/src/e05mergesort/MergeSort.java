@@ -1,6 +1,7 @@
 package e05mergesort;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -24,7 +25,7 @@ import java.util.List;
  * @author Oliver Smart <osmart01@dcs.bbk.ac.uk>
  * @since 23 Jan 2015
  */
-public class MergeSort<O> {
+public class MergeSort<O extends Comparable> {
 
 	/**
 	 * applies Merge Sort sorting
@@ -38,33 +39,74 @@ public class MergeSort<O> {
 		int inSize = inList.size();
 		if (inSize < 2) {
 			result = new ArrayList<O>(inSize);
-			// list has one or zero elements simply return a copy of the original
+			// list has one or zero elements simply return a copy of the
+			// original
 			for (O itO : inList) {
 				result.add(itO);
 			}
 		} else {
 			System.out.println("debug MergeSort needs to sort list " + inList);
 			// need to split the list into two sublists of ~equal size
-			List<O> subListA = inList.subList(0,(inSize+1)/2);
-			List<O> subListB = inList.subList((inSize+1)/2,inSize);
-			System.out.println("debug split into " + subListA + " and " + subListB);
+			List<O> subListA = inList.subList(0, (inSize + 1) / 2);
+			List<O> subListB = inList.subList((inSize + 1) / 2, inSize);
+			System.out.println("debug split into " + subListA + " and "
+					+ subListB);
 			// now sort each subList
 			List<O> sortListA = this.mergeSort(subListA);
 			List<O> sortListB = this.mergeSort(subListB);
-	        // Need to Merge the two sorted sublist ("integration" stage).
+			// Need to Merge the two sorted sublist ("integration" stage).
 			result = this.merge(sortListA, sortListB);
 		}
 		return result;
 	}
-	
+
 	/**
-	 * merges two already sorted lists so result is sorted 
-	 * @param listA first sorted list
+	 * merges two already sorted lists so result is sorted
+	 * 
+	 * @param listA
+	 *            first sorted list
 	 * @param listB
 	 * @return the resulting sorted list
 	 */
-	protected List<O> merge( List<O> listA, List<O> listB) {
-		return null;
+	protected List<O> merge(List<O> listA, List<O> listB) {
+		int sizeA = listA.size();
+		int sizeB = listB.size();
+		List<O> result = new ArrayList<O>(sizeA + sizeB);
+		Iterator<O> itrA = listA.iterator();
+		Iterator<O> itrB = listB.iterator();
+		O objA = null;
+		O objB = null;
+		while (itrA.hasNext() || itrB.hasNext()) { // more objects
+			if (objA == null && itrA.hasNext()) {
+				objA = itrA.next();
+				System.out.println("debug objA= "+ objA);
+			}
+			if (objB == null && itrB.hasNext()) {
+				objB = itrB.next();
+				System.out.println("debug objB= "+ objB);
+			}
+			if (objA != null && objB != null) {
+				// have both A and B so which is lower
+				if (objA.compareTo(objB) <= 0) { // A is comes "before" B
+					System.out.println("debug objA= " + objA + " comes before objB=" +  objB);
+					result.add(objA);
+					objA = null; // will ensure it is any next is loaded
+				} else {
+					System.out.println("debug objB= " + objB + " comes before objA=" +  objA);
+					result.add(objB);
+					objB = null;
+				}
+			} else if (objA != null) {
+				// have just A, B has finished
+				result.add(objA);
+				objA = null;
+			} else {
+				// have just A, B has finished
+				result.add(objB);
+				objB = null;
+			}
+		}
+		return result;
 	}
 
 }
