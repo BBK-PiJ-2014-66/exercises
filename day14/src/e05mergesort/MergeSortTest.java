@@ -71,6 +71,24 @@ public class MergeSortTest {
 		assertThat("Compare mergeSort() with Collections.sort()", sortedList,
 				is(integerList));
 	}
+	
+	@Test
+	public void testStringList() {
+
+		List<String> stringList = new ArrayList<String>();
+		stringList.addAll(Arrays.asList("charlie", "alice", "bob"));
+		// my sort
+		MergeSort<String> ms = new MergeSort<String>();
+		List<String> sortedList = ms.mergeSort(stringList);
+
+		// standard sort
+		Collections.sort(stringList);
+
+		assertThat("Compare mergeSort() with Collections.sort()", sortedList,
+				is(stringList));
+	}
+	
+	
 
 	@Test
 	public void testMerge() {
