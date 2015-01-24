@@ -53,9 +53,12 @@ public class MergeSort<O extends Comparable> {
 					+ subListB);
 			// now sort each subList
 			List<O> sortListA = this.mergeSort(subListA);
+			System.out.println("debug sortListA = " + sortListA);
 			List<O> sortListB = this.mergeSort(subListB);
+			System.out.println("debug sortListB = " + sortListB);
 			// Need to Merge the two sorted sublist ("integration" stage).
 			result = this.merge(sortListA, sortListB);
+			System.out.println("debug merged list = " + result);
 		}
 		return result;
 	}
@@ -76,23 +79,21 @@ public class MergeSort<O extends Comparable> {
 		Iterator<O> itrB = listB.iterator();
 		O objA = null;
 		O objB = null;
-		while (itrA.hasNext() || itrB.hasNext()) { // more objects
+		while (true) { // infinite loop
 			if (objA == null && itrA.hasNext()) {
 				objA = itrA.next();
-				System.out.println("debug objA= "+ objA);
 			}
 			if (objB == null && itrB.hasNext()) {
 				objB = itrB.next();
-				System.out.println("debug objB= "+ objB);
 			}
-			if (objA != null && objB != null) {
+			if (objA == null && objB == null) {
+				break; // no more letters
+			} else if (objA != null && objB != null) {
 				// have both A and B so which is lower
 				if (objA.compareTo(objB) <= 0) { // A is comes "before" B
-					System.out.println("debug objA= " + objA + " comes before objB=" +  objB);
 					result.add(objA);
 					objA = null; // will ensure it is any next is loaded
 				} else {
-					System.out.println("debug objB= " + objB + " comes before objA=" +  objA);
 					result.add(objB);
 					objB = null;
 				}
