@@ -1,0 +1,7 @@
+osmart@fuji01vm:~/msc/pij/day15/bin$ java e03ErrorHandlingUserInput.ErrorHandlingUser 
+How many numbers do you want to enter?> 3
+Enter an integer> 1
+Enter an integer> 3
+Enter an integer> 3
+the average is 2.3333333333333335
+

@@ -25,3 +25,8 @@ Exception in thread "main" java.lang.IndexOutOfBoundsException
 
 
 # 3 Error handling on user input
+* (ErrorHandlingUser)[src/e03ErrorHandlingUserInput/ErrorHandlingUser.java] produces output
+[output](ErrorHandlingUserInput_output.txt).
+
+
+
