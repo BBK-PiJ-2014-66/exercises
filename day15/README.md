@@ -1,4 +1,4 @@
-# Exercises, day 15
+# Exercises, day 15 Exception handling
 
 ## The exercise sheet [exercises_d15.pdf](exercises_d15.pdf) 
 
@@ -13,4 +13,12 @@ Exception in thread "main" java.lang.IndexOutOfBoundsException
   at CodeFlow.launch(CodeFlow.java:21)
   .....
 ```
+
+* *userInput=2*. Same will happen but on line 17 after printing *2* three time
+* *userInput=4*. Same will happen but on line 17 after printing *4* once
+* *userInput=6*. Same will happen but on line 11 without printing anything
+
+
+* Now implement it and check 
+
 
