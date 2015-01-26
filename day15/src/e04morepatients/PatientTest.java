@@ -16,7 +16,7 @@ public class PatientTest {
 		} catch (IllegalArgumentException ex) {
 			thrown = true;
 		}
-		assertTrue("Constructtor failed to throw a IllegalArgumentException "
+		assertTrue("Constructor failed to throw a IllegalArgumentException "
 				+ "for a patient born in 2020", thrown);
 	}
 
@@ -28,7 +28,7 @@ public class PatientTest {
 		} catch (IllegalArgumentException ex) {
 			thrown = true;
 		}
-		assertTrue("Constructtor failed to throw a IllegalArgumentException "
+		assertTrue("Constructor failed to throw a IllegalArgumentException "
 				+ " for a patient born in 0 - so 2015 years old!", thrown);
 	}
 
