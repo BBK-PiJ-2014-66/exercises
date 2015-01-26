@@ -1,0 +1,30 @@
+osmart@fuji01vm:~/msc/pij/day15/bin$ java  e01codeflow/CodeFlow >& ../CodeFlow_out.txt
+2
+3
+4
+5
+6
+java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+	at java.util.ArrayList.rangeCheck(ArrayList.java:571)
+	at java.util.ArrayList.get(ArrayList.java:349)
+	at e01codeflow.CodeFlow.launch(CodeFlow.java:47)
+	at e01codeflow.CodeFlow.main(CodeFlow.java:20)
+4
+5
+6
+java.lang.IndexOutOfBoundsException: Index: 2, Size: 2
+	at java.util.ArrayList.rangeCheck(ArrayList.java:571)
+	at java.util.ArrayList.get(ArrayList.java:349)
+	at e01codeflow.CodeFlow.launch(CodeFlow.java:43)
+	at e01codeflow.CodeFlow.main(CodeFlow.java:21)
+6
+java.lang.IndexOutOfBoundsException: Index: 4, Size: 4
+	at java.util.ArrayList.rangeCheck(ArrayList.java:571)
+	at java.util.ArrayList.get(ArrayList.java:349)
+	at e01codeflow.CodeFlow.launch(CodeFlow.java:39)
+	at e01codeflow.CodeFlow.main(CodeFlow.java:22)
+java.lang.IndexOutOfBoundsException: Index: 6, Size: 5
+	at java.util.ArrayList.rangeCheck(ArrayList.java:571)
+	at java.util.ArrayList.get(ArrayList.java:349)
+	at e01codeflow.CodeFlow.launch(CodeFlow.java:37)
+	at e01codeflow.CodeFlow.main(CodeFlow.java:23)
