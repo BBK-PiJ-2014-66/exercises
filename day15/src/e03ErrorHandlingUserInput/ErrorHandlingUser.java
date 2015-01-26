@@ -1,5 +1,12 @@
 package e03ErrorHandlingUserInput;
-
+/**
+ * PiJ day 15 Exception handling
+ * 
+ * Exercise 3 Error handling on user input
+ * 
+ * @author Oliver Smart <osmart01@dcs.bbk.ac.uk>
+ * @since 26 Jan 2015
+ */
 public class ErrorHandlingUser {
 
 	public static void main(String[] args) {
