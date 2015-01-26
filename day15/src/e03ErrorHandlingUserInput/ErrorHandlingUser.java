@@ -9,7 +9,7 @@ public class ErrorHandlingUser {
 
 	public void launch() {
 		// prompt for ten integers
-		int nAsk = 10; // number of integers to ask
+		int nAsk = promptForInt("How many numbers do you want to enter?> ");
 		int total = 0;
 		for (int ia = 0; ia < nAsk; ia++) {
 			int myNum = promptForInt("Enter an integer> ");
