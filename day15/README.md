@@ -26,7 +26,13 @@ Exception in thread "main" java.lang.IndexOutOfBoundsException
 
 # 3 Error handling on user input
 * [ErrorHandlingUser](src/e03ErrorHandlingUserInput/ErrorHandlingUser.java) produces output
-[output](ErrorHandlingUserInput_output.txt) fufils the two requirements.
+[output](ErrorHandlingUserInput_output.txt) fufils the two requirements (error checking user input and
+re-use of methods).
+
+#4 More Patients
+
+* [Patient](src/e04morepatients/Patient.java) class throws an `IllegalArgumentException` JUnit test in 
+[PatientTest](src/e04morepatients/PatientTest.java)
 
 
 
