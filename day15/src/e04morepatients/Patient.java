@@ -18,6 +18,8 @@
 
 package e04morepatients;
 
+import java.util.Calendar;
+
 public class Patient {
 	public int yearOfBirth;
 	public String name;
@@ -45,10 +47,11 @@ public class Patient {
 	/**
 	 * provides the current year.
 	 * 
-	 * @return
+	 * @return the current year - for instance 2015
 	 */
-	private int currentYear() {
-		return 2015; // for now hard code
+	public static int currentYear() {
+		Calendar now = Calendar.getInstance();
+		return now.get(Calendar.YEAR); 
 	}
 
 }
