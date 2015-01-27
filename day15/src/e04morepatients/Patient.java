@@ -39,7 +39,6 @@ public class Patient {
 		}
 
 		this.yearOfBirth = yearOfBirth;
-		// should validate yOB here
 		this.name = name;
 	}
 
