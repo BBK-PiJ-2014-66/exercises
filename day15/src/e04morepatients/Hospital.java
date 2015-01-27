@@ -37,18 +37,15 @@ public class Hospital {
 	public static void main(String Args[]) {
 		Hospital hospital = new Hospital();
 		boolean finished = false;
-		while (!finished) {
-			System.out.print("Enter name of new patient (ctrl-D to finish): ");
-			String name = System.console().readLine();
-			if (name == null) {
-				finished = true;
-			} else {
-				System.out.print("Enter year of birth for patient " + name
-						+ " (or ctrl-D to abort add): ");
-				String inYear = System.console().readLine();
-				if (inYear == null) // abort this input
-					continue;
-			}
+		while (true) {
+			String name = PromptUtils
+					.promptForString("Enter name of new patient (ctrl-D to finish): ");
+			if (name == null) // ctrl-D EOF entered
+				break;
+			int year = PromptUtils
+					.promptForInt("Enter year of birth for patient " + name
+							+ " (or ctrl-D to abort add): ");
+			Patient addPatient = new Patient(year, name);
 
 		}
 	}
