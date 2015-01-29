@@ -41,22 +41,28 @@ public class Hospital {
 	public static void main(String Args[]) {
 		Hospital hospital = new Hospital();
 		boolean finished = false;
-		while (true) { // main input loop
+		while (!finished) { // main input loop
 			Patient addPatient;
 			String name = PromptUtils
 					.promptForString("Enter name of new patient (ctrl-D to finish): ");
-			if (name == null) // ctrl-D EOF entered
-				break;
-			int year = PromptUtils
-					.promptForInt("Enter year of birth for patient " + name
-							+ " (or ctrl-D to abort add): ");
-			try {
-				addPatient = new Patient(year, name);
-			} catch (IllegalArgumentException ex) {
-				System.out.println("ERROR could not add that patient as " + ex);
-				continue; // prompt again
+			if (name == null) { // ctrl-D EOF entered
+				finished = true;
+			} else if (name.length() < 1) { // catch invalid names before
+											// prompting for year
+				System.out.println("ERROR blank names are not allowed!");
+			} else {
+				int year = PromptUtils
+						.promptForInt("Enter year of birth for patient " + name
+								+ " (or ctrl-D to abort add): ");
+				try {
+					addPatient = new Patient(year, name);
+				} catch (IllegalArgumentException ex) {
+					System.out.println("ERROR could not add as "
+							+ ex.getMessage());
+					continue; // prompt again
+				}
+				hospital.addPatient(addPatient);
 			}
-			hospital.addPatient(addPatient);
 
 		}
 		System.out.println("\n" + "After input we have "
