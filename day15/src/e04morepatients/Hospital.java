@@ -29,6 +29,10 @@ public class Hospital {
 		return patientList.size();
 	}
 
+	public void addPatient(Patient patient) {
+		patientList.add(patient);
+	}
+
 	/**
 	 * Little script to prompt for patient info and check that valid reply made.
 	 * 
@@ -37,7 +41,8 @@ public class Hospital {
 	public static void main(String Args[]) {
 		Hospital hospital = new Hospital();
 		boolean finished = false;
-		while (true) {
+		while (true) { // main input loop
+			Patient addPatient;
 			String name = PromptUtils
 					.promptForString("Enter name of new patient (ctrl-D to finish): ");
 			if (name == null) // ctrl-D EOF entered
@@ -45,8 +50,16 @@ public class Hospital {
 			int year = PromptUtils
 					.promptForInt("Enter year of birth for patient " + name
 							+ " (or ctrl-D to abort add): ");
-			Patient addPatient = new Patient(year, name);
+			try {
+				addPatient = new Patient(year, name);
+			} catch (IllegalArgumentException ex) {
+				System.out.println("ERROR could not add that patient as " + ex);
+				continue; // prompt again
+			}
+			hospital.addPatient(addPatient);
 
 		}
+		System.out.println("\n" + "After input we have "
+				+ hospital.numberOfPatients() + " patients");
 	}
 }
