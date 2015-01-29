@@ -33,6 +33,8 @@ re-use of methods).
 
 * [Patient](src/e04morepatients/Patient.java) class throws an `IllegalArgumentException` JUnit test in 
 [PatientTest](src/e04morepatients/PatientTest.java)
+* [Hospital](src/e04morepatients/Hospital.java) does prompt input and 
+picks up the IllegalArgumentException thrown by `Patient` constructor.
 
 
 
