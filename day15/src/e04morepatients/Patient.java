@@ -35,13 +35,13 @@ public class Patient {
 		int age = currentYear() - yearOfBirth;
 		if (age < 0 || age > AGEMAX) {
 			throw new IllegalArgumentException(
-					"refused to create a patient with YOB= " + yearOfBirth
-							+ " as this means age= " + age
-							+ " but age must be in range 0 to " + AGEMAX);
+					" YOB=" + yearOfBirth
+							+ " gives illegal age=" + age
+							+ ". Age must be in range 0 to " + AGEMAX + "!");
 		}
 	    if (name.length()<1) {
 			throw new IllegalArgumentException(
-					"refused to create a patient a blank name");
+					"blank patient names are not allowed.");
 	    }
 		this.yearOfBirth = yearOfBirth;
 		this.name = name;
