@@ -38,6 +38,7 @@ picks up the IllegalArgumentException thrown by the  `Patient` constructor. Exam
 script [ErrorHandlingUserInput_output.txt](ErrorHandlingUserInput_output.txt).
 
 
-
-
+#5 Prime divisors
+* Follow TDD first write interface [PrimeDivisorList](src/e05primedivisorlist/PrimeDivisorList.java), 
+  then move onto test
 
