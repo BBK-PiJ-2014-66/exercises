@@ -1,0 +1,11 @@
+$ java e04morepatients.Hospital 
+Enter name of new patient (ctrl-D to finish): Valid Patient
+Enter year of birth for patient Valid Patient (or ctrl-D to abort add): 2000
+Enter name of new patient (ctrl-D to finish): 
+ERROR blank names are not allowed!
+Enter name of new patient (ctrl-D to finish): TryAgeInPlaceOfYear
+Enter year of birth for patient TryAgeInPlaceOfYear (or ctrl-D to abort add): 14
+ERROR could not add as  YOB=14 gives illegal age=2001. Age must be in range 0 to 130!
+Enter name of new patient (ctrl-D to finish): 
+After input we have 1 patients
+
