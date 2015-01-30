@@ -1,0 +1,45 @@
+osmart@fuji01vm:~/msc/pij/day15/bin$ java e06ownexception.OwnException  
+Will throw an exception of your choice:
+1	for checked exception thrown in try block
+2	for runtime exception thrown in try block
+3	for checked exception thrown outside try block
+4	for runtime exception thrown outside try block
+0	to exit
+Enter choice: 1
+Caught MyCheckedException msg 'I am a checked exception and I have been thrown out of a try block'
+Will throw an exception of your choice:
+1	for checked exception thrown in try block
+2	for runtime exception thrown in try block
+3	for checked exception thrown outside try block
+4	for runtime exception thrown outside try block
+0	to exit
+Enter choice: 2
+Caught MyRtException msg 'I am a run time exception and I have been thrown out of a try block'
+Will throw an exception of your choice:
+1	for checked exception thrown in try block
+2	for runtime exception thrown in try block
+3	for checked exception thrown outside try block
+4	for runtime exception thrown outside try block
+0	to exit
+Enter choice: 3
+Exception in thread "main" e06ownexception.OwnException$MyCheckedException: I am a checked exception and I have been thrown outside of any try block
+	at e06ownexception.OwnException.launch(OwnException.java:107)
+	at e06ownexception.OwnException.main(OwnException.java:61)
+osmart@fuji01vm:~/msc/pij/day15/bin$ echo $?
+1
+osmart@fuji01vm:~/msc/pij/day15/bin$ echo "Program crashed out with error indicator true"
+Program crashed out with error indicator true
+
+
+osmart@fuji01vm:~/msc/pij/day15/bin$ java e06ownexception.OwnException  
+Will throw an exception of your choice:
+1	for checked exception thrown in try block
+2	for runtime exception thrown in try block
+3	for checked exception thrown outside try block
+4	for runtime exception thrown outside try block
+0	to exit
+Enter choice: 4
+Exception in thread "main" e06ownexception.OwnException$MyRtException: I am a run time exception and I have been thrown outside of any try block
+	at e06ownexception.OwnException.launch(OwnException.java:110)
+	at e06ownexception.OwnException.main(OwnException.java:61)
+
