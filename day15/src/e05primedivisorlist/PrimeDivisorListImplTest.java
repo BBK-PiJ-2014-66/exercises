@@ -46,7 +46,7 @@ public class PrimeDivisorListImplTest {
 		testPDL.addPrime(3);
 		testPDL.addPrime(2);
 		testPDL.addPrime(3);
-		String expected = "[ 2 * 3^2 *7 = 126 ]";
+		String expected = "[ 2 * 3^2 * 7 = 126 ]";
 		String actual = testPDL.toString();
 		assertThat("Adding 7,3,2,3 produces correct .toString()", actual,
 				is(expected));

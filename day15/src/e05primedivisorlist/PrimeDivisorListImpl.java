@@ -16,8 +16,8 @@ import java.util.TreeMap;
 public class PrimeDivisorListImpl implements PrimeDivisorList {
 
 	/*
-	 * use a TreeMap to store the number of occurances of each prime
-	 * seems a good choice as we want to produce an ordered 
+	 * use a TreeMap to store the number of occurances of each prime seems a
+	 * good choice as we want to produce an ordered
 	 */
 
 	private TreeMap<Integer, Integer> treeMapPrimeCount;
@@ -61,9 +61,38 @@ public class PrimeDivisorListImpl implements PrimeDivisorList {
 				.println("debug stub method PrimeDivisorListImpl.remove() needs to be written!");
 	}
 
+	/**
+	 * produces a string representation of the PrimeDivisorList conforming to
+	 * specification
+	 * 
+	 * a list containing one 2, two 3, and one 7 returns "[ 2 * 3^2 * 7 = 126 ]"
+	 * 
+	 * @return the string representation
+	 */
 	@Override
 	public String toString() {
-		return "debug stub method PrimeDivisorListImpl.toString() needs to be written!";
+		String outStr = "[ Empty ]";
+		if (treeMapPrimeCount.size()!=0) {
+			int product = 1;
+			outStr = "[";
+			// elegant iterate over TreeMap from
+			// http://tutorialswithexamples.com/java-treemap-tutorial-and-examples/
+			for ( Integer prime: treeMapPrimeCount.keySet()) {
+				outStr += " " + prime;
+				int nTimes = treeMapPrimeCount.get(prime);
+				if (nTimes==1) { // only once
+					product *= prime;
+				} else {
+					product *= Math.pow(prime,nTimes);
+					outStr += "^" + nTimes; 
+				}
+				outStr += " *";
+			}
+			// at the end we will have added an unwanted '*'
+			outStr = outStr.substring(0,outStr.length()-1);
+			outStr += "= " + product + " ]";
+		}
+		return outStr;
 	}
 
 	/**
