@@ -1,5 +1,7 @@
 package e05primedivisorlist;
 
+import java.util.TreeMap;
+
 /**
  * PiJ day 15 Exception handling
  * 
@@ -13,20 +15,46 @@ package e05primedivisorlist;
 
 public class PrimeDivisorListImpl implements PrimeDivisorList {
 
-	// no constructor yet
+	/*
+	 * use a TreeMap to store the number of occurances of each prime
+	 * seems a good choice as we want to produce an ordered 
+	 */
 
+	private TreeMap<Integer, Integer> treeMapPrimeCount;
+
+	PrimeDivisorListImpl() {
+		treeMapPrimeCount = new TreeMap<Integer, Integer>();
+	}
+
+	/**
+	 * Add a new or existing prime number to the list
+	 * 
+	 * @param aPrime
+	 *            that must be prime
+	 * @throws IllegalArgumentException
+	 *             if the number is not prime
+	 */
 	@Override
 	public void addPrime(Integer aPrime) throws IllegalArgumentException {
 		if (!isPrime(aPrime)) { // test that we have been supplied with a prime.
 			throw new IllegalArgumentException(aPrime
 					+ " is not a prime number");
 		}
-
-		System.out
-				.println("debug stub method PrimeDivisorListImpl.addPrime() needs to add"
-						+ aPrime + " to the list");
+		int timesSeen = 0;
+		if (treeMapPrimeCount.containsKey(aPrime)) {
+			timesSeen = treeMapPrimeCount.get(aPrime);
+		}
+		timesSeen++;
+		treeMapPrimeCount.put(aPrime, timesSeen);
 	}
 
+	/**
+	 * Remove a number that is in the list
+	 * 
+	 * @param aNumber
+	 * @throws IllegalArgumentException
+	 *             if aNumber is not in the list
+	 */
 	@Override
 	public void remove(Integer aNumber) throws IllegalArgumentException {
 		System.out

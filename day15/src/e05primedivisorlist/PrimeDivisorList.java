@@ -42,7 +42,7 @@ public interface PrimeDivisorList {
 	 * 
 	 * @param aNumber
 	 * @throws IllegalArgumentException
-	 *             if aNumber is no in the list
+	 *             if aNumber is not in the list
 	 */
 	void remove(Integer aNumber) throws IllegalArgumentException;
 
