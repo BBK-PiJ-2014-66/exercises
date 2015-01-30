@@ -40,5 +40,6 @@ script [ErrorHandlingUserInput_output.txt](ErrorHandlingUserInput_output.txt).
 
 #5 Prime divisors
 * Follow TDD first write interface [PrimeDivisorList](src/e05primedivisorlist/PrimeDivisorList.java), 
-  then move onto test
+  then move onto test [PrimeDivisorListImplTest](src/e05primedivisorlist/PrimeDivisorListImplTest.java),
+  before starting on implementation
 
