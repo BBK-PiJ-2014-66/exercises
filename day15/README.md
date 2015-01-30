@@ -42,4 +42,6 @@ script [ErrorHandlingUserInput_output.txt](ErrorHandlingUserInput_output.txt).
 * Follow TDD first write interface [PrimeDivisorList](src/e05primedivisorlist/PrimeDivisorList.java), 
   then move onto test [PrimeDivisorListImplTest](src/e05primedivisorlist/PrimeDivisorListImplTest.java),
   before starting on implementation [PrimeDivisorListImpl](src/e05primedivisorlist/PrimeDivisorListImpl.java).
+  Use code of `isPrime(number)` method written on day01 in [Prime04A](../day01/Prime04A.java) but 
+  add JavaDoc and JUnit test it here.
 
