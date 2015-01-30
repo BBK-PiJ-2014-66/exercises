@@ -11,6 +11,7 @@ public class PatientTest {
 		// http://stackoverflow.com/questions/156503/how-do-you-assert-that-a-certain-exception-is-thrown-in-junit-4-tests
 		boolean thrown = false;
 		try {
+			@SuppressWarnings("unused")
 			Patient test = new Patient(2020, "test name");
 		} catch (IllegalArgumentException ex) {
 			thrown = true;
@@ -23,6 +24,7 @@ public class PatientTest {
 	public void testSupplyingAgeInsteadOfYear() {
 		boolean thrown = false;
 		try {
+			@SuppressWarnings("unused")
 			Patient test = new Patient(0, "test name");
 		} catch (IllegalArgumentException ex) {
 			thrown = true;
