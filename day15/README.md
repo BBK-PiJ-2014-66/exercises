@@ -45,3 +45,9 @@ script [ErrorHandlingUserInput_output.txt](ErrorHandlingUserInput_output.txt).
   Use code of `isPrime(number)` method written on day01 in [Prime04A](../day01/Prime04A.java) but 
   add JavaDoc and JUnit test it here.
 
+#6 Your first exceptions
+Coded up [OwnException](src/e06ownexception/OwnException.java) following instructions, example output 
+[OwnException_out.txt](OwnException_out.txt). If you do not catch a checked
+exception you have to add throws to its declaration. This includes `main`. Means that have to worry about
+exceptions all over the place. The recommendation in the notes to make all new exceptions `RuntimeException` 
+seems sensible.
