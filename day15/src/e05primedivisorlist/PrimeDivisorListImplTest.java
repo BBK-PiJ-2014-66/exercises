@@ -48,8 +48,38 @@ public class PrimeDivisorListImplTest {
 		testPDL.addPrime(3);
 		String expected = "[ 2 * 3^2 *7 = 126 ]";
 		String actual = testPDL.toString();
-		assertThat("Adding 7,3,2,3 produces correct .toString()",
+		assertThat("Adding 7,3,2,3 produces correct .toString()", actual,
+				is(expected));
+	}
+
+	@Test
+	public void testOKRemove() {
+		testPDL.addPrime(7);
+		testPDL.addPrime(3);
+		testPDL.addPrime(2);
+		testPDL.addPrime(3);
+		testPDL.remove(7);
+		String expected = "[ 2 * 3^2 = 18 ]";
+		String actual = testPDL.toString();
+		assertThat(
+				"Adding 7,3,2,3 and removing 7 produces correct .toString()",
 				actual, is(expected));
+	}
+	
+	@Test
+	public void testBadRemove() {
+		testPDL.addPrime(7);
+		testPDL.addPrime(3);
+		testPDL.addPrime(2);
+		testPDL.addPrime(3);
+		try {
+			testPDL.remove(13);
+			fail(".remove(13) from a list that does not contain 13 failed to produce an IllegalArgumentException");
+		} catch (IllegalArgumentException ex) {
+			assertThat("IllegalArgument exception .remove(13) from list without 13",
+					ex.getMessage(), is("list does not contain 13"));
+		}
+
 	}
 
 }
