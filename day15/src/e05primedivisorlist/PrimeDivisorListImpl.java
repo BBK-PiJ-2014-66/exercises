@@ -17,8 +17,14 @@ public class PrimeDivisorListImpl implements PrimeDivisorList {
 
 	@Override
 	public void addPrime(Integer aPrime) throws IllegalArgumentException {
+		if (!isPrime(aPrime)) { // test that we have been supplied with a prime.
+			throw new IllegalArgumentException(aPrime
+					+ " is not a prime number");
+		}
+
 		System.out
-				.println("debug stub method PrimeDivisorListImpl.addPrime() needs to be written!");
+				.println("debug stub method PrimeDivisorListImpl.addPrime() needs to add"
+						+ aPrime + " to the list");
 	}
 
 	@Override
@@ -37,8 +43,9 @@ public class PrimeDivisorListImpl implements PrimeDivisorList {
 	 * Tests whether an integer is prime
 	 * 
 	 * Method adapted from that written on day01 Prime04A.java
-	 *  
-	 * @param itest integer to test
+	 * 
+	 * @param itest
+	 *            integer to test
 	 * @return true if itest is prime, false otherwise
 	 */
 	public static boolean isPrime(int itest) {
