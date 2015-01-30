@@ -53,5 +53,5 @@ exceptions all over the place. The recommendation in the notes to make all new e
 seems sensible.
 
 #7 Hierarchies of classes, hierarchies of exceptions
-[OwnException](src/e06ownexception/OwnException.java) follows instructions. When run get an exceptionC rather
-than exceptionA.
+[ExceptionHierachy](src/e07extendingexceptions/ExceptionHierachy.java) follows instructions. When run get an exceptionC rather
+than exceptionA. **Not sure what this is trying to get at post question to moodle!**
