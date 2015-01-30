@@ -57,8 +57,18 @@ public class PrimeDivisorListImpl implements PrimeDivisorList {
 	 */
 	@Override
 	public void remove(Integer aNumber) throws IllegalArgumentException {
-		System.out
-				.println("debug stub method PrimeDivisorListImpl.remove() needs to be written!");
+		if (!treeMapPrimeCount.containsKey(aNumber)) {
+			throw new IllegalArgumentException("list does not contain "
+					+ aNumber);
+		} else {
+			int timesSeen = treeMapPrimeCount.get(aNumber);
+			if (timesSeen == 1) {
+				treeMapPrimeCount.remove(aNumber);
+			} else {
+				timesSeen--;
+				treeMapPrimeCount.put(aNumber,timesSeen);
+			}
+		}
 	}
 
 	/**
@@ -72,24 +82,24 @@ public class PrimeDivisorListImpl implements PrimeDivisorList {
 	@Override
 	public String toString() {
 		String outStr = "[ Empty ]";
-		if (treeMapPrimeCount.size()!=0) {
+		if (treeMapPrimeCount.size() != 0) {
 			int product = 1;
 			outStr = "[";
 			// elegant iterate over TreeMap from
 			// http://tutorialswithexamples.com/java-treemap-tutorial-and-examples/
-			for ( Integer prime: treeMapPrimeCount.keySet()) {
+			for (Integer prime : treeMapPrimeCount.keySet()) {
 				outStr += " " + prime;
 				int nTimes = treeMapPrimeCount.get(prime);
-				if (nTimes==1) { // only once
+				if (nTimes == 1) { // only once
 					product *= prime;
 				} else {
-					product *= Math.pow(prime,nTimes);
-					outStr += "^" + nTimes; 
+					product *= Math.pow(prime, nTimes);
+					outStr += "^" + nTimes;
 				}
 				outStr += " *";
 			}
 			// at the end we will have added an unwanted '*'
-			outStr = outStr.substring(0,outStr.length()-1);
+			outStr = outStr.substring(0, outStr.length() - 1);
 			outStr += "= " + product + " ]";
 		}
 		return outStr;

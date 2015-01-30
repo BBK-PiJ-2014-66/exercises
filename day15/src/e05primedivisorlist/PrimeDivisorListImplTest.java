@@ -64,6 +64,12 @@ public class PrimeDivisorListImplTest {
 		assertThat(
 				"Adding 7,3,2,3 and removing 7 produces correct .toString()",
 				actual, is(expected));
+		testPDL.remove(3);
+		expected = "[ 2 * 3 = 6 ]";
+		actual = testPDL.toString();
+		assertThat(
+				"Adding 7,3,2,3 and removing 7 then 3 produces correct .toString()",
+				actual, is(expected));
 	}
 
 	@Test
