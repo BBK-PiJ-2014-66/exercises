@@ -51,3 +51,7 @@ Coded up [OwnException](src/e06ownexception/OwnException.java) following instruc
 exception you have to add throws to its declaration. This includes `main`. Means that have to worry about
 exceptions all over the place. The recommendation in the notes to make all new exceptions `RuntimeException` 
 seems sensible.
+
+#7 Hierarchies of classes, hierarchies of exceptions
+[OwnException](src/e06ownexception/OwnException.java) follows instructions. When run get an exceptionC rather
+than exceptionA.
