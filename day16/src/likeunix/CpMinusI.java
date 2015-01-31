@@ -99,7 +99,7 @@ public class CpMinusI {
 			// an existing, writable regular file and a new regular file of that
 			// name cannot be created, or if some other error occurs while
 			// opening or creating the file
-			System.err.println("ERROR opening destination file"
+			System.err.println("ERROR opening destination file "
 					+ ex.getMessage());
 			throw (new RuntimeException(ex));
 		}
