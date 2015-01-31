@@ -24,7 +24,7 @@ it makes actual output.
 * The program [CpMinusI](src/likeunix/CpMinusI.java) written using a read file line by line and write line by line.[Test output](outputs/cpA_example_out.md) shows it works well but does not handle binary files correctly.
 
 
-#4 (b) cp (multiple files into directory(
+#4 (b) cp (multiple files into directory)
 * Task *Modify the program so that it takes many file names at the command line. When this happens, the last name must be a directory (otherwise, your program should complain). If it is a directory, your program has to copy all files (i.e. the other arguments) into that directory.* So have to write something that behaves like cp.
-* Program [CpMultiFile](CpMultiFile.java) is adapted according to instructions. 
+* Program [CpMultiFile](src/likeunix/CpMultiFile.java) is adapted according to instructions. 
 
