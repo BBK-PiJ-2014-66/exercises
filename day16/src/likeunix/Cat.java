@@ -38,34 +38,63 @@ public class Cat {
 			System.err.println("\tjava -classpath .... Cat foo.txt bar.txt\n");
 			System.exit(1);
 		}
+		// first check whether there is any error by a silent pass through
 		for (int fc = 0; fc < args.length; fc++) {
-			String fname = args[fc];
-			File file = new File(fname);
-			if (!file.exists()) {
-				System.err.println("ERROR file " + file + " does not exist\n");
-				System.exit(1);
-			}
-			BufferedReader in = null;
 			try {
-				in = new BufferedReader(new FileReader(file));
-			} catch (FileNotFoundException ex) {
-				// FileNotFoundException happens if the named file does not
-				// exist, is a directory rather than a regular file, or for some
-				// other reason cannot be opened for reading
-				System.err.println("ERROR opening " + ex.getMessage());
-				System.exit(1);
-			}
-			// successfully opened file
-			String line;
-			try {
-				while ((line = in.readLine()) != null) {
-					System.out.println(line);
-				}
-			} catch (IOException ex) {
-				System.err.println("ERROR, ioerror reading file " + fname);
-				System.err.println("ERROR, ioerror details " + ex.getMessage());
-				System.exit(1);
+			checkOrCat(args[fc], Verbosity.SILENT);
+			} catch ( RuntimeException ex) {
+				System.exit(1); // with error set
 			}
 		}
+
+		// no error - repeat Verbose
+		for (int fc = 0; fc < args.length; fc++) {
+			checkOrCat(args[fc], Verbosity.NOT_SILENT);
+		}
+
+	}
+
+	/**
+	 * cat a single file, if silent is false.
+	 * 
+	 * @param fileName
+	 *            to print to stderr
+	 * @param silent
+	 *            if set true produces no output just checks for errors
+	 * @throws RuntimeException on any error
+	 */
+	private static void checkOrCat( String fileName, Verbosity silent) {
+		File file = new File(fileName);
+		if (!file.exists()) {
+			System.err.println("ERROR file " + file + " does not exist\n");
+			throw( new RuntimeException(file + "does not exist"));
+		}
+		BufferedReader in = null;
+		try {
+			in = new BufferedReader(new FileReader(file));
+		} catch (FileNotFoundException ex) {
+			// FileNotFoundException happens if the named file does not
+			// exist, is a directory rather than a regular file, or for some
+			// other reason cannot be opened for reading
+			System.err.println("ERROR opening " + ex.getMessage());
+			throw( new RuntimeException(ex));
+		}
+		// successfully opened file
+		String line;
+		try {
+			while ((line = in.readLine()) != null) {
+				if (silent == Verbosity.NOT_SILENT)
+					System.out.println(line);
+			}
+		} catch (IOException ex) {
+			System.err.println("ERROR, ioerror reading file " + fileName);
+			System.err.println("ERROR, ioerror details " + ex.getMessage());
+			throw( new RuntimeException(ex));
+		}
+
+	}
+
+	enum Verbosity {
+		SILENT, NOT_SILENT
 	}
 }
