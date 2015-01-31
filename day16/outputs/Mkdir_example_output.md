@@ -1,7 +1,7 @@
 # 2 Mkdir example output
 
 * Run with no arguments, check that usage statement produced an exit status is not 0. *In linux the exit status
-of the last command run is stored ion environment variable `$?`, a value `0` indicates success.*
+of the last command run is stored in environment variable `$?`, a value `0` indicates success.*
 
 ```
 $ java -classpath ~/msc/pij/day16/bin likeunix.Mkdir
