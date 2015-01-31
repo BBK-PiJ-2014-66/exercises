@@ -48,8 +48,18 @@ public class CpMultiFile {
 					"Error has not specified two command line arguments");
 		}
 
-		if (args.length == 2) {
+		// if the last file specified a directory
+		String lastFileName = args[args.length - 1];
+		File lastFile = new File(lastFileName);
+		if (lastFile.isDirectory()) {
+			System.out.println("debug last file is a directory");
+		} else if (args.length == 2) {
 			cp(args[0], args[1]);
+		} else {
+			// give the same error as linux cp does in this situation
+			String msg = "cp: target `" + lastFileName + "' is not a directory";
+			System.err.println(msg);
+			throw new RuntimeException(msg);
 		}
 	}
 
