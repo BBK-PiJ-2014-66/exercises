@@ -19,4 +19,9 @@ program makes two passes through the files first silently to check that there ar
 it makes actual output.
 
 
+#4 (a) cp (two files)
+* Task *Write a program that takes two names from the user at the command line. If a file with the first name exists, the program must copy it into a file with the second name. If the first file does not exist, the program must say so. If the second file does exists, the program must ask the user whether to overwrite it or not, and act accordingly.* So produce something that works like linux **cp -i*
+* The program [CpMinusI](src/likeunix/CpMinusI.java) written using a read file line by line and write line by line.[Test output](outputs/cpA_example_out.md) shows it works well but does not handle binary files correctly.
+
+
 
