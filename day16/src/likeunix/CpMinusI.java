@@ -1,5 +1,7 @@
 package likeunix;
 
+import java.io.File;
+
 
 /**
  * 
@@ -24,14 +26,33 @@ package likeunix;
  */
 public class CpMinusI {
 	public static void main(String args[]) {
+		// use launch to have a single System.exit(1) for ERROR
+		CpMinusI cpi = new CpMinusI();
+		try {
+		cpi.launch( args);
+		} catch (RuntimeException ex) {
+			System.exit(1); // set error indication 
+		}		
+	}
+	
+	public void launch( String args[] ) {
 		if (args.length != 2) {
 			System.err
 					.println("You must specify the source and destination files");
 			System.err
 					.println("for example to copy 'source.txt' to 'dest.txt'");
 			System.err.println("\tjava -classpath .... CpMinusI source.txt dest.txt\n");
-			System.exit(1);
+			throw new RuntimeException("Error has not specified two command line arguments");
 		}
+		
+		/*
+		String sourceName = args[0];
+		File source = new File(sourceName);
+		if (!source.exists()) {
+			System.out.println("ERROR source file " + sourceName + " does not exist");
+			
+		}
+		*/
 	}
 
 }
