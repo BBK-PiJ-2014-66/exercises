@@ -52,8 +52,14 @@ public class CpMultiFile {
 		String lastFileName = args[args.length - 1];
 		File lastFile = new File(lastFileName);
 		if (lastFile.isDirectory()) {
-			System.out.println("debug last file is a directory");
+			for (int fc=0; fc < args.length - 1; fc ++) {
+				// copy this file into the destination directory
+				// n.b. two slashes do not matter in linux
+				String dest = lastFileName + "/" + args[fc];
+				cp(args[fc], dest);
+			}
 		} else if (args.length == 2) {
+			// simple copy one file to another
 			cp(args[0], args[1]);
 		} else {
 			// give the same error as linux cp does in this situation
