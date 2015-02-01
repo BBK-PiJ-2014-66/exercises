@@ -61,30 +61,34 @@ public class TemperatureAverages {
 		// 2nd pass to parse the line
 		System.out
 				.println("# average value for each line added as last column");
+		List<Double> allValues = new ArrayList<Double>();
 		for (String itLine : lines) {
 			if (itLine.charAt(0) != '#') {
-				List<Double> values = parseCSVLine2Double(itLine);
-				double avg = Average(values);
-				System.out.println(itLine + "," + avg);
+				List<Double> lineValues = parseCSVLine2Double(itLine);
+				System.out.println(itLine + "," + Average(lineValues));
+				allValues.addAll(lineValues);
 			}
 		}
+		System.out.println("# average value for all data in file "
+				+ Average(allValues));
 
 	}
 
-    /**
-     * Returns the mean (aka average) of a list of doubles
-     * N.B. returns NaN if size is zero or supplied with a null list;
-     * @param values
-     * @return the mean
-     */
+	/**
+	 * Returns the mean (aka average) of a list of doubles N.B. returns NaN if
+	 * size is zero or supplied with a null list;
+	 * 
+	 * @param values
+	 * @return the mean
+	 */
 	private static double Average(List<Double> values) {
-		if (values== null)
+		if (values == null)
 			return Double.NaN;
-		double total=0.;
+		double total = 0.;
 		for (Double dIt : values) {
 			total += dIt;
 		}
-		return total/((double) values.size());
+		return total / ((double) values.size());
 	}
 
 	/**
