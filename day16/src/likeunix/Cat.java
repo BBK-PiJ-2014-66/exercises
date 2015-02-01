@@ -39,17 +39,21 @@ public class Cat {
 			System.exit(1);
 		}
 		// first check whether there is any error by a silent pass through
-		for (int fc = 0; fc < args.length; fc++) {
+		for (String itArg : args) {
 			try {
-			checkOrCat(args[fc], Verbosity.SILENT);
-			} catch ( RuntimeException ex) {
+				checkOrCat(itArg, Verbosity.SILENT);
+			} catch (RuntimeException ex) {
 				System.exit(1); // with error set
 			}
 		}
 
 		// no error - repeat Verbose
-		for (int fc = 0; fc < args.length; fc++) {
-			checkOrCat(args[fc], Verbosity.NOT_SILENT);
+		for (String itArg : args) {
+			try {
+				checkOrCat(itArg, Verbosity.NOT_SILENT);
+			} catch (RuntimeException ex) {
+				System.exit(1); // with error set
+			}
 		}
 
 	}
@@ -61,13 +65,14 @@ public class Cat {
 	 *            to print to stderr
 	 * @param silent
 	 *            if set true produces no output just checks for errors
-	 * @throws RuntimeException on any error
+	 * @throws RuntimeException
+	 *             on any error
 	 */
-	private static void checkOrCat( String fileName, Verbosity silent) {
+	private static void checkOrCat(String fileName, Verbosity silent) {
 		File file = new File(fileName);
 		if (!file.exists()) {
 			System.err.println("ERROR file " + file + " does not exist\n");
-			throw( new RuntimeException(file + "does not exist"));
+			throw (new RuntimeException(file + "does not exist"));
 		}
 		BufferedReader in = null;
 		try {
@@ -77,7 +82,7 @@ public class Cat {
 			// exist, is a directory rather than a regular file, or for some
 			// other reason cannot be opened for reading
 			System.err.println("ERROR opening " + ex.getMessage());
-			throw( new RuntimeException(ex));
+			throw (new RuntimeException(ex));
 		}
 		// successfully opened file
 		String line;
@@ -89,7 +94,7 @@ public class Cat {
 		} catch (IOException ex) {
 			System.err.println("ERROR, ioerror reading file " + fileName);
 			System.err.println("ERROR, ioerror details " + ex.getMessage());
-			throw( new RuntimeException(ex));
+			throw (new RuntimeException(ex));
 		}
 
 	}
