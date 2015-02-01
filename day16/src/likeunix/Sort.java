@@ -1,5 +1,6 @@
 package likeunix;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -39,9 +40,15 @@ public class Sort {
 			throw new RuntimeException(msg);
 		}
 
-		// read file contents into a List of strings
+		// read file contents into a List of strings (throws runtime error on problem)
 		List<String> lines = ReadFile2List.read( args[0]);
 		
+		// sort the list
+		Collections.sort(lines);
+		
+		for (String itLine : lines) {
+			System.out.println(itLine);
+		}
 		
 	}
 
