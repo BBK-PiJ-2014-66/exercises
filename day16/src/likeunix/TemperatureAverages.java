@@ -23,9 +23,9 @@ import java.util.List;
 public class TemperatureAverages {
 	public static void main(String args[]) {
 		// use launch to have a single System.exit(1) for ERROR
-		TemperatureAverages sorti = new TemperatureAverages();
+		TemperatureAverages tavg = new TemperatureAverages();
 		try {
-			sorti.launch(args);
+			tavg.launch(args);
 		} catch (RuntimeException ex) {
 			System.err.println(ex.getMessage()); // print exception to STDERR
 			System.exit(1); // set error indication
