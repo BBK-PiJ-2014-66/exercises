@@ -24,12 +24,23 @@ it makes actual output.
 * The program [CpMinusI](src/likeunix/CpMinusI.java) written using a read file line by line and write line by line.[Test output](outputs/cpA_example_out.md) shows it works well but does not handle binary files correctly.
 
 
-#4 (b) cp (multiple files into directory)
+#4 (b) cp (multiple files into directory) (*)
 * Task *Modify the program so that it takes many file names at the command line. When this happens, the last name must be a directory (otherwise, your program should complain). If it is a directory, your program has to copy all files (i.e. the other arguments) into that directory.* So have to write something that behaves like cp.
 * Program [CpMultiFile](src/likeunix/CpMultiFile.java) is adapted according to instructions. 
 
 
-#9 Binary cp
+# 5 tr (*)
+* skip this one.
+
+# 6 Sort (*)
+* Task *Write a program that takes a name from the user at the command line. If a file with that name exists, the program must show its contents on screen, but with the lines shown alphabetically. If the does not exist, the program must say so.*
+* Stop repeating same code by writing a utility to read a file into a List of lines 
+[ReadFile2List](src/likeunix/ReadFile2List.java)
+* Use this method in [Sort](src/likeunix/Sort.java), [Test output](outputs/Sort_example_out.md).
+
+
+
+#9 Binary cp (**)
 * Task *Write a program that takes two names from the user at the command line. If a file with the first name exists, the program must copy it into a file with the second name. If the first file does not exist, the program must say so. If the second file does exists, the program must ask the user whether to overwrite it or not, and act accordingly. This is the same exercise as above with an important difference: it must be able to copy binary files (use InputStream instead of Reader, etc).*
 * Program [CpBinary](src/likeunix/CpBinary.java) written according to instructions. Produces  [Test output](outputs/CpBinary_example_out.md).
 * Observation. In practice this would be a mad way to copy a file! Use `Files.copy()` as suggested in 
