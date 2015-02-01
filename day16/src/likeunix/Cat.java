@@ -43,6 +43,7 @@ public class Cat {
 			try {
 				checkOrCat(itArg, Verbosity.SILENT);
 			} catch (RuntimeException ex) {
+				System.err.println(ex.getMessage());
 				System.exit(1); // with error set
 			}
 		}
@@ -52,6 +53,8 @@ public class Cat {
 			try {
 				checkOrCat(itArg, Verbosity.NOT_SILENT);
 			} catch (RuntimeException ex) {
+				System.err.println("ERROR: unexpected error on checkOrCat 2nd pass?");
+				System.err.println(ex);
 				System.exit(1); // with error set
 			}
 		}
@@ -66,13 +69,12 @@ public class Cat {
 	 * @param silent
 	 *            if set true produces no output just checks for errors
 	 * @throws RuntimeException
-	 *             on any error
+	 *             on any error details returned in the message
 	 */
 	private static void checkOrCat(String fileName, Verbosity silent) {
 		File file = new File(fileName);
 		if (!file.exists()) {
-			System.err.println("ERROR file " + file + " does not exist\n");
-			throw (new RuntimeException(file + "does not exist"));
+			throw (new RuntimeException("ERROR file " + file + " does not exist"));
 		}
 		BufferedReader in = null;
 		try {
@@ -81,8 +83,7 @@ public class Cat {
 			// FileNotFoundException happens if the named file does not
 			// exist, is a directory rather than a regular file, or for some
 			// other reason cannot be opened for reading
-			System.err.println("ERROR opening " + ex.getMessage());
-			throw (new RuntimeException(ex));
+			throw (new RuntimeException("ERROR opening " + ex.getMessage()));
 		}
 		// successfully opened file
 		String line;
@@ -92,9 +93,9 @@ public class Cat {
 					System.out.println(line);
 			}
 		} catch (IOException ex) {
-			System.err.println("ERROR, ioerror reading file " + fileName);
-			System.err.println("ERROR, ioerror details " + ex.getMessage());
-			throw (new RuntimeException(ex));
+			throw (new RuntimeException("ERROR, ioerror reading file "
+					+ fileName + "\n" + "ERROR, ioerror details "
+					+ ex.getMessage()));
 		}
 
 	}
