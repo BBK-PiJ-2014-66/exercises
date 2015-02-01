@@ -28,14 +28,12 @@ import java.io.IOException;
 public class Cat {
 	public static void main(String args[]) {
 		if (args.length == 0) {
-			System.err
-					.println("You must specify the file(s) you want to display as comand line argument(s),");
-			System.err
-					.println("for example to see the contents of 'foo.txt':\n");
-			System.err.println("\tjava -classpath .... Cat foo.txt\n");
-			System.err
-					.println("or for 'foo.txt' then 'bar.txt' use command:\n");
-			System.err.println("\tjava -classpath .... Cat foo.txt bar.txt\n");
+			String msg = "You must specify the file(s) you want to display as comand line argument(s), \n"
+					+ "for example to see the contents of 'foo.txt':\n\n"
+					+ "\tjava -classpath .... Cat foo.txt\n\n"
+					+ "or for 'foo.txt' then 'bar.txt' use command:\n\n"
+					+ "\tjava -classpath .... Cat foo.txt bar.txt\n";
+			System.err.println(msg);
 			System.exit(1);
 		}
 		// first check whether there is any error by a silent pass through
@@ -53,7 +51,8 @@ public class Cat {
 			try {
 				checkOrCat(itArg, Verbosity.NOT_SILENT);
 			} catch (RuntimeException ex) {
-				System.err.println("ERROR: unexpected error on checkOrCat 2nd pass?");
+				System.err
+						.println("ERROR: unexpected error on checkOrCat 2nd pass?");
 				System.err.println(ex);
 				System.exit(1); // with error set
 			}
@@ -74,7 +73,8 @@ public class Cat {
 	private static void checkOrCat(String fileName, Verbosity silent) {
 		File file = new File(fileName);
 		if (!file.exists()) {
-			throw (new RuntimeException("ERROR file " + file + " does not exist"));
+			throw (new RuntimeException("ERROR file " + file
+					+ " does not exist"));
 		}
 		BufferedReader in = null;
 		try {
