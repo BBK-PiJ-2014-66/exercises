@@ -38,9 +38,17 @@ it makes actual output.
 [ReadFile2List](src/likeunix/ReadFile2List.java)
 * Use this method in [Sort](src/likeunix/Sort.java), [Test output](outputs/Sort_example_out.md).
 
+# 7 uniq (*)
+* skip this one.
+
+# 8 Temperature averages
+* Task: *Write a program that reads a file from disk in comma-separated format (CSV). Every line must contain a list of number separated by commas. The program must output the average for every line plus the average for the whole file. A file may look like the following...* [temperatures.csv](datafiles/temperatures.csv)
+* Wrote program [TemperatureAverages](src/likeunix/TemperatureAverages.java), uses [ReadFile2List](src/likeunix/ReadFile2List.java) for data input
 
 
-#9 Binary cp (**)
+
+
+# 9 Binary cp (**)
 * Task *Write a program that takes two names from the user at the command line. If a file with the first name exists, the program must copy it into a file with the second name. If the first file does not exist, the program must say so. If the second file does exists, the program must ask the user whether to overwrite it or not, and act accordingly. This is the same exercise as above with an important difference: it must be able to copy binary files (use InputStream instead of Reader, etc).*
 * Program [CpBinary](src/likeunix/CpBinary.java) written according to instructions. Produces  [Test output](outputs/CpBinary_example_out.md).
 * Observation. In practice this would be a mad way to copy a file! Use `Files.copy()` as suggested in 
