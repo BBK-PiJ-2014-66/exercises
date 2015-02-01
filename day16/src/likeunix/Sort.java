@@ -1,5 +1,7 @@
 package likeunix;
 
+import java.util.List;
+
 /**
  * 
  * PiJ day 16 I/O
@@ -37,6 +39,11 @@ public class Sort {
 			throw new RuntimeException(msg);
 		}
 
+		// read file contents into a List of strings
+		List<String> lines = ReadFile2List.read( args[0]);
+		
+		
 	}
+
 
 }
