@@ -45,13 +45,35 @@ public class TemperatureAverages {
 		List<String> lines = ReadFile2List.read(args[0]);
 
 		// check that we can parse each line
+		int lineCount = 0;
+		for (String itLine : lines) {
+			lineCount++;
+			if (itLine.charAt(0) != '#') {
+				try {
+					parseCSVLine2Double(itLine);
+				} catch (RuntimeException ex) {
+					throw new RuntimeException(ex.getMessage() + "\n"
+							+ "ERROR found passing line number " + lineCount
+							+ " '" + itLine + "'");
+				}
+			}
+		}
+		// 2nd pass to parse the line
+		System.out
+				.println("# average value for each line added as last column");
 		for (String itLine : lines) {
 			if (itLine.charAt(0) != '#') {
-				parseCSVLine2Double(itLine);
+				List<Double> values = parseCSVLine2Double(itLine);
+				double avg = Average(values);
+				System.out.println(itLine + "," + avg);
 			}
-			System.out.println(itLine);
 		}
 
+	}
+
+	private static double Average(List<Double> values) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 	/**
@@ -61,28 +83,26 @@ public class TemperatureAverages {
 	 * @param inLine
 	 *            input line
 	 * @return list of doubles
+	 * @throws RuntimeException
+	 *             if there was an error getting value from a line
 	 */
 	private List<Double> parseCSVLine2Double(String inLine) {
 		String noSpace = inLine.replaceAll("\\s", ""); // get rid of any white
 														// space
 		// split the inLine into words
 		String words[] = noSpace.split(",");
-		System.out.println("Debug split into " + words.length);
 		List<Double> dList = new ArrayList<Double>();
-		int lineCount = 0;
 		for (String itWord : words) {
-			lineCount++;
-			
 			try {
 				Double value = Double.parseDouble(itWord);
 				dList.add(value);
-				System.out.println("Debug " + value);
 			} catch (NumberFormatException ex) {
-				throw new RuntimeException("ERROR " + ex
-						+ " found passing numerical value from word " + itWord
-						+ " found line number " + lineCount);
+				throw new RuntimeException("ERROR '" + ex.getMessage()
+						+ "' found passing numerical value from word '"
+						+ itWord + "'");
 			}
 		}
 		return dList;
 	}
+
 }
