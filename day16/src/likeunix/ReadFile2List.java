@@ -56,7 +56,7 @@ public class ReadFile2List {
 					+ fileName + "\n" + "ERROR, ioerror details "
 					+ ex.getMessage()));
 		}
-		return null;
+		return lines;
 	}
 
 }
