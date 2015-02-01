@@ -34,7 +34,7 @@ public class Sort {
 
 	public void launch(String args[]) {
 		if (args.length != 1) {
-			String msg = "You must a single input file to sort.\n"
+			String msg = "You must specify a single input file to be sorted.\n"
 					+ "For example to sort 'file.txt`:\n\n"
 					+ "\t\tjava -classpath .... Sort file.txt\n\n";
 			throw new RuntimeException(msg);
