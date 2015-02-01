@@ -1,18 +1,19 @@
 package likeunix;
 
-import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.Scanner;
 
 /**
  * 
  * PiJ day 16 I/O
  * 
- * Exercise 4 b) cp multifile
+ * Exercise 9 b) Binary cp (**)
  * 
  * 
  * Modify the program so that it takes many file names at the command line. When
@@ -25,10 +26,10 @@ import java.util.Scanner;
  * @since 31 Jan 2015
  * 
  */
-public class CpMultiFile {
+public class CpBinary {
 	public static void main(String args[]) {
 		// use launch to have a single System.exit(1) for ERROR
-		CpMultiFile cpi = new CpMultiFile();
+		CpBinary cpi = new CpBinary();
 		try {
 			cpi.launch(args);
 		} catch (RuntimeException ex) {
@@ -43,7 +44,7 @@ public class CpMultiFile {
 			System.err
 					.println("for example to copy 'source.txt' to 'dest.txt'");
 			System.err
-					.println("\tjava -classpath .... CpMultiFile source.txt dest.txt\n");
+					.println("\tjava -classpath .... CpBinary source.txt dest.txt\n");
 			throw new RuntimeException(
 					"Error has not specified two command line arguments");
 		}
@@ -106,9 +107,9 @@ public class CpMultiFile {
 		}
 
 		// open source as 'in'
-		BufferedReader in = null;
+		InputStream in = null;
 		try {
-			in = new BufferedReader(new FileReader(source));
+			in = new FileInputStream(source);
 		} catch (FileNotFoundException ex) {
 			// FileNotFoundException happens if the named file does not
 			// exist, is a directory rather than a regular file, or for some
@@ -117,9 +118,9 @@ public class CpMultiFile {
 			throw (new RuntimeException(ex));
 		}
 		// open dest as 'out'
-		PrintWriter out = null;
+		OutputStream out = null;
 		try {
-			out = new PrintWriter(dest);
+			out = new FileOutputStream(dest);
 		} catch (FileNotFoundException ex) {
 			// FileNotFoundException - If the given file object does not denote
 			// an existing, writable regular file and a new regular file of that
@@ -131,10 +132,10 @@ public class CpMultiFile {
 		}
 
 		// have opened both input and output files
-		String line;
+		int data; // to store
 		try {
-			while ((line = in.readLine()) != null) {
-				out.println(line);
+			while ((data = in.read()) != -1) {
+				out.write(data);
 			}
 		} catch (IOException ex) {
 			System.err.println("ERROR IO Exception reading from input file "
@@ -149,7 +150,13 @@ public class CpMultiFile {
 						+ ex.getMessage());
 				throw (new RuntimeException(ex));
 			}
-			out.close();
+			try {
+				out.close();
+			} catch (IOException ex) {
+				System.err.println("ERROR closing destination file "
+						+ ex.getMessage());
+				throw (new RuntimeException(ex));
+			}
 		}
 
 	}
