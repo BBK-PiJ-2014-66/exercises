@@ -71,9 +71,20 @@ public class TemperatureAverages {
 
 	}
 
+    /**
+     * Returns the mean (aka average) of a list of doubles
+     * N.B. returns NaN if size is zero or supplied with a null list;
+     * @param values
+     * @return the mean
+     */
 	private static double Average(List<Double> values) {
-		// TODO Auto-generated method stub
-		return 0;
+		if (values== null)
+			return Double.NaN;
+		double total=0.;
+		for (Double dIt : values) {
+			total += dIt;
+		}
+		return total/((double) values.size());
 	}
 
 	/**
