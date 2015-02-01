@@ -43,10 +43,7 @@ it makes actual output.
 
 # 8 Temperature averages
 * Task: *Write a program that reads a file from disk in comma-separated format (CSV). Every line must contain a list of number separated by commas. The program must output the average for every line plus the average for the whole file. A file may look like the following...* [temperatures.csv](datafiles/temperatures.csv)
-* Wrote program [TemperatureAverages](src/likeunix/TemperatureAverages.java), uses [ReadFile2List](src/likeunix/ReadFile2List.java) for data input
-
-
-
+* Wrote program [TemperatureAverages](src/likeunix/TemperatureAverages.java), uses [ReadFile2List](src/likeunix/ReadFile2List.java) for data input. [Test how it works](outputs/TemperatureAverages_example_out.md)
 
 # 9 Binary cp (**)
 * Task *Write a program that takes two names from the user at the command line. If a file with the first name exists, the program must copy it into a file with the second name. If the first file does not exist, the program must say so. If the second file does exists, the program must ask the user whether to overwrite it or not, and act accordingly. This is the same exercise as above with an important difference: it must be able to copy binary files (use InputStream instead of Reader, etc).*
