@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.Reader;
 
 /**
  * 
@@ -98,30 +97,9 @@ public class Cat {
 					+ fileName + "\n" + "ERROR, ioerror details "
 					+ ex.getMessage()));
 		} finally {
-			closeReader( fileName, in);
+			CloseReader.close( fileName, in);
 		}
 
-	}
-
-	/**
-	 * Closes a Reader if it it is not null Adapted from PiJ lecture notes day
-	 * 16 page 6 difference is that we re throw any IOException as a runtime
-	 * exception
-	 * 
-	 * @param fileName file name used to open reader (for information)
-	 * @param reader to be closed
-	 * @throws RuntimeException if there is a problem
-	 */
-	private static void closeReader(String fileName, Reader reader) {
-		try {
-			if (reader != null) {
-				reader.close();
-			}
-		} catch (IOException ex) {
-			throw (new RuntimeException("ERROR, ioerror on closingfile "
-					+ fileName + "\n" + "ERROR, ioerror details "
-					+ ex.getMessage()));
-		}
 	}
 
 	enum Verbosity {

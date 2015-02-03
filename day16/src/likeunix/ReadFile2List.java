@@ -55,8 +55,11 @@ public class ReadFile2List {
 			throw (new RuntimeException("ERROR, ioerror reading file "
 					+ fileName + "\n" + "ERROR, ioerror details "
 					+ ex.getMessage()));
+		} finally {
+			CloseReader.close( fileName, in);
 		}
 		return lines;
 	}
+
 
 }
