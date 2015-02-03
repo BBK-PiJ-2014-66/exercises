@@ -62,7 +62,7 @@ public class CpBinary {
 			// simple copy one file to another
 			cp(args[0], args[1]);
 		} else {
-			// give the same error as linux cp does in this situation
+			// give the same error as Linux cp does in this situation
 			String msg = "cp: target `" + lastFileName + "' is not a directory";
 			throw new RuntimeException(msg);
 		}
@@ -91,7 +91,7 @@ public class CpBinary {
 					+ " is a directory Script cannot copy with this!");
 		} else if (dest.exists()) {
 			// check interactively whether to clobber
-			// use same message as linux cp -i
+			// use same message as Linux cp -i
 			System.out.print("cp: overwrite `" + dest + "'? ");
 			Scanner input = new Scanner(System.in);
 			String inLine = input.nextLine();
@@ -118,12 +118,14 @@ public class CpBinary {
 		try {
 			out = new FileOutputStream(dest);
 		} catch (FileNotFoundException ex) {
+			closeInputStream(in);
 			// FileNotFoundException - If the given file object does not denote
 			// an existing, writable regular file and a new regular file of that
 			// name cannot be created, or if some other error occurs while
 			// opening or creating the file
 			throw (new RuntimeException("ERROR opening destination file "
 					+ ex.getMessage()));
+
 		}
 
 		// have opened both input and output files
@@ -138,12 +140,7 @@ public class CpBinary {
 							+ ex.getMessage()));
 		} finally {
 			// close both input and output files
-			try {
-				in.close();
-			} catch (IOException ex) {
-				throw (new RuntimeException("ERROR closing source file "
-						+ ex.getMessage()));
-			}
+			closeInputStream(in);
 			try {
 				out.close();
 			} catch (IOException ex) {
@@ -152,5 +149,16 @@ public class CpBinary {
 			}
 		}
 
+	}
+
+	private void closeInputStream(InputStream stream) {
+		if (stream != null) {
+			try {
+				stream.close();
+			} catch (IOException ex) {
+				throw (new RuntimeException("ERROR closing input file"
+						+ ex.getMessage()));
+			}
+		}
 	}
 }
