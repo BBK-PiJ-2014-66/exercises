@@ -10,11 +10,9 @@ package e02counter;
  */
 public class Increaser implements Runnable {
 	private Counter c;
-	private Object lock;
 
 	public Increaser(Counter c) {
 		this.c = c;
-		lock = new Object();
 	}
 
 	public static void main(String args[]) {
@@ -28,13 +26,11 @@ public class Increaser implements Runnable {
 
 	@Override
 	public void run() {
-		synchronized (lock) {
-			System.out.println("Starting at " + c.getCount());
-			for (int i = 0; i < 1000; i++) {
-				c.increase();
-			}
-			System.out.println("Stopping at " + c.getCount());
+		System.out.println("Starting at " + c.getCount());
+		for (int i = 0; i < 1000; i++) {
+			c.increase();
 		}
+		System.out.println("Stopping at " + c.getCount());
 	}
 
 }
