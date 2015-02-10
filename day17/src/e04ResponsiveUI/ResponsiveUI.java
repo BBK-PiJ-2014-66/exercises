@@ -38,6 +38,7 @@ public class ResponsiveUI {
 			TaskSleep task = new TaskSleep(tc, delay);
 			task.run();
 		}
+		keyboard.close();
 
 	}
 
