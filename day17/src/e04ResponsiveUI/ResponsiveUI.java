@@ -30,14 +30,18 @@ public class ResponsiveUI {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+		TaskReport taskReport = new TaskReport();
 		Scanner keyboard = new Scanner(System.in);
 		for (int tc = 0; tc < NTASKS; tc++) {
 			System.out.print("Enter the duration (in ms) of task " + tc + ": ");
 			int delay = Integer.parseInt(keyboard.nextLine());
 			// start each task in a separate thread
-			Runnable task = new TaskSleep(tc, delay);
+			Runnable task = new TaskSleep(tc, delay, taskReport);
 			Thread taskThread = new Thread(task);
 			taskThread.start();
+			String finishedList = taskReport.toString();
+			if (finishedList != null)
+				System.out.println("Finished tasks: " + finishedList);			
 		}
 		keyboard.close();
 

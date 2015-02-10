@@ -13,22 +13,22 @@ package e04ResponsiveUI;
 public class TaskSleep implements Runnable {
 	private int taskNumber;
 	private int sleepMilliSecs;
+	private TaskReport taskReport;
 
-	public TaskSleep(int taskNumber, int sleepMilliSecs) {
+	public TaskSleep(int taskNumber, int sleepMilliSecs, TaskReport taskReport) {
 		this.taskNumber = taskNumber;
 		this.sleepMilliSecs = sleepMilliSecs;
+		this.taskReport = taskReport;
 	}
 
 	@Override
 	public void run() {
-		System.out.println("debug task " + taskNumber + " beginning a "
-				+ sleepMilliSecs + " millisecs 'run' (aka sleep) ");
 		try {
 			Thread.sleep(sleepMilliSecs);
 		} catch (InterruptedException ex) {
 			// just sleep less
 		}
-		System.out.println("debug task " + taskNumber + " ended");
+		taskReport.recordFinished(taskNumber);
 	}
 
 }
