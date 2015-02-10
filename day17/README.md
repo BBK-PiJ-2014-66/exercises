@@ -32,4 +32,8 @@ Loop:Thread 3, iteration:8.
 Loop:Thread 3, iteration:9.
 ```
 
+# 2 Counting
 
+* Given code [Increaser](src/e02counter/Increaser.java) and [Counter](src/e02counter/Counter.java). Get varying final amounts. This because `n++` is not atomic in java. Making method `Count.increase()` *synchronized* fixes the problem.
+
+# 3 Bank account
