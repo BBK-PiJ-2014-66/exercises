@@ -1,5 +1,15 @@
 package e04ResponsiveUI;
-
+/**
+ * PiJ day 17 Concurrent Programming
+ * 
+ * Exercise 4 Responsive UI
+ *
+ * Simple task. Just sleep for the appropriate number of milliseconds
+ * 
+ * @author Oliver Smart <osmart01@dcs.bbk.ac.uk>
+ * @since 10 Feb 2015
+ *
+ */
 public class TaskSleep implements Runnable {
 	private int taskNumber;
 	private int sleepMilliSecs;
@@ -12,7 +22,7 @@ public class TaskSleep implements Runnable {
 	@Override
 	public void run() {
 		System.out.println("debug task " + taskNumber + " beginning a "
-				+ sleepMilliSecs + " 'run' (aka sleep) ");
+				+ sleepMilliSecs + " millisecs 'run' (aka sleep) ");
 		try {
 			Thread.sleep(sleepMilliSecs);
 		} catch (InterruptedException ex) {
