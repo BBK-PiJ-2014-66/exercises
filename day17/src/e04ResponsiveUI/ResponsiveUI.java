@@ -34,9 +34,10 @@ public class ResponsiveUI {
 		for (int tc = 0; tc < NTASKS; tc++) {
 			System.out.print("Enter the duration (in ms) of task " + tc + ": ");
 			int delay = Integer.parseInt(keyboard.nextLine());
-			System.out.println("debug delay = " + delay);
-			TaskSleep task = new TaskSleep(tc, delay);
-			task.run();
+			// start each task in a separate thread
+			Runnable task = new TaskSleep(tc, delay);
+			Thread taskThread = new Thread(task);
+			taskThread.start();
 		}
 		keyboard.close();
 
