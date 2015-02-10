@@ -37,3 +37,7 @@ Loop:Thread 3, iteration:9.
 * Given code [Increaser](src/e02counter/Increaser.java) and [Counter](src/e02counter/Counter.java). Get varying final amounts. This because `n++` is not atomic in java. Making method `Count.increase()` *synchronized* fixes the problem.
 
 # 3 Bank account
+
+* Given bank account class [BankAccount](src/e03bankaccount/BankAccount.java) adding two `synchronized` statements can fix the class to allow multiple threads to access. But it is interesting to note that results may still be non-deterministic. If there are rapid deposits and withdrawls then results will vary as the order of operations matters! This has to be sorted outside the class.
+
+
