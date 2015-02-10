@@ -14,11 +14,11 @@ public class BankAccount {
 		return balance;
 	}
 	
-	public void deposit(int money) {
+	public synchronized void deposit(int money) {
 		balance = balance + money;
 	}
 	
-	public int retrieve(int money) {
+	public synchronized int retrieve(int money) {
 		int result = 0;
 		if (balance > money) {
 			result = money;
