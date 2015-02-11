@@ -27,7 +27,7 @@ public class TaskSleep implements Runnable {
 	@Override
 	public void run() {
 		try {
-			// old format Thread.sleep(sleepMilliSecs);
+			// old-Style Thread.sleep(sleepMilliSecs);
 			TimeUnit.MILLISECONDS.sleep(sleepMilliSecs);
 		} catch (InterruptedException ex) {
 			// just sleep less
