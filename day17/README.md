@@ -45,6 +45,11 @@ Loop:Thread 3, iteration:9.
 * [ResponsiveUI](src/e04ResponsiveUI/ResponsiveUI.java) the main script
 * [TaskSleep](src/e04ResponsiveUI/TaskSleep.java) the task
 * [TaskReport](src/e04ResponsiveUI/TaskReport.java) to record when a task has finished so it can be reported at a later stage.
+* N.B. A problem with the original implementation is 
+  that the  main scripted exited before all tasks finished. 
+  So modified so that after the input prompt for times loop has 
+  completed start a new loop that polls to see whether any of the 
+  threads are still alive and only exit when they have all finished.
 
 
 

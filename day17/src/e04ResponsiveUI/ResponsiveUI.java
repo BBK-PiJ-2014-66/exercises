@@ -1,6 +1,7 @@
 package e04ResponsiveUI;
 
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 /**
  * PiJ day 17 Concurrent Programming
@@ -28,23 +29,45 @@ public class ResponsiveUI {
 	 * The main script - user I/O is done here
 	 * 
 	 * @param args
+	 * @throws InterruptedException
 	 */
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		TaskReport taskReport = new TaskReport();
+		Thread[] taskThread = new Thread[10];
+
 		Scanner keyboard = new Scanner(System.in);
 		for (int tc = 0; tc < NTASKS; tc++) {
 			System.out.print("Enter the duration (in ms) of task " + tc + ": ");
 			int delay = Integer.parseInt(keyboard.nextLine());
 			// start each task in a separate thread
 			Runnable task = new TaskSleep(tc, delay, taskReport);
-			Thread taskThread = new Thread(task);
-			taskThread.start();
-			String finishedList = taskReport.toString();
-			if (finishedList != null)
-				System.out.println("Finished tasks: " + finishedList);			
+			taskThread[tc] = new Thread(task);
+			taskThread[tc].start();
+			printFinishedTasks(taskReport);
 		}
 		keyboard.close();
 
+		// wait for all the jobs to finish before exiting
+		boolean allFinished = false;
+		while (!allFinished) {
+			// "poll" threads to see whether they any is alive
+			allFinished = true;
+			for (int tc = 0; tc < NTASKS; tc++) {
+				if (taskThread[tc].isAlive())
+					allFinished = false;
+			}
+			printFinishedTasks(taskReport);
+			// wait 0.2 seconds before the next check
+			if (!allFinished)
+				TimeUnit.MILLISECONDS.sleep(200); 
+		}
+
+	}
+
+	public static void printFinishedTasks(TaskReport taskReport) {
+		String finishedList = taskReport.toString();
+		if (finishedList != null)
+			System.out.println("Finished tasks: " + finishedList);
 	}
 
 }

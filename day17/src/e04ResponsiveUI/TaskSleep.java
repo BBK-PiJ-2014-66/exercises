@@ -1,4 +1,7 @@
 package e04ResponsiveUI;
+
+import java.util.concurrent.TimeUnit;
+
 /**
  * PiJ day 17 Concurrent Programming
  * 
@@ -24,7 +27,8 @@ public class TaskSleep implements Runnable {
 	@Override
 	public void run() {
 		try {
-			Thread.sleep(sleepMilliSecs);
+			// old format Thread.sleep(sleepMilliSecs);
+			TimeUnit.MILLISECONDS.sleep(sleepMilliSecs);
 		} catch (InterruptedException ex) {
 			// just sleep less
 		}
