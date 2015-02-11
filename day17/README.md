@@ -40,4 +40,12 @@ Loop:Thread 3, iteration:9.
 
 * Given bank account class [BankAccount](src/e03bankaccount/BankAccount.java) adding two `synchronized` statements can fix the class to allow multiple threads to access. But it is interesting to note that results may still be non-deterministic. If there are rapid deposits and withdrawls then results will vary as the order of operations matters! This has to be sorted outside the class.
 
+# 4 Responsive UI	
+* Task is *Write a program that asks from the user the length in milliseconds of ten tasks. As the user enters the length, the tasks start running in the background while the user enters the length of the other tasks. When the tasks end, the program must register it and say it unless it is waiting for the user to enter data.*
+* [ResponsiveUI](src/e04ResponsiveUI/ResponsiveUI.java) the main script
+* [TaskSleep](src/e04ResponsiveUI/TaskSleep.java) the task
+* [TaskReport](src/e04ResponsiveUI/TaskReport.java) to record when a task has finished so it can be reported at a later stage.
+
+
+
 
