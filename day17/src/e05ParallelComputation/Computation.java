@@ -1,3 +1,5 @@
+package e05ParallelComputation;
+
 import java.util.*;
 
 /**

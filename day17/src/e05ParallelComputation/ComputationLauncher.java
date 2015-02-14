@@ -1,3 +1,5 @@
+package e05ParallelComputation;
+
 /**
  * This class launched two heavy computations
  * sequentially first, then in parallel. 
