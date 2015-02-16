@@ -1,3 +1,5 @@
+package e06immutability;
+
 import java.util.Date;  
 import java.util.StringTokenizer;  
 import java.util.Random; 
