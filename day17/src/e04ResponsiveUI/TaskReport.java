@@ -32,14 +32,13 @@ public class TaskReport {
 	 * 
 	 * synchronized to avoid conflicts
 	 * 
-	 * @return a string of finished job numbers like "2, 1, 3, 4" or null if
+	 * @return a string of finished job numbers like "2, 1, 3, 4" or "" if
 	 *         there are none
 	 */
 	@Override
 	public synchronized String toString() {
-		String list = null;
+		String list = "";
 		if (FinishedTask.size() != 0) {
-			list = "";
 			String separator = "";
 			for (Integer itTaskNo : FinishedTask) {
 				list += separator + itTaskNo;

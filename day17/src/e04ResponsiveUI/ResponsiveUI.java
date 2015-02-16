@@ -66,7 +66,7 @@ public class ResponsiveUI {
 
 	public static void printFinishedTasks(TaskReport taskReport) {
 		String finishedList = taskReport.toString();
-		if (finishedList != null)
+		if (finishedList != "")
 			System.out.println("Finished tasks: " + finishedList);
 	}
 
