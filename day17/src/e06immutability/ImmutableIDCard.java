@@ -34,11 +34,11 @@ public final class ImmutableIDCard {
 		return name;
 	}
 
-	public synchronized Date getDateOfBirth() {
+	public Date getDateOfBirth() {
 		return new Date(dateOfBirth.getTime());
 	}
 
-	public synchronized BufferedImage getPhoto() {
+	public BufferedImage getPhoto() {
 		return copyImage(photo);
 	}
 
