@@ -61,6 +61,6 @@ Loop:Thread 3, iteration:9.
 
 ![cpu vs number of processors](e05parallelcomputation.png)
 
-
+* interesting get plateau at 12 threads - is this because this is the actual number of cores or some other reason?
 
 
