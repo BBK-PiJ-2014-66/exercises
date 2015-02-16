@@ -51,6 +51,16 @@ Loop:Thread 3, iteration:9.
   completed start a new loop that polls to see whether any of the 
   threads are still alive and only exit when they have all finished.
 
+# 5 Parallel computation
+* Given [Computation](src/e05ParallelComputation/Computation.java) and 
+[ComputationLauncher](src/e05ParallelComputation/ComputationLauncher.java)
+* My notes different sets of random numbers are produced in `ComputationLauncher.createArray()` but the a seed is used to ensure that same random numbers are produced in `Computation.run()`.  So the threaded and unthreaded versions produce an identical result but rerunning the program produces a slightly different result because a different set of numbers is used.
+* Do not understand the comment **A new Random is created here because Math.random() is  synchronised, which leads to no improvement being seen**?
+* We are told to modify the program for 4 processors. Instead modify to allow it to default to run on as many threads as `availableProcessors()` and for the user to be able to specify try out on a 24 processor machine.
+* try out for a simple 2 processor and a 12 core (each is hyperthreaded) machine:
+
+![cpu vs number of processors](e05parallelcomputation.png)
+
 
 
 
