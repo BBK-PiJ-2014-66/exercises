@@ -53,7 +53,7 @@ public final class ImmutableIDCard {
 
 		long age = getAge(dateOfBirth);
 
-		if (dateOfBirth == null || age <= 0) {
+		if (age <= 0) {
 			throw new IllegalArgumentException();
 		}
 
