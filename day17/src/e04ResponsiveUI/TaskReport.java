@@ -39,12 +39,15 @@ public class TaskReport {
 	public synchronized String toString() {
 		String list = "";
 		if (FinishedTask.size() != 0) {
+			// FindBugs objects to String append in loop
+			StringBuffer buf = new StringBuffer();
 			String separator = "";
 			for (Integer itTaskNo : FinishedTask) {
-				list += separator + itTaskNo;
+				buf.append(separator + itTaskNo);
 				separator = ", ";
 			}
 			FinishedTask.clear(); // clear record
+			list = buf.toString();
 		}
 		return list;
 	}
