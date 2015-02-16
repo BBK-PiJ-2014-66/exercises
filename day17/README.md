@@ -63,4 +63,7 @@ Loop:Thread 3, iteration:9.
 
 * interesting get plateau at 12 threads - is this because this is the actual number of cores or some other reason?
 
+# 6 Immutability (*)
+**Look at the attached program `ImmutableExample`. Read it carefully. Do you see any flaws? If yes, what would you change to make the program work without problems? What whould you change to make the IDCard class immutable?**
+* The program [ImmutableExample](src/e06immutability/ImmutableExample.java) runs but the print out of the `Citizen` varies run to run sometimes printing *John ... 1971* and sometime Mary ... 1985 (but if one was really unlucky the two could be mixed). This showsthat supplying the same `MutableIDCard` object to the two threads means they can interfer. As this  is presumably not wanted have altered `Citizen`to keep a defensive copy of the supplied `id` rather than the original. With this can program always prints  *John ... 1971*.
 

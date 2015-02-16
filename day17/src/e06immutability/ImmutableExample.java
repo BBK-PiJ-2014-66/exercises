@@ -143,13 +143,15 @@ class MutableIDCard
     }
 }
 
-class Citizen implements Runnable
+final class Citizen implements Runnable // final to make sure id is protected
 {
-    private MutableIDCard id;
+    private final MutableIDCard id; // final to make it immutable
       
     public Citizen(MutableIDCard id)
     {
-        this.id = id;
+		// keep a defensive copy of the supplied id rather than original
+		this.id = new MutableIDCard(id.getName(), id.getDateOfBirth(),
+				id.getPhoto());
     }
       
     public void run()
