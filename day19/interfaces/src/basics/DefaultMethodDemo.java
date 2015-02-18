@@ -17,5 +17,10 @@ public class DefaultMethodDemo {
 
 		// Can also call default getString;
 		System.out.println(obj.getString());
+		
+		obj = new MyIFImplTwo();
+		System.out.println(obj.getNumber());
+		System.out.println(obj.getString());
+
 	}
 }
