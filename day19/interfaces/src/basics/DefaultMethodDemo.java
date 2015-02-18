@@ -9,6 +9,10 @@ package basics;
 public class DefaultMethodDemo {
 
 	public static void main(String[] args) {
+		// static method in interface
+		int istatic = MyIF.getDefaultNumber();
+		System.out.println("istatic = " + istatic);
+		
 		MyIF obj = new MyIFImpl();
 
 		// Can call getNumber(), because it is explicitly
@@ -17,10 +21,10 @@ public class DefaultMethodDemo {
 
 		// Can also call default getString;
 		System.out.println(obj.getString());
-		
+
 		obj = new MyIFImplTwo();
-		System.out.println(obj.getNumber());
-		System.out.println(obj.getString());
+		System.out.println("MyIFImplTwo " + obj.getNumber() + " '"
+				+ obj.getString() + "'");
 
 	}
 }

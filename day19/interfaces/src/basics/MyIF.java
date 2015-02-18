@@ -14,4 +14,9 @@ public interface MyIF {
 	default String getString() {
 		return "Default String";
 	}
+	
+	// Static method on page 7
+	static int getDefaultNumber() {
+		return 345;
+	}
 }
