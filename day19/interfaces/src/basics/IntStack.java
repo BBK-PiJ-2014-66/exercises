@@ -16,6 +16,6 @@ public interface IntStack {
 	// Because clear() has a default, it need not be implemented by an existing
 	// class that implements IntStack
 	default void clear() {
-		System.out.println("clear() not implemented.");
+		throw new UnsupportedOperationException("clear() not implemented.");
 	}
 }
