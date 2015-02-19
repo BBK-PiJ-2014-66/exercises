@@ -1,5 +1,7 @@
 package two;
 
+import java.util.function.Predicate;
+
 /**
  * 
  * @author PiJ sheet "An Introduction to Lambda Expressions in Java 8: Part 1" 
@@ -23,6 +25,9 @@ public class LambdaDemo {
 		if (!isNotNeg.test(-10))
 			System.out.println("-10 is negative");
 		
+		// OSS sheet 2 page 15 do with Predicate instead
+		Predicate<Integer> predIsEven = (n) -> (n%2) == 0;
+		System.out.println("predIsEven.test(10) = " + predIsEven.test(10)); 
 
 	}
 }
