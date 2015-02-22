@@ -39,7 +39,7 @@ public class LambdasAsArgumentsDemo {
 		}, inStr);
 		System.out.println("The string with spaces removed: " + outStr);
 		
-		// OSS try the last one more succinctly \\s means white space
+		// OSS try the last one more succinctly backslash s means white space
 		outStr = stringOp((str) -> str.replaceAll("\\s", ""), inStr);
 		System.out.println("The string with spaces removed v2: " + outStr);
 		// try using Unary operator instead
