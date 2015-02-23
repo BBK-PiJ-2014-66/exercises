@@ -24,7 +24,7 @@ public class StringUtils {
 	 *            the second string
 	 * @return an int value suitable for a Comparator compare: -1 if s1 contains
 	 *         'e' but s2 does not OR 1 if s2 contains 'e' but s1 does not
-	 *         OTHERWISE 0 
+	 *         OTHERWISE 0
 	 */
 	public static int eChecker(String s1, String s2) {
 		boolean e1 = s1.contains("e");
@@ -34,6 +34,25 @@ public class StringUtils {
 		if (e1 & !e2)
 			return -1;
 		return 0;
+	}
+
+	/**
+	 * Method to return the "better" of two strings
+	 * 
+	 * @param str1
+	 *            the first string
+	 * @param str2
+	 *            the second string
+	 * @param predicate
+	 *            lambda tests whether str1 is "better" than str2
+	 * @return the "better" of str1 and str2
+	 */
+	public static String betterString(String str1, String str2,
+			TwoStringPredicate predicate) {
+		String retStr = str1;
+		if (!predicate.test(str1, str2))
+			retStr = str2;
+		return retStr;
 	}
 
 }
