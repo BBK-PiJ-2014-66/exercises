@@ -1,5 +1,9 @@
 package e01;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
+
 /**
  * Class for static methods that work on String
  * 
@@ -53,6 +57,36 @@ public class StringUtils {
 		if (!predicate.test(str1, str2))
 			retStr = str2;
 		return retStr;
+	}
+
+	/**
+	 * Takes a list of Strings and a predicate returns a new list of strings
+	 * that pass the test
+	 * 
+	 * @param inList
+	 *            the list of strings
+	 * @param predicate
+	 *            the "test" boolean function to be applied
+	 * @return a list of the strings that pass the test
+	 */
+	public static List<String> allMatches(List<String> inList,
+			Predicate<String> predicate) {
+		/*
+		 * 1st version: make a new empty list and then add elements if
+		 * they match
+		 */
+		List<String> retList = new ArrayList<>();
+		for (String itStr : inList) {
+			if (predicate.test(itStr))
+				retList.add(itStr);
+		}
+		/*
+		 * 2nd version: make a (shallow) copy of the original list then use
+		 * .removeIf() method to chop out what we do not want
+		 */
+		// List<String> retList = new ArrayList<>(inList);
+		// retList.removeIf(!predicate);
+		return retList;
 	}
 
 }
