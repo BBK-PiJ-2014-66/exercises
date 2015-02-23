@@ -1,5 +1,9 @@
 package e01;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Predicate;
+
 /**
  * Class for static methods that work on generic element type T
  * 
@@ -15,7 +19,7 @@ public class ElementUtils<T> {
 		throw new UnsupportedOperationException("Uninstantiable class");
 	}
 
-		/**
+	/**
 	 * Method to return the "better" of two elements
 	 * 
 	 * @param ele1
@@ -33,5 +37,27 @@ public class ElementUtils<T> {
 			retEle = ele2;
 		return retEle;
 	}
+	
+	/**
+	 * Takes a list of T's and a predicate returns a new list of T's
+	 * that pass the test
+	 * 
+	 * @param inList
+	 *            the list of T's
+	 * @param predicate
+	 *            the "test" boolean function to be applied
+	 * @return a list of the T's that pass the test
+	 */
+	public static <T> List<T> allMatches(List<T> inList,
+			Predicate<T> predicate) {
+		/*
+		 * 2nd version: make a (shallow) copy of the original list then use
+		 * .removeIf() method to chop out what we do not want
+		 */
+		List<T> retList = new ArrayList<>(inList);
+		retList.removeIf(predicate.negate());
+		return retList;
+	}
+
 
 }

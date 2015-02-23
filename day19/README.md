@@ -39,4 +39,8 @@ words with 'b': [brown]
 words with an even length [over, lazy]
 ```
 
+#6 rewrite `allMatches` to be generic
+* added generic version of `allMatches` to  [ElementUtils](exercises/src/e01/ElementUtils.java)
+* altered test [TestAllMatches](exercises/src/e01/TestAllMatches.java) to use generic method. The output is unaltered.
+
 
