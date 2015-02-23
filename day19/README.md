@@ -44,3 +44,15 @@ words with an even length [over, lazy]
 * altered test [TestAllMatches](exercises/src/e01/TestAllMatches.java) to use generic method. The output is unaltered.
 
 
+#7 `transformedList` to apply a function to each element of a list
+* Added method `transformedList` to  [StringUtils](exercises/src/e01/StringUtils.java).
+* Tested by [TestTransformedList](exercises/src/e01/TestTransformedList.java) produces output:
+
+```
+Original list of words: [The, quick, brown, jumps, over, a, lazy, dog]
+'exciting' words: [The!, quick!, brown!, jumps!, over!, a!, lazy!, dog!]
+'eye' words: [The, queyeck, brown, jumps, over, a, lazy, dog]
+'uc' words: [THE, QUICK, BROWN, JUMPS, OVER, A, LAZY, DOG]
+```
+
+#8

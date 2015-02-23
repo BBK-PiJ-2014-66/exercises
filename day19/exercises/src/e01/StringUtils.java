@@ -2,6 +2,7 @@ package e01;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 /**
@@ -71,22 +72,48 @@ public class StringUtils {
 	 */
 	public static List<String> allMatches(List<String> inList,
 			Predicate<String> predicate) {
+
+		if (inList == null) // protect against being supplied with a null list
+			return null;
 		/*
-		 * 1st version: make a new empty list and then add elements if
-		 * they match
+		 * 1st version: make a new empty list and then add elements if they
+		 * match
 		 */
-//		List<String> retList = new ArrayList<>();
-//		for (String itStr : inList) {
-//			if (predicate.test(itStr))
-//				retList.add(itStr);
-//		}
-		
+		// List<String> retList = new ArrayList<>();
+		// for (String itStr : inList) {
+		// if (predicate.test(itStr))
+		// retList.add(itStr);
+		// }
+
 		/*
 		 * 2nd version: make a (shallow) copy of the original list then use
 		 * .removeIf() method to chop out what we do not want
 		 */
 		List<String> retList = new ArrayList<>(inList);
 		retList.removeIf(predicate.negate());
+		return retList;
+	}
+
+	/**
+	 * returns a new list that contains the result of applying function funct to
+	 * each element in inList
+	 * 
+	 * @param inList
+	 *            the input list - not altered
+	 * @param funct
+	 *            the Function to be applied
+	 * @return a new list with the result of apply funct to each element of
+	 *         input list
+	 */
+	public static List<String> transformedList(List<String> inList,
+			Function<String, String> funct) {
+		List<String> retList = null;
+		if (inList != null) {// protect against being supplied with a null list
+			retList = new ArrayList<>(inList.size());
+			for (String itStr : inList) {
+				retList.add(funct.apply(itStr));
+			}
+		}
 		return retList;
 	}
 
