@@ -22,3 +22,9 @@ The 2nd string: Eve
 The 1st string alphabetically: Eve
 The 1st string alphabetically ignoring case: adam
 ```
+
+#4 Generic version of betterString
+*  `static` method `betterElement1 in [ElementUtils](exercises/src/e01/ElementUtils.java)
+* Generic interface [TwoElementPredicate](exercises/src/e01/TwoElementPredicate.java)
+* test produces exactly the same output as 3 [TestBetterElement](exercises/src/e01/TestBetterElement.java)
+
