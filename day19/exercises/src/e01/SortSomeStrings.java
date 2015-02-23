@@ -32,26 +32,31 @@ public class SortSomeStrings {
 		System.out.println("Example array of strings before any sorting: "
 				+ Arrays.asList(makes));
 		// Produces output:
-		// Example array of strings before any sorting: [Ford, Fiat, Rover, Honda, Toyota, Renault, Seat]
+		// Example array of strings before any sorting: [Ford, Fiat, Rover,
+		// Honda, Toyota, Renault, Seat]
+		String origMakes[] = makes.clone();
 
 		Arrays.sort(makes, (s1, s2) -> s1.length() - s2.length());
 		System.out.println("Sorted by length shortest to longest: "
 				+ Arrays.asList(makes));
 		// Produces output:
-		// Sorted by length shortest to longest: [Ford, Fiat, Seat, Rover, Honda, Toyota, Renault]
-		
+		// Sorted by length shortest to longest: [Ford, Fiat, Seat, Rover,
+		// Honda, Toyota, Renault]
+
 		Arrays.sort(makes, (s1, s2) -> s2.length() - s1.length());
 		System.out.println("Sorted by length longest to shortest: "
 				+ Arrays.asList(makes));
 		// Produces output:
-		// Sorted by length longest to shortest: [Renault, Toyota, Rover, Honda, Ford, Fiat, Seat]
+		// Sorted by length longest to shortest: [Renault, Toyota, Rover, Honda,
+		// Ford, Fiat, Seat]
 
 		// first character - convert characters to ascii equivalent
 		Arrays.sort(makes, (s1, s2) -> s1.charAt(0) - s2.charAt(0));
 		System.out.println("Sorted by first character ascii value: "
 				+ Arrays.asList(makes));
 		// Produces output:
-		// Sorted by first character ascii value: [Ford, Fiat, Honda, Renault, Rover, Seat, Toyota]
+		// Sorted by first character ascii value: [Ford, Fiat, Honda, Renault,
+		// Rover, Seat, Toyota]
 
 		Comparator<String> eContainsFirst = (s1, s2) -> {
 			boolean e1 = s1.contains("e");
@@ -66,9 +71,24 @@ public class SortSomeStrings {
 		System.out.println("String that contain 'e' first, "
 				+ "everything else second: " + Arrays.asList(makes));
 		// Produces output:
-		// String that contain 'e' first, everything else second: [Renault, Rover, Seat, Ford, Fiat, Honda, Toyota]
+		// String that contain 'e' first, everything else second: [Renault,
+		// Rover, Seat, Ford, Fiat, Honda, Toyota]
+
+		// reset makes to original
+		makes = origMakes.clone();
+		System.out.println("reset makes to original unsorted: "
+				+ Arrays.asList(makes));
+		/*
+		 * Exercise 2 move logic for checking for 'e' into a separate static
+		 * method and use a method reference in place of an explicit lambda
+		 */
+		Arrays.sort(makes, StringUtils::eChecker);
+		System.out.println("String that contain 'e' first, "
+				+ "(eChecker version) " + Arrays.asList(makes));
+		// Produces output:
+		// String that contain 'e' first, (eChecker version) [Rover, Renault,
+		// Seat, Ford, Fiat, Honda, Toyota]
 
 	}
-
 
 }
