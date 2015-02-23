@@ -75,17 +75,18 @@ public class StringUtils {
 		 * 1st version: make a new empty list and then add elements if
 		 * they match
 		 */
-		List<String> retList = new ArrayList<>();
-		for (String itStr : inList) {
-			if (predicate.test(itStr))
-				retList.add(itStr);
-		}
+//		List<String> retList = new ArrayList<>();
+//		for (String itStr : inList) {
+//			if (predicate.test(itStr))
+//				retList.add(itStr);
+//		}
+		
 		/*
 		 * 2nd version: make a (shallow) copy of the original list then use
 		 * .removeIf() method to chop out what we do not want
 		 */
-		// List<String> retList = new ArrayList<>(inList);
-		// retList.removeIf(!predicate);
+		List<String> retList = new ArrayList<>(inList);
+		retList.removeIf(predicate.negate());
 		return retList;
 	}
 
