@@ -55,4 +55,20 @@ Original list of words: [The, quick, brown, jumps, over, a, lazy, dog]
 'uc' words: [THE, QUICK, BROWN, JUMPS, OVER, A, LAZY, DOG]
 ```
 
-#8
+#8 `transformedList` generic
+* Added generic method `transformedList` to  [ElementUtils](exercises/src/e01/ElementUtils.java)
+* Tested by [TestTransformedList](exercises/src/e01/TestTransformedList.java) produces output:
+
+```
+Original list of words: [The, quick, brown, jumps, over, a, lazy, dog]
+'exciting' words: [The!, quick!, brown!, jumps!, over!, a!, lazy!, dog!]
+'eye' words: [The, queyeck, brown, jumps, over, a, lazy, dog]
+'uc' words: [THE, QUICK, BROWN, JUMPS, OVER, A, LAZY, DOG]
+
+Repeat tests using generic version:
+'exciting' words: [The!, quick!, brown!, jumps!, over!, a!, lazy!, dog!]
+'eye' words: [The, queyeck, brown, jumps, over, a, lazy, dog]
+'uc' words: [THE, QUICK, BROWN, JUMPS, OVER, A, LAZY, DOG]
+```
+
+**finished exercise**

@@ -2,6 +2,7 @@ package e01;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Function;
 import java.util.function.Predicate;
 
 /**
@@ -58,6 +59,30 @@ public class ElementUtils<T> {
 		retList.removeIf(predicate.negate());
 		return retList;
 	}
+	
+	/**
+	 * returns a new list that contains the result of applying function funct to
+	 * each element in inList
+	 * 
+	 * @param inList
+	 *            the input list - not altered
+	 * @param funct
+	 *            the Function to be applied
+	 * @return a new list with the result of apply funct to each element of
+	 *         input list
+	 */
+	public static <T> List<T> transformedList(List<T> inList,
+			Function<T, T> funct) {
+		List<T> retList = null;
+		if (inList != null) {// protect against being supplied with a null list
+			retList = new ArrayList<>(inList.size());
+			for (T itT : inList) {
+				retList.add(funct.apply(itT));
+			}
+		}
+		return retList;
+	}
+
 
 
 }
