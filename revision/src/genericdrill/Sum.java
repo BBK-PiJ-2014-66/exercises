@@ -3,6 +3,7 @@ package genericdrill;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Keith Mannock "Generics Drill" in Revision Session 27th April 2015
@@ -37,9 +38,9 @@ public class Sum {
 		Double dSum = sumIterative(doubleArray);
 		System.out.println(" sum of " + Arrays.asList(doubleArray) + " is "
 				+ dSum);
-		dSum = sumRecursive(doubleArray);
-		System.out.println(" recursive sum of " + Arrays.asList(doubleArray)
-				+ " is " + dSum);
+		
+		Optional<Double>dSum2 = sumRecursive(doubleArray);
+		System.out.println(" recursive sum is " + dSum2.get());
 
 	}
 
@@ -95,11 +96,11 @@ public class Sum {
 		return result;
 	}
 
-	private static double sumRecursive(Double... darr) {
-		double result = 0.0;
-		if (darr.length > 1) {
+	private static Optional<Double> sumRecursive(Double... darr) {
+		Optional<Double> result = Optional.empty();
+		if (darr != null && darr.length > 1) {
 			ArrayList<Double> dlist = new ArrayList<Double>(Arrays.asList(darr));
-			result = sumRecursive(dlist);
+			result = Optional.of(sumRecursive(dlist));
 		}
 		return result;
 	}
