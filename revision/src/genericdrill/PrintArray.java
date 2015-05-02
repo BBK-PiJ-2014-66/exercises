@@ -3,7 +3,7 @@ package genericdrill;
 /**
  * Keith Mannock "Generics Drill" in Revision Session 27th April 2015
  * 
- * 1st example a simple generic method and how type inference works
+ * 1st example a simple generic method and how type inference works.
  *
  */
 public class PrintArray {
