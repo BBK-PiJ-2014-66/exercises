@@ -12,3 +12,8 @@ From 01 May 2015.
   * [Sum](src/genericdrill/Sum.java) Attempt at a generic method for `<T extends Number>` that I think is not possible? Also coded a recursive sum.
 
 
+## 2014 exam
+
+* Question 8 the word ladder puzzle
+ * The *model answer* [Q8keith](src/exam2014/Q8keith.java)  has some problems
+ * My answer[Q8oliver](src/exam2014/Q8oliver.java) is long winded but works
