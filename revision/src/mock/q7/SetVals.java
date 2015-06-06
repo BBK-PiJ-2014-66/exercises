@@ -1,5 +1,7 @@
 package mock.q7;
 
+import java.util.Scanner;
+
 public class SetVals extends Thread {
 	private Queue theQ;
 
@@ -9,15 +11,14 @@ public class SetVals extends Thread {
 
 	@Override
 	public void run() {
-		while (true) {
-			String str;
-			System.out.print("Enter and Integer" + " (-1 to finish):");
-			str = System.console().readLine();
-			Integer anInt = Integer.parseInt(str);
-			theQ.enqueue(anInt);
-			if (anInt == -1)
-				break;
+		try (Scanner keyboard = new Scanner(System.in);) {
+			while (true) {
+				System.out.print("Enter and Integer" + " (-1 to finish):");
+				Integer anInt = keyboard.nextInt();
+				theQ.enqueue(anInt);
+				if (anInt == -1)
+					break;
+			}
 		}
 	}
-
 }
